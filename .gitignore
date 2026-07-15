@@ -1,0 +1,5 @@
+.runtime-test/
+Source/1.6/LCAnomalyOrdeals/bin/
+Source/1.6/LCAnomalyOrdeals/obj/
+Source/1.6/LocalDllPaths.props
+1.6/Assemblies/*.pdb

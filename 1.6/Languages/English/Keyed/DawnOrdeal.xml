@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LCOrdeal_DawnStarted>Dawn Ordeal: {0}\n{1}</LCOrdeal_DawnStarted>
+  <LCOrdeal_DawnPassed>The Dawn Ordeal has been suppressed. Recovered Enkephalin: {0}.</LCOrdeal_DawnPassed>
+  <LCOrdeal_DawnNoMap>No player home map with an active colonist is available.</LCOrdeal_DawnNoMap>
+  <LCOrdeal_DawnSpawnFailed>The Ordeal could not establish a valid breach point.</LCOrdeal_DawnSpawnFailed>
+  <LCOrdeal_DawnTargets>Remaining targets</LCOrdeal_DawnTargets>
+  <LCOrdeal_DawnVariant>Active Ordeal</LCOrdeal_DawnVariant>
+  <LCOrdeal_VioletTime>Time until the Fruit matures</LCOrdeal_VioletTime>
+  <LCOrdeal_VioletDetonated>The Fruits of Understanding matured. Their psychic blasts reduced {0} nearby containment counter(s) to zero.</LCOrdeal_VioletDetonated>
+  <LCOrdeal_AmberName>The Perfect Food</LCOrdeal_AmberName>
+  <LCOrdeal_AmberQuote>A perfect meal, an excellent substitute.</LCOrdeal_AmberQuote>
+  <LCOrdeal_CrimsonName>Cheers for the Beginning</LCOrdeal_CrimsonName>
+  <LCOrdeal_CrimsonQuote>Let us light a flame yet more radiant in our lives; for life is a candlelight, destined to snuff out one day.</LCOrdeal_CrimsonQuote>
+  <LCOrdeal_GreenName>Doubt</LCOrdeal_GreenName>
+  <LCOrdeal_GreenQuote>One day, a question crossed through my mind. Where do we come from? We were given life and left in this world against our own volition.</LCOrdeal_GreenQuote>
+  <LCOrdeal_VioletName>The Fruit of Understanding</LCOrdeal_VioletName>
+  <LCOrdeal_VioletQuote>To gain an understanding of what is incomprehensible, they dream, staring.</LCOrdeal_VioletQuote>
+  <LCOrdeal_PresentationDawn>DAWN ORDEAL</LCOrdeal_PresentationDawn>
+  <LCOrdeal_PresentationSuppressed>ORDEAL SUPPRESSED</LCOrdeal_PresentationSuppressed>
+  <LCOrdeal_PresentationFailed>SUPPRESSION FAILED</LCOrdeal_PresentationFailed>
+  <LCOrdeal_AmberEndQuote>We ate incessantly to live. The inevitable diminution, the waste…</LCOrdeal_AmberEndQuote>
+  <LCOrdeal_CrimsonEndQuote>To live is to yearn and fight for our desires.</LCOrdeal_CrimsonEndQuote>
+  <LCOrdeal_GreenEndQuote>To live was a process full of pain.</LCOrdeal_GreenEndQuote>
+  <LCOrdeal_VioletEndQuote>They complied with nothing in their bid to understand. They simply did so.</LCOrdeal_VioletEndQuote>
+  <LCOrdeal_AmberFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_AmberFailureText>
+  <LCOrdeal_CrimsonFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_CrimsonFailureText>
+  <LCOrdeal_GreenFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_GreenFailureText>
+  <LCOrdeal_VioletFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_VioletFailureText>
+</LanguageData>

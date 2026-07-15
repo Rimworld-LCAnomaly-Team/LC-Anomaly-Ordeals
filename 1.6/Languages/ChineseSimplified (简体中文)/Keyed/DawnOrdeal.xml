@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LCOrdeal_DawnStarted>黎明考验：{0}\n{1}</LCOrdeal_DawnStarted>
+  <LCOrdeal_DawnPassed>黎明考验已镇压。回收脑啡肽：{0}。</LCOrdeal_DawnPassed>
+  <LCOrdeal_DawnNoMap>没有可用且存在活动殖民者的玩家基地地图。</LCOrdeal_DawnNoMap>
+  <LCOrdeal_DawnSpawnFailed>考验无法建立有效的突破点。</LCOrdeal_DawnSpawnFailed>
+  <LCOrdeal_DawnTargets>剩余目标</LCOrdeal_DawnTargets>
+  <LCOrdeal_DawnVariant>当前考验</LCOrdeal_DawnVariant>
+  <LCOrdeal_VioletTime>理解的果实自爆倒计时</LCOrdeal_VioletTime>
+  <LCOrdeal_VioletDetonated>理解的果实已经自爆。精神冲击使范围内 {0} 个收容平台的计数器归零。</LCOrdeal_VioletDetonated>
+  <LCOrdeal_AmberName>新鲜的食物</LCOrdeal_AmberName>
+  <LCOrdeal_AmberQuote>食物—新鲜。替代品—很好。</LCOrdeal_AmberQuote>
+  <LCOrdeal_CrimsonName>开始欢呼吧！</LCOrdeal_CrimsonName>
+  <LCOrdeal_CrimsonQuote>让我们在这宛如风中残烛的生命里，纵情放一把大火吧！</LCOrdeal_CrimsonQuote>
+  <LCOrdeal_GreenName>疑问</LCOrdeal_GreenName>
+  <LCOrdeal_GreenQuote>有一天，我们想到一个问题：我们从何而来？我们被给予了生命，却又被不负责任地抛弃。</LCOrdeal_GreenQuote>
+  <LCOrdeal_VioletName>理解的果实</LCOrdeal_VioletName>
+  <LCOrdeal_VioletQuote>有朝一日，我们必将理解那些不能理解的东西。</LCOrdeal_VioletQuote>
+  <LCOrdeal_PresentationDawn>黎明考验</LCOrdeal_PresentationDawn>
+  <LCOrdeal_PresentationSuppressed>考验镇压完成</LCOrdeal_PresentationSuppressed>
+  <LCOrdeal_PresentationFailed>镇压失败</LCOrdeal_PresentationFailed>
+  <LCOrdeal_AmberEndQuote>我们—生存。我们—吃。我们—腐烂。成为—食物...</LCOrdeal_AmberEndQuote>
+  <LCOrdeal_CrimsonEndQuote>活着，就是为了满足肉欲。</LCOrdeal_CrimsonEndQuote>
+  <LCOrdeal_GreenEndQuote>生命，充满了痛苦。</LCOrdeal_GreenEndQuote>
+  <LCOrdeal_VioletEndQuote>为了理解，我们只能这么做。</LCOrdeal_VioletEndQuote>
+  <LCOrdeal_AmberFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_AmberFailureText>
+  <LCOrdeal_CrimsonFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_CrimsonFailureText>
+  <LCOrdeal_GreenFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_GreenFailureText>
+  <LCOrdeal_VioletFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_VioletFailureText>
+</LanguageData>
