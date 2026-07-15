@@ -85,4 +85,33 @@
   <LCOrdeal_WhiteMidnightQuote>将世界的奥秘玩弄于股掌之间，乃是“首脑”，“眼线”与“爪牙”至高无上的特权。</LCOrdeal_WhiteMidnightQuote>
   <LCOrdeal_WhiteMidnightEndQuote>他们无人能挡，“巢”与他们的故事永不落幕。</LCOrdeal_WhiteMidnightEndQuote>
   <LCOrdeal_WhiteFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_WhiteFailureText>
+  <LCOrdeal_DebugDawnAmber>黎明考验 - 琥珀</LCOrdeal_DebugDawnAmber>
+  <LCOrdeal_DebugDawnCrimson>黎明考验 - 赤红</LCOrdeal_DebugDawnCrimson>
+  <LCOrdeal_DebugDawnGreen>黎明考验 -碧绿</LCOrdeal_DebugDawnGreen>
+  <LCOrdeal_DebugDawnViolet>黎明考验 - 紫罗兰</LCOrdeal_DebugDawnViolet>
+  <LCOrdeal_DebugNoonCrimson>正午考验 - 赤红</LCOrdeal_DebugNoonCrimson>
+  <LCOrdeal_DebugNoonGreen>正午考验 - 碧绿</LCOrdeal_DebugNoonGreen>
+  <LCOrdeal_DebugNoonViolet>正午考验 - 紫罗兰</LCOrdeal_DebugNoonViolet>
+  <LCOrdeal_DebugNoonIndigo>正午考验 - 靛蓝</LCOrdeal_DebugNoonIndigo>
+  <LCOrdeal_DebugDuskAmber>黄昏考验 - 琥珀</LCOrdeal_DebugDuskAmber>
+  <LCOrdeal_DebugDuskCrimson>黄昏考验 - 赤红</LCOrdeal_DebugDuskCrimson>
+  <LCOrdeal_DebugDuskGreen>黄昏考验 - 碧绿</LCOrdeal_DebugDuskGreen>
+  <LCOrdeal_DebugMidnightAmber>午夜考验 - 琥珀</LCOrdeal_DebugMidnightAmber>
+  <LCOrdeal_DebugMidnightGreen>午夜考验 - 碧绿</LCOrdeal_DebugMidnightGreen>
+  <LCOrdeal_DebugMidnightViolet>午夜考验 - 紫罗兰</LCOrdeal_DebugMidnightViolet>
+  <LCOrdeal_DebugWhiteDawn>白色考验 - 黎明</LCOrdeal_DebugWhiteDawn>
+  <LCOrdeal_DebugWhiteNoon>白色考验 - 正午</LCOrdeal_DebugWhiteNoon>
+  <LCOrdeal_DebugWhiteDusk>白色考验 - 黄昏</LCOrdeal_DebugWhiteDusk>
+  <LCOrdeal_DebugWhiteMidnight>白色考验 - 午夜</LCOrdeal_DebugWhiteMidnight>
+  <LCOrdeal_DebugEndPassed>以成功状态结束</LCOrdeal_DebugEndPassed>
+  <LCOrdeal_DebugEndFailed>以失败状态结束</LCOrdeal_DebugEndFailed>
+  <LCOrdeal_DebugEndCancelled>取消并清理对象</LCOrdeal_DebugEndCancelled>
+  <LCOrdeal_DebugForcedPassed>已通过开发者菜单结束考验。</LCOrdeal_DebugForcedPassed>
+  <LCOrdeal_DebugForcedFailed>已通过开发者菜单令考验失败。</LCOrdeal_DebugForcedFailed>
+  <LCOrdeal_DebugForcedCancelled>已通过开发者菜单取消考验。</LCOrdeal_DebugForcedCancelled>
+  <LCOrdeal_DebugReplaced>已通过开发者菜单替换为另一项考验。</LCOrdeal_DebugReplaced>
+  <LCOrdeal_DebugNoActive>当前没有正在进行的 LC 考验。</LCOrdeal_DebugNoActive>
+  <LCOrdeal_DebugUnavailable>考验框架或考验定义当前不可用。</LCOrdeal_DebugUnavailable>
+  <LCOrdeal_DebugStartFailed>无法触发考验：{0}</LCOrdeal_DebugStartFailed>
+  <LCOrdeal_DebugUnknown>未知原因</LCOrdeal_DebugUnknown>
 </LanguageData>

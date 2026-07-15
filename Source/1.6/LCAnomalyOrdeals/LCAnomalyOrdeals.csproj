@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Bootstrap.cs" />
     <Compile Include="DefOfs\OrdealDefOf.cs" />
+    <Compile Include="Debugging\OrdealDebugActions.cs" />
     <Compile Include="Defs\DawnOrdealSettings.cs" />
     <Compile Include="Defs\NoonOrdealSettings.cs" />
     <Compile Include="Defs\DuskOrdealSettings.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Presentation\GameComponent_MidnightPresentation.cs" />
     <Compile Include="Presentation\GameComponent_WhitePresentation.cs" />
     <Compile Include="Patches\OrdealPawnPatches.cs" />
+    <Compile Include="Utilities\OrdealTargetUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,6 +6,7 @@ using LCAnomalyCore.Comp;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Presentation;
+using LCAnomalyOrdeals.Utilities;
 using LCAnomalyStory;
 using LCAnomalyStory.Defs;
 using LCAnomalyStory.Examinations;
@@ -31,6 +32,14 @@ namespace LCAnomalyOrdeals.Examinations
             Crimson,
             Green,
             Violet
+        }
+
+        private static DawnVariant? debugForcedVariant;
+
+        internal static void DebugForceNextVariant(string variant)
+        {
+            DawnVariant parsed;
+            debugForcedVariant = Enum.TryParse(variant, out parsed) ? parsed : (DawnVariant?)null;
         }
 
         public override bool CanStart(ExaminationContext context, out string rejectionReason)
@@ -60,10 +69,11 @@ namespace LCAnomalyOrdeals.Examinations
                 return;
             }
 
-            DawnVariant variant = (DawnVariant)Rand.RangeInclusive(0, 3);
+            DawnVariant variant = debugForcedVariant ?? (DawnVariant)Rand.RangeInclusive(0, 3);
+            debugForcedVariant = null;
             DawnOrdealSettings settings = Settings;
-            int colonists = Math.Max(1, map.mapPawns.FreeColonistsSpawnedCount);
-            int count = TargetCount(variant, colonists, settings);
+            int population = Math.Max(1, OrdealTargetUtility.AllTargets(map).Count);
+            int count = TargetCount(variant, population, settings);
             PawnKindDef pawnKind = PawnKindFor(variant);
             List<Pawn> spawned = new List<Pawn>();
 
@@ -332,17 +342,17 @@ namespace LCAnomalyOrdeals.Examinations
 
         private static void BurrowAmberTargets(Map map, IEnumerable<Pawn> targets, DawnOrdealSettings settings)
         {
-            List<Pawn> colonists = map.mapPawns.FreeColonistsSpawned;
-            if (colonists.Count == 0)
+            List<Pawn> victims = OrdealTargetUtility.AllTargets(map);
+            if (victims.Count == 0)
             {
                 return;
             }
 
             foreach (Pawn pawn in targets.ToList())
             {
-                Pawn colonist = colonists.RandomElement();
+                Pawn victim = victims.RandomElement();
                 IntVec3 destination = CellFinder.RandomClosewalkCellNear(
-                    colonist.Position,
+                    victim.Position,
                     map,
                     settings.amberBurrowRadius,
                     cell => cell.Standable(map) && !cell.Fogged(map));
@@ -379,7 +389,7 @@ namespace LCAnomalyOrdeals.Examinations
 
         private static void PulsePsychic(Map map, Thing instigator, float amount, float radius)
         {
-            foreach (Pawn pawn in map.mapPawns.FreeColonistsSpawned)
+            foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map))
             {
                 if (!pawn.Dead && (radius < 0f || pawn.Position.InHorDistOf(instigator.PositionHeld, radius)))
                 {

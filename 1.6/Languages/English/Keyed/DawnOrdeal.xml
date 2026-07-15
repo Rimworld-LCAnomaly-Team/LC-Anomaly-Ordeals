@@ -85,4 +85,33 @@
   <LCOrdeal_WhiteMidnightQuote>To know and manipulate all the secrets of the world is the privilege of the Head, the Eye, and the Claw.</LCOrdeal_WhiteMidnightQuote>
   <LCOrdeal_WhiteMidnightEndQuote>No one dares stand against them. As long as they continue to exist, the tale of the Nest will never reach its close.</LCOrdeal_WhiteMidnightEndQuote>
   <LCOrdeal_WhiteFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_WhiteFailureText>
+  <LCOrdeal_DebugDawnAmber>Dawn - Amber</LCOrdeal_DebugDawnAmber>
+  <LCOrdeal_DebugDawnCrimson>Dawn - Crimson</LCOrdeal_DebugDawnCrimson>
+  <LCOrdeal_DebugDawnGreen>Dawn - Green</LCOrdeal_DebugDawnGreen>
+  <LCOrdeal_DebugDawnViolet>Dawn - Violet</LCOrdeal_DebugDawnViolet>
+  <LCOrdeal_DebugNoonCrimson>Noon - Crimson</LCOrdeal_DebugNoonCrimson>
+  <LCOrdeal_DebugNoonGreen>Noon - Green</LCOrdeal_DebugNoonGreen>
+  <LCOrdeal_DebugNoonViolet>Noon - Violet</LCOrdeal_DebugNoonViolet>
+  <LCOrdeal_DebugNoonIndigo>Noon - Indigo</LCOrdeal_DebugNoonIndigo>
+  <LCOrdeal_DebugDuskAmber>Dusk - Amber</LCOrdeal_DebugDuskAmber>
+  <LCOrdeal_DebugDuskCrimson>Dusk - Crimson</LCOrdeal_DebugDuskCrimson>
+  <LCOrdeal_DebugDuskGreen>Dusk - Green</LCOrdeal_DebugDuskGreen>
+  <LCOrdeal_DebugMidnightAmber>Midnight - Amber</LCOrdeal_DebugMidnightAmber>
+  <LCOrdeal_DebugMidnightGreen>Midnight - Green</LCOrdeal_DebugMidnightGreen>
+  <LCOrdeal_DebugMidnightViolet>Midnight - Violet</LCOrdeal_DebugMidnightViolet>
+  <LCOrdeal_DebugWhiteDawn>White - Dawn</LCOrdeal_DebugWhiteDawn>
+  <LCOrdeal_DebugWhiteNoon>White - Noon</LCOrdeal_DebugWhiteNoon>
+  <LCOrdeal_DebugWhiteDusk>White - Dusk</LCOrdeal_DebugWhiteDusk>
+  <LCOrdeal_DebugWhiteMidnight>White - Midnight</LCOrdeal_DebugWhiteMidnight>
+  <LCOrdeal_DebugEndPassed>End as passed</LCOrdeal_DebugEndPassed>
+  <LCOrdeal_DebugEndFailed>End as failed</LCOrdeal_DebugEndFailed>
+  <LCOrdeal_DebugEndCancelled>Cancel and clean up</LCOrdeal_DebugEndCancelled>
+  <LCOrdeal_DebugForcedPassed>Ended through the developer menu.</LCOrdeal_DebugForcedPassed>
+  <LCOrdeal_DebugForcedFailed>Failed through the developer menu.</LCOrdeal_DebugForcedFailed>
+  <LCOrdeal_DebugForcedCancelled>Cancelled through the developer menu.</LCOrdeal_DebugForcedCancelled>
+  <LCOrdeal_DebugReplaced>Replaced by another ordeal through the developer menu.</LCOrdeal_DebugReplaced>
+  <LCOrdeal_DebugNoActive>There is no active LC ordeal.</LCOrdeal_DebugNoActive>
+  <LCOrdeal_DebugUnavailable>The ordeal framework or definition is unavailable.</LCOrdeal_DebugUnavailable>
+  <LCOrdeal_DebugStartFailed>Could not start the ordeal: {0}</LCOrdeal_DebugStartFailed>
+  <LCOrdeal_DebugUnknown>unknown reason</LCOrdeal_DebugUnknown>
 </LanguageData>

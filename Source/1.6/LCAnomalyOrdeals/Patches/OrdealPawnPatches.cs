@@ -4,12 +4,37 @@ using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Examinations;
 using LCAnomalyOrdeals.Presentation;
+using LCAnomalyOrdeals.Utilities;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace LCAnomalyOrdeals.Patches
 {
+    [HarmonyPatch(typeof(GenHostility), nameof(GenHostility.HostileTo), new[] { typeof(Thing), typeof(Thing) })]
+    internal static class OrdealHostilityPatch
+    {
+        private static bool Prefix(Thing a, Thing b, ref bool __result)
+        {
+            Pawn first = a as Pawn;
+            Pawn second = b as Pawn;
+            if (first == null || second == null)
+            {
+                return true;
+            }
+
+            bool firstIsOrdeal = OrdealTargetUtility.IsOrdealPawn(first);
+            bool secondIsOrdeal = OrdealTargetUtility.IsOrdealPawn(second);
+            if (!firstIsOrdeal && !secondIsOrdeal)
+            {
+                return true;
+            }
+
+            __result = firstIsOrdeal != secondIsOrdeal;
+            return false;
+        }
+    }
+
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]
     internal static class VioletMidnightAbsorptionPatch
     {
@@ -123,13 +148,13 @@ namespace LCAnomalyOrdeals.Patches
                 || __state.map == null
                 || __state.greenKiller == null
                 || __state.greenKiller.kindDef != OrdealDefOf.LCOrdeal_GreenDawn
-                || __instance.Faction != Faction.OfPlayer)
+                || OrdealTargetUtility.IsOrdealPawn(__instance))
             {
                 return;
             }
 
             DawnOrdealSettings settings = DawnOrdealWorker.ActiveSettings();
-            foreach (Pawn pawn in __state.map.mapPawns.FreeColonistsSpawned)
+            foreach (Pawn pawn in OrdealTargetUtility.AllTargets(__state.map))
             {
                 if (!pawn.Dead && pawn.Position.InHorDistOf(__state.position, settings.greenExecutionPsychicRadius))
                 {

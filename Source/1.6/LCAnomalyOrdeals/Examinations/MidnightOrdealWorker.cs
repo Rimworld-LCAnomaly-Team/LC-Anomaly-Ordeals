@@ -4,6 +4,7 @@ using System.Linq;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Presentation;
+using LCAnomalyOrdeals.Utilities;
 using LCAnomalyStory;
 using LCAnomalyStory.Defs;
 using LCAnomalyStory.Examinations;
@@ -30,6 +31,14 @@ namespace LCAnomalyOrdeals.Examinations
         private enum MidnightVariant { Amber, Green, Violet }
         private enum VioletColor { Red, White, Black, Pale }
 
+        private static MidnightVariant? debugForcedVariant;
+
+        internal static void DebugForceNextVariant(string variant)
+        {
+            MidnightVariant parsed;
+            debugForcedVariant = Enum.TryParse(variant, out parsed) ? parsed : (MidnightVariant?)null;
+        }
+
         public override bool CanStart(ExaminationContext context, out string rejectionReason)
         {
             if (!base.CanStart(context, out rejectionReason)) return false;
@@ -42,7 +51,8 @@ namespace LCAnomalyOrdeals.Examinations
             base.OnStarted(context);
             Map map = SelectMap();
             if (map == null) { context.Fail("LCOrdeal_DawnNoMap".Translate()); return; }
-            MidnightVariant variant = (MidnightVariant)Rand.RangeInclusive(0, 2);
+            MidnightVariant variant = debugForcedVariant ?? (MidnightVariant)Rand.RangeInclusive(0, 2);
+            debugForcedVariant = null;
             context.SetLong(MapIdKey, map.uniqueID); context.SetString(VariantKey, variant.ToString()); context.SetString(TargetIdsKey, string.Empty);
             List<Pawn> spawned = variant == MidnightVariant.Amber ? SpawnAmber(context, map) : variant == MidnightVariant.Green ? SpawnGreen(context, map) : SpawnViolet(context, map);
             if (spawned.Count == 0) { context.Fail("LCOrdeal_DawnSpawnFailed".Translate()); return; }
@@ -140,14 +150,14 @@ namespace LCAnomalyOrdeals.Examinations
 
         private static void UpdateAmber(ExaminationContext context, Map map, List<Pawn> targets)
         {
-            MidnightOrdealSettings settings = ActiveSettings(); List<Pawn> colonists = map.mapPawns.FreeColonistsSpawned;
+            MidnightOrdealSettings settings = ActiveSettings(); List<Pawn> victims = OrdealTargetUtility.AllTargets(map);
             foreach (Pawn parent in targets.Where(item => item.kindDef == OrdealDefOf.LCOrdeal_AmberMidnight).ToList())
             {
                 if (context.CurrentTick < context.GetLong(AmberNextKey(parent.thingIDNumber), int.MaxValue)) continue;
                 int spawnedTotal = (int)context.GetLong(AmberSpawnedKey(parent.thingIDNumber), 0L); int count = Math.Min(settings.amberDuskSpawnPerCycle, settings.amberDuskLifetimeCapPerParent - spawnedTotal); List<Pawn> spawned = new List<Pawn>();
                 for (int i = 0; i < count; i++) { Pawn child = SpawnNear(map, parent.Position, OrdealDefOf.LCOrdeal_AmberDusk, settings.amberSpawnRadius); if (child == null) continue; spawned.Add(child); context.SetLong(AmberOwnerKey(child.thingIDNumber), parent.thingIDNumber); context.SetLong(AmberDuskNextKey(child.thingIDNumber), context.CurrentTick + settings.amberDuskActionIntervalTicks); }
                 spawnedTotal += spawned.Count; context.SetLong(AmberSpawnedKey(parent.thingIDNumber), spawnedTotal); AppendTargetIds(context, spawned.Select(item => item.thingIDNumber)); AssignAssaultLord(map, spawned);
-                if (colonists.Count > 0) { IntVec3 destination = CellFinder.RandomClosewalkCellNear(colonists.RandomElement().Position, map, settings.amberBurrowArrivalRadius, cell => cell.Standable(map) && !cell.Fogged(map)); MoveByBurrow(parent, destination, map); DamageNearby(map, parent, settings.amberEmergenceRadius, settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage); }
+                if (victims.Count > 0) { IntVec3 destination = CellFinder.RandomClosewalkCellNear(victims.RandomElement().Position, map, settings.amberBurrowArrivalRadius, cell => cell.Standable(map) && !cell.Fogged(map)); MoveByBurrow(parent, destination, map); DamageNearby(map, parent, settings.amberEmergenceRadius, settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage); }
                 context.SetLong(AmberNextKey(parent.thingIDNumber), context.CurrentTick + settings.amberSpawnIntervalTicks.RandomInRange);
             }
             foreach (Pawn dusk in targets.Where(item => item.kindDef == OrdealDefOf.LCOrdeal_AmberDusk).ToList())
@@ -174,7 +184,7 @@ namespace LCAnomalyOrdeals.Examinations
         private static void ApplyBeam(Map map, Pawn tower, float angleDegrees, MidnightOrdealSettings settings)
         {
             Vector2 direction = new Vector2(Mathf.Cos(angleDegrees * Mathf.Deg2Rad), Mathf.Sin(angleDegrees * Mathf.Deg2Rad)); Vector2 origin = new Vector2(tower.Position.x, tower.Position.z);
-            foreach (Pawn pawn in map.mapPawns.FreeColonistsSpawned.Where(item => !item.Dead).ToList())
+            foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map))
             {
                 Vector2 offset = new Vector2(pawn.Position.x, pawn.Position.z) - origin; float along = Vector2.Dot(offset, direction); float perpendicular = Mathf.Abs(offset.x * direction.y - offset.y * direction.x);
                 if (along < 0f || perpendicular > settings.greenBeamWidthCells) continue; pawn.TakeDamage(new DamageInfo(LCDamageDefOf.LC_BlackDamage, settings.greenBeamDamage, 0f, instigator: tower)); AddTimedSlow(pawn, settings.greenBeamSlowDurationTicks);
@@ -199,7 +209,7 @@ namespace LCAnomalyOrdeals.Examinations
 
         private static void BeginVioletAttack(ExaminationContext context, Map map, Pawn shrine, VioletColor color)
         {
-            List<Pawn> colonists = map.mapPawns.FreeColonistsSpawned; if (colonists.Count == 0) return; IntVec3 target = colonists.RandomElement().Position; context.SetLong(VioletTargetKey(shrine.thingIDNumber), EncodeCell(target)); context.SetLong(VioletResolveKey(shrine.thingIDNumber), context.CurrentTick + ActiveSettings().violetTelegraphTicks);
+            List<Pawn> victims = OrdealTargetUtility.AllTargets(map); if (victims.Count == 0) return; IntVec3 target = victims.RandomElement().Position; context.SetLong(VioletTargetKey(shrine.thingIDNumber), EncodeCell(target)); context.SetLong(VioletResolveKey(shrine.thingIDNumber), context.CurrentTick + ActiveSettings().violetTelegraphTicks);
         }
 
         private static void ResolveVioletAttack(Map map, Pawn shrine, VioletColor color, IntVec3 target)
@@ -207,11 +217,11 @@ namespace LCAnomalyOrdeals.Examinations
             MidnightOrdealSettings settings = ActiveSettings(); DamageDef damageDef = DamageFor(color); float damage = color == VioletColor.Red ? settings.violetRedDamage : color == VioletColor.White ? settings.violetWhiteDamage : color == VioletColor.Black ? settings.violetBlackDamage : settings.violetPaleDamage;
             if (color == VioletColor.Black)
             {
-                Vector2 origin = new Vector2(shrine.Position.x, shrine.Position.z); Vector2 direction = (new Vector2(target.x, target.z) - origin).normalized; foreach (Pawn pawn in map.mapPawns.FreeColonistsSpawned.Where(item => !item.Dead).ToList()) { Vector2 offset = new Vector2(pawn.Position.x, pawn.Position.z) - origin; if (Vector2.Dot(offset, direction) >= 0f && Mathf.Abs(offset.x * direction.y - offset.y * direction.x) <= settings.violetBlackLineWidth) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: shrine)); }
+                Vector2 origin = new Vector2(shrine.Position.x, shrine.Position.z); Vector2 direction = (new Vector2(target.x, target.z) - origin).normalized; foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map)) { Vector2 offset = new Vector2(pawn.Position.x, pawn.Position.z) - origin; if (Vector2.Dot(offset, direction) >= 0f && Mathf.Abs(offset.x * direction.y - offset.y * direction.x) <= settings.violetBlackLineWidth) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: shrine)); }
             }
             else
             {
-                float radius = color == VioletColor.Red ? settings.violetRedRadius : color == VioletColor.White ? settings.violetWhiteRadius : settings.violetPaleRadius; foreach (Pawn pawn in map.mapPawns.FreeColonistsSpawned.Where(item => !item.Dead && item.Position.InHorDistOf(target, radius)).ToList()) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: shrine));
+                float radius = color == VioletColor.Red ? settings.violetRedRadius : color == VioletColor.White ? settings.violetWhiteRadius : settings.violetPaleRadius; foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(target, radius))) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: shrine));
             }
             if (target.InBounds(map)) FleckMaker.ThrowLightningGlow(target.ToVector3Shifted(), map, color == VioletColor.White ? settings.violetWhiteRadius : 3f);
         }
@@ -235,7 +245,7 @@ namespace LCAnomalyOrdeals.Examinations
         private static bool TryVioletColor(PawnKindDef kind, out VioletColor color) { foreach (VioletColor candidate in Enum.GetValues(typeof(VioletColor))) if (kind == VioletKind(candidate)) { color = candidate; return true; } color = VioletColor.Red; return false; }
         private static bool IsVioletKind(PawnKindDef kind) { VioletColor ignored; return TryVioletColor(kind, out ignored); }
         private static void MakeImmobile(Pawn pawn) { if (pawn.health.hediffSet.GetFirstHediffOfDef(OrdealDefOf.LCOrdeal_VioletNoonImmobile) == null) pawn.health.AddHediff(OrdealDefOf.LCOrdeal_VioletNoonImmobile); pawn.pather.StopDead(); if (pawn.CurJob != null) pawn.jobs.StopAll(); }
-        private static void DamageNearby(Map map, Thing instigator, float radius, float damage, DamageDef def) { foreach (Pawn pawn in map.mapPawns.FreeColonistsSpawned.Where(item => !item.Dead && item.Position.InHorDistOf(instigator.PositionHeld, radius)).ToList()) pawn.TakeDamage(new DamageInfo(def, damage, 0f, instigator: instigator)); }
+        private static void DamageNearby(Map map, Thing instigator, float radius, float damage, DamageDef def) { foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(instigator.PositionHeld, radius))) pawn.TakeDamage(new DamageInfo(def, damage, 0f, instigator: instigator)); }
         private static Pawn SpawnAtEntry(Map map, PawnKindDef kind) { IntVec3 cell; return RCellFinder.TryFindRandomPawnEntryCell(out cell, map, CellFinder.EdgeRoadChance_Hostile, true) ? SpawnAt(map, cell, kind) : null; }
         private static Pawn SpawnNear(Map map, IntVec3 center, PawnKindDef kind, int radius) => SpawnAt(map, CellFinder.RandomClosewalkCellNear(center, map, radius, cell => cell.Standable(map) && !cell.Fogged(map)), kind);
         private static Pawn SpawnAt(Map map, IntVec3 cell, PawnKindDef kind) { if (!cell.IsValid) return null; Pawn pawn = PawnGenerator.GeneratePawn(kind, Faction.OfMechanoids); GenSpawn.Spawn(pawn, cell, map); return pawn; }

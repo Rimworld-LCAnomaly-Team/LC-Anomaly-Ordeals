@@ -5,6 +5,7 @@ using LCAnomalyCore.Buildings;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Presentation;
+using LCAnomalyOrdeals.Utilities;
 using LCAnomalyStory;
 using LCAnomalyStory.Defs;
 using LCAnomalyStory.Examinations;
@@ -26,6 +27,14 @@ namespace LCAnomalyOrdeals.Examinations
 
         private enum DuskVariant { Amber, Crimson, Green }
 
+        private static DuskVariant? debugForcedVariant;
+
+        internal static void DebugForceNextVariant(string variant)
+        {
+            DuskVariant parsed;
+            debugForcedVariant = Enum.TryParse(variant, out parsed) ? parsed : (DuskVariant?)null;
+        }
+
         public override bool CanStart(ExaminationContext context, out string rejectionReason)
         {
             if (!base.CanStart(context, out rejectionReason)) return false;
@@ -38,7 +47,8 @@ namespace LCAnomalyOrdeals.Examinations
             base.OnStarted(context);
             Map map = SelectMap();
             if (map == null) { context.Fail("LCOrdeal_DawnNoMap".Translate()); return; }
-            DuskVariant variant = (DuskVariant)Rand.RangeInclusive(0, 2);
+            DuskVariant variant = debugForcedVariant ?? (DuskVariant)Rand.RangeInclusive(0, 2);
+            debugForcedVariant = null;
             DuskOrdealSettings settings = Settings;
             context.SetLong(MapIdKey, map.uniqueID);
             context.SetString(VariantKey, variant.ToString());
@@ -47,7 +57,7 @@ namespace LCAnomalyOrdeals.Examinations
             context.SetLong(NextSecondaryTickKey, context.CurrentTick + InitialSecondaryInterval(variant, settings));
 
             int count = variant == DuskVariant.Amber
-                ? Mathf.Clamp(Mathf.CeilToInt(Math.Max(1, map.mapPawns.FreeColonistsSpawnedCount) / settings.amberColonistsPerTarget), settings.amberCountMin, settings.amberCountMax)
+                ? Mathf.Clamp(Mathf.CeilToInt(Math.Max(1, OrdealTargetUtility.AllTargets(map).Count) / settings.amberColonistsPerTarget), settings.amberCountMin, settings.amberCountMax)
                 : variant == DuskVariant.Crimson ? settings.crimsonCount : settings.greenFactoryCount;
             List<Pawn> spawned = SpawnInitial(map, variant, count, settings);
             if (spawned.Count == 0) { context.Fail("LCOrdeal_DawnSpawnFailed".Translate()); return; }
@@ -171,7 +181,7 @@ namespace LCAnomalyOrdeals.Examinations
                 if (slow != null && context.CurrentTick >= context.GetLong(AmberSlowUntilKey(worm.thingIDNumber), int.MaxValue)) worm.health.RemoveHediff(slow);
             }
             if (context.CurrentTick < context.GetLong(NextSpecialTickKey, int.MaxValue)) return;
-            List<Pawn> colonists = map.mapPawns.FreeColonistsSpawned;
+            List<Pawn> victims = OrdealTargetUtility.AllTargets(map);
             foreach (Pawn parent in targets.Where(item => item.kindDef == OrdealDefOf.LCOrdeal_AmberDusk).ToList())
             {
                 List<Pawn> children = targets.Where(item => item.kindDef == OrdealDefOf.LCOrdeal_AmberDawn && context.GetLong(AmberOwnerKey(item.thingIDNumber), -1L) == parent.thingIDNumber).ToList();
@@ -181,9 +191,9 @@ namespace LCAnomalyOrdeals.Examinations
                     Pawn child = SpawnNear(map, parent.Position, OrdealDefOf.LCOrdeal_AmberDawn, 4); if (child == null) continue;
                     context.SetLong(AmberOwnerKey(child.thingIDNumber), parent.thingIDNumber); children.Add(child); AppendTargetIds(context, new[] { child.thingIDNumber });
                 }
-                if (colonists.Count > 0)
+                if (victims.Count > 0)
                 {
-                    IntVec3 destination = CellFinder.RandomClosewalkCellNear(colonists.RandomElement().Position, map, settings.amberBurrowRadius, cell => cell.Standable(map) && !cell.Fogged(map));
+                    IntVec3 destination = CellFinder.RandomClosewalkCellNear(victims.RandomElement().Position, map, settings.amberBurrowRadius, cell => cell.Standable(map) && !cell.Fogged(map));
                     MoveByBurrow(parent, destination, map);
                     foreach (Pawn child in children.Where(item => item.Spawned).ToList()) MoveByBurrow(child, CellFinder.RandomClosewalkCellNear(destination, map, 4), map);
                     DamageNearby(map, parent, settings.amberEmergenceRadius, settings.amberEmergenceDamage, DamageDefOf.Blunt);
@@ -197,11 +207,11 @@ namespace LCAnomalyOrdeals.Examinations
         {
             if (context.CurrentTick >= context.GetLong(NextSpecialTickKey, int.MaxValue))
             {
-                List<Pawn> colonists = map.mapPawns.FreeColonistsSpawned;
+                List<Pawn> victims = OrdealTargetUtility.AllTargets(map);
                 foreach (Pawn dusk in targets.Where(item => item.kindDef == OrdealDefOf.LCOrdeal_CrimsonDusk).ToList())
                 {
-                    if (colonists.Count == 0) break;
-                    IntVec3 destination = CellFinder.RandomClosewalkCellNear(colonists.RandomElement().Position, map, settings.crimsonRollArrivalRadius, cell => cell.Standable(map) && !cell.Fogged(map));
+                    if (victims.Count == 0) break;
+                    IntVec3 destination = CellFinder.RandomClosewalkCellNear(victims.RandomElement().Position, map, settings.crimsonRollArrivalRadius, cell => cell.Standable(map) && !cell.Fogged(map));
                     MoveByBurrow(dusk, destination, map); DamageNearby(map, dusk, settings.crimsonRollDamageRadius, settings.crimsonRollDamage, DamageDefOf.Blunt);
                 }
                 context.SetLong(NextSpecialTickKey, context.CurrentTick + settings.crimsonRollIntervalTicks);
@@ -249,8 +259,8 @@ namespace LCAnomalyOrdeals.Examinations
             }
             if (context.CurrentTick < context.GetLong(NextSecondaryTickKey, int.MaxValue)) return;
             foreach (Pawn machine in list.Where(item => !item.stances.stunner.Stunned))
-                foreach (Pawn colonist in map.mapPawns.FreeColonistsSpawned.Where(item => !item.Dead && item.Position.InHorDistOf(machine.Position, settings.greenNoonSawRadius)).ToList())
-                    colonist.TakeDamage(new DamageInfo(DamageDefOf.Cut, settings.greenNoonSawDamage, 0f, instigator: machine));
+                foreach (Pawn victim in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(machine.Position, settings.greenNoonSawRadius)))
+                    victim.TakeDamage(new DamageInfo(DamageDefOf.Cut, settings.greenNoonSawDamage, 0f, instigator: machine));
             context.SetLong(NextSecondaryTickKey, context.CurrentTick + settings.greenNoonSawIntervalTicks);
         }
 
@@ -267,7 +277,7 @@ namespace LCAnomalyOrdeals.Examinations
 
         private static void DamageNearby(Map map, Thing instigator, float radius, float damage, DamageDef damageDef)
         {
-            foreach (Pawn pawn in map.mapPawns.FreeColonistsSpawned.Where(item => !item.Dead && item.Position.InHorDistOf(instigator.PositionHeld, radius)).ToList()) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: instigator));
+            foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(instigator.PositionHeld, radius))) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: instigator));
         }
 
         private static void MoveByBurrow(Pawn pawn, IntVec3 destination, Map map)

@@ -6,6 +6,7 @@ using LCAnomalyCore.Comp;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Presentation;
+using LCAnomalyOrdeals.Utilities;
 using LCAnomalyStory;
 using LCAnomalyStory.Defs;
 using LCAnomalyStory.Examinations;
@@ -33,6 +34,14 @@ namespace LCAnomalyOrdeals.Examinations
             Indigo
         }
 
+        private static NoonVariant? debugForcedVariant;
+
+        internal static void DebugForceNextVariant(string variant)
+        {
+            NoonVariant parsed;
+            debugForcedVariant = Enum.TryParse(variant, out parsed) ? parsed : (NoonVariant?)null;
+        }
+
         public override bool CanStart(ExaminationContext context, out string rejectionReason)
         {
             if (!base.CanStart(context, out rejectionReason)) return false;
@@ -54,7 +63,8 @@ namespace LCAnomalyOrdeals.Examinations
                 return;
             }
 
-            NoonVariant variant = (NoonVariant)Rand.RangeInclusive(0, 3);
+            NoonVariant variant = debugForcedVariant ?? (NoonVariant)Rand.RangeInclusive(0, 3);
+            debugForcedVariant = null;
             NoonOrdealSettings settings = Settings;
             context.SetLong(MapIdKey, map.uniqueID);
             context.SetString(VariantKey, variant.ToString());
@@ -64,7 +74,7 @@ namespace LCAnomalyOrdeals.Examinations
 
             List<Pawn> spawned = variant == NoonVariant.Indigo
                 ? SpawnIndigoGroups(map, settings)
-                : SpawnStandardTargets(map, variant, TargetCount(variant, map.mapPawns.FreeColonistsSpawnedCount, settings));
+                : SpawnStandardTargets(map, variant, TargetCount(variant, OrdealTargetUtility.AllTargets(map).Count, settings));
             if (spawned.Count == 0)
             {
                 context.Fail("LCOrdeal_DawnSpawnFailed".Translate());
@@ -231,7 +241,7 @@ namespace LCAnomalyOrdeals.Examinations
 
         private static void ApplyVioletImpact(Map map, Pawn monolith, NoonOrdealSettings settings)
         {
-            foreach (Pawn pawn in map.mapPawns.FreeColonistsSpawned.ToList())
+            foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map))
             {
                 if (!pawn.Dead && pawn.Position.InHorDistOf(monolith.Position, settings.violetImpactRadius))
                 {
@@ -269,7 +279,7 @@ namespace LCAnomalyOrdeals.Examinations
             {
                 foreach (Pawn machine in targets.Where(target => target.kindDef == OrdealDefOf.LCOrdeal_GreenNoon && !target.stances.stunner.Stunned))
                 {
-                    foreach (Pawn colonist in map.mapPawns.FreeColonistsSpawned.Where(pawn => !pawn.Dead && pawn.Position.InHorDistOf(machine.Position, settings.greenSawRadius)).ToList())
+                    foreach (Pawn colonist in OrdealTargetUtility.AllTargets(map).Where(pawn => pawn.Position.InHorDistOf(machine.Position, settings.greenSawRadius)))
                     {
                         colonist.TakeDamage(new DamageInfo(DamageDefOf.Cut, settings.greenSawDamage, 0f, instigator: machine));
                     }
@@ -314,7 +324,10 @@ namespace LCAnomalyOrdeals.Examinations
                     .ToList();
                 foreach (Pawn sweeper in targets)
                 {
-                    Corpse corpse = corpses.Where(item => item.Position.InHorDistOf(sweeper.Position, settings.indigoCorpseSearchRadius)).MinBy(item => item.Position.DistanceToSquared(sweeper.Position));
+                    Corpse corpse = corpses
+                        .Where(item => item.Position.InHorDistOf(sweeper.Position, settings.indigoCorpseSearchRadius))
+                        .OrderBy(item => item.Position.DistanceToSquared(sweeper.Position))
+                        .FirstOrDefault();
                     if (corpse == null) continue;
                     Heal(sweeper, 99999f);
                     corpses.Remove(corpse);
@@ -331,7 +344,7 @@ namespace LCAnomalyOrdeals.Examinations
 
         private static void PulsePsychic(Map map, Thing instigator, float damage, float radius)
         {
-            foreach (Pawn pawn in map.mapPawns.FreeColonistsSpawned.ToList())
+            foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map))
             {
                 if (!pawn.Dead && pawn.Position.InHorDistOf(instigator.PositionHeld, radius))
                     pawn.TakeDamage(new DamageInfo(DamageDefOf.Psychic, damage, 0f, instigator: instigator));
