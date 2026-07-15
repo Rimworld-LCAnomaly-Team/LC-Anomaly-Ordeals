@@ -8,4 +8,8 @@
   <LCOrdeal_Dusk.description>镇压黄昏考验。</LCOrdeal_Dusk.description>
   <LCOrdeal_Midnight.label>午夜考验</LCOrdeal_Midnight.label>
   <LCOrdeal_Midnight.description>镇压一场午夜考验。</LCOrdeal_Midnight.description>
+  <LCOrdeal_WhiteDawn.label>惨白的黎明：委托</LCOrdeal_WhiteDawn.label><LCOrdeal_WhiteDawn.description>镇压第一阶段惨白考验。</LCOrdeal_WhiteDawn.description>
+  <LCOrdeal_WhiteNoon.label>惨白的正午：武器</LCOrdeal_WhiteNoon.label><LCOrdeal_WhiteNoon.description>镇压第二阶段惨白考验。</LCOrdeal_WhiteNoon.description>
+  <LCOrdeal_WhiteDusk.label>惨白的黄昏：收尾人</LCOrdeal_WhiteDusk.label><LCOrdeal_WhiteDusk.description>镇压第三阶段惨白考验。</LCOrdeal_WhiteDusk.description>
+  <LCOrdeal_WhiteMidnight.label>惨白的午夜：爪牙</LCOrdeal_WhiteMidnight.label><LCOrdeal_WhiteMidnight.description>镇压最终阶段惨白考验。</LCOrdeal_WhiteMidnight.description>
 </LanguageData>

@@ -23,10 +23,16 @@ namespace LCAnomalyOrdeals.DefOfs
         public static PawnKindDef LCOrdeal_VioletMidnightWhite;
         public static PawnKindDef LCOrdeal_VioletMidnightBlack;
         public static PawnKindDef LCOrdeal_VioletMidnightPale;
+        public static PawnKindDef LCOrdeal_WhiteFixerRed;
+        public static PawnKindDef LCOrdeal_WhiteFixerWhite;
+        public static PawnKindDef LCOrdeal_WhiteFixerBlack;
+        public static PawnKindDef LCOrdeal_WhiteFixerPale;
+        public static PawnKindDef LCOrdeal_WhiteClaw;
         public static HediffDef LCOrdeal_VioletSlowness;
         public static HediffDef LCOrdeal_VioletNoonImmobile;
         public static HediffDef LCOrdeal_AmberDuskSlowness;
         public static HediffDef LCOrdeal_GreenMidnightBeamSlowness;
+        public static HediffDef LCOrdeal_WhiteFogSlowness;
 
         static OrdealDefOf()
         {

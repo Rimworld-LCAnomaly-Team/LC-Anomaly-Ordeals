@@ -66,4 +66,23 @@
   <LCOrdeal_MidnightVioletQuote>我们一次又一次地试图接纳它们，无论这要付出何等的代价，我们必须理解！！！</LCOrdeal_MidnightVioletQuote>
   <LCOrdeal_MidnightVioletEndQuote>为了避免自我的崩溃，它们绝不容忍那些不可理解，不可触及的存在...</LCOrdeal_MidnightVioletEndQuote>
   <LCOrdeal_MidnightFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_MidnightFailureText>
+  <LCOrdeal_WhitePreviousRequired>必须先镇压上一阶段的惨白考验。</LCOrdeal_WhitePreviousRequired>
+  <LCOrdeal_WhiteStage>惨白考验</LCOrdeal_WhiteStage>
+  <LCOrdeal_PresentationWhiteDawn>惨白的黎明</LCOrdeal_PresentationWhiteDawn>
+  <LCOrdeal_PresentationWhiteNoon>惨白的正午</LCOrdeal_PresentationWhiteNoon>
+  <LCOrdeal_PresentationWhiteDusk>惨白的黄昏</LCOrdeal_PresentationWhiteDusk>
+  <LCOrdeal_PresentationWhiteMidnight>惨白的午夜</LCOrdeal_PresentationWhiteMidnight>
+  <LCOrdeal_WhiteDawnName>委托</LCOrdeal_WhiteDawnName>
+  <LCOrdeal_WhiteDawnQuote>从烦琐的跑腿，勘察，到雇凶杀人。只要付得起钱，他们就会接下任何工作。</LCOrdeal_WhiteDawnQuote>
+  <LCOrdeal_WhiteDawnEndQuote>他们受托于“事务所”，“辛迪加”，甚至是“翼”。从微乎其微的琐事，到惨绝人寰的要事。他们，无所不能。</LCOrdeal_WhiteDawnEndQuote>
+  <LCOrdeal_WhiteNoonName>武器</LCOrdeal_WhiteNoonName>
+  <LCOrdeal_WhiteNoonQuote>他们无休无止地搜罗着精良的武器。无论是“翼”的科技，还是“后巷”的发明，亦或是“郊区”的战利品，乃至“废墟”的遗物...</LCOrdeal_WhiteNoonQuote>
+  <LCOrdeal_WhiteNoonEndQuote>他们的所作所为，无非是紧握手中的武器，一如既往地用暴力解决眼中的一切。</LCOrdeal_WhiteNoonEndQuote>
+  <LCOrdeal_WhiteDuskName>收尾人</LCOrdeal_WhiteDuskName>
+  <LCOrdeal_WhiteDuskQuote>被称作“图书馆”的光之高塔拔地而起，那片承载着生与死的秘境自然会吸引“收尾人”的驻足。</LCOrdeal_WhiteDuskQuote>
+  <LCOrdeal_WhiteDuskEndQuote>“收尾人”，书籍猎手的前身，终将葬身于“惨白管理者”统治下的“图书馆”中。</LCOrdeal_WhiteDuskEndQuote>
+  <LCOrdeal_WhiteMidnightName>爪牙</LCOrdeal_WhiteMidnightName>
+  <LCOrdeal_WhiteMidnightQuote>将世界的奥秘玩弄于股掌之间，乃是“首脑”，“眼线”与“爪牙”至高无上的特权。</LCOrdeal_WhiteMidnightQuote>
+  <LCOrdeal_WhiteMidnightEndQuote>他们无人能挡，“巢”与他们的故事永不落幕。</LCOrdeal_WhiteMidnightEndQuote>
+  <LCOrdeal_WhiteFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_WhiteFailureText>
 </LanguageData>

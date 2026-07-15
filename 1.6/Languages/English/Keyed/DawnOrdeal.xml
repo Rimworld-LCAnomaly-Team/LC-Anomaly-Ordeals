@@ -66,4 +66,23 @@
   <LCOrdeal_MidnightVioletQuote>We incessantly tried to accept it. We wanted to understand them in our heads by any means, regardless of the consequences.</LCOrdeal_MidnightVioletQuote>
   <LCOrdeal_MidnightVioletEndQuote>For the sake of not crumbling in on oneself. The idea that they may impossibly exist, or that they are unreachable and forever enigmatic no matter the path. Unacceptable…</LCOrdeal_MidnightVioletEndQuote>
   <LCOrdeal_MidnightFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_MidnightFailureText>
+  <LCOrdeal_WhitePreviousRequired>The previous Ordeal of White must be suppressed first.</LCOrdeal_WhitePreviousRequired>
+  <LCOrdeal_WhiteStage>White Ordeal</LCOrdeal_WhiteStage>
+  <LCOrdeal_PresentationWhiteDawn>DAWN OF WHITE</LCOrdeal_PresentationWhiteDawn>
+  <LCOrdeal_PresentationWhiteNoon>NOON OF WHITE</LCOrdeal_PresentationWhiteNoon>
+  <LCOrdeal_PresentationWhiteDusk>DUSK OF WHITE</LCOrdeal_PresentationWhiteDusk>
+  <LCOrdeal_PresentationWhiteMidnight>MIDNIGHT OF WHITE</LCOrdeal_PresentationWhiteMidnight>
+  <LCOrdeal_WhiteDawnName>A Request</LCOrdeal_WhiteDawnName>
+  <LCOrdeal_WhiteDawnQuote>From meaningless errands, to exploration, to contract killing; they will do whatever you wish, so long as you pay them sufficiently.</LCOrdeal_WhiteDawnQuote>
+  <LCOrdeal_WhiteDawnEndQuote>They work in the Offices, Syndicates, and the Wings. Their tasks vary from the banal things to something truly sublime.</LCOrdeal_WhiteDawnEndQuote>
+  <LCOrdeal_WhiteNoonName>Armaments</LCOrdeal_WhiteNoonName>
+  <LCOrdeal_WhiteNoonQuote>They search constantly, be it for the Backers of the Wings, the Inventions of the Backstreets, the Reliques of the Outskirts, the Artefacts of the Ruins...</LCOrdeal_WhiteNoonQuote>
+  <LCOrdeal_WhiteNoonEndQuote>As they have always done, they will overcome all that impedes them, weapons in hand.</LCOrdeal_WhiteNoonEndQuote>
+  <LCOrdeal_WhiteDuskName>The Fixers</LCOrdeal_WhiteDuskName>
+  <LCOrdeal_WhiteDuskQuote>The colossal tower of light was titled The Library. It is only natural for the Fixers to be drawn to such a mystic place of life and death.</LCOrdeal_WhiteDuskQuote>
+  <LCOrdeal_WhiteDuskEndQuote>Bookhunters... One day they will rummage through the Library reigned over by the Pale Librarian. They are what shall become of the Fixers.</LCOrdeal_WhiteDuskEndQuote>
+  <LCOrdeal_WhiteMidnightName>The Claw</LCOrdeal_WhiteMidnightName>
+  <LCOrdeal_WhiteMidnightQuote>To know and manipulate all the secrets of the world is the privilege of the Head, the Eye, and the Claw.</LCOrdeal_WhiteMidnightQuote>
+  <LCOrdeal_WhiteMidnightEndQuote>No one dares stand against them. As long as they continue to exist, the tale of the Nest will never reach its close.</LCOrdeal_WhiteMidnightEndQuote>
+  <LCOrdeal_WhiteFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_WhiteFailureText>
 </LanguageData>

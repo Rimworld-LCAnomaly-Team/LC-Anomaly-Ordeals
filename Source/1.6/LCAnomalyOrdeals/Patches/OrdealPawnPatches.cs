@@ -15,7 +15,7 @@ namespace LCAnomalyOrdeals.Patches
     {
         private static bool Prefix(Pawn __instance, ref DamageInfo dinfo, out bool absorbed)
         {
-            absorbed = MidnightOrdealWorker.TryAbsorbVioletDamage(__instance, dinfo);
+            absorbed = MidnightOrdealWorker.TryAbsorbVioletDamage(__instance, dinfo) || WhiteOrdealWorker.TryAbsorbDamage(__instance, dinfo);
             return !absorbed;
         }
     }
@@ -29,6 +29,7 @@ namespace LCAnomalyOrdeals.Patches
             GameComponent_NoonPresentation.FilterCurrentInput();
             GameComponent_DuskPresentation.FilterCurrentInput();
             GameComponent_MidnightPresentation.FilterCurrentInput();
+            GameComponent_WhitePresentation.FilterCurrentInput();
         }
     }
 
@@ -62,6 +63,7 @@ namespace LCAnomalyOrdeals.Patches
             if (totalDamageDealt > 0f)
             {
                 MidnightOrdealWorker.NotifyVioletShrineDamaged(__instance, totalDamageDealt);
+                WhiteOrdealWorker.NotifyDamaged(__instance, totalDamageDealt);
             }
         }
     }
@@ -74,6 +76,7 @@ namespace LCAnomalyOrdeals.Patches
             public Map map;
             public IntVec3 position;
             public Pawn greenKiller;
+            public Rot4 rotation;
         }
 
         private static void Prefix(Pawn __instance, DamageInfo? dinfo, out KillState __state)
@@ -83,6 +86,7 @@ namespace LCAnomalyOrdeals.Patches
                 map = __instance.MapHeld,
                 position = __instance.PositionHeld,
                 greenKiller = dinfo.HasValue ? dinfo.Value.Instigator as Pawn : null
+                ,rotation = __instance.Rotation
             };
 
             if (__instance.kindDef == OrdealDefOf.LCOrdeal_CrimsonNoon && __instance.Spawned)
@@ -114,6 +118,7 @@ namespace LCAnomalyOrdeals.Patches
 
         private static void Postfix(Pawn __instance, KillState __state)
         {
+            if (__state != null) WhiteOrdealWorker.NotifyKilled(__instance, __state.map, __state.position, __state.rotation);
             if (__state == null
                 || __state.map == null
                 || __state.greenKiller == null
