@@ -183,4 +183,44 @@
     <weaponMoney>0~0</weaponMoney>
     <weaponTags />
   </PawnKindDef>
+
+  <PawnKindDef ParentName="InsectKindBase">
+    <defName>LCOrdeal_AmberDusk</defName>
+    <label>The Food Chain</label>
+    <race>Megaspider</race>
+    <combatPower>360</combatPower>
+    <defaultFactionDef>Mechanoid</defaultFactionDef>
+    <forceDeathOnDowned>true</forceDeathOnDowned>
+    <lifeStages>
+      <li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>2.2</drawSize><color>(133,80,26)</color></bodyGraphicData></li>
+      <li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>2.35</drawSize><color>(133,80,26)</color></bodyGraphicData></li>
+      <li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>2.5</drawSize><color>(133,80,26)</color></bodyGraphicData></li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>LCOrdeal_CrimsonDusk</defName>
+    <label>The Struggle at the Climax</label>
+    <race>Mech_CentipedeBurner</race>
+    <combatPower>430</combatPower>
+    <forceDeathOnDowned>true</forceDeathOnDowned>
+    <lifeStages>
+      <li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/CentipedeBurner</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3</drawSize><color>(158,31,41)</color></bodyGraphicData></li>
+    </lifeStages>
+    <weaponMoney>0~0</weaponMoney>
+    <weaponTags />
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>LCOrdeal_GreenDusk</defName>
+    <label>Where We Must Reach</label>
+    <race>Mech_CentipedeBlaster</race>
+    <combatPower>500</combatPower>
+    <forceDeathOnDowned>true</forceDeathOnDowned>
+    <lifeStages>
+      <li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.8</drawSize><color>(31,91,48)</color></bodyGraphicData></li>
+    </lifeStages>
+    <weaponMoney>0~0</weaponMoney>
+    <weaponTags />
+  </PawnKindDef>
 </Defs>

@@ -42,4 +42,16 @@
   <LCOrdeal_NoonIndigoQuote>夜幕降临之际，他们悄悄地来到后巷……</LCOrdeal_NoonIndigoQuote>
   <LCOrdeal_NoonIndigoEndQuote>旭日东升之时，半点痕迹都不会剩下……</LCOrdeal_NoonIndigoEndQuote>
   <LCOrdeal_NoonFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_NoonFailureText>
+  <LCOrdeal_PresentationDusk>黄昏考验</LCOrdeal_PresentationDusk>
+  <LCOrdeal_DuskVariant>当前考验</LCOrdeal_DuskVariant>
+  <LCOrdeal_DuskAmberName>食物链</LCOrdeal_DuskAmberName>
+  <LCOrdeal_DuskAmberQuote>品尝—味道。避免—不能。</LCOrdeal_DuskAmberQuote>
+  <LCOrdeal_DuskAmberEndQuote>我们—生存。我们—吃—吃—吃—吃...</LCOrdeal_DuskAmberEndQuote>
+  <LCOrdeal_DuskCrimsonName>绝顶之战</LCOrdeal_DuskCrimsonName>
+  <LCOrdeal_DuskCrimsonQuote>快扔掉那些破烂的躯干，来和我们融为一体，继续永不落幕的血色狂欢吧！！！</LCOrdeal_DuskCrimsonQuote>
+  <LCOrdeal_DuskCrimsonEndQuote>迟早有一天所有人都会明白。我们，终将一同狂欢。</LCOrdeal_DuskCrimsonEndQuote>
+  <LCOrdeal_DuskGreenName>前往何方</LCOrdeal_DuskGreenName>
+  <LCOrdeal_DuskGreenQuote>为了回到来时的地方，它们筑起了一座高塔。</LCOrdeal_DuskGreenQuote>
+  <LCOrdeal_DuskGreenEndQuote>它们没能得到答案，只能看到凋零的生命...</LCOrdeal_DuskGreenEndQuote>
+  <LCOrdeal_DuskFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_DuskFailureText>
 </LanguageData>

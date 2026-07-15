@@ -22,4 +22,11 @@
       <li><statFactors><MoveSpeed>0.01</MoveSpeed></statFactors></li>
     </stages>
   </HediffDef>
+  <HediffDef>
+    <defName>LCOrdeal_AmberDuskSlowness</defName>
+    <label>slowed movement</label>
+    <description>Move speed is greatly reduced.</description>
+    <isBad>false</isBad>
+    <stages><li><statFactors><MoveSpeed>0.1</MoveSpeed></statFactors></li></stages>
+  </HediffDef>
 </Defs>

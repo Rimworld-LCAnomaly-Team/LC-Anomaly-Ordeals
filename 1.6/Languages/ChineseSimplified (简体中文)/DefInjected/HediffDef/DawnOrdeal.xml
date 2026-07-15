@@ -4,4 +4,6 @@
   <LCOrdeal_VioletSlowness.description>移动速度降低。</LCOrdeal_VioletSlowness.description>
   <LCOrdeal_VioletNoonImmobile.label>无法移动</LCOrdeal_VioletNoonImmobile.label>
   <LCOrdeal_VioletNoonImmobile.description>无法移动。</LCOrdeal_VioletNoonImmobile.description>
+  <LCOrdeal_AmberDuskSlowness.label>移动减缓</LCOrdeal_AmberDuskSlowness.label>
+  <LCOrdeal_AmberDuskSlowness.description>移动速度大幅降低。</LCOrdeal_AmberDuskSlowness.description>
 </LanguageData>

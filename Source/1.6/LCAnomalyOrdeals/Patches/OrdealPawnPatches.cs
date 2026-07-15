@@ -17,6 +17,7 @@ namespace LCAnomalyOrdeals.Patches
         {
             GameComponent_DawnPresentation.FilterCurrentInput();
             GameComponent_NoonPresentation.FilterCurrentInput();
+            GameComponent_DuskPresentation.FilterCurrentInput();
         }
     }
 
@@ -35,6 +36,11 @@ namespace LCAnomalyOrdeals.Patches
             if (totalDamageDealt > 0f && dinfo.Instigator is Pawn instigator)
             {
                 NoonOrdealWorker.NotifyIndigoDamage(instigator, totalDamageDealt);
+            }
+
+            if (totalDamageDealt > 0f && __instance.kindDef == OrdealDefOf.LCOrdeal_AmberDusk)
+            {
+                DuskOrdealWorker.NotifyAmberDamaged(__instance, totalDamageDealt);
             }
         }
     }
@@ -61,6 +67,12 @@ namespace LCAnomalyOrdeals.Patches
             if (__instance.kindDef == OrdealDefOf.LCOrdeal_CrimsonNoon && __instance.Spawned)
             {
                 NoonOrdealWorker.NotifyCrimsonNoonKilled(__instance);
+                DuskOrdealWorker.NotifyCrimsonKilled(__instance);
+            }
+
+            if (__instance.kindDef == OrdealDefOf.LCOrdeal_CrimsonDusk && __instance.Spawned)
+            {
+                DuskOrdealWorker.NotifyCrimsonKilled(__instance);
             }
 
             if (__instance.kindDef == OrdealDefOf.LCOrdeal_CrimsonDawn && __instance.Spawned)

@@ -42,4 +42,16 @@
   <LCOrdeal_NoonIndigoQuote>When night falls in the Backstreets, they will come.</LCOrdeal_NoonIndigoQuote>
   <LCOrdeal_NoonIndigoEndQuote>When the sun rises, there will be no trace of them.</LCOrdeal_NoonIndigoEndQuote>
   <LCOrdeal_NoonFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_NoonFailureText>
+  <LCOrdeal_PresentationDusk>DUSK ORDEAL</LCOrdeal_PresentationDusk>
+  <LCOrdeal_DuskVariant>Active Ordeal</LCOrdeal_DuskVariant>
+  <LCOrdeal_DuskAmberName>The Food Chain</LCOrdeal_DuskAmberName>
+  <LCOrdeal_DuskAmberQuote>To accustom oneself to the taste was an inevitable process.</LCOrdeal_DuskAmberQuote>
+  <LCOrdeal_DuskAmberEndQuote>We could live. We could continue eating.</LCOrdeal_DuskAmberEndQuote>
+  <LCOrdeal_DuskCrimsonName>The Struggle at the Climax</LCOrdeal_DuskCrimsonName>
+  <LCOrdeal_DuskCrimsonQuote>Throwing away our old bodies, we all become one, infinitely continuing the red march.</LCOrdeal_DuskCrimsonQuote>
+  <LCOrdeal_DuskCrimsonEndQuote>One day we will know, and tomorrow we will march hand in hand.</LCOrdeal_DuskCrimsonEndQuote>
+  <LCOrdeal_DuskGreenName>Where We Must Reach</LCOrdeal_DuskGreenName>
+  <LCOrdeal_DuskGreenQuote>We constructed a looming tower to return whence we came.</LCOrdeal_DuskGreenQuote>
+  <LCOrdeal_DuskGreenEndQuote>There wasn’t an answer. We didn’t find a single thing we wanted. We only witnessed the death of life itself.</LCOrdeal_DuskGreenEndQuote>
+  <LCOrdeal_DuskFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_DuskFailureText>
 </LanguageData>

@@ -45,10 +45,13 @@
     <Compile Include="DefOfs\OrdealDefOf.cs" />
     <Compile Include="Defs\DawnOrdealSettings.cs" />
     <Compile Include="Defs\NoonOrdealSettings.cs" />
+    <Compile Include="Defs\DuskOrdealSettings.cs" />
     <Compile Include="Examinations\DawnOrdealWorker.cs" />
     <Compile Include="Examinations\NoonOrdealWorker.cs" />
+    <Compile Include="Examinations\DuskOrdealWorker.cs" />
     <Compile Include="Presentation\GameComponent_DawnPresentation.cs" />
     <Compile Include="Presentation\GameComponent_NoonPresentation.cs" />
+    <Compile Include="Presentation\GameComponent_DuskPresentation.cs" />
     <Compile Include="Patches\OrdealPawnPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

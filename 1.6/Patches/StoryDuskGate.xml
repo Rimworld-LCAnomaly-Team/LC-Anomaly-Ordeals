@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/LCAnomalyStory.Defs.CompanyDevelopmentDef[defName="LCStory_InstitutionalCrisis"]/conditions/li[@Class="LCAnomalyStory.Conditions.DevelopmentCondition_StatisticAtLeast"]</xpath>
+    <value><li Class="LCAnomalyStory.Conditions.DevelopmentCondition_ExaminationPassed"><labelKey>LCStory_Condition_Examination</labelKey><examination>LCOrdeal_Dusk</examination></li></value>
+  </Operation>
+</Patch>

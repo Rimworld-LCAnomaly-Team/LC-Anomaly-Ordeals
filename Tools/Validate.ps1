@@ -99,6 +99,10 @@ if (Test-Path -LiteralPath $storyNodes) {
     if (-not $document.SelectSingleNode($noonXpath)) {
         throw "StoryNoonGate.xml no longer matches LCStory_OrganizationalIntegration."
     }
+    $duskXpath = '/Defs/LCAnomalyStory.Defs.CompanyDevelopmentDef[defName="LCStory_InstitutionalCrisis"]/conditions/li[@Class="LCAnomalyStory.Conditions.DevelopmentCondition_StatisticAtLeast"]'
+    if (-not $document.SelectSingleNode($duskXpath)) {
+        throw "StoryDuskGate.xml no longer matches LCStory_InstitutionalCrisis."
+    }
 }
 
 $forbidden = Get-ChildItem -Path $root -Recurse -File |
