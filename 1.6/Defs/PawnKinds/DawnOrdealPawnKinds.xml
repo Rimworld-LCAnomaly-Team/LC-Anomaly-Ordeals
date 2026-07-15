@@ -103,4 +103,84 @@
       </li>
     </lifeStages>
   </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>LCOrdeal_CrimsonNoon</defName>
+    <label>The Harmony of Skin</label>
+    <race>Mech_CentipedeGunner</race>
+    <combatPower>260</combatPower>
+    <forceDeathOnDowned>true</forceDeathOnDowned>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/CentipedeGunner</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.5</drawSize>
+          <color>(151,35,45)</color>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0~0</weaponMoney>
+    <weaponTags />
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>LCOrdeal_GreenNoon</defName>
+    <label>Process of Understanding</label>
+    <race>Mech_CentipedeGunner</race>
+    <combatPower>240</combatPower>
+    <forceDeathOnDowned>true</forceDeathOnDowned>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/CentipedeGunner</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.1</drawSize>
+          <color>(42,111,63)</color>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags><li>Minigun</li></weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>LCOrdeal_VioletNoon</defName>
+    <label>Grant Us Love</label>
+    <race>Mech_CentipedeBlaster</race>
+    <combatPower>170</combatPower>
+    <forceDeathOnDowned>true</forceDeathOnDowned>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Centipede</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.3</drawSize>
+          <color>(104,48,143)</color>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0~0</weaponMoney>
+    <weaponTags />
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>LCOrdeal_IndigoNoon</defName>
+    <label>The Sweepers</label>
+    <race>Mech_Scyther</race>
+    <combatPower>135</combatPower>
+    <forceDeathOnDowned>true</forceDeathOnDowned>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Scyther</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.45</drawSize>
+          <color>(37,73,103)</color>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>0~0</weaponMoney>
+    <weaponTags />
+  </PawnKindDef>
 </Defs>

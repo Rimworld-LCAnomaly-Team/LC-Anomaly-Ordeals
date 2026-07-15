@@ -2,4 +2,6 @@
 <LanguageData>
   <LCOrdeal_VioletSlowness.label>移动减缓</LCOrdeal_VioletSlowness.label>
   <LCOrdeal_VioletSlowness.description>移动速度降低。</LCOrdeal_VioletSlowness.description>
+  <LCOrdeal_VioletNoonImmobile.label>无法移动</LCOrdeal_VioletNoonImmobile.label>
+  <LCOrdeal_VioletNoonImmobile.description>无法移动。</LCOrdeal_VioletNoonImmobile.description>
 </LanguageData>

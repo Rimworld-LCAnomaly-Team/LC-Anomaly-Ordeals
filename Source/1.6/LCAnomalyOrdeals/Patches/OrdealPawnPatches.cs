@@ -16,6 +16,7 @@ namespace LCAnomalyOrdeals.Patches
         private static void Prefix()
         {
             GameComponent_DawnPresentation.FilterCurrentInput();
+            GameComponent_NoonPresentation.FilterCurrentInput();
         }
     }
 
@@ -29,6 +30,11 @@ namespace LCAnomalyOrdeals.Patches
                 && dinfo.Instigator is Pawn attacker)
             {
                 DawnOrdealWorker.NotifyVioletDamaged(__instance, attacker);
+            }
+
+            if (totalDamageDealt > 0f && dinfo.Instigator is Pawn instigator)
+            {
+                NoonOrdealWorker.NotifyIndigoDamage(instigator, totalDamageDealt);
             }
         }
     }
@@ -51,6 +57,11 @@ namespace LCAnomalyOrdeals.Patches
                 position = __instance.PositionHeld,
                 greenKiller = dinfo.HasValue ? dinfo.Value.Instigator as Pawn : null
             };
+
+            if (__instance.kindDef == OrdealDefOf.LCOrdeal_CrimsonNoon && __instance.Spawned)
+            {
+                NoonOrdealWorker.NotifyCrimsonNoonKilled(__instance);
+            }
 
             if (__instance.kindDef == OrdealDefOf.LCOrdeal_CrimsonDawn && __instance.Spawned)
             {

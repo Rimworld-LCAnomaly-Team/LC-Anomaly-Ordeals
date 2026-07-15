@@ -27,4 +27,19 @@
   <LCOrdeal_CrimsonFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_CrimsonFailureText>
   <LCOrdeal_GreenFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_GreenFailureText>
   <LCOrdeal_VioletFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_VioletFailureText>
+  <LCOrdeal_PresentationNoon>正午考验</LCOrdeal_PresentationNoon>
+  <LCOrdeal_NoonVariant>当前考验</LCOrdeal_NoonVariant>
+  <LCOrdeal_NoonCrimsonName>汁水大合唱</LCOrdeal_NoonCrimsonName>
+  <LCOrdeal_NoonCrimsonQuote>我们每时都在游行，每刻都在分享喜悦。</LCOrdeal_NoonCrimsonQuote>
+  <LCOrdeal_NoonCrimsonEndQuote>我们绘出了生命的碰撞...肉体的交融...更美丽的外表...</LCOrdeal_NoonCrimsonEndQuote>
+  <LCOrdeal_NoonGreenName>理解的过程</LCOrdeal_NoonGreenName>
+  <LCOrdeal_NoonGreenQuote>他们，终究是被生命束缚着的存在。而我们，将倾泻绝望与怒火！</LCOrdeal_NoonGreenQuote>
+  <LCOrdeal_NoonGreenEndQuote>我们会用双手，理解生命与灵魂。</LCOrdeal_NoonGreenEndQuote>
+  <LCOrdeal_NoonVioletName>请给我们爱！！！</LCOrdeal_NoonVioletName>
+  <LCOrdeal_NoonVioletQuote>我们听见了弱者的挣扎与悲鸣，向它们乞求爱与慈悲吧。</LCOrdeal_NoonVioletQuote>
+  <LCOrdeal_NoonVioletEndQuote>我们不能理解它们，它们更不会理解我们。</LCOrdeal_NoonVioletEndQuote>
+  <LCOrdeal_NoonIndigoName>清道夫</LCOrdeal_NoonIndigoName>
+  <LCOrdeal_NoonIndigoQuote>夜幕降临之际，他们悄悄地来到后巷……</LCOrdeal_NoonIndigoQuote>
+  <LCOrdeal_NoonIndigoEndQuote>旭日东升之时，半点痕迹都不会剩下……</LCOrdeal_NoonIndigoEndQuote>
+  <LCOrdeal_NoonFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_NoonFailureText>
 </LanguageData>

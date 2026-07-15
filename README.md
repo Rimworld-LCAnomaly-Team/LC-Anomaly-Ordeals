@@ -1,8 +1,8 @@
 # LC Anomaly Ordeals
 
-面向 RimWorld 1.6 的 `LC Anomaly Story` 考验内容包。当前版本实现四种黎明考验：琥珀、深红、翠绿和紫罗兰，并将 Story 的第一阶段基础考验替换为随机黎明镇压。
+面向 RimWorld 1.6 的 `LC Anomaly Story` 考验内容包。当前版本实现原作的四种黎明考验，以及血色、绿色、紫罗兰和靛蓝色四种正午考验。Story 的第一阶段与第二阶段门槛分别替换为随机黎明和随机正午镇压。
 
-详细玩法与技术边界见 [DAWN_ORDEAL_DESIGN.md](DAWN_ORDEAL_DESIGN.md)，接入框架约束见 [ORDEAL_SUBMOD_GUIDE.md](ORDEAL_SUBMOD_GUIDE.md)。
+详细玩法见 [DAWN_ORDEAL_DESIGN.md](DAWN_ORDEAL_DESIGN.md) 和 [NOON_ORDEAL_DESIGN.md](NOON_ORDEAL_DESIGN.md)，接入框架约束见 [ORDEAL_SUBMOD_GUIDE.md](ORDEAL_SUBMOD_GUIDE.md)。
 
 ## 依赖与加载顺序
 
@@ -18,6 +18,7 @@
 ```powershell
 ./Tools/Build.ps1
 ./Tools/Validate.ps1
+./Tools/RuntimeSmokeTest.ps1
 ```
 
 项目默认从 `Source/1.6/LocalDllPaths.props` 读取本机程序集位置。首次构建时请复制

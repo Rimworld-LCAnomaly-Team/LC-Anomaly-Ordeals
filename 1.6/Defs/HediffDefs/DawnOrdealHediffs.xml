@@ -13,4 +13,13 @@
       </li>
     </stages>
   </HediffDef>
+  <HediffDef>
+    <defName>LCOrdeal_VioletNoonImmobile</defName>
+    <label>immobile</label>
+    <description>Movement is disabled.</description>
+    <isBad>false</isBad>
+    <stages>
+      <li><statFactors><MoveSpeed>0.01</MoveSpeed></statFactors></li>
+    </stages>
+  </HediffDef>
 </Defs>

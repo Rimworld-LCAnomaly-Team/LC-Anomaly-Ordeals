@@ -27,4 +27,19 @@
   <LCOrdeal_CrimsonFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_CrimsonFailureText>
   <LCOrdeal_GreenFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_GreenFailureText>
   <LCOrdeal_VioletFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_VioletFailureText>
+  <LCOrdeal_PresentationNoon>NOON ORDEAL</LCOrdeal_PresentationNoon>
+  <LCOrdeal_NoonVariant>Active Ordeal</LCOrdeal_NoonVariant>
+  <LCOrdeal_NoonCrimsonName>The Harmony of Skin</LCOrdeal_NoonCrimsonName>
+  <LCOrdeal_NoonCrimsonQuote>We marched from time to time, and we would share our pleasure.</LCOrdeal_NoonCrimsonQuote>
+  <LCOrdeal_NoonCrimsonEndQuote>The collision of one life with another, skin harmonizing, painting a yet more beautiful appearance.</LCOrdeal_NoonCrimsonEndQuote>
+  <LCOrdeal_NoonGreenName>Process of Understanding</LCOrdeal_NoonGreenName>
+  <LCOrdeal_NoonGreenQuote>In the end, they were bound to life. We existed only to express despair and ire.</LCOrdeal_NoonGreenQuote>
+  <LCOrdeal_NoonGreenEndQuote>We will understand life and the soul with our own hands.</LCOrdeal_NoonGreenEndQuote>
+  <LCOrdeal_NoonVioletName>Grant Us Love</LCOrdeal_NoonVioletName>
+  <LCOrdeal_NoonVioletQuote>We could only hear the weakest and faintest of their acts. We sought for love and compassion from them.</LCOrdeal_NoonVioletQuote>
+  <LCOrdeal_NoonVioletEndQuote>We cannot understand them, nor will they understand us.</LCOrdeal_NoonVioletEndQuote>
+  <LCOrdeal_NoonIndigoName>The Sweepers</LCOrdeal_NoonIndigoName>
+  <LCOrdeal_NoonIndigoQuote>When night falls in the Backstreets, they will come.</LCOrdeal_NoonIndigoQuote>
+  <LCOrdeal_NoonIndigoEndQuote>When the sun rises, there will be no trace of them.</LCOrdeal_NoonIndigoEndQuote>
+  <LCOrdeal_NoonFailureText>The Ordeal was not suppressed within the allotted time.</LCOrdeal_NoonFailureText>
 </LanguageData>
