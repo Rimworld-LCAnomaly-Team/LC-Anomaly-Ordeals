@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LCAnomalyStory.Defs.CompanyDevelopmentDef[defName="LCStory_CorporateEndgame"]/conditions</xpath>
+    <value><li Class="LCAnomalyStory.Conditions.DevelopmentCondition_ExaminationPassed"><labelKey>LCStory_Condition_Examination</labelKey><examination>LCOrdeal_Midnight</examination></li></value>
+  </Operation>
+</Patch>

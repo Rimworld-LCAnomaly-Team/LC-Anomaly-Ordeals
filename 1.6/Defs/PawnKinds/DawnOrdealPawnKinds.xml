@@ -223,4 +223,22 @@
     <weaponMoney>0~0</weaponMoney>
     <weaponTags />
   </PawnKindDef>
+
+  <PawnKindDef ParentName="InsectKindBase">
+    <defName>LCOrdeal_AmberMidnight</defName><label>The Eternal Meal</label><race>Megaspider</race><combatPower>850</combatPower><defaultFactionDef>Mechanoid</defaultFactionDef><forceDeathOnDowned>true</forceDeathOnDowned>
+    <lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>4.2</drawSize><color>(105,60,18)</color></bodyGraphicData></li><li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>4.4</drawSize><color>(105,60,18)</color></bodyGraphicData></li><li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>4.6</drawSize><color>(105,60,18)</color></bodyGraphicData></li></lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>LCOrdeal_GreenMidnight</defName><label>Helix of the End</label><race>Mech_CentipedeBlaster</race><combatPower>1200</combatPower><forceDeathOnDowned>true</forceDeathOnDowned>
+    <lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>5</drawSize><color>(20,105,48)</color></bodyGraphicData></li></lifeStages><weaponMoney>0~0</weaponMoney><weaponTags />
+  </PawnKindDef>
+
+  <PawnKindDef Name="LCOrdeal_VioletMidnightBase" ParentName="BaseMechanoidKind" Abstract="True">
+    <race>Mech_CentipedeBlaster</race><combatPower>650</combatPower><forceDeathOnDowned>true</forceDeathOnDowned><weaponMoney>0~0</weaponMoney><weaponTags />
+  </PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightRed</defName><label>Shrine of Red</label><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(150,35,38)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightWhite</defName><label>Shrine of White</label><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(210,210,205)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightBlack</defName><label>Shrine of Black</label><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(80,35,105)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightPale</defName><label>Shrine of Pale</label><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(90,165,205)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
 </Defs>

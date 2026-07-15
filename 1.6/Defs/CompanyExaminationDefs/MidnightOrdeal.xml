@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <LCAnomalyStory.Defs.CompanyExaminationDef>
+    <defName>LCOrdeal_Midnight</defName><label>Midnight Ordeal</label><description>Suppress a Midnight Ordeal.</description>
+    <durationTicks>120000</durationTicks><retryCooldownTicks>90000</retryCooldownTicks><workerTickInterval>12</workerTickInterval><workerClass>LCAnomalyOrdeals.Examinations.MidnightOrdealWorker</workerClass>
+    <modExtensions><li Class="LCAnomalyOrdeals.Defs.MidnightOrdealSettings">
+      <amberMidnightCount>2</amberMidnightCount><amberInitialSpawnDelayTicks>900</amberInitialSpawnDelayTicks><amberSpawnIntervalTicks>900~1200</amberSpawnIntervalTicks>
+      <amberDuskSpawnPerCycle>2</amberDuskSpawnPerCycle><amberDuskLifetimeCapPerParent>6</amberDuskLifetimeCapPerParent><amberSpawnRadius>5</amberSpawnRadius><amberBurrowArrivalRadius>10</amberBurrowArrivalRadius>
+      <amberEmergenceRadius>5</amberEmergenceRadius><amberEmergenceDamage>35</amberEmergenceDamage><amberDuskActionIntervalTicks>1800</amberDuskActionIntervalTicks><amberDawnSpawnPerCycle>3</amberDawnSpawnPerCycle><amberDawnCapPerParent>3</amberDawnCapPerParent>
+
+      <greenTowerCount>1</greenTowerCount><greenActivationDelayTicks>600</greenActivationDelayTicks><greenBeamTickIntervalTicks>12</greenBeamTickIntervalTicks><greenRotationDurationTicks>7200</greenRotationDurationTicks><greenCooldownTicks>1800</greenCooldownTicks>
+      <greenFixedBeamAngleDegrees>90</greenFixedBeamAngleDegrees><greenBeamWidthCells>1.35</greenBeamWidthCells><greenBeamDamage>15</greenBeamDamage><greenBeamSlowDurationTicks>120</greenBeamSlowDurationTicks>
+      <greenDamageSlowThreshold>405</greenDamageSlowThreshold><greenRotationSlowDurationTicks>600</greenRotationSlowDurationTicks><greenMaximumRotationSlowTicks>6000</greenMaximumRotationSlowTicks><greenRotationSlowFactor>0.5</greenRotationSlowFactor><greenBeamVisualSpacingCells>8</greenBeamVisualSpacingCells>
+
+      <violetShrinesPerColor>1</violetShrinesPerColor><violetInitialAttackDelayTicks>600~900</violetInitialAttackDelayTicks><violetAttackIntervalTicks>1500~1800</violetAttackIntervalTicks><violetTelegraphTicks>480</violetTelegraphTicks>
+      <violetRedDamage>45</violetRedDamage><violetRedRadius>3.5</violetRedRadius><violetWhiteDamage>18</violetWhiteDamage><violetWhiteRadius>9</violetWhiteRadius><violetBlackDamage>30</violetBlackDamage><violetBlackLineWidth>2.5</violetBlackLineWidth><violetPaleDamage>12</violetPaleDamage><violetPaleRadius>5</violetPaleRadius>
+      <violetDefenseThresholdOne>0.7</violetDefenseThresholdOne><violetDefenseThresholdTwo>0.4</violetDefenseThresholdTwo><violetDefenseThresholdThree>0.1</violetDefenseThresholdThree><violetDefenseExtraAttacks>1</violetDefenseExtraAttacks>
+
+      <rewardBase>15</rewardBase><rewardPerColonist>4</rewardPerColonist><presentationFadeInSeconds>0.35</presentationFadeInSeconds><presentationHoldSeconds>2.75</presentationHoldSeconds><presentationFadeOutSeconds>0.85</presentationFadeOutSeconds><presentationInputBlockSeconds>1.75</presentationInputBlockSeconds><presentationOverlayAlpha>0.94</presentationOverlayAlpha><presentationBandAlpha>0.44</presentationBandAlpha>
+      <presentations>
+        <li><variant>Amber</variant><color>(210,125,32)</color><startTitleKey>LCOrdeal_MidnightAmberName</startTitleKey><startTextKey>LCOrdeal_MidnightAmberQuote</startTextKey><successTitleKey>LCOrdeal_MidnightAmberName</successTitleKey><successTextKey>LCOrdeal_MidnightAmberEndQuote</successTextKey><failureTitleKey>LCOrdeal_MidnightAmberName</failureTitleKey><failureTextKey>LCOrdeal_MidnightFailureText</failureTextKey><startSound>Message_ThreatBig</startSound><successSound>Message_TaskCompletion</successSound><failureSound>Message_NegativeEvent</failureSound></li>
+        <li><variant>Green</variant><color>(35,150,70)</color><startTitleKey>LCOrdeal_MidnightGreenName</startTitleKey><startTextKey>LCOrdeal_MidnightGreenQuote</startTextKey><successTitleKey>LCOrdeal_MidnightGreenName</successTitleKey><successTextKey>LCOrdeal_MidnightGreenEndQuote</successTextKey><failureTitleKey>LCOrdeal_MidnightGreenName</failureTitleKey><failureTextKey>LCOrdeal_MidnightFailureText</failureTextKey><startSound>Message_ThreatBig</startSound><successSound>Message_TaskCompletion</successSound><failureSound>Message_NegativeEvent</failureSound></li>
+        <li><variant>Violet</variant><color>(120,55,165)</color><startTitleKey>LCOrdeal_MidnightVioletName</startTitleKey><startTextKey>LCOrdeal_MidnightVioletQuote</startTextKey><successTitleKey>LCOrdeal_MidnightVioletName</successTitleKey><successTextKey>LCOrdeal_MidnightVioletEndQuote</successTextKey><failureTitleKey>LCOrdeal_MidnightVioletName</failureTitleKey><failureTextKey>LCOrdeal_MidnightFailureText</failureTextKey><startSound>Message_ThreatBig</startSound><successSound>Message_TaskCompletion</successSound><failureSound>Message_NegativeEvent</failureSound></li>
+      </presentations>
+    </li></modExtensions>
+  </LCAnomalyStory.Defs.CompanyExaminationDef>
+</Defs>

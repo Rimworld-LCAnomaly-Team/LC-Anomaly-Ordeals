@@ -6,4 +6,6 @@
   <LCOrdeal_VioletNoonImmobile.description>无法移动。</LCOrdeal_VioletNoonImmobile.description>
   <LCOrdeal_AmberDuskSlowness.label>移动减缓</LCOrdeal_AmberDuskSlowness.label>
   <LCOrdeal_AmberDuskSlowness.description>移动速度大幅降低。</LCOrdeal_AmberDuskSlowness.description>
+  <LCOrdeal_GreenMidnightBeamSlowness.label>终末螺旋压制</LCOrdeal_GreenMidnightBeamSlowness.label>
+  <LCOrdeal_GreenMidnightBeamSlowness.description>终末螺旋的射线降低了移动速度。</LCOrdeal_GreenMidnightBeamSlowness.description>
 </LanguageData>

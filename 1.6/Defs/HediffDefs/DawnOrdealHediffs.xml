@@ -29,4 +29,8 @@
     <isBad>false</isBad>
     <stages><li><statFactors><MoveSpeed>0.1</MoveSpeed></statFactors></li></stages>
   </HediffDef>
+  <HediffDef>
+    <defName>LCOrdeal_GreenMidnightBeamSlowness</defName><label>helix beam suppression</label><description>Movement is slowed by the Helix of the End.</description><isBad>true</isBad>
+    <comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>120</disappearsAfterTicks></li></comps><stages><li><statFactors><MoveSpeed>0.5</MoveSpeed></statFactors></li></stages>
+  </HediffDef>
 </Defs>

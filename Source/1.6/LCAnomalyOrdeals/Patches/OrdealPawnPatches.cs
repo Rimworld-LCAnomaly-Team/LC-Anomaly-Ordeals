@@ -10,6 +10,16 @@ using Verse;
 
 namespace LCAnomalyOrdeals.Patches
 {
+    [HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]
+    internal static class VioletMidnightAbsorptionPatch
+    {
+        private static bool Prefix(Pawn __instance, ref DamageInfo dinfo, out bool absorbed)
+        {
+            absorbed = MidnightOrdealWorker.TryAbsorbVioletDamage(__instance, dinfo);
+            return !absorbed;
+        }
+    }
+
     [HarmonyPatch(typeof(UIRoot), nameof(UIRoot.UIRootOnGUI))]
     internal static class DawnPresentationInputPatch
     {
@@ -18,6 +28,7 @@ namespace LCAnomalyOrdeals.Patches
             GameComponent_DawnPresentation.FilterCurrentInput();
             GameComponent_NoonPresentation.FilterCurrentInput();
             GameComponent_DuskPresentation.FilterCurrentInput();
+            GameComponent_MidnightPresentation.FilterCurrentInput();
         }
     }
 
@@ -41,6 +52,16 @@ namespace LCAnomalyOrdeals.Patches
             if (totalDamageDealt > 0f && __instance.kindDef == OrdealDefOf.LCOrdeal_AmberDusk)
             {
                 DuskOrdealWorker.NotifyAmberDamaged(__instance, totalDamageDealt);
+            }
+
+            if (totalDamageDealt > 0f && __instance.kindDef == OrdealDefOf.LCOrdeal_GreenMidnight)
+            {
+                MidnightOrdealWorker.NotifyGreenTowerDamaged(__instance, totalDamageDealt);
+            }
+
+            if (totalDamageDealt > 0f)
+            {
+                MidnightOrdealWorker.NotifyVioletShrineDamaged(__instance, totalDamageDealt);
             }
         }
     }

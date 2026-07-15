@@ -54,4 +54,16 @@
   <LCOrdeal_DuskGreenQuote>为了回到来时的地方，它们筑起了一座高塔。</LCOrdeal_DuskGreenQuote>
   <LCOrdeal_DuskGreenEndQuote>它们没能得到答案，只能看到凋零的生命...</LCOrdeal_DuskGreenEndQuote>
   <LCOrdeal_DuskFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_DuskFailureText>
+  <LCOrdeal_PresentationMidnight>午夜考验</LCOrdeal_PresentationMidnight>
+  <LCOrdeal_MidnightVariant>当前考验</LCOrdeal_MidnightVariant>
+  <LCOrdeal_MidnightAmberName>永恒的盛宴</LCOrdeal_MidnightAmberName>
+  <LCOrdeal_MidnightAmberQuote>你—撕扯—我。我—吃掉—你。</LCOrdeal_MidnightAmberQuote>
+  <LCOrdeal_MidnightAmberEndQuote>弱者—被吃。永远—不变。</LCOrdeal_MidnightAmberEndQuote>
+  <LCOrdeal_MidnightGreenName>终末螺旋</LCOrdeal_MidnightGreenName>
+  <LCOrdeal_MidnightGreenQuote>高塔直破苍穹，大地荡然无存。</LCOrdeal_MidnightGreenQuote>
+  <LCOrdeal_MidnightGreenEndQuote>给予我们生命，却放任我们受苦的人，必将为此付出代价！</LCOrdeal_MidnightGreenEndQuote>
+  <LCOrdeal_MidnightVioletName>神明的迷思</LCOrdeal_MidnightVioletName>
+  <LCOrdeal_MidnightVioletQuote>我们一次又一次地试图接纳它们，无论这要付出何等的代价，我们必须理解！！！</LCOrdeal_MidnightVioletQuote>
+  <LCOrdeal_MidnightVioletEndQuote>为了避免自我的崩溃，它们绝不容忍那些不可理解，不可触及的存在...</LCOrdeal_MidnightVioletEndQuote>
+  <LCOrdeal_MidnightFailureText>未能在规定时间内完成考验镇压。</LCOrdeal_MidnightFailureText>
 </LanguageData>
