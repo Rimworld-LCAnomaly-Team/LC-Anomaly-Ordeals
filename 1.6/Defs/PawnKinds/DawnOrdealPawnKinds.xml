@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <PawnKindDef ParentName="InsectKindBase">
+  <!-- Independent PawnKind hierarchy: no vanilla insect/mechanoid PawnKind parent. -->
+  <PawnKindDef Name="LCOrdeal_KindBase" Abstract="True">
+    <defaultFactionDef>Mechanoid</defaultFactionDef>
+    <aiAvoidCover>true</aiAvoidCover>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <canStrip>false</canStrip>
+    <forceNormalGearQuality>true</forceNormalGearQuality>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_AmberDawn</defName>
     <label>The Perfect Food</label>
-    <race>Megascarab</race>
+    <race>LCOrdeal_Race_AmberDawn</race>
     <combatPower>32</combatPower>
     <showInDebugSpawner>true</showInDebugSpawner>
     <defaultFactionDef>Mechanoid</defaultFactionDef>
@@ -33,10 +42,10 @@
     </lifeStages>
   </PawnKindDef>
 
-  <PawnKindDef ParentName="BaseMechanoidKind">
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_CrimsonDawn</defName>
     <label>Cheers for the Beginning</label>
-    <race>Mech_Scyther</race>
+    <race>LCOrdeal_Race_CrimsonDawn</race>
     <combatPower>75</combatPower>
     <showInDebugSpawner>true</showInDebugSpawner>
     <forceDeathOnDowned>true</forceDeathOnDowned>
@@ -62,10 +71,10 @@
     <weaponTags />
   </PawnKindDef>
 
-  <PawnKindDef ParentName="BaseMechanoidKind">
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_GreenDawn</defName>
     <label>Doubt</label>
-    <race>Mech_Scyther</race>
+    <race>LCOrdeal_Race_GreenDawn</race>
     <combatPower>110</combatPower>
     <showInDebugSpawner>true</showInDebugSpawner>
     <forceDeathOnDowned>true</forceDeathOnDowned>
@@ -91,10 +100,10 @@
     <weaponTags />
   </PawnKindDef>
 
-  <PawnKindDef ParentName="InsectKindBase">
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_VioletDawn</defName>
     <label>The Fruit of Understanding</label>
-    <race>Megascarab</race>
+    <race>LCOrdeal_Race_VioletDawn</race>
     <combatPower>20</combatPower>
     <showInDebugSpawner>true</showInDebugSpawner>
     <defaultFactionDef>Mechanoid</defaultFactionDef>
@@ -124,10 +133,10 @@
     </lifeStages>
   </PawnKindDef>
 
-  <PawnKindDef ParentName="BaseMechanoidKind">
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_CrimsonNoon</defName>
     <label>The Harmony of Skin</label>
-    <race>Mech_CentipedeGunner</race>
+    <race>LCOrdeal_Race_CrimsonNoon</race>
     <combatPower>260</combatPower>
     <showInDebugSpawner>true</showInDebugSpawner>
     <forceDeathOnDowned>true</forceDeathOnDowned>
@@ -153,10 +162,10 @@
     <weaponTags />
   </PawnKindDef>
 
-  <PawnKindDef ParentName="BaseMechanoidKind">
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_GreenNoon</defName>
     <label>Process of Understanding</label>
-    <race>Mech_CentipedeGunner</race>
+    <race>LCOrdeal_Race_GreenNoon</race>
     <combatPower>240</combatPower>
     <showInDebugSpawner>true</showInDebugSpawner>
     <forceDeathOnDowned>true</forceDeathOnDowned>
@@ -182,10 +191,10 @@
     <weaponTags><li>Minigun</li></weaponTags>
   </PawnKindDef>
 
-  <PawnKindDef ParentName="BaseMechanoidKind">
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_VioletNoon</defName>
     <label>Grant Us Love</label>
-    <race>Mech_CentipedeBlaster</race>
+    <race>LCOrdeal_Race_VioletNoon</race>
     <combatPower>170</combatPower>
     <showInDebugSpawner>true</showInDebugSpawner>
     <forceDeathOnDowned>true</forceDeathOnDowned>
@@ -211,10 +220,10 @@
     <weaponTags />
   </PawnKindDef>
 
-  <PawnKindDef ParentName="BaseMechanoidKind">
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_IndigoNoon</defName>
     <label>The Sweepers</label>
-    <race>Mech_Scyther</race>
+    <race>LCOrdeal_Race_IndigoNoon</race>
     <combatPower>135</combatPower>
     <showInDebugSpawner>true</showInDebugSpawner>
     <forceDeathOnDowned>true</forceDeathOnDowned>
@@ -240,10 +249,10 @@
     <weaponTags />
   </PawnKindDef>
 
-  <PawnKindDef ParentName="InsectKindBase">
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_AmberDusk</defName>
     <label>The Food Chain</label>
-    <race>Megaspider</race>
+    <race>LCOrdeal_Race_AmberDusk</race>
     <combatPower>360</combatPower>
     <showInDebugSpawner>true</showInDebugSpawner>
     <defaultFactionDef>Mechanoid</defaultFactionDef>
@@ -255,10 +264,10 @@
     </lifeStages>
   </PawnKindDef>
 
-  <PawnKindDef ParentName="BaseMechanoidKind">
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_CrimsonDusk</defName>
     <label>The Struggle at the Climax</label>
-    <race>Mech_CentipedeBurner</race>
+    <race>LCOrdeal_Race_CrimsonDusk</race>
     <combatPower>430</combatPower>
     <showInDebugSpawner>true</showInDebugSpawner>
     <forceDeathOnDowned>true</forceDeathOnDowned>
@@ -270,10 +279,10 @@
     <weaponTags />
   </PawnKindDef>
 
-  <PawnKindDef ParentName="BaseMechanoidKind">
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_GreenDusk</defName>
     <label>Where We Must Reach</label>
-    <race>Mech_CentipedeBlaster</race>
+    <race>LCOrdeal_Race_GreenDusk</race>
     <combatPower>500</combatPower>
     <showInDebugSpawner>true</showInDebugSpawner>
     <forceDeathOnDowned>true</forceDeathOnDowned>
@@ -285,28 +294,28 @@
     <weaponTags />
   </PawnKindDef>
 
-  <PawnKindDef ParentName="InsectKindBase">
-    <defName>LCOrdeal_AmberMidnight</defName><label>The Eternal Meal</label><race>Megaspider</race><combatPower>850</combatPower><showInDebugSpawner>true</showInDebugSpawner><defaultFactionDef>Mechanoid</defaultFactionDef><forceDeathOnDowned>true</forceDeathOnDowned>
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
+    <defName>LCOrdeal_AmberMidnight</defName><label>The Eternal Meal</label><race>LCOrdeal_Race_AmberMidnight</race><combatPower>850</combatPower><showInDebugSpawner>true</showInDebugSpawner><defaultFactionDef>Mechanoid</defaultFactionDef><forceDeathOnDowned>true</forceDeathOnDowned>
     <lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>4.2</drawSize><color>(105,60,18)</color></bodyGraphicData></li><li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>4.4</drawSize><color>(105,60,18)</color></bodyGraphicData></li><li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>4.6</drawSize><color>(105,60,18)</color></bodyGraphicData></li></lifeStages>
   </PawnKindDef>
 
-  <PawnKindDef ParentName="BaseMechanoidKind">
-    <defName>LCOrdeal_GreenMidnight</defName><label>Helix of the End</label><race>Mech_CentipedeBlaster</race><combatPower>1200</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned>
+  <PawnKindDef ParentName="LCOrdeal_KindBase">
+    <defName>LCOrdeal_GreenMidnight</defName><label>Helix of the End</label><race>LCOrdeal_Race_GreenMidnight</race><combatPower>1200</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned>
     <lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>5</drawSize><color>(20,105,48)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>5</drawSize><color>(20,105,48)</color></bodyGraphicData></li></lifeStages><weaponMoney>0~0</weaponMoney><weaponTags />
   </PawnKindDef>
 
-  <PawnKindDef Name="LCOrdeal_VioletMidnightBase" ParentName="BaseMechanoidKind" Abstract="True">
-    <race>Mech_CentipedeBlaster</race><combatPower>650</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned><weaponMoney>0~0</weaponMoney><weaponTags />
+  <PawnKindDef Name="LCOrdeal_VioletMidnightBase" ParentName="LCOrdeal_KindBase" Abstract="True">
+    <combatPower>650</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned><weaponMoney>0~0</weaponMoney><weaponTags />
   </PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightRed</defName><label>Shrine of Red</label><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(150,35,38)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(150,35,38)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightWhite</defName><label>Shrine of White</label><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(210,210,205)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(210,210,205)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightBlack</defName><label>Shrine of Black</label><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(80,35,105)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(80,35,105)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightPale</defName><label>Shrine of Pale</label><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(90,165,205)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(90,165,205)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightRed</defName><label>Shrine of Red</label><race>LCOrdeal_Race_VioletMidnightRed</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(150,35,38)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(150,35,38)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightWhite</defName><label>Shrine of White</label><race>LCOrdeal_Race_VioletMidnightWhite</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(210,210,205)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(210,210,205)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightBlack</defName><label>Shrine of Black</label><race>LCOrdeal_Race_VioletMidnightBlack</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(80,35,105)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(80,35,105)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightPale</defName><label>Shrine of Pale</label><race>LCOrdeal_Race_VioletMidnightPale</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(90,165,205)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(90,165,205)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
 
-  <PawnKindDef Name="LCOrdeal_WhiteFixerBase" ParentName="BaseMechanoidKind" Abstract="True"><race>Mech_CentipedeBlaster</race><combatPower>650</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned><weaponMoney>0~0</weaponMoney><weaponTags /></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerRed</defName><label>Red Fixer</label><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(160,35,40)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(160,35,40)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerWhite</defName><label>White Fixer</label><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(220,220,210)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(220,220,210)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerBlack</defName><label>Black Fixer</label><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/CentipedeBurner</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.3</drawSize><color>(45,42,50)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/CentipedeBurner</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.3</drawSize><color>(45,42,50)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerPale</defName><label>Pale Fixer</label><combatPower>760</combatPower><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.25</drawSize><color>(80,145,190)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.25</drawSize><color>(80,145,190)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="BaseMechanoidKind"><defName>LCOrdeal_WhiteClaw</defName><label>The Claw</label><race>Mech_CentipedeBlaster</race><combatPower>1400</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3</drawSize><color>(35,35,38)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3</drawSize><color>(35,35,38)</color></bodyGraphicData></li></lifeStages><weaponMoney>0~0</weaponMoney><weaponTags /></PawnKindDef>
+  <PawnKindDef Name="LCOrdeal_WhiteFixerBase" ParentName="LCOrdeal_KindBase" Abstract="True"><combatPower>650</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned><weaponMoney>0~0</weaponMoney><weaponTags /></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerRed</defName><label>Red Fixer</label><race>LCOrdeal_Race_WhiteFixerRed</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(160,35,40)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(160,35,40)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerWhite</defName><label>White Fixer</label><race>LCOrdeal_Race_WhiteFixerWhite</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(220,220,210)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(220,220,210)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerBlack</defName><label>Black Fixer</label><race>LCOrdeal_Race_WhiteFixerBlack</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/CentipedeBurner</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.3</drawSize><color>(45,42,50)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/CentipedeBurner</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.3</drawSize><color>(45,42,50)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerPale</defName><label>Pale Fixer</label><race>LCOrdeal_Race_WhiteFixerPale</race><combatPower>760</combatPower><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.25</drawSize><color>(80,145,190)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.25</drawSize><color>(80,145,190)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_KindBase"><defName>LCOrdeal_WhiteClaw</defName><label>The Claw</label><race>LCOrdeal_Race_WhiteClaw</race><combatPower>1400</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3</drawSize><color>(35,35,38)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3</drawSize><color>(35,35,38)</color></bodyGraphicData></li></lifeStages><weaponMoney>0~0</weaponMoney><weaponTags /></PawnKindDef>
 </Defs>

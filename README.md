@@ -2,7 +2,7 @@
 
 面向 RimWorld 1.6 的 `LC Anomaly Story` 考验内容包。当前版本实现原作的黎明、正午、黄昏和午夜考验，Story 的阶段门槛依次接入对应层级的随机考验镇压。
 
-详细玩法见 [DAWN_ORDEAL_DESIGN.md](DAWN_ORDEAL_DESIGN.md)、[NOON_ORDEAL_DESIGN.md](NOON_ORDEAL_DESIGN.md)、[DUSK_ORDEAL_DESIGN.md](DUSK_ORDEAL_DESIGN.md)、[MIDNIGHT_ORDEAL_DESIGN.md](MIDNIGHT_ORDEAL_DESIGN.md) 和 [WHITE_ORDEAL_DESIGN.md](WHITE_ORDEAL_DESIGN.md)，接入框架约束见 [ORDEAL_SUBMOD_GUIDE.md](ORDEAL_SUBMOD_GUIDE.md)。
+详细玩法见 [DAWN_ORDEAL_DESIGN.md](DAWN_ORDEAL_DESIGN.md)、[NOON_ORDEAL_DESIGN.md](NOON_ORDEAL_DESIGN.md)、[DUSK_ORDEAL_DESIGN.md](DUSK_ORDEAL_DESIGN.md)、[MIDNIGHT_ORDEAL_DESIGN.md](MIDNIGHT_ORDEAL_DESIGN.md) 和 [WHITE_ORDEAL_DESIGN.md](WHITE_ORDEAL_DESIGN.md)，种族结构见 [RACE_SYSTEM_DESIGN.md](RACE_SYSTEM_DESIGN.md)，接入框架约束见 [ORDEAL_SUBMOD_GUIDE.md](ORDEAL_SUBMOD_GUIDE.md)。
 
 ## 依赖与加载顺序
 
@@ -25,4 +25,4 @@
 
 ## 当前美术说明
 
-当前可运行版本复用 RimWorld 原版虫族和机械体图形并以颜色区分，不包含《脑叶公司》的原始美术或音频资源。代码和 Def 已为后续原创资源替换保持稳定命名。
+所有考验实体均使用本模组独立的 Race、FleshType 与 PawnKind 体系，不继承原版虫族或机械族。当前可运行版本仅复用 RimWorld 原版虫族和机械体图形、身体结构、音效与通用 AI，并以颜色区分，不包含《脑叶公司》的原始美术或音频资源。代码和 Def 已为后续原创资源替换保持稳定命名。
