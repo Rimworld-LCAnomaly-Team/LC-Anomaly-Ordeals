@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LCOrdeal_VioletSlowness.label>移动减缓</LCOrdeal_VioletSlowness.label>
+  <LCOrdeal_VioletSlowness.description>移动速度降低。</LCOrdeal_VioletSlowness.description>
+  <LCOrdeal_VioletNoonImmobile.label>无法移动</LCOrdeal_VioletNoonImmobile.label>
+  <LCOrdeal_VioletNoonImmobile.description>无法移动。</LCOrdeal_VioletNoonImmobile.description>
+  <LCOrdeal_AmberDuskSlowness.label>移动减缓</LCOrdeal_AmberDuskSlowness.label>
+  <LCOrdeal_AmberDuskSlowness.description>移动速度大幅降低。</LCOrdeal_AmberDuskSlowness.description>
+  <LCOrdeal_GreenMidnightBeamSlowness.label>终末螺旋压制</LCOrdeal_GreenMidnightBeamSlowness.label>
+  <LCOrdeal_GreenMidnightBeamSlowness.description>终末螺旋的射线降低了移动速度。</LCOrdeal_GreenMidnightBeamSlowness.description>
+  <LCOrdeal_WhiteFogSlowness.label>白色雾气</LCOrdeal_WhiteFogSlowness.label><LCOrdeal_WhiteFogSlowness.description>白色收尾人的雾气降低了移动速度。</LCOrdeal_WhiteFogSlowness.description>
+</LanguageData>

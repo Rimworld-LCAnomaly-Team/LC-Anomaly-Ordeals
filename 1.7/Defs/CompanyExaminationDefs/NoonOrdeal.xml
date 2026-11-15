@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <LCAnomalyStory.Defs.CompanyExaminationDef>
+    <defName>LCOrdeal_Noon</defName>
+    <label>Noon Ordeal</label>
+    <description>Suppress a Noon Ordeal.</description>
+    <durationTicks>45000</durationTicks>
+    <retryCooldownTicks>45000</retryCooldownTicks>
+    <workerTickInterval>30</workerTickInterval>
+    <workerClass>LCAnomalyOrdeals.Examinations.NoonOrdealWorker</workerClass>
+    <modExtensions>
+      <li Class="LCAnomalyOrdeals.Defs.NoonOrdealSettings">
+        <crimsonColonistsPerTarget>8</crimsonColonistsPerTarget>
+        <crimsonCountMin>1</crimsonCountMin>
+        <crimsonCountMax>2</crimsonCountMax>
+        <crimsonDawnSplitCount>3</crimsonDawnSplitCount>
+        <crimsonDawnRetargetIntervalTicks>600</crimsonDawnRetargetIntervalTicks>
+
+        <greenColonistsPerTarget>4</greenColonistsPerTarget>
+        <greenCountMin>2</greenCountMin>
+        <greenCountMax>6</greenCountMax>
+        <greenShutdownIntervalTicks>1200~1800</greenShutdownIntervalTicks>
+        <greenShutdownDurationTicks>240~390</greenShutdownDurationTicks>
+        <greenSawIntervalTicks>150</greenSawIntervalTicks>
+        <greenSawRadius>2.2</greenSawRadius>
+        <greenSawDamage>6</greenSawDamage>
+
+        <violetColonistsPerTarget>4</violetColonistsPerTarget>
+        <violetCountMin>2</violetCountMin>
+        <violetCountMax>5</violetCountMax>
+        <violetImpactRadius>6</violetImpactRadius>
+        <violetImpactDamage>35</violetImpactDamage>
+        <violetPulseIntervalTicks>90</violetPulseIntervalTicks>
+        <violetPulseRadius>5</violetPulseRadius>
+        <violetPulsePsychicDamage>1</violetPulsePsychicDamage>
+        <violetCounterIntervalTicks>1800</violetCounterIntervalTicks>
+        <violetCounterReduction>1</violetCounterReduction>
+
+        <indigoGroupCount>4</indigoGroupCount>
+        <indigoGroupSize>3</indigoGroupSize>
+        <indigoGroupScatterRadius>5</indigoGroupScatterRadius>
+        <indigoCorpseCheckIntervalTicks>180</indigoCorpseCheckIntervalTicks>
+        <indigoCorpseSearchRadius>5</indigoCorpseSearchRadius>
+        <indigoChargeIntervalTicks>750</indigoChargeIntervalTicks>
+        <indigoChargeRadius>2.5</indigoChargeRadius>
+        <indigoChargePsychicDamage>18</indigoChargePsychicDamage>
+        <indigoLifestealFactor>0.35</indigoLifestealFactor>
+
+        <rewardBase>8</rewardBase>
+        <rewardPerColonist>2</rewardPerColonist>
+        <presentationFadeInSeconds>0.35</presentationFadeInSeconds>
+        <presentationHoldSeconds>2.25</presentationHoldSeconds>
+        <presentationFadeOutSeconds>0.75</presentationFadeOutSeconds>
+        <presentationInputBlockSeconds>1.5</presentationInputBlockSeconds>
+        <presentationOverlayAlpha>0.92</presentationOverlayAlpha>
+        <presentationBandAlpha>0.42</presentationBandAlpha>
+        <presentations>
+          <li>
+            <variant>Crimson</variant><color>(190,35,48)</color>
+            <startTitleKey>LCOrdeal_NoonCrimsonName</startTitleKey><startTextKey>LCOrdeal_NoonCrimsonQuote</startTextKey>
+            <successTitleKey>LCOrdeal_NoonCrimsonName</successTitleKey><successTextKey>LCOrdeal_NoonCrimsonEndQuote</successTextKey>
+            <failureTitleKey>LCOrdeal_NoonCrimsonName</failureTitleKey><failureTextKey>LCOrdeal_NoonFailureText</failureTextKey>
+            <startSound>Message_ThreatBig</startSound><successSound>Message_TaskCompletion</successSound><failureSound>Message_NegativeEvent</failureSound>
+          </li>
+          <li>
+            <variant>Green</variant><color>(42,145,75)</color>
+            <startTitleKey>LCOrdeal_NoonGreenName</startTitleKey><startTextKey>LCOrdeal_NoonGreenQuote</startTextKey>
+            <successTitleKey>LCOrdeal_NoonGreenName</successTitleKey><successTextKey>LCOrdeal_NoonGreenEndQuote</successTextKey>
+            <failureTitleKey>LCOrdeal_NoonGreenName</failureTitleKey><failureTextKey>LCOrdeal_NoonFailureText</failureTextKey>
+            <startSound>Message_ThreatBig</startSound><successSound>Message_TaskCompletion</successSound><failureSound>Message_NegativeEvent</failureSound>
+          </li>
+          <li>
+            <variant>Violet</variant><color>(126,67,174)</color>
+            <startTitleKey>LCOrdeal_NoonVioletName</startTitleKey><startTextKey>LCOrdeal_NoonVioletQuote</startTextKey>
+            <successTitleKey>LCOrdeal_NoonVioletName</successTitleKey><successTextKey>LCOrdeal_NoonVioletEndQuote</successTextKey>
+            <failureTitleKey>LCOrdeal_NoonVioletName</failureTitleKey><failureTextKey>LCOrdeal_NoonFailureText</failureTextKey>
+            <startSound>Message_ThreatBig</startSound><successSound>Message_TaskCompletion</successSound><failureSound>Message_NegativeEvent</failureSound>
+          </li>
+          <li>
+            <variant>Indigo</variant><color>(40,77,110)</color>
+            <startTitleKey>LCOrdeal_NoonIndigoName</startTitleKey><startTextKey>LCOrdeal_NoonIndigoQuote</startTextKey>
+            <successTitleKey>LCOrdeal_NoonIndigoName</successTitleKey><successTextKey>LCOrdeal_NoonIndigoEndQuote</successTextKey>
+            <failureTitleKey>LCOrdeal_NoonIndigoName</failureTitleKey><failureTextKey>LCOrdeal_NoonFailureText</failureTextKey>
+            <startSound>Message_ThreatBig</startSound><successSound>Message_TaskCompletion</successSound><failureSound>Message_NegativeEvent</failureSound>
+          </li>
+        </presentations>
+      </li>
+    </modExtensions>
+  </LCAnomalyStory.Defs.CompanyExaminationDef>
+</Defs>

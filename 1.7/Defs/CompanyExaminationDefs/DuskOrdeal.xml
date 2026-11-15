@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <LCAnomalyStory.Defs.CompanyExaminationDef>
+    <defName>LCOrdeal_Dusk</defName>
+    <label>Dusk Ordeal</label>
+    <description>Suppress a Dusk Ordeal.</description>
+    <durationTicks>75000</durationTicks>
+    <retryCooldownTicks>60000</retryCooldownTicks>
+    <workerTickInterval>30</workerTickInterval>
+    <workerClass>LCAnomalyOrdeals.Examinations.DuskOrdealWorker</workerClass>
+    <modExtensions>
+      <li Class="LCAnomalyOrdeals.Defs.DuskOrdealSettings">
+        <amberColonistsPerTarget>5</amberColonistsPerTarget><amberCountMin>2</amberCountMin><amberCountMax>5</amberCountMax>
+        <amberBurrowIntervalTicks>1800</amberBurrowIntervalTicks><amberBurrowRadius>12</amberBurrowRadius>
+        <amberDawnSpawnPerCycle>3</amberDawnSpawnPerCycle><amberDawnCapPerParent>3</amberDawnCapPerParent>
+        <amberEmergenceRadius>4</amberEmergenceRadius><amberEmergenceDamage>18</amberEmergenceDamage>
+        <amberSlowDamageThreshold>28</amberSlowDamageThreshold><amberSlowDurationTicks>60~120</amberSlowDurationTicks>
+
+        <crimsonCount>2</crimsonCount><crimsonNoonSplitCount>1</crimsonNoonSplitCount><crimsonDawnSplitCount>3</crimsonDawnSplitCount>
+        <crimsonRollIntervalTicks>900</crimsonRollIntervalTicks><crimsonRollArrivalRadius>6</crimsonRollArrivalRadius>
+        <crimsonRollDamageRadius>3</crimsonRollDamageRadius><crimsonRollDamage>20</crimsonRollDamage>
+        <crimsonDawnRetargetIntervalTicks>600</crimsonDawnRetargetIntervalTicks>
+
+        <greenFactoryCount>4</greenFactoryCount><greenFactoryInitialDelayTicks>600</greenFactoryInitialDelayTicks>
+        <greenFactoryProductionIntervalTicks>2700~3600</greenFactoryProductionIntervalTicks>
+        <greenSpawnPerCycle>3</greenSpawnPerCycle><greenSpawnedUnitCap>15</greenSpawnedUnitCap><greenNoonChance>0.5</greenNoonChance><greenSpawnRadius>5</greenSpawnRadius>
+        <greenNoonShutdownIntervalTicks>1200~1800</greenNoonShutdownIntervalTicks><greenNoonShutdownDurationTicks>240~390</greenNoonShutdownDurationTicks>
+        <greenNoonSawIntervalTicks>150</greenNoonSawIntervalTicks><greenNoonSawRadius>2.2</greenNoonSawRadius><greenNoonSawDamage>6</greenNoonSawDamage>
+
+        <rewardBase>12</rewardBase><rewardPerColonist>3</rewardPerColonist>
+        <presentationFadeInSeconds>0.35</presentationFadeInSeconds><presentationHoldSeconds>2.25</presentationHoldSeconds><presentationFadeOutSeconds>0.75</presentationFadeOutSeconds>
+        <presentationInputBlockSeconds>1.5</presentationInputBlockSeconds><presentationOverlayAlpha>0.92</presentationOverlayAlpha><presentationBandAlpha>0.42</presentationBandAlpha>
+        <presentations>
+          <li><variant>Amber</variant><color>(210,125,32)</color><startTitleKey>LCOrdeal_DuskAmberName</startTitleKey><startTextKey>LCOrdeal_DuskAmberQuote</startTextKey><successTitleKey>LCOrdeal_DuskAmberName</successTitleKey><successTextKey>LCOrdeal_DuskAmberEndQuote</successTextKey><failureTitleKey>LCOrdeal_DuskAmberName</failureTitleKey><failureTextKey>LCOrdeal_DuskFailureText</failureTextKey><startSound>Message_ThreatBig</startSound><successSound>Message_TaskCompletion</successSound><failureSound>Message_NegativeEvent</failureSound></li>
+          <li><variant>Crimson</variant><color>(190,35,48)</color><startTitleKey>LCOrdeal_DuskCrimsonName</startTitleKey><startTextKey>LCOrdeal_DuskCrimsonQuote</startTextKey><successTitleKey>LCOrdeal_DuskCrimsonName</successTitleKey><successTextKey>LCOrdeal_DuskCrimsonEndQuote</successTextKey><failureTitleKey>LCOrdeal_DuskCrimsonName</failureTitleKey><failureTextKey>LCOrdeal_DuskFailureText</failureTextKey><startSound>Message_ThreatBig</startSound><successSound>Message_TaskCompletion</successSound><failureSound>Message_NegativeEvent</failureSound></li>
+          <li><variant>Green</variant><color>(42,145,75)</color><startTitleKey>LCOrdeal_DuskGreenName</startTitleKey><startTextKey>LCOrdeal_DuskGreenQuote</startTextKey><successTitleKey>LCOrdeal_DuskGreenName</successTitleKey><successTextKey>LCOrdeal_DuskGreenEndQuote</successTextKey><failureTitleKey>LCOrdeal_DuskGreenName</failureTitleKey><failureTextKey>LCOrdeal_DuskFailureText</failureTextKey><startSound>Message_ThreatBig</startSound><successSound>Message_TaskCompletion</successSound><failureSound>Message_NegativeEvent</failureSound></li>
+        </presentations>
+      </li>
+    </modExtensions>
+  </LCAnomalyStory.Defs.CompanyExaminationDef>
+</Defs>

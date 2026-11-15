@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch><Operation Class="PatchOperationAdd"><xpath>Defs/LCAnomalyStory.Defs.CompanyDevelopmentDef[defName="LCStory_CorporateEndgame"]/prerequisites</xpath><value><li>LCOrdeal_WhiteMidnightNode</li></value></Operation></Patch>

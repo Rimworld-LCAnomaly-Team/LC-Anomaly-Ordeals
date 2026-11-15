@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <LCAnomalyStory.Defs.CompanyExaminationDef>
+    <defName>LCOrdeal_Dawn</defName>
+    <label>Dawn Ordeal</label>
+    <description>Suppress a Dawn Ordeal.</description>
+    <durationTicks>30000</durationTicks>
+    <retryCooldownTicks>30000</retryCooldownTicks>
+    <workerTickInterval>30</workerTickInterval>
+    <workerClass>LCAnomalyOrdeals.Examinations.DawnOrdealWorker</workerClass>
+    <modExtensions>
+      <li Class="LCAnomalyOrdeals.Defs.DawnOrdealSettings">
+        <amberCountOffset>2</amberCountOffset>
+        <amberCountMin>4</amberCountMin>
+        <amberCountMax>10</amberCountMax>
+        <amberBurrowIntervalTicks>2500</amberBurrowIntervalTicks>
+        <amberBurrowRadius>14</amberBurrowRadius>
+
+        <crimsonColonistsPerTarget>2</crimsonColonistsPerTarget>
+        <crimsonCountMin>2</crimsonCountMin>
+        <crimsonCountMax>5</crimsonCountMax>
+        <crimsonRetargetIntervalTicks>600</crimsonRetargetIntervalTicks>
+        <crimsonExplosionRadius>2.4</crimsonExplosionRadius>
+        <crimsonExplosionDamage>18</crimsonExplosionDamage>
+        <crimsonExplosionArmorPenetration>0.15</crimsonExplosionArmorPenetration>
+
+        <greenColonistsPerTarget>3</greenColonistsPerTarget>
+        <greenCountMin>1</greenCountMin>
+        <greenCountMax>4</greenCountMax>
+        <greenExecutionPsychicRadius>8</greenExecutionPsychicRadius>
+        <greenExecutionPsychicDamage>5</greenExecutionPsychicDamage>
+
+        <violetColonistsPerTarget>3</violetColonistsPerTarget>
+        <violetCountMin>1</violetCountMin>
+        <violetCountMax>3</violetCountMax>
+        <violetMatureDelayTicks>7500</violetMatureDelayTicks>
+        <violetBlastRadius>18</violetBlastRadius>
+        <violetPsychicDamage>10</violetPsychicDamage>
+        <violetChaseDurationTicks>600~900</violetChaseDurationTicks>
+        <violetWanderRadius>12</violetWanderRadius>
+        <violetWanderJobExpiryTicks>600</violetWanderJobExpiryTicks>
+
+        <rewardBase>5</rewardBase>
+        <rewardPerColonist>1</rewardPerColonist>
+
+        <presentationFadeInSeconds>0.35</presentationFadeInSeconds>
+        <presentationHoldSeconds>2.25</presentationHoldSeconds>
+        <presentationFadeOutSeconds>0.75</presentationFadeOutSeconds>
+        <presentationInputBlockSeconds>1.5</presentationInputBlockSeconds>
+        <presentationOverlayAlpha>0.92</presentationOverlayAlpha>
+        <presentationBandAlpha>0.42</presentationBandAlpha>
+        <presentations>
+          <li>
+            <variant>Amber</variant>
+            <color>(210,125,32)</color>
+            <startTitleKey>LCOrdeal_AmberName</startTitleKey>
+            <startTextKey>LCOrdeal_AmberQuote</startTextKey>
+            <successTitleKey>LCOrdeal_AmberName</successTitleKey>
+            <successTextKey>LCOrdeal_AmberEndQuote</successTextKey>
+            <failureTitleKey>LCOrdeal_AmberName</failureTitleKey>
+            <failureTextKey>LCOrdeal_AmberFailureText</failureTextKey>
+            <startSound>Message_ThreatBig</startSound>
+            <successSound>Message_TaskCompletion</successSound>
+            <failureSound>Message_NegativeEvent</failureSound>
+          </li>
+          <li>
+            <variant>Crimson</variant>
+            <color>(190,35,48)</color>
+            <startTitleKey>LCOrdeal_CrimsonName</startTitleKey>
+            <startTextKey>LCOrdeal_CrimsonQuote</startTextKey>
+            <successTitleKey>LCOrdeal_CrimsonName</successTitleKey>
+            <successTextKey>LCOrdeal_CrimsonEndQuote</successTextKey>
+            <failureTitleKey>LCOrdeal_CrimsonName</failureTitleKey>
+            <failureTextKey>LCOrdeal_CrimsonFailureText</failureTextKey>
+            <startSound>Message_ThreatBig</startSound>
+            <successSound>Message_TaskCompletion</successSound>
+            <failureSound>Message_NegativeEvent</failureSound>
+          </li>
+          <li>
+            <variant>Green</variant>
+            <color>(42,145,75)</color>
+            <startTitleKey>LCOrdeal_GreenName</startTitleKey>
+            <startTextKey>LCOrdeal_GreenQuote</startTextKey>
+            <successTitleKey>LCOrdeal_GreenName</successTitleKey>
+            <successTextKey>LCOrdeal_GreenEndQuote</successTextKey>
+            <failureTitleKey>LCOrdeal_GreenName</failureTitleKey>
+            <failureTextKey>LCOrdeal_GreenFailureText</failureTextKey>
+            <startSound>Message_ThreatBig</startSound>
+            <successSound>Message_TaskCompletion</successSound>
+            <failureSound>Message_NegativeEvent</failureSound>
+          </li>
+          <li>
+            <variant>Violet</variant>
+            <color>(126,67,174)</color>
+            <startTitleKey>LCOrdeal_VioletName</startTitleKey>
+            <startTextKey>LCOrdeal_VioletQuote</startTextKey>
+            <successTitleKey>LCOrdeal_VioletName</successTitleKey>
+            <successTextKey>LCOrdeal_VioletEndQuote</successTextKey>
+            <failureTitleKey>LCOrdeal_VioletName</failureTitleKey>
+            <failureTextKey>LCOrdeal_VioletFailureText</failureTextKey>
+            <startSound>Message_ThreatBig</startSound>
+            <successSound>Message_TaskCompletion</successSound>
+            <failureSound>Message_NegativeEvent</failureSound>
+          </li>
+        </presentations>
+      </li>
+    </modExtensions>
+  </LCAnomalyStory.Defs.CompanyExaminationDef>
+</Defs>

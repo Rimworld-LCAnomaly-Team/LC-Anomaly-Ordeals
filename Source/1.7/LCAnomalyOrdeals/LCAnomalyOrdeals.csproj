@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\RimWorld17.props" />
+  <PropertyGroup>
+    <AssemblyName>LCAnomalyOrdeals</AssemblyName>
+    <RootNamespace>LCAnomalyOrdeals</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="DefOfs\OrdealDefOf.cs" />
+    <Compile Include="Debugging\OrdealDebugActions.cs" />
+    <Compile Include="Defs\DawnOrdealSettings.cs" />
+    <Compile Include="Defs\NoonOrdealSettings.cs" />
+    <Compile Include="Defs\DuskOrdealSettings.cs" />
+    <Compile Include="Defs\MidnightOrdealSettings.cs" />
+    <Compile Include="Defs\WhiteOrdealSettings.cs" />
+    <Compile Include="Examinations\DawnOrdealWorker.cs" />
+    <Compile Include="Examinations\NoonOrdealWorker.cs" />
+    <Compile Include="Examinations\DuskOrdealWorker.cs" />
+    <Compile Include="Examinations\MidnightOrdealWorker.cs" />
+    <Compile Include="Examinations\WhiteOrdealWorker.cs" />
+    <Compile Include="Presentation\GameComponent_DawnPresentation.cs" />
+    <Compile Include="Presentation\GameComponent_NoonPresentation.cs" />
+    <Compile Include="Presentation\GameComponent_DuskPresentation.cs" />
+    <Compile Include="Presentation\GameComponent_MidnightPresentation.cs" />
+    <Compile Include="Presentation\GameComponent_WhitePresentation.cs" />
+    <Compile Include="Patches\OrdealPawnPatches.cs" />
+    <Compile Include="Utilities\OrdealTargetUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <ProjectReference Include="..\..\..\..\LC Anomaly Core\Source\1.7\LCAnomalyCore\LCAnomalyCore.csproj"><Private>false</Private></ProjectReference>
+    <ProjectReference Include="..\..\..\..\LC-Anomaly-Story\Source\1.7\LCAnomalyStory\LCAnomalyStory.csproj"><Private>false</Private></ProjectReference>
+    <Reference Include="0Harmony"><HintPath>$(HarmonyAssembliesDir)\0Harmony.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>
