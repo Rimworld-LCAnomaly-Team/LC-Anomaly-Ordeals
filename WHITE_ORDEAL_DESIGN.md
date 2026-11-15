@@ -82,7 +82,7 @@
 
 ## XML 参数
 
-所有四个 Def 继承 `1.6/Defs/CompanyExaminationDefs/WhiteOrdeals.xml` 中的抽象基类和 `WhiteOrdealSettings`：
+所有四个 Def 继承 `1.7/Defs/CompanyExaminationDefs/WhiteOrdeals.xml` 中的抽象基类和 `WhiteOrdealSettings`：
 
 | 参数组 | 可调整内容 |
 | --- | --- |

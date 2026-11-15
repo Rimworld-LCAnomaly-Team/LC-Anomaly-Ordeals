@@ -1,6 +1,6 @@
 # LC Anomaly Story 考验 Submod 接入指南
 
-本文面向为 RimWorld 1.6 开发“考验（Ordeal）”内容包的开发者或编码助手。它描述 `LC Anomaly Story` 提供的考验扩展 API、生命周期、存档约束和推荐实现方式。
+本文面向为 RimWorld 1.7 开发“考验（Ordeal）”内容包的开发者或编码助手。它描述 `LC Anomaly Story` 提供的考验扩展 API、生命周期、存档约束和推荐实现方式。
 
 ## 1. 依赖与职责边界
 
@@ -29,7 +29,7 @@ LC Anomaly Story
 - 需要高频维护或复杂对象引用时，自有的 `GameComponent` / `MapComponent`；
 - 将最终结果提交给 Story，而不是维护第二套公司阶段状态。
 
-只支持 RimWorld 1.6。不要修改或引用本仓库的 `1.5/`、`Source/1.5/`。
+只支持 RimWorld 1.7，使用 .NET 10。旧版运行目录与项目已移除；不得引用旧版程序集。Anomaly DLC 不是依赖项。
 
 ## 2. API 版本和程序集引用
 
@@ -42,10 +42,10 @@ GameComponent_CompanyDevelopment.ExaminationFrameworkApiVersion == 1
 
 Submod 的 C# 项目至少应引用：
 
-- RimWorld 1.6 `Assembly-CSharp.dll`；
+- RimWorld 1.7 `Assembly-CSharp.dll`；
 - `LCAnomalyStory.dll`；
 - 如果直接使用异想体或 PE-Box 类型，再引用 `LCAnomalyCore.dll`；
-- 需要 Harmony Patch 时引用 RimWorld 1.6 当前使用的 `0Harmony.dll`。
+- 需要 Harmony Patch 时引用 RimWorld 1.7 当前使用的 `0Harmony.dll`。
 
 这些游戏与前置程序集应设置 `Private=False`，不要复制进 Submod 的 Assemblies。
 
@@ -401,7 +401,7 @@ State 字典只能保存 `long`、`float`、`string`。不要把 `Pawn`、`Thing
 9. 开发者重置触发 `OnCancelled`；
 10. Worker 故意抛异常时能够安全失败；
 11. 中文和英文缺失键检查；
-12. 仅构建和验证 RimWorld 1.6。
+12. 仅构建和验证 RimWorld 1.7。
 
 主项目验证命令：
 

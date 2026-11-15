@@ -20,7 +20,7 @@
 
 ## XML 参数
 
-主要平衡参数集中在 `1.6/Defs/CompanyExaminationDefs/DuskOrdeal.xml` 的 `DuskOrdealSettings`：
+主要平衡参数集中在 `1.7/Defs/CompanyExaminationDefs/DuskOrdeal.xml` 的 `DuskOrdealSettings`：
 
 | 参数组 | 可调整内容 |
 | --- | --- |

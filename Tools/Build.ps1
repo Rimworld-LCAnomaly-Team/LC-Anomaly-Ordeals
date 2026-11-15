@@ -1,23 +1,13 @@
 param(
-    [ValidateSet("Debug", "Release")]
-    [string]$Configuration = "Debug"
+    [ValidateSet('Debug', 'Release')][string]$Configuration = 'Release',
+    [string]$RimWorldRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path,
+    [string]$HarmonyAssembliesDir
 )
 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
-$project = Join-Path $root "Source\1.6\LCAnomalyOrdeals\LCAnomalyOrdeals.csproj"
-$candidates = @(
-    "${env:ProgramFiles}\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe",
-    "${env:ProgramFiles}\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe",
-    "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe",
-    "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
-)
-$msbuild = $candidates | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
-if (-not $msbuild) {
-    throw "MSBuild was not found. Install Visual Studio or Visual Studio Build Tools."
-}
-
-& $msbuild $project /t:Rebuild "/p:Configuration=$Configuration" /verbosity:minimal
-if ($LASTEXITCODE -ne 0) {
-    exit $LASTEXITCODE
-}
+$project = Join-Path $root 'Source\1.7\LCAnomalyOrdeals\LCAnomalyOrdeals.csproj'
+$buildArguments = @('build', $project, '-c', $Configuration, '--nologo', '-v:minimal', "/p:RimWorldRoot=$RimWorldRoot")
+if ($HarmonyAssembliesDir) { $buildArguments += "/p:HarmonyAssembliesDir=$HarmonyAssembliesDir" }
+& dotnet @buildArguments
+if ($LASTEXITCODE -ne 0) { throw "RimWorld 1.7 build failed with exit code $LASTEXITCODE." }

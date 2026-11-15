@@ -24,11 +24,11 @@
 - `Faction.OfMechanoids` 仍作为当前敌对阵营载体；这是阵营归属，不是种族继承。
 - 当前图形路径仍指向原版虫族与机械体素材；替换原创素材时只需改动图形路径，不需更改 RaceDef 或 PawnKindDef 名称。
 - 新生成的考验实体使用独立种族。旧存档中已经生成并保存的实体不会被强制换种，以避免破坏存档对象。
-- 仅维护 RimWorld 1.6；`1.5/` 与 `Source/1.5/` 不参与本体系。
+- 仅维护 RimWorld 1.7；旧版本运行目录和源码项目已移除，历史内容从 Git 历史查阅。
 
 ## 文件位置
 
-- `1.6/Defs/FleshTypeDefs/OrdealFleshTypes.xml`
-- `1.6/Defs/ThingDefs_Races/OrdealRaces.xml`
-- `1.6/Defs/PawnKinds/DawnOrdealPawnKinds.xml`
-- `1.6/Languages/ChineseSimplified (简体中文)/DefInjected/ThingDef/OrdealRaces.xml`
+- `1.7/Defs/FleshTypeDefs/OrdealFleshTypes.xml`
+- `1.7/Defs/ThingDefs_Races/OrdealRaces.xml`
+- `1.7/Defs/PawnKinds/DawnOrdealPawnKinds.xml`
+- `1.7/Languages/ChineseSimplified (简体中文)/DefInjected/ThingDef/OrdealRaces.xml`

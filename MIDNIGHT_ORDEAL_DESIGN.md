@@ -47,7 +47,7 @@
 
 ## XML 参数
 
-主要参数集中在 `1.6/Defs/CompanyExaminationDefs/MidnightOrdeal.xml` 的 `MidnightOrdealSettings`：
+主要参数集中在 `1.7/Defs/CompanyExaminationDefs/MidnightOrdeal.xml` 的 `MidnightOrdealSettings`：
 
 | 参数组 | 可调整内容 |
 | --- | --- |

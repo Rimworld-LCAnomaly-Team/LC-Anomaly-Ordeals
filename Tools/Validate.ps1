@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 $xmlFiles = Get-ChildItem -Path $root -Recurse -File -Filter "*.xml" |
-    Where-Object { $_.FullName -notmatch '[\\/](\.runtime-test|bin|obj)[\\/]' }
+    Where-Object { $_.FullName -notmatch '[\\/](\.runtime-test[^\\/]*|bin|obj)[\\/]' }
 
 foreach ($file in $xmlFiles) {
     $document = New-Object System.Xml.XmlDocument
@@ -10,7 +10,7 @@ foreach ($file in $xmlFiles) {
 
 function Get-LanguageKeys([string]$languageFolder, [string]$subFolder) {
     $keys = New-Object 'System.Collections.Generic.HashSet[string]'
-    $folder = Join-Path $root "1.6\Languages\$languageFolder\$subFolder"
+    $folder = Join-Path $root "1.7\Languages\$languageFolder\$subFolder"
     if (-not (Test-Path -LiteralPath $folder)) {
         return $keys
     }
@@ -26,7 +26,7 @@ function Get-LanguageKeys([string]$languageFolder, [string]$subFolder) {
     return $keys
 }
 
-$languageRoot = Join-Path $root "1.6\Languages"
+$languageRoot = Join-Path $root "1.7\Languages"
 $chineseLanguage = Get-ChildItem -LiteralPath $languageRoot -Directory |
     Where-Object { $_.Name -like "ChineseSimplified*" } |
     Select-Object -First 1 -ExpandProperty Name
@@ -42,7 +42,7 @@ if ($missingEnglish.Count -gt 0 -or $missingChinese.Count -gt 0) {
 }
 
 $referencedKeys = New-Object 'System.Collections.Generic.HashSet[string]'
-Get-ChildItem -LiteralPath (Join-Path $root "1.6\Defs") -Recurse -File -Filter "*.xml" | ForEach-Object {
+Get-ChildItem -LiteralPath (Join-Path $root "1.7\Defs") -Recurse -File -Filter "*.xml" | ForEach-Object {
     $doc = New-Object System.Xml.XmlDocument
     $doc.Load($_.FullName)
     foreach ($node in $doc.SelectNodes("//*")) {
@@ -51,7 +51,7 @@ Get-ChildItem -LiteralPath (Join-Path $root "1.6\Defs") -Recurse -File -Filter "
         }
     }
 }
-Get-ChildItem -LiteralPath (Join-Path $root "Source\1.6") -Recurse -File -Filter "*.cs" | ForEach-Object {
+Get-ChildItem -LiteralPath (Join-Path $root "Source\1.7") -Recurse -File -Filter "*.cs" | ForEach-Object {
     $source = [System.IO.File]::ReadAllText($_.FullName, [System.Text.Encoding]::UTF8)
     foreach ($match in [regex]::Matches($source, '"(LCOrdeal_[A-Za-z0-9_]+)"\.Translate')) {
         [void]$referencedKeys.Add($match.Groups[1].Value)
@@ -64,7 +64,7 @@ if ($missingReferenced.Count -gt 0) {
 
 $chineseInjected = @(Get-LanguageKeys $chineseLanguage "DefInjected")
 $missingInjected = New-Object 'System.Collections.Generic.List[string]'
-Get-ChildItem -LiteralPath (Join-Path $root "1.6\Defs") -Recurse -File -Filter "*.xml" | ForEach-Object {
+Get-ChildItem -LiteralPath (Join-Path $root "1.7\Defs") -Recurse -File -Filter "*.xml" | ForEach-Object {
     $doc = New-Object System.Xml.XmlDocument
     $doc.Load($_.FullName)
     foreach ($def in $doc.DocumentElement.ChildNodes) {
@@ -87,7 +87,7 @@ if ($missingInjected.Count -gt 0) {
     throw "Chinese DefInjected entries are missing: $($missingInjected -join ', ')"
 }
 
-$storyNodes = "D:\DevelopSpace\LC-Anomaly-Story\1.6\Defs\CompanyDevelopmentDefs\DevelopmentNodes.xml"
+$storyNodes = (Join-Path $root '..\LC-Anomaly-Story\1.7\Defs\CompanyDevelopmentDefs\DevelopmentNodes.xml')
 if (Test-Path -LiteralPath $storyNodes) {
     $document = New-Object System.Xml.XmlDocument
     $document.Load($storyNodes)
@@ -106,14 +106,14 @@ if (Test-Path -LiteralPath $storyNodes) {
 }
 
 $forbidden = Get-ChildItem -Path $root -Recurse -File |
-    Where-Object { $_.FullName -match '[\\/]1\.5[\\/]' -or $_.FullName -match '[\\/]Source[\\/]1\.5[\\/]' }
+    Where-Object { $_.FullName -match '[\\/]1\.[56][\\/]' -or $_.FullName -match '[\\/]Source[\\/]1\.5[\\/]' }
 if ($forbidden) {
-    throw "RimWorld 1.5 content is not allowed in this repository."
+    throw "Retired RimWorld content is not allowed in this repository."
 }
 
-$assembly = Join-Path $root "1.6\Assemblies\LCAnomalyOrdeals.dll"
+$assembly = Join-Path $root "1.7\Assemblies\LCAnomalyOrdeals.dll"
 if (-not (Test-Path -LiteralPath $assembly)) {
     throw "LCAnomalyOrdeals.dll is missing. Run Tools/Build.ps1 first."
 }
 
-Write-Host "Validated $($xmlFiles.Count) XML files, $($englishKeys.Count) bilingual keyed translations, DefInjected coverage, and the RimWorld 1.6 assembly."
+Write-Host "Validated $($xmlFiles.Count) XML files, $($englishKeys.Count) bilingual keyed translations, DefInjected coverage, and the RimWorld 1.7 assembly."
