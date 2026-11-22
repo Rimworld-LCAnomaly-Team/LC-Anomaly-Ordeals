@@ -159,7 +159,7 @@ namespace LCAnomalyOrdeals.Patches
                 if (!pawn.Dead && pawn.Position.InHorDistOf(__state.position, settings.greenExecutionPsychicRadius))
                 {
                     pawn.TakeDamage(new DamageInfo(
-                        DamageDefOf.Psychic,
+                        DamageDefOf.Psychic ?? LCAnomalyCore.Defs.DamageDefOf.LC_WhiteDamage,
                         settings.greenExecutionPsychicDamage,
                         0f,
                         instigator: __state.greenKiller));

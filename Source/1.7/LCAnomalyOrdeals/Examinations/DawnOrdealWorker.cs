@@ -393,7 +393,7 @@ namespace LCAnomalyOrdeals.Examinations
             {
                 if (!pawn.Dead && (radius < 0f || pawn.Position.InHorDistOf(instigator.PositionHeld, radius)))
                 {
-                    pawn.TakeDamage(new DamageInfo(DamageDefOf.Psychic, amount, 0f, instigator: instigator));
+                    pawn.TakeDamage(new DamageInfo(DamageDefOf.Psychic ?? LCAnomalyCore.Defs.DamageDefOf.LC_WhiteDamage, amount, 0f, instigator: instigator));
                 }
             }
         }

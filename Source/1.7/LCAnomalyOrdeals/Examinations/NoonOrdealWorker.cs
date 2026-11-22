@@ -347,7 +347,7 @@ namespace LCAnomalyOrdeals.Examinations
             foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map))
             {
                 if (!pawn.Dead && pawn.Position.InHorDistOf(instigator.PositionHeld, radius))
-                    pawn.TakeDamage(new DamageInfo(DamageDefOf.Psychic, damage, 0f, instigator: instigator));
+                    pawn.TakeDamage(new DamageInfo(DamageDefOf.Psychic ?? LCAnomalyCore.Defs.DamageDefOf.LC_WhiteDamage, damage, 0f, instigator: instigator));
             }
         }
 
