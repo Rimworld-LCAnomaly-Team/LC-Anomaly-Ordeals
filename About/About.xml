@@ -6,7 +6,7 @@
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
-  <description>Adds Lobotomy Corporation Dawn, Noon, Dusk, and Midnight Ordeals to LC Anomaly Story.</description>
+  <description>[Early WIP / 极早期不完善版本] Adds Lobotomy Corporation Dawn, Noon, Dusk, Midnight, and White Ordeals (with early-stage animations and combat VFX) to LC Anomaly Story. Balance, visuals, and mechanics are still under active iteration.</description>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>

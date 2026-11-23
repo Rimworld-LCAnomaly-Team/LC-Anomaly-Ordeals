@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Animated</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_OrdealAnimated">
+          <debugLabel>OrdealBodyAnimated</debugLabel>
+          <tagDef>Body</tagDef>
+          <baseLayer>0</baseLayer>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+</Defs>

@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 2D Presentation Start / End Stingers -->
+  <SoundDef>
+    <defName>LCOrdeal_Sound_BugStart</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug_Start</clipPath></li></grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_BugEnd</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug_End</clipPath></li></grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusStart</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Circus_Start</clipPath></li></grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusEnd</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Circus_End</clipPath></li></grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineStart</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Start</clipPath></li></grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineEnd</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_End</clipPath></li></grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_OutterGodStart</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_Start</clipPath></li></grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_OutterGodEnd</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_End</clipPath></li></grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ScavengerStart</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Scavenger_Start</clipPath></li></grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ScavengerEnd</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Scavenger_End</clipPath></li></grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- Map-Spatial Dawn & Noon Combat / Special / Death SFX -->
+  <SoundDef>
+    <defName>LCOrdeal_Sound_Bug1Dig</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug1_DigIn</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug1_DigOut</clipPath></li>
+        </grains>
+        <volumeRange>42~50</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_Bug1Dead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug1_Dead</clipPath></li></grains>
+        <volumeRange>42~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusDawnDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Circus_Dead</clipPath></li></grains>
+        <volumeRange>48~56</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusNoonDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/CircusNoon_Dead</clipPath></li></grains>
+        <volumeRange>52~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineBlood</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Blood</clipPath></li></grains>
+        <volumeRange>45~54</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineNoonAtk</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Noon_Atk</clipPath></li></grains>
+        <volumeRange>44~52</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineNoonCooldown</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Noon_CoolTime_Effect</clipPath></li></grains>
+        <volumeRange>42~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineNoonDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Noon_Dead</clipPath></li></grains>
+        <volumeRange>48~56</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_OutterGodDawnSuicide</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGodDawn_Suicide</clipPath></li></grains>
+        <volumeRange>54~62</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_OutterGodDawnDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGodDawn_Dead</clipPath></li></grains>
+        <volumeRange>46~54</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_OutterGodNoonDown</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_Down</clipPath></li></grains>
+        <volumeRange>55~64</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_OutterGodNoonCasting</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_Casting</clipPath></li></grains>
+        <volumeRange>42~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_OutterGodNoonDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_Dead</clipPath></li></grains>
+        <volumeRange>50~58</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ScavengerNoonSkill</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/ScavengerNoon_Skill</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/ScavengerNoon_Atk1</clipPath></li>
+        </grains>
+        <volumeRange>42~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ScavengerNoonDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/ScavengerNoon_Dead</clipPath></li></grains>
+        <volumeRange>44~52</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- Dusk & Midnight Map-Spatial Combat / Special / Death SFX -->
+  <SoundDef>
+    <defName>LCOrdeal_Sound_BugDuskDig</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/BugDusk_DigIn</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/BugDusk_DigOut</clipPath></li>
+        </grains>
+        <volumeRange>48~56</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_BugDuskSpawn</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/BugDusk_Spawn2</clipPath></li></grains>
+        <volumeRange>46~54</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_BugDuskDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/BugDusk_Dead</clipPath></li></grains>
+        <volumeRange>50~58</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusDuskMove</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/CircusDusk_Move</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/CircusDusk_Atk1</clipPath></li>
+        </grains>
+        <volumeRange>48~56</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusDuskDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/CircusDusk_Dead</clipPath></li></grains>
+        <volumeRange>52~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineDuskProduce</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Dusk_1</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Dusk_2</clipPath></li>
+        </grains>
+        <volumeRange>46~54</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineDuskDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Dusk_dead</clipPath></li></grains>
+        <volumeRange>52~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_BugMidnightDig</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug3_DigIn</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug3_Digout</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug3_Shout</clipPath></li>
+        </grains>
+        <volumeRange>54~62</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_BugMidnightSpawn</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug3_Spawn</clipPath></li></grains>
+        <volumeRange>52~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_BugMidnightDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug3_Dead</clipPath></li></grains>
+        <volumeRange>56~64</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineMidnightBeam</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Midnight_1</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Midnight_3</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Midnight_5</clipPath></li>
+        </grains>
+        <volumeRange>50~58</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineMidnightDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Midnight_Dead</clipPath></li></grains>
+        <volumeRange>58~66</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_VioletMidnightPortal</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_Midnight_Portal_On</clipPath></li></grains>
+        <volumeRange>46~54</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_VioletMidnightRed</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_Midnight_Tentacle_r</clipPath></li></grains>
+        <volumeRange>50~58</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_VioletMidnightWhite</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_Midnight_Tentacle_W</clipPath></li></grains>
+        <volumeRange>50~58</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_VioletMidnightBlack</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_Midnight_Tentacle_b</clipPath></li></grains>
+        <volumeRange>50~58</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_VioletMidnightPale</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_Midnight_Eye_p</clipPath></li></grains>
+        <volumeRange>52~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_VioletMidnightDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_Midnight_StondDead</clipPath></li></grains>
+        <volumeRange>54~62</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <!-- White Ordeal Presentation Stingers & Spatial Fixer/Claw SFX -->
+  <SoundDef>
+    <defName>LCOrdeal_Sound_WhiteStart</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/WhiteOrdeal_Start</clipPath></li></grains>
+        <volumeRange>62~62</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_WhiteEnd</defName>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/WhiteOrdeal_End</clipPath></li></grains>
+        <volumeRange>62~62</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_FixerRedAtk</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Liq_Red_Atk1</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Liq_Red_GunAtk</clipPath></li>
+        </grains>
+        <volumeRange>50~58</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_FixerRedDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Liq_Red_Dead</clipPath></li></grains>
+        <volumeRange>54~62</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_FixerWhiteAtk</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Liq_White_LongAtk</clipPath></li></grains>
+        <volumeRange>50~58</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_FixerWhiteReflect</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Liq_White_reflect</clipPath></li></grains>
+        <volumeRange>50~58</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_FixerWhiteDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Liq_White_Dead</clipPath></li></grains>
+        <volumeRange>54~62</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_FixerBlackAtk</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Liq_Black_CastAtk</clipPath></li></grains>
+        <volumeRange>50~58</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_FixerBlackDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Liq_Black_Dead</clipPath></li></grains>
+        <volumeRange>54~62</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_FixerPaleTeleport</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Liq_Pale_Teleport1</clipPath></li></grains>
+        <volumeRange>48~56</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_FixerPaleAtk</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Liq_Pale_Atk</clipPath></li></grains>
+        <volumeRange>52~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_FixerPaleDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Liq_Pale_KnifeEnd</clipPath></li></grains>
+        <volumeRange>54~62</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ClawNormal</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Claw_normal</clipPath></li></grains>
+        <volumeRange>50~58</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ClawOrange</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Claw_red_Cast</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Claw_Red_end</clipPath></li>
+        </grains>
+        <volumeRange>54~62</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ClawBlue</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Claw_Blue_Cast1</clipPath></li>
+          <li Class="AudioGrain_Clip"><clipPath>Ordeals/Claw_Blue_Atk</clipPath></li>
+        </grains>
+        <volumeRange>54~62</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ClawGreen</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Claw_Heal</clipPath></li></grains>
+        <volumeRange>52~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ClawDead</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Claw_Dead1</clipPath></li></grains>
+        <volumeRange>58~66</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

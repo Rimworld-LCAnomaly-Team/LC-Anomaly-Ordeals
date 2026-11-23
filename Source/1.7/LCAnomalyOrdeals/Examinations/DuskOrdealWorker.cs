@@ -5,7 +5,9 @@ using LCAnomalyCore.Buildings;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Presentation;
+using LCAnomalyOrdeals.Render;
 using LCAnomalyOrdeals.Utilities;
+using LCAnomalyOrdeals.Vfx;
 using LCAnomalyStory;
 using LCAnomalyStory.Defs;
 using LCAnomalyStory.Examinations;
@@ -14,6 +16,8 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
+using Verse.Sound;
+using LCDamageDefOf = LCAnomalyCore.Defs.DamageDefOf;
 
 namespace LCAnomalyOrdeals.Examinations
 {
@@ -98,7 +102,7 @@ namespace LCAnomalyOrdeals.Examinations
         {
             DuskVariant variant = ReadVariant(context); Map map = FindMap(context); DuskOrdealSettings settings = Settings;
             int reward = settings.rewardBase + (map == null ? 0 : settings.rewardPerColonist * map.mapPawns.FreeColonistsSpawnedCount);
-            Cleanup(context); SpawnReward(map, reward); GameComponent_DuskPresentation.ShowEnd(variant.ToString(), true); base.OnPassed(context);
+            Cleanup(context); SpawnReward(map, reward); OrdealTargetUtility.GrantOrdealSuppressionLoopRewards(map, 3); GameComponent_DuskPresentation.ShowEnd(variant.ToString(), true); base.OnPassed(context);
         }
 
         public override void OnFailed(ExaminationContext context)
@@ -136,16 +140,26 @@ namespace LCAnomalyOrdeals.Examinations
             ExaminationContext context;
             if (!TryActiveContext(out context, DuskVariant.Crimson)) return;
             DuskOrdealSettings settings = ActiveSettings(); Map map = pawn.Map; List<Pawn> spawned = new List<Pawn>();
+            Color crimsonFx = new Color(0.94f, 0.16f, 0.22f, 0.90f);
+            OrdealVfxUtility.SpawnShockwave(map, pawn.DrawPos, 0.6f, 5.0f, crimsonFx, 38);
+            OrdealVfxUtility.SpawnPortal(map, pawn.DrawPos, 3.4f, crimsonFx, 42);
             if (pawn.kindDef == OrdealDefOf.LCOrdeal_CrimsonDusk)
             {
-                for (int i = 0; i < settings.crimsonNoonSplitCount; i++) spawned.Add(SpawnNear(map, pawn.Position, OrdealDefOf.LCOrdeal_CrimsonNoon, 5));
+                for (int i = 0; i < settings.crimsonNoonSplitCount; i++)
+                {
+                    Pawn child = SpawnNear(map, pawn.Position, OrdealDefOf.LCOrdeal_CrimsonNoon, 5);
+                    if (child != null) OrdealVfxUtility.SpawnPortal(map, child.DrawPos, 2.4f, crimsonFx, 36);
+                    spawned.Add(child);
+                }
             }
             else if (pawn.kindDef == OrdealDefOf.LCOrdeal_CrimsonNoon)
             {
                 for (int i = 0; i < settings.crimsonDawnSplitCount; i++)
                 {
                     IntVec3 cell; if (!RCellFinder.TryFindRandomPawnEntryCell(out cell, map, CellFinder.EdgeRoadChance_Hostile, true)) continue;
-                    spawned.Add(SpawnAt(map, cell, OrdealDefOf.LCOrdeal_CrimsonDawn));
+                    Pawn child = SpawnAt(map, cell, OrdealDefOf.LCOrdeal_CrimsonDawn);
+                    if (child != null) OrdealVfxUtility.SpawnPortal(map, child.DrawPos, 2.0f, crimsonFx, 36);
+                    spawned.Add(child);
                 }
             }
             spawned.RemoveAll(item => item == null); AppendTargetIds(context, spawned.Select(item => item.thingIDNumber)); AssignAssaultLord(map, spawned);
@@ -167,7 +181,15 @@ namespace LCAnomalyOrdeals.Examinations
                 IntVec3 cell; if (!RCellFinder.TryFindRandomPawnEntryCell(out cell, map, CellFinder.EdgeRoadChance_Hostile, true)) continue;
                 Pawn pawn = SpawnAt(map, cell, kind); if (pawn == null) continue;
                 if (variant == DuskVariant.Green) pawn.health.AddHediff(OrdealDefOf.LCOrdeal_VioletNoonImmobile);
-                if (variant == DuskVariant.Amber) DamageNearby(map, pawn, settings.amberEmergenceRadius, settings.amberEmergenceDamage, DamageDefOf.Blunt);
+                if (variant == DuskVariant.Amber)
+                {
+                    OrdealDefOf.LCOrdeal_Sound_BugDuskDig?.PlayOneShot(new TargetInfo(pawn.Position, map));
+                    CompOrdealAnimator.TriggerAttackOn(pawn, 45);
+                    Color amberFx = new Color(0.92f, 0.56f, 0.16f, 0.90f);
+                    OrdealVfxUtility.SpawnCrater(map, pawn.DrawPos, 4.2f, amberFx, 160);
+                    OrdealVfxUtility.SpawnShockwave(map, pawn.DrawPos, 0.8f, settings.amberEmergenceRadius, amberFx, 36);
+                    DamageNearby(map, pawn, settings.amberEmergenceRadius, settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage ?? DamageDefOf.Blunt);
+                }
                 result.Add(pawn);
             }
             return result;
@@ -191,12 +213,26 @@ namespace LCAnomalyOrdeals.Examinations
                     Pawn child = SpawnNear(map, parent.Position, OrdealDefOf.LCOrdeal_AmberDawn, 4); if (child == null) continue;
                     context.SetLong(AmberOwnerKey(child.thingIDNumber), parent.thingIDNumber); children.Add(child); AppendTargetIds(context, new[] { child.thingIDNumber });
                 }
+                if (spawnCount > 0)
+                {
+                    OrdealDefOf.LCOrdeal_Sound_BugDuskSpawn?.PlayOneShot(new TargetInfo(parent.Position, map));
+                    CompOrdealAnimator.TriggerSpecialOn(parent, 40, new Color(0.95f, 0.65f, 0.25f), 0.85f);
+                    OrdealVfxUtility.SpawnCrater(map, parent.DrawPos, 3.6f, new Color(0.88f, 0.52f, 0.16f, 0.85f), 140);
+                }
                 if (victims.Count > 0)
                 {
+                    IntVec3 oldPos = parent.Position;
                     IntVec3 destination = CellFinder.RandomClosewalkCellNear(victims.RandomElement().Position, map, settings.amberBurrowRadius, cell => cell.Standable(map) && !cell.Fogged(map));
+                    Color amberFx = new Color(0.92f, 0.56f, 0.16f, 0.90f);
+                    OrdealVfxUtility.SpawnCrater(map, oldPos.ToVector3Shifted(), 3.6f, amberFx, 120);
                     MoveByBurrow(parent, destination, map);
+                    OrdealDefOf.LCOrdeal_Sound_BugDuskDig?.PlayOneShot(new TargetInfo(parent.Position, map));
+                    CompOrdealAnimator.TriggerAttackOn(parent, 45);
+                    OrdealVfxUtility.SpawnCrater(map, parent.DrawPos, 4.4f, amberFx, 160);
+                    OrdealVfxUtility.SpawnShockwave(map, parent.DrawPos, 0.8f, settings.amberEmergenceRadius, amberFx, 38);
+                    FleckMaker.ThrowDustPuffThick(parent.Position.ToVector3Shifted(), map, 2.2f, new Color(0.75f, 0.48f, 0.18f));
                     foreach (Pawn child in children.Where(item => item.Spawned).ToList()) MoveByBurrow(child, CellFinder.RandomClosewalkCellNear(destination, map, 4), map);
-                    DamageNearby(map, parent, settings.amberEmergenceRadius, settings.amberEmergenceDamage, DamageDefOf.Blunt);
+                    DamageNearby(map, parent, settings.amberEmergenceRadius, settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage ?? DamageDefOf.Blunt);
                 }
                 AssignAssaultLord(map, children.Where(item => item.GetLord() == null));
             }
@@ -211,8 +247,16 @@ namespace LCAnomalyOrdeals.Examinations
                 foreach (Pawn dusk in targets.Where(item => item.kindDef == OrdealDefOf.LCOrdeal_CrimsonDusk).ToList())
                 {
                     if (victims.Count == 0) break;
+                    IntVec3 oldPos = dusk.Position;
                     IntVec3 destination = CellFinder.RandomClosewalkCellNear(victims.RandomElement().Position, map, settings.crimsonRollArrivalRadius, cell => cell.Standable(map) && !cell.Fogged(map));
-                    MoveByBurrow(dusk, destination, map); DamageNearby(map, dusk, settings.crimsonRollDamageRadius, settings.crimsonRollDamage, DamageDefOf.Blunt);
+                    MoveByBurrow(dusk, destination, map);
+                    OrdealDefOf.LCOrdeal_Sound_CircusDuskMove?.PlayOneShot(new TargetInfo(dusk.Position, map));
+                    CompOrdealAnimator.TriggerAttackOn(dusk, 45);
+                    Color crimsonFx = new Color(0.95f, 0.18f, 0.24f, 0.90f);
+                    OrdealVfxUtility.SpawnBeamBetween(map, oldPos.ToVector3Shifted(), dusk.DrawPos, 1.4f, new Color(0.95f, 0.20f, 0.24f, 0.55f), 22);
+                    OrdealVfxUtility.SpawnShockwave(map, dusk.DrawPos, 0.7f, settings.crimsonRollDamageRadius, crimsonFx, 34);
+                    OrdealVfxUtility.SpawnSlash(map, dusk.DrawPos, settings.crimsonRollDamageRadius * 1.2f, crimsonFx, 24);
+                    DamageNearby(map, dusk, settings.crimsonRollDamageRadius, settings.crimsonRollDamage, LCDamageDefOf.LC_RedDamage ?? DamageDefOf.Blunt);
                 }
                 context.SetLong(NextSpecialTickKey, context.CurrentTick + settings.crimsonRollIntervalTicks);
             }
@@ -239,6 +283,18 @@ namespace LCAnomalyOrdeals.Examinations
                     PawnKindDef kind = Rand.Chance(settings.greenNoonChance) ? OrdealDefOf.LCOrdeal_GreenNoon : OrdealDefOf.LCOrdeal_GreenDawn;
                     Pawn product = SpawnNear(map, factory.Position, kind, settings.greenSpawnRadius); if (product != null) { spawned.Add(product); products.Add(product); }
                 }
+                if (spawned.Count > 0)
+                {
+                    OrdealDefOf.LCOrdeal_Sound_MachineDuskProduce?.PlayOneShot(new TargetInfo(factory.Position, map));
+                    Color emeraldFx = new Color(0.24f, 0.95f, 0.44f, 0.90f);
+                    CompOrdealAnimator.TriggerSpecialOn(factory, 60, emeraldFx, 0.9f);
+                    OrdealVfxUtility.SpawnPawnAura(map, factory, OrdealVfxUtility.TexHollowRing, 3.2f, emeraldFx, 54, rotateSpeed: 90f);
+                    OrdealVfxUtility.SpawnShockwave(map, factory.DrawPos, 0.8f, 4.6f, emeraldFx, 38);
+                    foreach (Pawn product in spawned)
+                    {
+                        OrdealVfxUtility.SpawnStrikeSprite(map, product.DrawPos, OrdealVfxUtility.TexSparkMidnight, 0.8f, 2.2f, emeraldFx, 26, riseHeight: 0.3f, rotateSpeed: 140f, additive: true);
+                    }
+                }
                 AppendTargetIds(context, spawned.Select(item => item.thingIDNumber)); AssignAssaultLord(map, spawned);
                 context.SetLong(nextKey, context.CurrentTick + settings.greenFactoryProductionIntervalTicks.RandomInRange);
             }
@@ -255,12 +311,25 @@ namespace LCAnomalyOrdeals.Examinations
                 if (context.CurrentTick >= next)
                 {
                     int duration = settings.greenNoonShutdownDurationTicks.RandomInRange; context.SetLong(untilKey, context.CurrentTick + duration); context.SetLong(nextKey, context.CurrentTick + duration + settings.greenNoonShutdownIntervalTicks.RandomInRange); pawn.stances.stunner.StunFor(duration, pawn, false);
+                    CompOrdealAnimator.TriggerSpecialOn(pawn, duration, new Color(0.76f, 0.86f, 0.78f), 0.7f);
+                    OrdealVfxUtility.SpawnPawnAura(map, pawn, OrdealVfxUtility.TexSoftGlow, 2.0f, new Color(0.70f, 0.76f, 0.72f, 0.55f), duration, rotateSpeed: 40f);
                 }
             }
             if (context.CurrentTick < context.GetLong(NextSecondaryTickKey, int.MaxValue)) return;
             foreach (Pawn machine in list.Where(item => !item.stances.stunner.Stunned))
+            {
+                bool hitAny = false;
                 foreach (Pawn victim in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(machine.Position, settings.greenNoonSawRadius)))
-                    victim.TakeDamage(new DamageInfo(DamageDefOf.Cut, settings.greenNoonSawDamage, 0f, instigator: machine));
+                {
+                    victim.TakeDamage(new DamageInfo(LCDamageDefOf.LC_RedDamage ?? DamageDefOf.Cut, settings.greenNoonSawDamage, 0f, instigator: machine));
+                    hitAny = true;
+                }
+                if (hitAny)
+                {
+                    CompOrdealAnimator.TriggerAttackOn(machine, 32);
+                    OrdealVfxUtility.SpawnSlash(map, machine.DrawPos, settings.greenNoonSawRadius * 1.45f, new Color(0.32f, 0.95f, 0.45f, 0.92f), 22);
+                }
+            }
             context.SetLong(NextSecondaryTickKey, context.CurrentTick + settings.greenNoonSawIntervalTicks);
         }
 

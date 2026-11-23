@@ -20,23 +20,26 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
-          <drawSize>1.15</drawSize>
-          <color>(126,82,32)</color>
+          <texPath>Things/Pawn/Ordeals/AmberDawn</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.35</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
-          <drawSize>1.3</drawSize>
-          <color>(126,82,32)</color>
-        </bodyGraphicData>
-      </li>
-      <li>
-        <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <texPath>Things/Pawn/Ordeals/AmberDawn</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.45</drawSize>
-          <color>(126,82,32)</color>
+          <color>(255,255,255)</color>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Ordeals/AmberDawn</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.55</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -52,18 +55,18 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Scyther</texPath>
+          <texPath>Things/Pawn/Ordeals/CrimsonDawn</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.15</drawSize>
-          <color>(166,38,48)</color>
+          <drawSize>1.5</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Scyther</texPath>
+          <texPath>Things/Pawn/Ordeals/CrimsonDawn</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.15</drawSize>
-          <color>(166,38,48)</color>
+          <drawSize>1.5</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -81,18 +84,18 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Scyther</texPath>
+          <texPath>Things/Pawn/Ordeals/GreenDawn</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.35</drawSize>
-          <color>(53,120,74)</color>
+          <drawSize>1.65</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Scyther</texPath>
+          <texPath>Things/Pawn/Ordeals/GreenDawn</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.35</drawSize>
-          <color>(53,120,74)</color>
+          <drawSize>1.65</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -111,23 +114,26 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
-          <drawSize>1.5</drawSize>
-          <color>(100,48,135)</color>
+          <texPath>Things/Pawn/Ordeals/VioletDawn</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.65</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
-          <drawSize>1.6</drawSize>
-          <color>(100,48,135)</color>
+          <texPath>Things/Pawn/Ordeals/VioletDawn</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.75</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
-          <drawSize>1.7</drawSize>
-          <color>(100,48,135)</color>
+          <texPath>Things/Pawn/Ordeals/VioletDawn</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.85</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -143,18 +149,18 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/CentipedeGunner</texPath>
+          <texPath>Things/Pawn/Ordeals/CrimsonNoon</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2.5</drawSize>
-          <color>(151,35,45)</color>
+          <drawSize>2.45</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/CentipedeGunner</texPath>
+          <texPath>Things/Pawn/Ordeals/CrimsonNoon</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2.5</drawSize>
-          <color>(151,35,45)</color>
+          <drawSize>2.45</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -172,18 +178,18 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/CentipedeGunner</texPath>
+          <texPath>Things/Pawn/Ordeals/GreenNoon</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2.1</drawSize>
-          <color>(42,111,63)</color>
+          <drawSize>2.25</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/CentipedeGunner</texPath>
+          <texPath>Things/Pawn/Ordeals/GreenNoon</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2.1</drawSize>
-          <color>(42,111,63)</color>
+          <drawSize>2.25</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -201,18 +207,18 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Centipede</texPath>
+          <texPath>Things/Pawn/Ordeals/VioletNoon</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2.3</drawSize>
-          <color>(104,48,143)</color>
+          <drawSize>2.55</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Centipede</texPath>
+          <texPath>Things/Pawn/Ordeals/VioletNoon</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2.3</drawSize>
-          <color>(104,48,143)</color>
+          <drawSize>2.55</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -230,18 +236,18 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Scyther</texPath>
+          <texPath>Things/Pawn/Ordeals/IndigoNoon</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.45</drawSize>
-          <color>(37,73,103)</color>
+          <drawSize>1.6</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Scyther</texPath>
+          <texPath>Things/Pawn/Ordeals/IndigoNoon</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.45</drawSize>
-          <color>(37,73,103)</color>
+          <drawSize>1.6</drawSize>
+          <color>(255,255,255)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>
@@ -258,9 +264,9 @@
     <defaultFactionDef>Mechanoid</defaultFactionDef>
     <forceDeathOnDowned>true</forceDeathOnDowned>
     <lifeStages>
-      <li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>2.2</drawSize><color>(133,80,26)</color></bodyGraphicData></li>
-      <li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>2.35</drawSize><color>(133,80,26)</color></bodyGraphicData></li>
-      <li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>2.5</drawSize><color>(133,80,26)</color></bodyGraphicData></li>
+      <li><bodyGraphicData><texPath>Things/Pawn/Ordeals/AmberDusk</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.4</drawSize><color>(255,255,255)</color></bodyGraphicData></li>
+      <li><bodyGraphicData><texPath>Things/Pawn/Ordeals/AmberDusk</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.55</drawSize><color>(255,255,255)</color></bodyGraphicData></li>
+      <li><bodyGraphicData><texPath>Things/Pawn/Ordeals/AmberDusk</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.7</drawSize><color>(255,255,255)</color></bodyGraphicData></li>
     </lifeStages>
   </PawnKindDef>
 
@@ -272,8 +278,8 @@
     <showInDebugSpawner>true</showInDebugSpawner>
     <forceDeathOnDowned>true</forceDeathOnDowned>
     <lifeStages>
-      <li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/CentipedeBurner</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3</drawSize><color>(158,31,41)</color></bodyGraphicData></li>
-      <li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/CentipedeBurner</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3</drawSize><color>(158,31,41)</color></bodyGraphicData></li>
+      <li><bodyGraphicData><texPath>Things/Pawn/Ordeals/CrimsonDusk</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.95</drawSize><color>(255,255,255)</color></bodyGraphicData></li>
+      <li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/CrimsonDusk</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.95</drawSize><color>(255,255,255)</color></bodyGraphicData></li>
     </lifeStages>
     <weaponMoney>0~0</weaponMoney>
     <weaponTags />
@@ -287,8 +293,8 @@
     <showInDebugSpawner>true</showInDebugSpawner>
     <forceDeathOnDowned>true</forceDeathOnDowned>
     <lifeStages>
-      <li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.8</drawSize><color>(31,91,48)</color></bodyGraphicData></li>
-      <li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.8</drawSize><color>(31,91,48)</color></bodyGraphicData></li>
+      <li><bodyGraphicData><texPath>Things/Pawn/Ordeals/GreenDusk</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.85</drawSize><color>(255,255,255)</color></bodyGraphicData></li>
+      <li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/GreenDusk</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.85</drawSize><color>(255,255,255)</color></bodyGraphicData></li>
     </lifeStages>
     <weaponMoney>0~0</weaponMoney>
     <weaponTags />
@@ -296,26 +302,26 @@
 
   <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_AmberMidnight</defName><label>The Eternal Meal</label><race>LCOrdeal_Race_AmberMidnight</race><combatPower>850</combatPower><showInDebugSpawner>true</showInDebugSpawner><defaultFactionDef>Mechanoid</defaultFactionDef><forceDeathOnDowned>true</forceDeathOnDowned>
-    <lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>4.2</drawSize><color>(105,60,18)</color></bodyGraphicData></li><li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>4.4</drawSize><color>(105,60,18)</color></bodyGraphicData></li><li><bodyGraphicData><texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath><drawSize>4.6</drawSize><color>(105,60,18)</color></bodyGraphicData></li></lifeStages>
+    <lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/AmberMidnight</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>4.2</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/AmberMidnight</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>4.4</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/AmberMidnight</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>4.6</drawSize><color>(255,255,255)</color></bodyGraphicData></li></lifeStages>
   </PawnKindDef>
 
   <PawnKindDef ParentName="LCOrdeal_KindBase">
     <defName>LCOrdeal_GreenMidnight</defName><label>Helix of the End</label><race>LCOrdeal_Race_GreenMidnight</race><combatPower>1200</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned>
-    <lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>5</drawSize><color>(20,105,48)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>5</drawSize><color>(20,105,48)</color></bodyGraphicData></li></lifeStages><weaponMoney>0~0</weaponMoney><weaponTags />
+    <lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/GreenMidnight</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>4.8</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/GreenMidnight</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>4.8</drawSize><color>(255,255,255)</color></bodyGraphicData></li></lifeStages><weaponMoney>0~0</weaponMoney><weaponTags />
   </PawnKindDef>
 
   <PawnKindDef Name="LCOrdeal_VioletMidnightBase" ParentName="LCOrdeal_KindBase" Abstract="True">
     <combatPower>650</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned><weaponMoney>0~0</weaponMoney><weaponTags />
   </PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightRed</defName><label>Shrine of Red</label><race>LCOrdeal_Race_VioletMidnightRed</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(150,35,38)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(150,35,38)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightWhite</defName><label>Shrine of White</label><race>LCOrdeal_Race_VioletMidnightWhite</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(210,210,205)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(210,210,205)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightBlack</defName><label>Shrine of Black</label><race>LCOrdeal_Race_VioletMidnightBlack</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(80,35,105)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(80,35,105)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightPale</defName><label>Shrine of Pale</label><race>LCOrdeal_Race_VioletMidnightPale</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(90,165,205)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.8</drawSize><color>(90,165,205)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightRed</defName><label>Shrine of Red</label><race>LCOrdeal_Race_VioletMidnightRed</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/VioletMidnightRed</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.6</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/VioletMidnightRed</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.6</drawSize><color>(255,255,255)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightWhite</defName><label>Shrine of White</label><race>LCOrdeal_Race_VioletMidnightWhite</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/VioletMidnightWhite</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.6</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/VioletMidnightWhite</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.6</drawSize><color>(255,255,255)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightBlack</defName><label>Shrine of Black</label><race>LCOrdeal_Race_VioletMidnightBlack</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/VioletMidnightBlack</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.6</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/VioletMidnightBlack</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.6</drawSize><color>(255,255,255)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_VioletMidnightBase"><defName>LCOrdeal_VioletMidnightPale</defName><label>Shrine of Pale</label><race>LCOrdeal_Race_VioletMidnightPale</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/VioletMidnightPale</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.6</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/VioletMidnightPale</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3.6</drawSize><color>(255,255,255)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
 
   <PawnKindDef Name="LCOrdeal_WhiteFixerBase" ParentName="LCOrdeal_KindBase" Abstract="True"><combatPower>650</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned><weaponMoney>0~0</weaponMoney><weaponTags /></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerRed</defName><label>Red Fixer</label><race>LCOrdeal_Race_WhiteFixerRed</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(160,35,40)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(160,35,40)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerWhite</defName><label>White Fixer</label><race>LCOrdeal_Race_WhiteFixerWhite</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(220,220,210)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Centipede</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.2</drawSize><color>(220,220,210)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerBlack</defName><label>Black Fixer</label><race>LCOrdeal_Race_WhiteFixerBlack</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/CentipedeBurner</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.3</drawSize><color>(45,42,50)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/CentipedeBurner</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.3</drawSize><color>(45,42,50)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerPale</defName><label>Pale Fixer</label><race>LCOrdeal_Race_WhiteFixerPale</race><combatPower>760</combatPower><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.25</drawSize><color>(80,145,190)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.25</drawSize><color>(80,145,190)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
-  <PawnKindDef ParentName="LCOrdeal_KindBase"><defName>LCOrdeal_WhiteClaw</defName><label>The Claw</label><race>LCOrdeal_Race_WhiteClaw</race><combatPower>1400</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3</drawSize><color>(35,35,38)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Mechanoid/Scyther</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>3</drawSize><color>(35,35,38)</color></bodyGraphicData></li></lifeStages><weaponMoney>0~0</weaponMoney><weaponTags /></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerRed</defName><label>Red Fixer</label><race>LCOrdeal_Race_WhiteFixerRed</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/WhiteFixerRed</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.1</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/WhiteFixerRed</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.1</drawSize><color>(255,255,255)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerWhite</defName><label>White Fixer</label><race>LCOrdeal_Race_WhiteFixerWhite</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/WhiteFixerWhite</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.1</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/WhiteFixerWhite</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.1</drawSize><color>(255,255,255)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerBlack</defName><label>Black Fixer</label><race>LCOrdeal_Race_WhiteFixerBlack</race><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/WhiteFixerBlack</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.25</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/WhiteFixerBlack</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.25</drawSize><color>(255,255,255)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_WhiteFixerBase"><defName>LCOrdeal_WhiteFixerPale</defName><label>Pale Fixer</label><race>LCOrdeal_Race_WhiteFixerPale</race><combatPower>760</combatPower><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/WhiteFixerPale</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.1</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/WhiteFixerPale</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.1</drawSize><color>(255,255,255)</color></bodyGraphicData></li></lifeStages></PawnKindDef>
+  <PawnKindDef ParentName="LCOrdeal_KindBase"><defName>LCOrdeal_WhiteClaw</defName><label>The Claw</label><race>LCOrdeal_Race_WhiteClaw</race><combatPower>1400</combatPower><showInDebugSpawner>true</showInDebugSpawner><forceDeathOnDowned>true</forceDeathOnDowned><lifeStages><li><bodyGraphicData><texPath>Things/Pawn/Ordeals/WhiteClaw</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.85</drawSize><color>(255,255,255)</color></bodyGraphicData></li><li MayRequire="Ludeon.RimWorld.Biotech"><bodyGraphicData><texPath>Things/Pawn/Ordeals/WhiteClaw</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>2.85</drawSize><color>(255,255,255)</color></bodyGraphicData></li></lifeStages><weaponMoney>0~0</weaponMoney><weaponTags /></PawnKindDef>
 </Defs>

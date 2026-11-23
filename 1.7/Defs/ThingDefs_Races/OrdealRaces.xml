@@ -12,12 +12,15 @@
     </statBases>
     <race>
       <trainability>None</trainability>
-      <renderTree>Misc</renderTree><fleshType>LCOrdeal_ManifestationFlesh</fleshType><needsRest>false</needsRest><hasGenders>false</hasGenders><foodType>None</foodType><lifeExpectancy>2500</lifeExpectancy><bloodDef>Filth_MachineBits</bloodDef><intelligence>ToolUser</intelligence><thinkTreeMain>Mechanoid</thinkTreeMain><canFlyInVacuum>true</canFlyInVacuum>
+      <renderTree>LCOrdeal_Animated</renderTree><fleshType>LCOrdeal_ManifestationFlesh</fleshType><needsRest>false</needsRest><hasGenders>false</hasGenders><foodType>None</foodType><lifeExpectancy>2500</lifeExpectancy><bloodDef>Filth_MachineBits</bloodDef><intelligence>ToolUser</intelligence><thinkTreeMain>Mechanoid</thinkTreeMain><canFlyInVacuum>true</canFlyInVacuum>
       <lifeStageAges>
         <li><def>MechanoidFullyFormed</def><minAge>0</minAge><soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded><soundDeath>Pawn_Mech_Scyther_Death</soundDeath><soundCall>Pawn_Mech_Scyther_Call</soundCall></li>
         <li MayRequire="Ludeon.RimWorld.Biotech"><def>MechanoidFullyFormed</def><minAge>100</minAge><soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded><soundDeath>Pawn_Mech_Scyther_Death</soundDeath><soundCall>Pawn_Mech_Scyther_Call</soundCall></li>
       </lifeStageAges>
     </race>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Render.CompProperties_OrdealAnimator" />
+    </comps>
   </ThingDef>
 
   <ThingDef Name="LCOrdeal_RaceSmall" ParentName="LCOrdeal_RaceBase" Abstract="True">
@@ -42,26 +45,271 @@
   </ThingDef>
 
   <!-- Every ordeal PawnKind owns a concrete race Def, even where anatomy/stats share an abstract family. -->
-  <ThingDef ParentName="LCOrdeal_RaceSmall"><defName>LCOrdeal_Race_AmberDawn</defName><label>Perfect Food manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceWalker"><defName>LCOrdeal_Race_CrimsonDawn</defName><label>Cheers manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceWalker"><defName>LCOrdeal_Race_GreenDawn</defName><label>Doubt manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceSmall"><defName>LCOrdeal_Race_VioletDawn</defName><label>Understanding Fruit manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_CrimsonNoon</defName><label>Harmony manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_GreenNoon</defName><label>Understanding Process manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_VioletNoon</defName><label>Love monument manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceWalker"><defName>LCOrdeal_Race_IndigoNoon</defName><label>Sweeper manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceLarge"><defName>LCOrdeal_Race_AmberDusk</defName><label>Food Chain manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_CrimsonDusk</defName><label>Climax manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_GreenDusk</defName><label>Factory manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceLarge"><defName>LCOrdeal_Race_AmberMidnight</defName><label>Eternal Meal manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_GreenMidnight</defName><label>Helix manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_VioletMidnightRed</defName><label>red shrine manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_VioletMidnightWhite</defName><label>white shrine manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_VioletMidnightBlack</defName><label>black shrine manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_VioletMidnightPale</defName><label>pale shrine manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_WhiteFixerRed</defName><label>red Fixer manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_WhiteFixerWhite</defName><label>white Fixer manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_WhiteFixerBlack</defName><label>black Fixer manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_WhiteFixerPale</defName><label>pale Fixer manifestation</label></ThingDef>
-  <ThingDef ParentName="LCOrdeal_RaceHeavy"><defName>LCOrdeal_Race_WhiteClaw</defName><label>Claw manifestation</label></ThingDef>
+  <!-- Dawn & Noon races carry authentic Lobotomy Corporation four-color resistances. -->
+  <ThingDef ParentName="LCOrdeal_RaceSmall">
+    <defName>LCOrdeal_Race_AmberDawn</defName>
+    <label>Perfect Food manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>2.0</redResistance>
+        <whiteResistance>1.0</whiteResistance>
+        <blackResistance>1.0</blackResistance>
+        <paleResistance>2.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceWalker">
+    <defName>LCOrdeal_Race_CrimsonDawn</defName>
+    <label>Cheers manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.8</redResistance>
+        <whiteResistance>1.3</whiteResistance>
+        <blackResistance>1.3</blackResistance>
+        <paleResistance>2.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceWalker">
+    <defName>LCOrdeal_Race_GreenDawn</defName>
+    <label>Doubt manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.8</redResistance>
+        <whiteResistance>1.3</whiteResistance>
+        <blackResistance>2.0</blackResistance>
+        <paleResistance>1.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceSmall">
+    <defName>LCOrdeal_Race_VioletDawn</defName>
+    <label>Understanding Fruit manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>1.0</redResistance>
+        <whiteResistance>1.5</whiteResistance>
+        <blackResistance>1.0</blackResistance>
+        <paleResistance>1.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_CrimsonNoon</defName>
+    <label>Harmony manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.5</redResistance>
+        <whiteResistance>1.2</whiteResistance>
+        <blackResistance>1.2</blackResistance>
+        <paleResistance>1.5</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_GreenNoon</defName>
+    <label>Understanding Process manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.8</redResistance>
+        <whiteResistance>1.3</whiteResistance>
+        <blackResistance>2.0</blackResistance>
+        <paleResistance>1.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_VioletNoon</defName>
+    <label>Love monument manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.8</redResistance>
+        <whiteResistance>2.0</whiteResistance>
+        <blackResistance>0.8</blackResistance>
+        <paleResistance>1.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceWalker">
+    <defName>LCOrdeal_Race_IndigoNoon</defName>
+    <label>Sweeper manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>1.0</redResistance>
+        <whiteResistance>1.2</whiteResistance>
+        <blackResistance>0.5</blackResistance>
+        <paleResistance>0.8</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <!-- Dusk & Midnight races carry authentic Lobotomy Corporation four-color resistances. -->
+  <ThingDef ParentName="LCOrdeal_RaceLarge">
+    <defName>LCOrdeal_Race_AmberDusk</defName>
+    <label>Food Chain manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>1.2</redResistance>
+        <whiteResistance>0.8</whiteResistance>
+        <blackResistance>0.5</blackResistance>
+        <paleResistance>2.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_CrimsonDusk</defName>
+    <label>Climax manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.6</redResistance>
+        <whiteResistance>0.8</whiteResistance>
+        <blackResistance>0.8</blackResistance>
+        <paleResistance>1.5</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_GreenDusk</defName>
+    <label>Factory manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.8</redResistance>
+        <whiteResistance>1.0</whiteResistance>
+        <blackResistance>1.2</blackResistance>
+        <paleResistance>1.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceLarge">
+    <defName>LCOrdeal_Race_AmberMidnight</defName>
+    <label>Eternal Meal manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>1.0</redResistance>
+        <whiteResistance>0.6</whiteResistance>
+        <blackResistance>0.4</blackResistance>
+        <paleResistance>0.8</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_GreenMidnight</defName>
+    <label>Helix manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.5</redResistance>
+        <whiteResistance>0.8</whiteResistance>
+        <blackResistance>1.2</blackResistance>
+        <paleResistance>1.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_VioletMidnightRed</defName>
+    <label>red shrine manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.0</redResistance>
+        <whiteResistance>0.7</whiteResistance>
+        <blackResistance>1.2</blackResistance>
+        <paleResistance>1.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_VioletMidnightWhite</defName>
+    <label>white shrine manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>1.0</redResistance>
+        <whiteResistance>0.0</whiteResistance>
+        <blackResistance>1.0</blackResistance>
+        <paleResistance>1.2</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_VioletMidnightBlack</defName>
+    <label>black shrine manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>1.2</redResistance>
+        <whiteResistance>0.7</whiteResistance>
+        <blackResistance>0.0</blackResistance>
+        <paleResistance>1.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_VioletMidnightPale</defName>
+    <label>pale shrine manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.7</redResistance>
+        <whiteResistance>1.0</whiteResistance>
+        <blackResistance>0.7</blackResistance>
+        <paleResistance>0.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <!-- White Ordeal Fixers & The Claw carry authentic Lobotomy Corporation four-color resistances. -->
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_WhiteFixerRed</defName>
+    <label>red Fixer manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.0</redResistance>
+        <whiteResistance>0.5</whiteResistance>
+        <blackResistance>1.0</blackResistance>
+        <paleResistance>0.5</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_WhiteFixerWhite</defName>
+    <label>white Fixer manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.5</redResistance>
+        <whiteResistance>0.0</whiteResistance>
+        <blackResistance>0.5</blackResistance>
+        <paleResistance>1.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_WhiteFixerBlack</defName>
+    <label>black Fixer manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>1.0</redResistance>
+        <whiteResistance>0.5</whiteResistance>
+        <blackResistance>0.0</blackResistance>
+        <paleResistance>0.5</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_WhiteFixerPale</defName>
+    <label>pale Fixer manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.5</redResistance>
+        <whiteResistance>1.0</whiteResistance>
+        <blackResistance>0.5</blackResistance>
+        <paleResistance>0.0</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="LCOrdeal_RaceHeavy">
+    <defName>LCOrdeal_Race_WhiteClaw</defName>
+    <label>Claw manifestation</label>
+    <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <redResistance>0.4</redResistance>
+        <whiteResistance>0.4</whiteResistance>
+        <blackResistance>0.4</blackResistance>
+        <paleResistance>0.4</paleResistance>
+      </li>
+    </modExtensions>
+  </ThingDef>
 </Defs>

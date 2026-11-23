@@ -4,10 +4,13 @@ using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Examinations;
 using LCAnomalyOrdeals.Presentation;
+using LCAnomalyOrdeals.Render;
 using LCAnomalyOrdeals.Utilities;
+using LCAnomalyOrdeals.Vfx;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace LCAnomalyOrdeals.Patches
 {
@@ -72,6 +75,10 @@ namespace LCAnomalyOrdeals.Patches
 
             if (totalDamageDealt > 0f && dinfo.Instigator is Pawn instigator)
             {
+                if (OrdealTargetUtility.IsOrdealPawn(instigator))
+                {
+                    CompOrdealAnimator.TriggerAttackOn(instigator, 26);
+                }
                 NoonOrdealWorker.NotifyIndigoDamage(instigator, totalDamageDealt);
             }
 
@@ -114,6 +121,11 @@ namespace LCAnomalyOrdeals.Patches
                 ,rotation = __instance.Rotation
             };
 
+            if (__instance.Spawned)
+            {
+                PlayOrdealDeathSound(__instance);
+            }
+
             if (__instance.kindDef == OrdealDefOf.LCOrdeal_CrimsonNoon && __instance.Spawned)
             {
                 NoonOrdealWorker.NotifyCrimsonNoonKilled(__instance);
@@ -128,17 +140,49 @@ namespace LCAnomalyOrdeals.Patches
             if (__instance.kindDef == OrdealDefOf.LCOrdeal_CrimsonDawn && __instance.Spawned)
             {
                 DawnOrdealSettings settings = DawnOrdealWorker.ActiveSettings();
+                Vector3 blastPos = __instance.DrawPos;
+                OrdealVfxUtility.SpawnShockwave(__instance.Map, blastPos, 0.5f, settings.crimsonExplosionRadius * 1.25f, new Color(0.95f, 0.16f, 0.20f, 0.92f), 32);
+                OrdealVfxUtility.SpawnSlash(__instance.Map, blastPos, settings.crimsonExplosionRadius * 1.1f, new Color(1f, 0.25f, 0.25f, 0.88f), 22);
+                DamageDef redBlast = LCAnomalyCore.Defs.DamageDefOf.LC_RedDamage ?? DamageDefOf.Bomb;
                 GenExplosion.DoExplosion(
                     __instance.Position,
                     __instance.Map,
                     settings.crimsonExplosionRadius,
-                    DamageDefOf.Bomb,
+                    redBlast,
                     __instance,
                     settings.crimsonExplosionDamage,
                     settings.crimsonExplosionArmorPenetration,
+                    explosionSound: OrdealDefOf.LCOrdeal_Sound_CircusDawnDead ?? DamageDefOf.Bomb.soundExplosion,
                     ignoredThings: new List<Thing> { __instance },
                     damageFalloff: true);
             }
+        }
+
+        private static void PlayOrdealDeathSound(Pawn pawn)
+        {
+            SoundDef sound = null;
+            if (pawn.kindDef == OrdealDefOf.LCOrdeal_AmberDawn) sound = OrdealDefOf.LCOrdeal_Sound_Bug1Dead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_VioletDawn) sound = OrdealDefOf.LCOrdeal_Sound_OutterGodDawnDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_CrimsonNoon) sound = OrdealDefOf.LCOrdeal_Sound_CircusNoonDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_GreenNoon) sound = OrdealDefOf.LCOrdeal_Sound_MachineNoonDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_VioletNoon) sound = OrdealDefOf.LCOrdeal_Sound_OutterGodNoonDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_IndigoNoon) sound = OrdealDefOf.LCOrdeal_Sound_ScavengerNoonDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_AmberDusk) sound = OrdealDefOf.LCOrdeal_Sound_BugDuskDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_CrimsonDusk) sound = OrdealDefOf.LCOrdeal_Sound_CircusDuskDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_GreenDusk) sound = OrdealDefOf.LCOrdeal_Sound_MachineDuskDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_AmberMidnight) sound = OrdealDefOf.LCOrdeal_Sound_BugMidnightDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_GreenMidnight) sound = OrdealDefOf.LCOrdeal_Sound_MachineMidnightDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_VioletMidnightRed
+                || pawn.kindDef == OrdealDefOf.LCOrdeal_VioletMidnightWhite
+                || pawn.kindDef == OrdealDefOf.LCOrdeal_VioletMidnightBlack
+                || pawn.kindDef == OrdealDefOf.LCOrdeal_VioletMidnightPale)
+                sound = OrdealDefOf.LCOrdeal_Sound_VioletMidnightDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_WhiteFixerRed) sound = OrdealDefOf.LCOrdeal_Sound_FixerRedDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_WhiteFixerWhite) sound = OrdealDefOf.LCOrdeal_Sound_FixerWhiteDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_WhiteFixerBlack) sound = OrdealDefOf.LCOrdeal_Sound_FixerBlackDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_WhiteFixerPale) sound = OrdealDefOf.LCOrdeal_Sound_FixerPaleDead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_WhiteClaw) sound = OrdealDefOf.LCOrdeal_Sound_ClawDead;
+            sound?.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
         }
 
         private static void Postfix(Pawn __instance, KillState __state)
@@ -153,13 +197,19 @@ namespace LCAnomalyOrdeals.Patches
                 return;
             }
 
+            OrdealDefOf.LCOrdeal_Sound_MachineBlood?.PlayOneShot(new TargetInfo(__state.position, __state.map));
+            CompOrdealAnimator.TriggerAttackOn(__state.greenKiller, 42);
+            Vector3 execPos = __state.position.ToVector3Shifted();
             DawnOrdealSettings settings = DawnOrdealWorker.ActiveSettings();
+            OrdealVfxUtility.SpawnShockwave(__state.map, execPos, 0.6f, settings.greenExecutionPsychicRadius, new Color(0.28f, 0.96f, 0.56f, 0.85f), 36);
+            OrdealVfxUtility.SpawnStrikeSprite(__state.map, execPos, OrdealVfxUtility.TexSparkMidnight, 1.0f, 2.8f, new Color(0.85f, 1f, 0.92f, 0.9f), 26, riseHeight: 0.2f, rotateSpeed: 120f, additive: true);
+            DamageDef whiteDamage = LCAnomalyCore.Defs.DamageDefOf.LC_WhiteDamage ?? DamageDefOf.Psychic;
             foreach (Pawn pawn in OrdealTargetUtility.AllTargets(__state.map))
             {
                 if (!pawn.Dead && pawn.Position.InHorDistOf(__state.position, settings.greenExecutionPsychicRadius))
                 {
                     pawn.TakeDamage(new DamageInfo(
-                        DamageDefOf.Psychic ?? LCAnomalyCore.Defs.DamageDefOf.LC_WhiteDamage,
+                        whiteDamage,
                         settings.greenExecutionPsychicDamage,
                         0f,
                         instigator: __state.greenKiller));

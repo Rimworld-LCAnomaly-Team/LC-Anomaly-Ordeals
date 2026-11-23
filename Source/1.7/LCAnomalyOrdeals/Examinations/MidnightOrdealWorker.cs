@@ -4,7 +4,9 @@ using System.Linq;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Presentation;
+using LCAnomalyOrdeals.Render;
 using LCAnomalyOrdeals.Utilities;
+using LCAnomalyOrdeals.Vfx;
 using LCAnomalyStory;
 using LCAnomalyStory.Defs;
 using LCAnomalyStory.Examinations;
@@ -12,6 +14,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI.Group;
+using Verse.Sound;
 using LCDamageDefOf = LCAnomalyCore.Defs.DamageDefOf;
 
 namespace LCAnomalyOrdeals.Examinations
@@ -77,7 +80,7 @@ namespace LCAnomalyOrdeals.Examinations
         public override void OnPassed(ExaminationContext context)
         {
             MidnightVariant variant = ReadVariant(context); Map map = FindMap(context); MidnightOrdealSettings settings = Settings;
-            SpawnReward(map, settings.rewardBase + (map == null ? 0 : settings.rewardPerColonist * map.mapPawns.FreeColonistsSpawnedCount)); Cleanup(context); GameComponent_MidnightPresentation.ShowEnd(variant.ToString(), true); base.OnPassed(context);
+            SpawnReward(map, settings.rewardBase + (map == null ? 0 : settings.rewardPerColonist * map.mapPawns.FreeColonistsSpawnedCount)); OrdealTargetUtility.GrantOrdealSuppressionLoopRewards(map, 4); Cleanup(context); GameComponent_MidnightPresentation.ShowEnd(variant.ToString(), true); base.OnPassed(context);
         }
         public override void OnFailed(ExaminationContext context) { MidnightVariant variant = ReadVariant(context); Cleanup(context); GameComponent_MidnightPresentation.ShowEnd(variant.ToString(), false); base.OnFailed(context); }
         public override void OnCancelled(ExaminationContext context) { Cleanup(context); base.OnCancelled(context); }
@@ -112,6 +115,10 @@ namespace LCAnomalyOrdeals.Examinations
             {
                 float healed = Math.Min(remaining, injury.Severity); injury.Severity -= healed; remaining -= healed; if (remaining <= 0f) break;
             }
+            if (shrine.Spawned && shrine.Map != null)
+            {
+                OrdealVfxUtility.SpawnShockwave(shrine.Map, shrine.DrawPos, 0.5f, 2.4f, VioletTint(color), 24);
+            }
             return true;
         }
 
@@ -127,7 +134,17 @@ namespace LCAnomalyOrdeals.Examinations
         private List<Pawn> SpawnAmber(ExaminationContext context, Map map)
         {
             List<Pawn> result = new List<Pawn>();
-            for (int i = 0; i < Settings.amberMidnightCount; i++) { Pawn pawn = SpawnAtEntry(map, OrdealDefOf.LCOrdeal_AmberMidnight); if (pawn == null) continue; result.Add(pawn); context.SetLong(AmberNextKey(pawn.thingIDNumber), context.CurrentTick + Settings.amberInitialSpawnDelayTicks); DamageNearby(map, pawn, Settings.amberEmergenceRadius, Settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage); }
+            for (int i = 0; i < Settings.amberMidnightCount; i++)
+            {
+                Pawn pawn = SpawnAtEntry(map, OrdealDefOf.LCOrdeal_AmberMidnight); if (pawn == null) continue; result.Add(pawn);
+                context.SetLong(AmberNextKey(pawn.thingIDNumber), context.CurrentTick + Settings.amberInitialSpawnDelayTicks);
+                OrdealDefOf.LCOrdeal_Sound_BugMidnightDig?.PlayOneShot(new TargetInfo(pawn.Position, map));
+                CompOrdealAnimator.TriggerAttackOn(pawn, 55);
+                Color amberFx = new Color(0.95f, 0.56f, 0.16f, 0.92f);
+                OrdealVfxUtility.SpawnCrater(map, pawn.DrawPos, 6.2f, amberFx, 200);
+                OrdealVfxUtility.SpawnShockwave(map, pawn.DrawPos, 1.0f, Settings.amberEmergenceRadius, amberFx, 44);
+                DamageNearby(map, pawn, Settings.amberEmergenceRadius, Settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage);
+            }
             return result;
         }
 
@@ -157,7 +174,25 @@ namespace LCAnomalyOrdeals.Examinations
                 int spawnedTotal = (int)context.GetLong(AmberSpawnedKey(parent.thingIDNumber), 0L); int count = Math.Min(settings.amberDuskSpawnPerCycle, settings.amberDuskLifetimeCapPerParent - spawnedTotal); List<Pawn> spawned = new List<Pawn>();
                 for (int i = 0; i < count; i++) { Pawn child = SpawnNear(map, parent.Position, OrdealDefOf.LCOrdeal_AmberDusk, settings.amberSpawnRadius); if (child == null) continue; spawned.Add(child); context.SetLong(AmberOwnerKey(child.thingIDNumber), parent.thingIDNumber); context.SetLong(AmberDuskNextKey(child.thingIDNumber), context.CurrentTick + settings.amberDuskActionIntervalTicks); }
                 spawnedTotal += spawned.Count; context.SetLong(AmberSpawnedKey(parent.thingIDNumber), spawnedTotal); AppendTargetIds(context, spawned.Select(item => item.thingIDNumber)); AssignAssaultLord(map, spawned);
-                if (victims.Count > 0) { IntVec3 destination = CellFinder.RandomClosewalkCellNear(victims.RandomElement().Position, map, settings.amberBurrowArrivalRadius, cell => cell.Standable(map) && !cell.Fogged(map)); MoveByBurrow(parent, destination, map); DamageNearby(map, parent, settings.amberEmergenceRadius, settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage); }
+                if (spawned.Count > 0)
+                {
+                    OrdealDefOf.LCOrdeal_Sound_BugMidnightSpawn?.PlayOneShot(new TargetInfo(parent.Position, map));
+                    CompOrdealAnimator.TriggerSpecialOn(parent, 45, new Color(0.95f, 0.65f, 0.24f), 0.9f);
+                }
+                if (victims.Count > 0)
+                {
+                    IntVec3 oldPos = parent.Position;
+                    IntVec3 destination = CellFinder.RandomClosewalkCellNear(victims.RandomElement().Position, map, settings.amberBurrowArrivalRadius, cell => cell.Standable(map) && !cell.Fogged(map));
+                    Color amberFx = new Color(0.95f, 0.56f, 0.16f, 0.92f);
+                    OrdealVfxUtility.SpawnCrater(map, oldPos.ToVector3Shifted(), 5.4f, amberFx, 160);
+                    MoveByBurrow(parent, destination, map);
+                    OrdealDefOf.LCOrdeal_Sound_BugMidnightDig?.PlayOneShot(new TargetInfo(parent.Position, map));
+                    CompOrdealAnimator.TriggerAttackOn(parent, 55);
+                    OrdealVfxUtility.SpawnCrater(map, parent.DrawPos, 6.4f, amberFx, 200);
+                    OrdealVfxUtility.SpawnShockwave(map, parent.DrawPos, 1.0f, settings.amberEmergenceRadius, amberFx, 44);
+                    FleckMaker.ThrowDustPuffThick(parent.Position.ToVector3Shifted(), map, 3.0f, new Color(0.75f, 0.48f, 0.18f));
+                    DamageNearby(map, parent, settings.amberEmergenceRadius, settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage);
+                }
                 context.SetLong(AmberNextKey(parent.thingIDNumber), context.CurrentTick + settings.amberSpawnIntervalTicks.RandomInRange);
             }
             foreach (Pawn dusk in targets.Where(item => item.kindDef == OrdealDefOf.LCOrdeal_AmberDusk).ToList())
@@ -172,24 +207,48 @@ namespace LCAnomalyOrdeals.Examinations
         private static void UpdateGreen(ExaminationContext context, Map map, List<Pawn> targets)
         {
             MidnightOrdealSettings settings = ActiveSettings(); List<Pawn> towers = targets.Where(item => item.kindDef == OrdealDefOf.LCOrdeal_GreenMidnight).ToList(); if (towers.Count == 0) return; foreach (Pawn tower in towers) MakeImmobile(tower);
-            if (context.CurrentTick < context.GetLong(GreenActiveAtKey, int.MaxValue) || context.CurrentTick < context.GetLong(GreenCooldownUntilKey, 0L)) { context.SetLong(GreenLastUpdateTickKey, context.CurrentTick); return; }
+            if (context.CurrentTick < context.GetLong(GreenActiveAtKey, int.MaxValue) || context.CurrentTick < context.GetLong(GreenCooldownUntilKey, 0L))
+            {
+                context.SetLong(GreenLastUpdateTickKey, context.CurrentTick);
+                if (context.CurrentTick % 45 == 0)
+                {
+                    foreach (Pawn tower in towers)
+                    {
+                        CompOrdealAnimator.TriggerSpecialOn(tower, 45, new Color(0.32f, 0.96f, 0.50f), 0.75f);
+                        OrdealVfxUtility.SpawnPawnAura(map, tower, OrdealVfxUtility.TexHollowRing, 3.4f, new Color(0.22f, 0.96f, 0.45f, 0.72f), 42, rotateSpeed: 120f);
+                    }
+                }
+                return;
+            }
             long lastTick = context.GetLong(GreenLastUpdateTickKey, context.CurrentTick); int elapsedTicks = Math.Max(1, context.CurrentTick - (int)lastTick); context.SetLong(GreenLastUpdateTickKey, context.CurrentTick);
             float angle = context.GetLong(GreenAngleKey, 0L) / 1000f; float factor = context.CurrentTick < context.GetLong(GreenSlowUntilKey, 0L) ? settings.greenRotationSlowFactor : 1f; angle += 360f * elapsedTicks * factor / settings.greenRotationDurationTicks;
             if (angle >= 360f) { angle %= 360f; context.SetLong(GreenCooldownUntilKey, context.CurrentTick + settings.greenCooldownTicks); }
             context.SetLong(GreenAngleKey, Mathf.RoundToInt(angle * 1000f));
             if (context.CurrentTick < context.GetLong(GreenNextBeamTickKey, 0L)) return; context.SetLong(GreenNextBeamTickKey, context.CurrentTick + settings.greenBeamTickIntervalTicks);
-            foreach (Pawn tower in towers) { ApplyBeam(map, tower, settings.greenFixedBeamAngleDegrees, settings); ApplyBeam(map, tower, angle, settings); }
+            if (context.CurrentTick % 60 == 0) { foreach (Pawn tower in towers) OrdealDefOf.LCOrdeal_Sound_MachineMidnightBeam?.PlayOneShot(new TargetInfo(tower.Position, map)); }
+            foreach (Pawn tower in towers)
+            {
+                CompOrdealAnimator.TriggerAttackOn(tower, settings.greenBeamTickIntervalTicks + 12);
+                ApplyBeam(map, tower, settings.greenFixedBeamAngleDegrees, settings);
+                ApplyBeam(map, tower, angle, settings);
+            }
         }
 
         private static void ApplyBeam(Map map, Pawn tower, float angleDegrees, MidnightOrdealSettings settings)
         {
             Vector2 direction = new Vector2(Mathf.Cos(angleDegrees * Mathf.Deg2Rad), Mathf.Sin(angleDegrees * Mathf.Deg2Rad)); Vector2 origin = new Vector2(tower.Position.x, tower.Position.z);
+            float beamLength = Mathf.Max(map.Size.x, map.Size.z) * 1.15f;
+            Color emeraldBeam = new Color(0.18f, 0.98f, 0.46f, 0.95f);
+            OrdealVfxUtility.SpawnBeam(map, tower.DrawPos, angleDegrees, beamLength, settings.greenBeamWidthCells * 1.45f, emeraldBeam, settings.greenBeamTickIntervalTicks + 6, withCore: true);
+            OrdealVfxUtility.SpawnStrikeSprite(map, tower.DrawPos, OrdealVfxUtility.TexLaserHit, 1.4f, 2.6f, emeraldBeam, settings.greenBeamTickIntervalTicks + 4, riseHeight: 0.25f, rotateSpeed: 180f, additive: true);
             foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map))
             {
                 Vector2 offset = new Vector2(pawn.Position.x, pawn.Position.z) - origin; float along = Vector2.Dot(offset, direction); float perpendicular = Mathf.Abs(offset.x * direction.y - offset.y * direction.x);
-                if (along < 0f || perpendicular > settings.greenBeamWidthCells) continue; pawn.TakeDamage(new DamageInfo(LCDamageDefOf.LC_BlackDamage, settings.greenBeamDamage, 0f, instigator: tower)); AddTimedSlow(pawn, settings.greenBeamSlowDurationTicks);
+                if (along < 0f || perpendicular > settings.greenBeamWidthCells) continue;
+                pawn.TakeDamage(new DamageInfo(LCDamageDefOf.LC_BlackDamage, settings.greenBeamDamage, 0f, instigator: tower));
+                AddTimedSlow(pawn, settings.greenBeamSlowDurationTicks);
+                OrdealVfxUtility.SpawnStrikeSprite(map, pawn.DrawPos, OrdealVfxUtility.TexSparkMidnight, 0.8f, 2.2f, emeraldBeam, 18, riseHeight: 0.25f, rotateSpeed: 220f, additive: true);
             }
-            for (int distance = settings.greenBeamVisualSpacingCells; distance < Math.Max(map.Size.x, map.Size.z); distance += settings.greenBeamVisualSpacingCells) { IntVec3 cell = new IntVec3(Mathf.RoundToInt(origin.x + direction.x * distance), 0, Mathf.RoundToInt(origin.y + direction.y * distance)); if (!cell.InBounds(map)) break; FleckMaker.ThrowLightningGlow(cell.ToVector3Shifted(), map, 1.2f); }
         }
 
         private static void UpdateViolet(ExaminationContext context, Map map, List<Pawn> targets)
@@ -209,21 +268,58 @@ namespace LCAnomalyOrdeals.Examinations
 
         private static void BeginVioletAttack(ExaminationContext context, Map map, Pawn shrine, VioletColor color)
         {
-            List<Pawn> victims = OrdealTargetUtility.AllTargets(map); if (victims.Count == 0) return; IntVec3 target = victims.RandomElement().Position; context.SetLong(VioletTargetKey(shrine.thingIDNumber), EncodeCell(target)); context.SetLong(VioletResolveKey(shrine.thingIDNumber), context.CurrentTick + ActiveSettings().violetTelegraphTicks);
+            List<Pawn> victims = OrdealTargetUtility.AllTargets(map); if (victims.Count == 0) return; IntVec3 target = victims.RandomElement().Position;
+            int telegraph = ActiveSettings().violetTelegraphTicks;
+            Color tint = VioletTint(color);
+            OrdealDefOf.LCOrdeal_Sound_VioletMidnightPortal?.PlayOneShot(new TargetInfo(target, map));
+            CompOrdealAnimator.TriggerSpecialOn(shrine, telegraph, tint, 0.95f);
+            OrdealVfxUtility.SpawnPortal(map, target.ToVector3Shifted(), color == VioletColor.White ? 4.4f : 3.2f, tint, telegraph, rotateSpeed: 170f);
+            OrdealVfxUtility.SpawnPawnAura(map, shrine, OrdealVfxUtility.TexHollowRing, 2.8f, tint, telegraph, rotateSpeed: 130f);
+            context.SetLong(VioletTargetKey(shrine.thingIDNumber), EncodeCell(target)); context.SetLong(VioletResolveKey(shrine.thingIDNumber), context.CurrentTick + telegraph);
         }
 
         private static void ResolveVioletAttack(Map map, Pawn shrine, VioletColor color, IntVec3 target)
         {
             MidnightOrdealSettings settings = ActiveSettings(); DamageDef damageDef = DamageFor(color); float damage = color == VioletColor.Red ? settings.violetRedDamage : color == VioletColor.White ? settings.violetWhiteDamage : color == VioletColor.Black ? settings.violetBlackDamage : settings.violetPaleDamage;
+            CompOrdealAnimator.TriggerAttackOn(shrine, 48);
+            Vector3 targetPos = target.InBounds(map) ? target.ToVector3Shifted() : shrine.DrawPos;
+            Color tint = VioletTint(color);
             if (color == VioletColor.Black)
             {
-                Vector2 origin = new Vector2(shrine.Position.x, shrine.Position.z); Vector2 direction = (new Vector2(target.x, target.z) - origin).normalized; foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map)) { Vector2 offset = new Vector2(pawn.Position.x, pawn.Position.z) - origin; if (Vector2.Dot(offset, direction) >= 0f && Mathf.Abs(offset.x * direction.y - offset.y * direction.x) <= settings.violetBlackLineWidth) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: shrine)); }
+                Vector2 origin = new Vector2(shrine.Position.x, shrine.Position.z); Vector2 direction = (new Vector2(target.x, target.z) - origin).normalized;
+                OrdealVfxUtility.SpawnBeamBetween(map, shrine.DrawPos, targetPos, settings.violetBlackLineWidth * 1.25f, tint, 46, extendLength: 60f);
+                OrdealVfxUtility.SpawnStrikeSprite(map, targetPos, OrdealVfxUtility.TexTentacleBlack, 2.2f, 4.6f, Color.white, 48, riseHeight: 0.7f, angleDegrees: Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+                foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map)) { Vector2 offset = new Vector2(pawn.Position.x, pawn.Position.z) - origin; if (Vector2.Dot(offset, direction) >= 0f && Mathf.Abs(offset.x * direction.y - offset.y * direction.x) <= settings.violetBlackLineWidth) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: shrine)); }
             }
             else
             {
-                float radius = color == VioletColor.Red ? settings.violetRedRadius : color == VioletColor.White ? settings.violetWhiteRadius : settings.violetPaleRadius; foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(target, radius))) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: shrine));
+                float radius = color == VioletColor.Red ? settings.violetRedRadius : color == VioletColor.White ? settings.violetWhiteRadius : settings.violetPaleRadius;
+                if (color == VioletColor.Red)
+                {
+                    OrdealVfxUtility.SpawnStrikeSprite(map, targetPos, OrdealVfxUtility.TexTentacleRed, 2.0f, 4.6f, Color.white, 52, riseHeight: 0.6f, angleDegrees: Rand.Range(-30f, 30f));
+                    OrdealVfxUtility.SpawnShockwave(map, targetPos, 0.7f, radius, tint, 38);
+                }
+                else if (color == VioletColor.White)
+                {
+                    OrdealVfxUtility.SpawnStrikeSprite(map, targetPos, OrdealVfxUtility.TexTentacleWhite, 2.2f, 5.0f, Color.white, 54, riseHeight: 0.7f, angleDegrees: Rand.Range(-25f, 25f));
+                    OrdealVfxUtility.SpawnShockwave(map, targetPos, 0.8f, radius, tint, 42);
+                }
+                else
+                {
+                    OrdealVfxUtility.SpawnStrikeSprite(map, targetPos, OrdealVfxUtility.TexPaleEye, 2.4f, 4.6f, Color.white, 68, riseHeight: 1.0f);
+                    OrdealVfxUtility.SpawnShockwave(map, targetPos, 0.8f, radius, tint, 44);
+                }
+                foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(target, radius))) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: shrine));
             }
-            if (target.InBounds(map)) FleckMaker.ThrowLightningGlow(target.ToVector3Shifted(), map, color == VioletColor.White ? settings.violetWhiteRadius : 3f);
+            SoundDef strikeSnd = color == VioletColor.Red ? OrdealDefOf.LCOrdeal_Sound_VioletMidnightRed : color == VioletColor.White ? OrdealDefOf.LCOrdeal_Sound_VioletMidnightWhite : color == VioletColor.Black ? OrdealDefOf.LCOrdeal_Sound_VioletMidnightBlack : OrdealDefOf.LCOrdeal_Sound_VioletMidnightPale; strikeSnd?.PlayOneShot(new TargetInfo(target.InBounds(map) ? target : shrine.Position, map)); if (target.InBounds(map)) FleckMaker.ThrowLightningGlow(target.ToVector3Shifted(), map, color == VioletColor.White ? settings.violetWhiteRadius : 3f);
+        }
+
+        private static Color VioletTint(VioletColor color)
+        {
+            if (color == VioletColor.Red) return new Color(0.96f, 0.20f, 0.22f, 0.92f);
+            if (color == VioletColor.White) return new Color(0.98f, 0.96f, 0.88f, 0.92f);
+            if (color == VioletColor.Black) return new Color(0.62f, 0.24f, 0.96f, 0.92f);
+            return new Color(0.42f, 0.94f, 0.96f, 0.94f);
         }
 
         private static void CheckVioletDefense(ExaminationContext context, Pawn shrine, VioletColor color)

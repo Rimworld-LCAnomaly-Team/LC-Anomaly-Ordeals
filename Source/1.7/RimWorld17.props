@@ -14,6 +14,7 @@
   <ItemGroup>
     <Reference Include="Assembly-CSharp"><HintPath>$(RimWorldRoot)\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="UnityStubs"><HintPath>$(RimWorldRoot)\UnityStubs.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Waylith"><HintPath>$(RimWorldRoot)\Waylith.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="Waylith.UnityCompat"><HintPath>$(RimWorldRoot)\Waylith.UnityCompat.dll</HintPath><Private>false</Private></Reference>
   </ItemGroup>
 </Project>

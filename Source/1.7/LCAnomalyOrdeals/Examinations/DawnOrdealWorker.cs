@@ -6,7 +6,9 @@ using LCAnomalyCore.Comp;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Presentation;
+using LCAnomalyOrdeals.Render;
 using LCAnomalyOrdeals.Utilities;
+using LCAnomalyOrdeals.Vfx;
 using LCAnomalyStory;
 using LCAnomalyStory.Defs;
 using LCAnomalyStory.Examinations;
@@ -15,6 +17,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
+using Verse.Sound;
 
 namespace LCAnomalyOrdeals.Examinations
 {
@@ -206,6 +209,7 @@ namespace LCAnomalyOrdeals.Examinations
                 + (map == null ? 0 : settings.rewardPerColonist * map.mapPawns.FreeColonistsSpawnedCount);
             Cleanup(context);
             SpawnReward(map, reward);
+            OrdealTargetUtility.GrantOrdealSuppressionLoopRewards(map, 1);
             GameComponent_DawnPresentation.ShowEnd(ReadVariant(context).ToString(), true);
             base.OnPassed(context);
         }
@@ -358,8 +362,17 @@ namespace LCAnomalyOrdeals.Examinations
                     cell => cell.Standable(map) && !cell.Fogged(map));
                 if (destination.IsValid && destination != pawn.Position)
                 {
+                    IntVec3 oldPos = pawn.Position;
                     pawn.DeSpawn();
                     GenSpawn.Spawn(pawn, destination, map);
+                    OrdealDefOf.LCOrdeal_Sound_Bug1Dig?.PlayOneShot(new TargetInfo(destination, map));
+                    CompOrdealAnimator.TriggerSpecialOn(pawn, 36);
+                    Color amberFx = new Color(0.90f, 0.58f, 0.18f, 0.88f);
+                    OrdealVfxUtility.SpawnCrater(map, oldPos.ToVector3Shifted(), 2.2f, amberFx, 100);
+                    OrdealVfxUtility.SpawnCrater(map, destination.ToVector3Shifted(), 2.6f, amberFx, 120);
+                    OrdealVfxUtility.SpawnShockwave(map, destination.ToVector3Shifted(), 0.4f, 2.8f, amberFx, 28);
+                    FleckMaker.ThrowDustPuffThick(oldPos.ToVector3Shifted(), map, 1.4f, new Color(0.75f, 0.52f, 0.22f));
+                    FleckMaker.ThrowDustPuffThick(destination.ToVector3Shifted(), map, 1.6f, new Color(0.75f, 0.52f, 0.22f));
                 }
             }
         }
@@ -382,18 +395,21 @@ namespace LCAnomalyOrdeals.Examinations
                 Building target = priorities.MinBy(building => building.Position.DistanceToSquared(pawn.Position));
                 if (target != null && pawn.CanReach(target, PathEndMode.Touch, Danger.Deadly))
                 {
+                    CompOrdealAnimator.TriggerAttackOn(pawn, 30);
+                    OrdealVfxUtility.SpawnStrikeSprite(map, pawn.DrawPos, OrdealVfxUtility.TexSparkMidnight, 0.6f, 1.6f, new Color(0.95f, 0.20f, 0.25f, 0.85f), 20, riseHeight: 0.2f, rotateSpeed: 160f, additive: true);
                     pawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.AttackMelee, target));
                 }
             }
         }
 
-        private static void PulsePsychic(Map map, Thing instigator, float amount, float radius)
+        private static void PulseBlackDamage(Map map, Thing instigator, float amount, float radius)
         {
+            DamageDef blackDamage = LCAnomalyCore.Defs.DamageDefOf.LC_BlackDamage ?? DamageDefOf.Psychic;
             foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map))
             {
                 if (!pawn.Dead && (radius < 0f || pawn.Position.InHorDistOf(instigator.PositionHeld, radius)))
                 {
-                    pawn.TakeDamage(new DamageInfo(DamageDefOf.Psychic ?? LCAnomalyCore.Defs.DamageDefOf.LC_WhiteDamage, amount, 0f, instigator: instigator));
+                    pawn.TakeDamage(new DamageInfo(blackDamage, amount, 0f, instigator: instigator));
                 }
             }
         }
@@ -407,7 +423,14 @@ namespace LCAnomalyOrdeals.Examinations
 
             Map map = fruit.Map;
             IntVec3 center = fruit.Position;
-            PulsePsychic(map, fruit, settings.violetPsychicDamage, settings.violetBlastRadius);
+            Vector3 centerPos = center.ToVector3Shifted();
+            OrdealDefOf.LCOrdeal_Sound_OutterGodDawnSuicide?.PlayOneShot(new TargetInfo(center, map));
+            Color violetFx = new Color(0.68f, 0.24f, 0.96f, 0.92f);
+            OrdealVfxUtility.SpawnShockwave(map, centerPos, 0.6f, settings.violetBlastRadius, violetFx, 42);
+            OrdealVfxUtility.SpawnPortal(map, centerPos, 3.6f, violetFx, 40, rotateSpeed: -240f);
+            OrdealVfxUtility.SpawnStrikeSprite(map, centerPos, OrdealVfxUtility.TexLaserHit, 1.2f, 4.6f, violetFx, 32, riseHeight: 0.2f, rotateSpeed: 90f, additive: true);
+            FleckMaker.Static(center, map, FleckDefOf.PsycastAreaEffect, 4.5f);
+            PulseBlackDamage(map, fruit, settings.violetPsychicDamage, settings.violetBlastRadius);
 
             int affectedPlatforms = 0;
             foreach (Building_AbnormalityHoldingPlatform platform in map.listerBuildings
@@ -460,8 +483,23 @@ namespace LCAnomalyOrdeals.Examinations
             IEnumerable<Pawn> targets,
             DawnOrdealSettings settings)
         {
+            long matureTick = context.GetLong(VioletMatureTickKey, context.CurrentTick + settings.violetMatureDelayTicks);
+            float chargeProgress = settings.violetMatureDelayTicks > 0
+                ? Mathf.Clamp01(1f - (matureTick - context.CurrentTick) / (float)settings.violetMatureDelayTicks)
+                : 0f;
+
             foreach (Pawn fruit in targets)
             {
+                CompOrdealAnimator animator = fruit.TryGetComp<CompOrdealAnimator>();
+                if (animator != null)
+                {
+                    animator.SetChargeIntensity(chargeProgress);
+                    if (chargeProgress > 0.72f && context.CurrentTick % 45 == 0)
+                    {
+                        animator.TriggerSpecial(30, new Color(0.84f, 0.56f, 1f), chargeProgress);
+                        OrdealVfxUtility.SpawnShockwave(map, fruit.DrawPos, 0.3f, 2.2f, new Color(0.68f, 0.24f, 0.96f, 0.75f), 26);
+                    }
+                }
                 int attackerId = (int)context.GetLong(VioletAttackerKey(fruit.thingIDNumber), -1L);
                 int chaseUntil = (int)context.GetLong(VioletChaseUntilKey(fruit.thingIDNumber), -1L);
                 Pawn attacker = map.mapPawns.AllPawnsSpawned

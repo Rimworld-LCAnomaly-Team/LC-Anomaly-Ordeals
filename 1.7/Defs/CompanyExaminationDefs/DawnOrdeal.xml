@@ -59,8 +59,8 @@
             <successTextKey>LCOrdeal_AmberEndQuote</successTextKey>
             <failureTitleKey>LCOrdeal_AmberName</failureTitleKey>
             <failureTextKey>LCOrdeal_AmberFailureText</failureTextKey>
-            <startSound>Message_ThreatBig</startSound>
-            <successSound>Message_TaskCompletion</successSound>
+            <startSound>LCOrdeal_Sound_BugStart</startSound>
+            <successSound>LCOrdeal_Sound_BugEnd</successSound>
             <failureSound>Message_NegativeEvent</failureSound>
           </li>
           <li>
@@ -72,8 +72,8 @@
             <successTextKey>LCOrdeal_CrimsonEndQuote</successTextKey>
             <failureTitleKey>LCOrdeal_CrimsonName</failureTitleKey>
             <failureTextKey>LCOrdeal_CrimsonFailureText</failureTextKey>
-            <startSound>Message_ThreatBig</startSound>
-            <successSound>Message_TaskCompletion</successSound>
+            <startSound>LCOrdeal_Sound_CircusStart</startSound>
+            <successSound>LCOrdeal_Sound_CircusEnd</successSound>
             <failureSound>Message_NegativeEvent</failureSound>
           </li>
           <li>
@@ -85,8 +85,8 @@
             <successTextKey>LCOrdeal_GreenEndQuote</successTextKey>
             <failureTitleKey>LCOrdeal_GreenName</failureTitleKey>
             <failureTextKey>LCOrdeal_GreenFailureText</failureTextKey>
-            <startSound>Message_ThreatBig</startSound>
-            <successSound>Message_TaskCompletion</successSound>
+            <startSound>LCOrdeal_Sound_MachineStart</startSound>
+            <successSound>LCOrdeal_Sound_MachineEnd</successSound>
             <failureSound>Message_NegativeEvent</failureSound>
           </li>
           <li>
@@ -98,8 +98,8 @@
             <successTextKey>LCOrdeal_VioletEndQuote</successTextKey>
             <failureTitleKey>LCOrdeal_VioletName</failureTitleKey>
             <failureTextKey>LCOrdeal_VioletFailureText</failureTextKey>
-            <startSound>Message_ThreatBig</startSound>
-            <successSound>Message_TaskCompletion</successSound>
+            <startSound>LCOrdeal_Sound_OutterGodStart</startSound>
+            <successSound>LCOrdeal_Sound_OutterGodEnd</successSound>
             <failureSound>Message_NegativeEvent</failureSound>
           </li>
         </presentations>

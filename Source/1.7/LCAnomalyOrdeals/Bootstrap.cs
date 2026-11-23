@@ -8,7 +8,7 @@ namespace LCAnomalyOrdeals
     {
         static Bootstrap()
         {
-            new Harmony("DarthCY.LC.AnomalyOrdeals").PatchAll();
+            new Harmony("DarthCY.LC.AnomalyOrdeals").PatchAll(typeof(Bootstrap).Assembly);
             Log.Message("[LC Anomaly Ordeals] RimWorld 1.7 ordeal content initialized.");
         }
     }

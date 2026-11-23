@@ -6,7 +6,9 @@ using LCAnomalyCore.Comp;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Presentation;
+using LCAnomalyOrdeals.Render;
 using LCAnomalyOrdeals.Utilities;
+using LCAnomalyOrdeals.Vfx;
 using LCAnomalyStory;
 using LCAnomalyStory.Defs;
 using LCAnomalyStory.Examinations;
@@ -15,6 +17,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
+using Verse.Sound;
 
 namespace LCAnomalyOrdeals.Examinations
 {
@@ -140,6 +143,7 @@ namespace LCAnomalyOrdeals.Examinations
             int reward = settings.rewardBase + (map == null ? 0 : settings.rewardPerColonist * map.mapPawns.FreeColonistsSpawnedCount);
             Cleanup(context);
             SpawnReward(map, reward);
+            OrdealTargetUtility.GrantOrdealSuppressionLoopRewards(map, 2);
             GameComponent_NoonPresentation.ShowEnd(variant.ToString(), true);
             base.OnPassed(context);
         }
@@ -181,6 +185,9 @@ namespace LCAnomalyOrdeals.Examinations
                 || ReadVariant(context) != NoonVariant.Crimson) return;
 
             Map map = parent.Map;
+            Color crimsonFx = new Color(0.92f, 0.16f, 0.22f, 0.90f);
+            OrdealVfxUtility.SpawnShockwave(map, parent.DrawPos, 0.6f, 4.2f, crimsonFx, 36);
+            OrdealVfxUtility.SpawnPortal(map, parent.DrawPos, 3.0f, crimsonFx, 42);
             List<Pawn> children = new List<Pawn>();
             for (int i = 0; i < ActiveSettings().crimsonDawnSplitCount; i++)
             {
@@ -188,6 +195,7 @@ namespace LCAnomalyOrdeals.Examinations
                 if (!RCellFinder.TryFindRandomPawnEntryCell(out cell, map, CellFinder.EdgeRoadChance_Hostile, true)) continue;
                 Pawn child = PawnGenerator.GeneratePawn(OrdealDefOf.LCOrdeal_CrimsonDawn, Faction.OfMechanoids);
                 GenSpawn.Spawn(child, cell, map);
+                OrdealVfxUtility.SpawnPortal(map, cell.ToVector3Shifted(), 2.2f, crimsonFx, 40);
                 children.Add(child);
             }
             AppendTargetIds(context, children.Select(child => child.thingIDNumber));
@@ -241,11 +249,20 @@ namespace LCAnomalyOrdeals.Examinations
 
         private static void ApplyVioletImpact(Map map, Pawn monolith, NoonOrdealSettings settings)
         {
+            OrdealDefOf.LCOrdeal_Sound_OutterGodNoonDown?.PlayOneShot(new TargetInfo(monolith.Position, map));
+            CompOrdealAnimator.TriggerAttackOn(monolith, 55);
+            Vector3 impactPos = monolith.Position.ToVector3Shifted();
+            Color violetFx = new Color(0.64f, 0.20f, 0.95f, 0.94f);
+            OrdealVfxUtility.SpawnPortal(map, impactPos, 4.8f, violetFx, 75, rotateSpeed: 180f);
+            OrdealVfxUtility.SpawnCrater(map, impactPos, 5.2f, new Color(0.45f, 0.16f, 0.72f, 0.85f), 200);
+            OrdealVfxUtility.SpawnShockwave(map, impactPos, 0.8f, settings.violetImpactRadius, violetFx, 46);
+            FleckMaker.Static(monolith.Position, map, FleckDefOf.PsycastAreaEffect, 5f);
+            DamageDef blackDamage = LCAnomalyCore.Defs.DamageDefOf.LC_BlackDamage ?? DamageDefOf.Blunt;
             foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map))
             {
                 if (!pawn.Dead && pawn.Position.InHorDistOf(monolith.Position, settings.violetImpactRadius))
                 {
-                    pawn.TakeDamage(new DamageInfo(DamageDefOf.Blunt, settings.violetImpactDamage, 0f, instigator: monolith));
+                    pawn.TakeDamage(new DamageInfo(blackDamage, settings.violetImpactDamage, 0f, instigator: monolith));
                 }
             }
         }
@@ -268,6 +285,9 @@ namespace LCAnomalyOrdeals.Examinations
                     context.SetLong(untilKey, context.CurrentTick + duration);
                     context.SetLong(nextKey, context.CurrentTick + duration + settings.greenShutdownIntervalTicks.RandomInRange);
                     pawn.stances.stunner.StunFor(duration, pawn, false);
+                    CompOrdealAnimator.TriggerSpecialOn(pawn, duration, new Color(0.76f, 0.86f, 0.78f), 0.7f);
+                    OrdealVfxUtility.SpawnPawnAura(map, pawn, OrdealVfxUtility.TexSoftGlow, 2.0f, new Color(0.70f, 0.76f, 0.72f, 0.55f), duration, rotateSpeed: 40f);
+                    OrdealDefOf.LCOrdeal_Sound_MachineNoonCooldown?.PlayOneShot(new TargetInfo(pawn.Position, map));
                 }
                 else if (context.CurrentTick < context.GetLong(untilKey, -1L) && !pawn.stances.stunner.Stunned)
                 {
@@ -277,11 +297,21 @@ namespace LCAnomalyOrdeals.Examinations
 
             if (context.CurrentTick >= context.GetLong(NextSecondaryTickKey, int.MaxValue))
             {
+                DamageDef redDamage = LCAnomalyCore.Defs.DamageDefOf.LC_RedDamage ?? DamageDefOf.Cut;
                 foreach (Pawn machine in targets.Where(target => target.kindDef == OrdealDefOf.LCOrdeal_GreenNoon && !target.stances.stunner.Stunned))
                 {
+                    bool hitAny = false;
                     foreach (Pawn colonist in OrdealTargetUtility.AllTargets(map).Where(pawn => pawn.Position.InHorDistOf(machine.Position, settings.greenSawRadius)))
                     {
-                        colonist.TakeDamage(new DamageInfo(DamageDefOf.Cut, settings.greenSawDamage, 0f, instigator: machine));
+                        colonist.TakeDamage(new DamageInfo(redDamage, settings.greenSawDamage, 0f, instigator: machine));
+                        hitAny = true;
+                    }
+                    if (hitAny)
+                    {
+                        CompOrdealAnimator.TriggerAttackOn(machine, 32);
+                        OrdealVfxUtility.SpawnSlash(map, machine.DrawPos, settings.greenSawRadius * 1.45f, new Color(0.32f, 0.95f, 0.45f, 0.92f), 22);
+                        OrdealVfxUtility.SpawnShockwave(map, machine.DrawPos, 0.5f, settings.greenSawRadius, new Color(0.95f, 0.30f, 0.25f, 0.80f), 24);
+                        OrdealDefOf.LCOrdeal_Sound_MachineNoonAtk?.PlayOneShot(new TargetInfo(machine.Position, map));
                     }
                 }
                 context.SetLong(NextSecondaryTickKey, context.CurrentTick + settings.greenSawIntervalTicks);
@@ -298,7 +328,17 @@ namespace LCAnomalyOrdeals.Examinations
 
             if (context.CurrentTick >= context.GetLong(NextSpecialTickKey, int.MaxValue))
             {
-                foreach (Pawn monolith in targets) PulsePsychic(map, monolith, settings.violetPulsePsychicDamage, settings.violetPulseRadius);
+                foreach (Pawn monolith in targets)
+                {
+                    Color pulseViolet = new Color(0.68f, 0.24f, 0.96f, 0.88f);
+                    CompOrdealAnimator.TriggerSpecialOn(monolith, 40, pulseViolet, 0.9f);
+                    OrdealVfxUtility.SpawnShockwave(map, monolith.DrawPos, 0.7f, settings.violetPulseRadius, pulseViolet, 38);
+                    OrdealVfxUtility.SpawnStrikeSprite(map, monolith.DrawPos, OrdealVfxUtility.TexTentacleBlack, 1.4f, 3.2f, Color.white, 34, riseHeight: 0.6f, angleDegrees: Rand.Range(0f, 360f));
+                    if (PulseBlackDamage(map, monolith, settings.violetPulsePsychicDamage, settings.violetPulseRadius))
+                    {
+                        OrdealDefOf.LCOrdeal_Sound_OutterGodNoonCasting?.PlayOneShot(new TargetInfo(monolith.Position, map));
+                    }
+                }
                 context.SetLong(NextSpecialTickKey, context.CurrentTick + settings.violetPulseIntervalTicks);
             }
             if (context.CurrentTick >= context.GetLong(NextSecondaryTickKey, int.MaxValue))
@@ -308,7 +348,11 @@ namespace LCAnomalyOrdeals.Examinations
                 {
                     Building_AbnormalityHoldingPlatform platform = platforms.Where(item => item.HeldPawn?.TryGetComp<CompAbnormality>()?.QliphothEnabled == true).RandomElementWithFallback();
                     CompAbnormality abnormality = platform?.HeldPawn?.TryGetComp<CompAbnormality>();
-                    if (abnormality != null) abnormality.QliphothCountCurrent = Math.Max(0, abnormality.QliphothCountCurrent - settings.violetCounterReduction);
+                    if (abnormality != null)
+                    {
+                        abnormality.QliphothCountCurrent = Math.Max(0, abnormality.QliphothCountCurrent - settings.violetCounterReduction);
+                        OrdealVfxUtility.SpawnPortal(map, platform.DrawPos, 2.2f, new Color(0.66f, 0.22f, 0.96f, 0.86f), 45);
+                    }
                 }
                 context.SetLong(NextSecondaryTickKey, context.CurrentTick + settings.violetCounterIntervalTicks);
             }
@@ -330,6 +374,10 @@ namespace LCAnomalyOrdeals.Examinations
                         .FirstOrDefault();
                     if (corpse == null) continue;
                     Heal(sweeper, 99999f);
+                    CompOrdealAnimator.TriggerSpecialOn(sweeper, 45, new Color(0.95f, 0.26f, 0.34f), 0.95f);
+                    OrdealVfxUtility.SpawnPawnAura(map, sweeper, OrdealVfxUtility.TexHollowRing, 1.8f, new Color(0.92f, 0.18f, 0.26f, 0.88f), 42, rotateSpeed: 150f);
+                    OrdealVfxUtility.SpawnShockwave(map, corpse.DrawPos, 0.4f, 2.6f, new Color(0.88f, 0.14f, 0.24f, 0.86f), 30);
+                    OrdealDefOf.LCOrdeal_Sound_ScavengerNoonSkill?.PlayOneShot(new TargetInfo(sweeper.Position, map));
                     corpses.Remove(corpse);
                     corpse.Destroy(DestroyMode.Vanish);
                 }
@@ -337,18 +385,33 @@ namespace LCAnomalyOrdeals.Examinations
             }
             if (context.CurrentTick >= context.GetLong(NextSecondaryTickKey, int.MaxValue))
             {
-                foreach (Pawn sweeper in targets) PulsePsychic(map, sweeper, settings.indigoChargePsychicDamage, settings.indigoChargeRadius);
+                foreach (Pawn sweeper in targets)
+                {
+                    if (PulseBlackDamage(map, sweeper, settings.indigoChargePsychicDamage, settings.indigoChargeRadius))
+                    {
+                        CompOrdealAnimator.TriggerAttackOn(sweeper, 36);
+                        OrdealVfxUtility.SpawnSlash(map, sweeper.DrawPos, settings.indigoChargeRadius * 1.25f, new Color(0.32f, 0.44f, 0.98f, 0.92f), 26);
+                        OrdealVfxUtility.SpawnShockwave(map, sweeper.DrawPos, 0.5f, settings.indigoChargeRadius, new Color(0.28f, 0.34f, 0.88f, 0.85f), 30);
+                        OrdealDefOf.LCOrdeal_Sound_ScavengerNoonSkill?.PlayOneShot(new TargetInfo(sweeper.Position, map));
+                    }
+                }
                 context.SetLong(NextSecondaryTickKey, context.CurrentTick + settings.indigoChargeIntervalTicks);
             }
         }
 
-        private static void PulsePsychic(Map map, Thing instigator, float damage, float radius)
+        private static bool PulseBlackDamage(Map map, Thing instigator, float damage, float radius)
         {
+            DamageDef blackDamage = LCAnomalyCore.Defs.DamageDefOf.LC_BlackDamage ?? DamageDefOf.Psychic;
+            bool hitAny = false;
             foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map))
             {
                 if (!pawn.Dead && pawn.Position.InHorDistOf(instigator.PositionHeld, radius))
-                    pawn.TakeDamage(new DamageInfo(DamageDefOf.Psychic ?? LCAnomalyCore.Defs.DamageDefOf.LC_WhiteDamage, damage, 0f, instigator: instigator));
+                {
+                    pawn.TakeDamage(new DamageInfo(blackDamage, damage, 0f, instigator: instigator));
+                    hitAny = true;
+                }
             }
+            return hitAny;
         }
 
         private static void Heal(Pawn pawn, float amount)
