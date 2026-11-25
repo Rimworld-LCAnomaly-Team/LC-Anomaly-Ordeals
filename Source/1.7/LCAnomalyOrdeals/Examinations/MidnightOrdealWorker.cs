@@ -176,22 +176,29 @@ namespace LCAnomalyOrdeals.Examinations
                 spawnedTotal += spawned.Count; context.SetLong(AmberSpawnedKey(parent.thingIDNumber), spawnedTotal); AppendTargetIds(context, spawned.Select(item => item.thingIDNumber)); AssignAssaultLord(map, spawned);
                 if (spawned.Count > 0)
                 {
-                    OrdealDefOf.LCOrdeal_Sound_BugMidnightSpawn?.PlayOneShot(new TargetInfo(parent.Position, map));
-                    CompOrdealAnimator.TriggerSpecialOn(parent, 45, new Color(0.95f, 0.65f, 0.24f), 0.9f);
+                    Comps.CompAmberOrdeal amberComp = parent.TryGetComp<Comps.CompAmberOrdeal>();
+                    if (amberComp != null) amberComp.TriggerSpawnRoar();
+                    else
+                    {
+                        OrdealDefOf.LCOrdeal_Sound_BugMidnightSpawn?.PlayOneShot(new TargetInfo(parent.Position, map));
+                        CompOrdealAnimator.TriggerSpecialOn(parent, 45, new Color(0.95f, 0.65f, 0.24f), 0.9f);
+                    }
                 }
                 if (victims.Count > 0)
                 {
-                    IntVec3 oldPos = parent.Position;
                     IntVec3 destination = CellFinder.RandomClosewalkCellNear(victims.RandomElement().Position, map, settings.amberBurrowArrivalRadius, cell => cell.Standable(map) && !cell.Fogged(map));
-                    Color amberFx = new Color(0.95f, 0.56f, 0.16f, 0.92f);
-                    OrdealVfxUtility.SpawnCrater(map, oldPos.ToVector3Shifted(), 5.4f, amberFx, 160);
-                    MoveByBurrow(parent, destination, map);
-                    OrdealDefOf.LCOrdeal_Sound_BugMidnightDig?.PlayOneShot(new TargetInfo(parent.Position, map));
-                    CompOrdealAnimator.TriggerAttackOn(parent, 55);
-                    OrdealVfxUtility.SpawnCrater(map, parent.DrawPos, 6.4f, amberFx, 200);
-                    OrdealVfxUtility.SpawnShockwave(map, parent.DrawPos, 1.0f, settings.amberEmergenceRadius, amberFx, 44);
-                    FleckMaker.ThrowDustPuffThick(parent.Position.ToVector3Shifted(), map, 3.0f, new Color(0.75f, 0.48f, 0.18f));
-                    DamageNearby(map, parent, settings.amberEmergenceRadius, settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage);
+                    Comps.CompAmberOrdeal amberComp = parent.TryGetComp<Comps.CompAmberOrdeal>();
+                    if (amberComp == null || !amberComp.BeginBurrow(destination))
+                    {
+                        IntVec3 oldPos = parent.Position;
+                        Color amberFx = new Color(0.95f, 0.56f, 0.16f, 0.92f);
+                        OrdealVfxUtility.SpawnCrater(map, oldPos.ToVector3Shifted(), 5.4f, amberFx, 160);
+                        MoveByBurrow(parent, destination, map);
+                        OrdealDefOf.LCOrdeal_Sound_BugMidnightDig?.PlayOneShot(new TargetInfo(parent.Position, map));
+                        OrdealVfxUtility.SpawnCrater(map, parent.DrawPos, 6.4f, amberFx, 200);
+                        OrdealVfxUtility.SpawnShockwave(map, parent.DrawPos, 1.0f, settings.amberEmergenceRadius, amberFx, 44);
+                        DamageNearby(map, parent, settings.amberEmergenceRadius, settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage);
+                    }
                 }
                 context.SetLong(AmberNextKey(parent.thingIDNumber), context.CurrentTick + settings.amberSpawnIntervalTicks.RandomInRange);
             }
@@ -214,7 +221,9 @@ namespace LCAnomalyOrdeals.Examinations
                 {
                     foreach (Pawn tower in towers)
                     {
-                        CompOrdealAnimator.TriggerSpecialOn(tower, 45, new Color(0.32f, 0.96f, 0.50f), 0.75f);
+                        Comps.CompGreenOrdeal greenComp = tower.TryGetComp<Comps.CompGreenOrdeal>();
+                        if (greenComp != null) greenComp.NotifyMidnightCharge(52);
+                        else CompOrdealAnimator.TriggerSpecialOn(tower, 45, new Color(0.32f, 0.96f, 0.50f), 0.75f);
                         OrdealVfxUtility.SpawnPawnAura(map, tower, OrdealVfxUtility.TexHollowRing, 3.4f, new Color(0.22f, 0.96f, 0.45f, 0.72f), 42, rotateSpeed: 120f);
                     }
                 }
@@ -228,7 +237,9 @@ namespace LCAnomalyOrdeals.Examinations
             if (context.CurrentTick % 60 == 0) { foreach (Pawn tower in towers) OrdealDefOf.LCOrdeal_Sound_MachineMidnightBeam?.PlayOneShot(new TargetInfo(tower.Position, map)); }
             foreach (Pawn tower in towers)
             {
-                CompOrdealAnimator.TriggerAttackOn(tower, settings.greenBeamTickIntervalTicks + 12);
+                Comps.CompGreenOrdeal greenComp = tower.TryGetComp<Comps.CompGreenOrdeal>();
+                if (greenComp != null) greenComp.NotifyMidnightFire(angle, settings.greenBeamTickIntervalTicks + 14);
+                else CompOrdealAnimator.TriggerAttackOn(tower, settings.greenBeamTickIntervalTicks + 12);
                 ApplyBeam(map, tower, settings.greenFixedBeamAngleDegrees, settings);
                 ApplyBeam(map, tower, angle, settings);
             }
@@ -245,7 +256,7 @@ namespace LCAnomalyOrdeals.Examinations
             {
                 Vector2 offset = new Vector2(pawn.Position.x, pawn.Position.z) - origin; float along = Vector2.Dot(offset, direction); float perpendicular = Mathf.Abs(offset.x * direction.y - offset.y * direction.x);
                 if (along < 0f || perpendicular > settings.greenBeamWidthCells) continue;
-                pawn.TakeDamage(new DamageInfo(LCDamageDefOf.LC_BlackDamage, settings.greenBeamDamage, 0f, instigator: tower));
+                pawn.TakeDamage(new DamageInfo(LCDamageDefOf.LC_BlackDamage, settings.greenBeamDamage, 0.25f, instigator: tower, weapon: tower.def));
                 AddTimedSlow(pawn, settings.greenBeamSlowDurationTicks);
                 OrdealVfxUtility.SpawnStrikeSprite(map, pawn.DrawPos, OrdealVfxUtility.TexSparkMidnight, 0.8f, 2.2f, emeraldBeam, 18, riseHeight: 0.25f, rotateSpeed: 220f, additive: true);
             }
@@ -272,7 +283,9 @@ namespace LCAnomalyOrdeals.Examinations
             int telegraph = ActiveSettings().violetTelegraphTicks;
             Color tint = VioletTint(color);
             OrdealDefOf.LCOrdeal_Sound_VioletMidnightPortal?.PlayOneShot(new TargetInfo(target, map));
-            CompOrdealAnimator.TriggerSpecialOn(shrine, telegraph, tint, 0.95f);
+            Comps.CompVioletOrdeal violetComp = shrine.TryGetComp<Comps.CompVioletOrdeal>();
+            if (violetComp != null) violetComp.TriggerCast(telegraph);
+            else CompOrdealAnimator.TriggerSpecialOn(shrine, telegraph, tint, 0.95f);
             OrdealVfxUtility.SpawnPortal(map, target.ToVector3Shifted(), color == VioletColor.White ? 4.4f : 3.2f, tint, telegraph, rotateSpeed: 170f);
             OrdealVfxUtility.SpawnPawnAura(map, shrine, OrdealVfxUtility.TexHollowRing, 2.8f, tint, telegraph, rotateSpeed: 130f);
             context.SetLong(VioletTargetKey(shrine.thingIDNumber), EncodeCell(target)); context.SetLong(VioletResolveKey(shrine.thingIDNumber), context.CurrentTick + telegraph);
@@ -281,7 +294,9 @@ namespace LCAnomalyOrdeals.Examinations
         private static void ResolveVioletAttack(Map map, Pawn shrine, VioletColor color, IntVec3 target)
         {
             MidnightOrdealSettings settings = ActiveSettings(); DamageDef damageDef = DamageFor(color); float damage = color == VioletColor.Red ? settings.violetRedDamage : color == VioletColor.White ? settings.violetWhiteDamage : color == VioletColor.Black ? settings.violetBlackDamage : settings.violetPaleDamage;
-            CompOrdealAnimator.TriggerAttackOn(shrine, 48);
+            Comps.CompVioletOrdeal violetComp = shrine.TryGetComp<Comps.CompVioletOrdeal>();
+            if (violetComp != null) violetComp.TriggerCast(50);
+            else CompOrdealAnimator.TriggerAttackOn(shrine, 48);
             Vector3 targetPos = target.InBounds(map) ? target.ToVector3Shifted() : shrine.DrawPos;
             Color tint = VioletTint(color);
             if (color == VioletColor.Black)
@@ -289,7 +304,7 @@ namespace LCAnomalyOrdeals.Examinations
                 Vector2 origin = new Vector2(shrine.Position.x, shrine.Position.z); Vector2 direction = (new Vector2(target.x, target.z) - origin).normalized;
                 OrdealVfxUtility.SpawnBeamBetween(map, shrine.DrawPos, targetPos, settings.violetBlackLineWidth * 1.25f, tint, 46, extendLength: 60f);
                 OrdealVfxUtility.SpawnStrikeSprite(map, targetPos, OrdealVfxUtility.TexTentacleBlack, 2.2f, 4.6f, Color.white, 48, riseHeight: 0.7f, angleDegrees: Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
-                foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map)) { Vector2 offset = new Vector2(pawn.Position.x, pawn.Position.z) - origin; if (Vector2.Dot(offset, direction) >= 0f && Mathf.Abs(offset.x * direction.y - offset.y * direction.x) <= settings.violetBlackLineWidth) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: shrine)); }
+                foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map)) { Vector2 offset = new Vector2(pawn.Position.x, pawn.Position.z) - origin; if (Vector2.Dot(offset, direction) >= 0f && Mathf.Abs(offset.x * direction.y - offset.y * direction.x) <= settings.violetBlackLineWidth) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0.25f, instigator: shrine, weapon: shrine.def)); }
             }
             else
             {
@@ -309,7 +324,7 @@ namespace LCAnomalyOrdeals.Examinations
                     OrdealVfxUtility.SpawnStrikeSprite(map, targetPos, OrdealVfxUtility.TexPaleEye, 2.4f, 4.6f, Color.white, 68, riseHeight: 1.0f);
                     OrdealVfxUtility.SpawnShockwave(map, targetPos, 0.8f, radius, tint, 44);
                 }
-                foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(target, radius))) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0f, instigator: shrine));
+                foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(target, radius))) pawn.TakeDamage(new DamageInfo(damageDef, damage, 0.25f, instigator: shrine, weapon: shrine.def));
             }
             SoundDef strikeSnd = color == VioletColor.Red ? OrdealDefOf.LCOrdeal_Sound_VioletMidnightRed : color == VioletColor.White ? OrdealDefOf.LCOrdeal_Sound_VioletMidnightWhite : color == VioletColor.Black ? OrdealDefOf.LCOrdeal_Sound_VioletMidnightBlack : OrdealDefOf.LCOrdeal_Sound_VioletMidnightPale; strikeSnd?.PlayOneShot(new TargetInfo(target.InBounds(map) ? target : shrine.Position, map)); if (target.InBounds(map)) FleckMaker.ThrowLightningGlow(target.ToVector3Shifted(), map, color == VioletColor.White ? settings.violetWhiteRadius : 3f);
         }

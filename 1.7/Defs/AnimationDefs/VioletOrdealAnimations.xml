@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ======================================================================================== -->
+  <!-- 1. VIOLET NOON (GRANT US LOVE / stone.txt) — 3 ARTICULATED KEYFRAME ANIMATIONS           -->
+  <!-- ======================================================================================== -->
+  <!-- Idle: Ominous obsidian monolith standing with tentacles curled/tucked inward (video t=18.8s-21.2s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_VioletNoon_Idle</defName>
+    <durationTicks>96</durationTicks>
+    <startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_VioletNoon_Monolith</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4768, 0.4624)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><scale>(1,1,1)</scale></li>
+            <li><tick>48</tick><offset>(0,0,0.025)</offset><scale>(1.01,1,1.02)</scale></li>
+            <li><tick>96</tick><offset>(0,0,0)</offset><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle1</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.35,1,0.35)</scale><angle>-8</angle></li><li><tick>48</tick><scale>(0.42,1,0.42)</scale><angle>8</angle></li><li><tick>96</tick><scale>(0.35,1,0.35)</scale><angle>-8</angle></li></keyframes></value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle2</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.35,1,0.35)</scale><angle>8</angle></li><li><tick>48</tick><scale>(0.42,1,0.42)</scale><angle>-8</angle></li><li><tick>96</tick><scale>(0.35,1,0.35)</scale><angle>8</angle></li></keyframes></value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle3</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.30,1,0.30)</scale></li><li><tick>96</tick><scale>(0.30,1,0.30)</scale></li></keyframes></value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle4</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.30,1,0.30)</scale></li><li><tick>96</tick><scale>(0.30,1,0.30)</scale></li></keyframes></value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle5</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.30,1,0.30)</scale></li><li><tick>96</tick><scale>(0.30,1,0.30)</scale></li></keyframes></value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle6</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.30,1,0.30)</scale></li><li><tick>96</tick><scale>(0.30,1,0.30)</scale></li></keyframes></value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Impact: Monolith slams down from the sky crushing everything beneath it (video t=13.8s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_VioletNoon_Impact</defName>
+    <durationTicks>48</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_VioletNoon_Monolith</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4768, 0.4624)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0.45)</offset><scale>(0.86,1,1.18)</scale></li>
+            <li><tick>18</tick><offset>(0,0,-0.08)</offset><scale>(1.16,1,0.84)</scale></li>
+            <li><tick>32</tick><offset>(0,0,0.04)</offset><scale>(0.96,1,1.06)</scale></li>
+            <li><tick>48</tick><offset>(0,0,0)</offset><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Cast: All 6 black eldritch tentacles burst out whipping violently in every direction (video t=15s-17.5s & 22.5s-26.2s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_VioletNoon_Cast</defName>
+    <durationTicks>56</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_VioletNoon_Monolith</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4768, 0.4624)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+            <li><tick>14</tick><offset>(-0.02,0,0.04)</offset><angle>-3</angle><scale>(1.04,1,1.05)</scale></li>
+            <li><tick>28</tick><offset>(0.02,0,0.06)</offset><angle>3</angle><scale>(1.06,1,1.07)</scale></li>
+            <li><tick>42</tick><offset>(-0.02,0,0.03)</offset><angle>-2</angle><scale>(1.03,1,1.04)</scale></li>
+            <li><tick>56</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle1</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.4,1,0.4)</scale><angle>-20</angle></li><li><tick>18</tick><scale>(1.25,1,1.25)</scale><angle>36</angle></li><li><tick>36</tick><scale>(1.20,1,1.20)</scale><angle>-32</angle></li><li><tick>56</tick><scale>(0.4,1,0.4)</scale><angle>-20</angle></li></keyframes></value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle2</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.4,1,0.4)</scale><angle>24</angle></li><li><tick>18</tick><scale>(1.28,1,1.28)</scale><angle>-38</angle></li><li><tick>36</tick><scale>(1.22,1,1.22)</scale><angle>34</angle></li><li><tick>56</tick><scale>(0.4,1,0.4)</scale><angle>24</angle></li></keyframes></value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle3</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.35,1,0.35)</scale><angle>-28</angle></li><li><tick>22</tick><scale>(1.30,1,1.30)</scale><angle>40</angle></li><li><tick>40</tick><scale>(1.22,1,1.22)</scale><angle>-34</angle></li><li><tick>56</tick><scale>(0.35,1,0.35)</scale><angle>-28</angle></li></keyframes></value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle4</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.35,1,0.35)</scale><angle>26</angle></li><li><tick>22</tick><scale>(1.28,1,1.28)</scale><angle>-42</angle></li><li><tick>40</tick><scale>(1.20,1,1.20)</scale><angle>32</angle></li><li><tick>56</tick><scale>(0.35,1,0.35)</scale><angle>26</angle></li></keyframes></value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle5</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.35,1,0.35)</scale><angle>-22</angle></li><li><tick>20</tick><scale>(1.32,1,1.32)</scale><angle>38</angle></li><li><tick>38</tick><scale>(1.22,1,1.22)</scale><angle>-30</angle></li><li><tick>56</tick><scale>(0.35,1,0.35)</scale><angle>-22</angle></li></keyframes></value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletNoon_Tentacle6</key>
+        <value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4768, 0.4624)</pivot><keyframes><li><tick>0</tick><scale>(0.35,1,0.35)</scale><angle>22</angle></li><li><tick>20</tick><scale>(1.28,1,1.28)</scale><angle>-36</angle></li><li><tick>38</tick><scale>(1.20,1,1.20)</scale><angle>34</angle></li><li><tick>56</tick><scale>(0.35,1,0.35)</scale><angle>22</angle></li></keyframes></value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- ======================================================================================== -->
+  <!-- 2. VIOLET MIDNIGHT 4 SHRINES (GOD'S DELUSION) — 2 SHARED ARTICULATED SHRINE ANIMATIONS   -->
+  <!-- ======================================================================================== -->
+  <AnimationDef>
+    <defName>LCOrdeal_VioletShrine_Idle</defName>
+    <durationTicks>108</durationTicks>
+    <startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_VioletShrine_Base</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.50, 0.25)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><scale>(1.01,1,0.99)</scale></li>
+            <li><tick>54</tick><offset>(0,0,0.025)</offset><scale>(0.99,1,1.02)</scale></li>
+            <li><tick>108</tick><offset>(0,0,0)</offset><scale>(1.01,1,0.99)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletShrine_Aura</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.50, 0.45)</pivot>
+          <keyframes>
+            <li><tick>0</tick><scale>(0.96,1,0.96)</scale></li>
+            <li><tick>54</tick><scale>(1.06,1,1.06)</scale></li>
+            <li><tick>108</tick><scale>(0.96,1,0.96)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Cast: Shrine shudders & flares brightly while opening its colored portal & tentacle/eye -->
+  <AnimationDef>
+    <defName>LCOrdeal_VioletShrine_Cast</defName>
+    <durationTicks>50</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_VioletShrine_Base</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.50, 0.25)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+            <li><tick>12</tick><offset>(-0.02,0,0.04)</offset><angle>-3</angle><scale>(1.05,1,1.06)</scale></li>
+            <li><tick>25</tick><offset>(0.02,0,0.07)</offset><angle>3</angle><scale>(1.08,1,1.09)</scale></li>
+            <li><tick>38</tick><offset>(-0.01,0,0.03)</offset><angle>-2</angle><scale>(1.04,1,1.04)</scale></li>
+            <li><tick>50</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_VioletShrine_Aura</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.50, 0.45)</pivot>
+          <keyframes>
+            <li><tick>0</tick><scale>(1,1,1)</scale></li>
+            <li><tick>25</tick><scale>(1.18,1,1.18)</scale></li>
+            <li><tick>50</tick><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+</Defs>

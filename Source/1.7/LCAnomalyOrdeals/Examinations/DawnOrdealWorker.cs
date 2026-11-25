@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using LCAnomalyCore.Buildings;
 using LCAnomalyCore.Comp;
+using LCAnomalyOrdeals.Comps;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Presentation;
@@ -362,6 +363,12 @@ namespace LCAnomalyOrdeals.Examinations
                     cell => cell.Standable(map) && !cell.Fogged(map));
                 if (destination.IsValid && destination != pawn.Position)
                 {
+                    CompDawnOrdeal dawnComp = pawn.TryGetComp<CompDawnOrdeal>();
+                    if (dawnComp != null && dawnComp.BeginAmberBurrow(destination))
+                    {
+                        continue;
+                    }
+
                     IntVec3 oldPos = pawn.Position;
                     pawn.DeSpawn();
                     GenSpawn.Spawn(pawn, destination, map);
@@ -392,6 +399,12 @@ namespace LCAnomalyOrdeals.Examinations
 
             foreach (Pawn pawn in targets)
             {
+                CompDawnOrdeal dawnComp = pawn.TryGetComp<CompDawnOrdeal>();
+                if (dawnComp != null && dawnComp.IsTampering)
+                {
+                    continue;
+                }
+
                 Building target = priorities.MinBy(building => building.Position.DistanceToSquared(pawn.Position));
                 if (target != null && pawn.CanReach(target, PathEndMode.Touch, Danger.Deadly))
                 {
@@ -405,11 +418,16 @@ namespace LCAnomalyOrdeals.Examinations
         private static void PulseBlackDamage(Map map, Thing instigator, float amount, float radius)
         {
             DamageDef blackDamage = LCAnomalyCore.Defs.DamageDefOf.LC_BlackDamage ?? DamageDefOf.Psychic;
+            DamageDef whiteDamage = LCAnomalyCore.Defs.DamageDefOf.LC_WhiteDamage ?? DamageDefOf.Psychic;
             foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map))
             {
                 if (!pawn.Dead && (radius < 0f || pawn.Position.InHorDistOf(instigator.PositionHeld, radius)))
                 {
-                    pawn.TakeDamage(new DamageInfo(blackDamage, amount, 0f, instigator: instigator));
+                    pawn.TakeDamage(new DamageInfo(blackDamage, amount, 0f, instigator: instigator, weapon: instigator?.def));
+                    if (!pawn.Dead)
+                    {
+                        pawn.TakeDamage(new DamageInfo(whiteDamage, amount * 0.65f, 0f, instigator: instigator, weapon: instigator?.def));
+                    }
                 }
             }
         }
@@ -490,15 +508,22 @@ namespace LCAnomalyOrdeals.Examinations
 
             foreach (Pawn fruit in targets)
             {
+                CompDawnOrdeal dawnComp = fruit.TryGetComp<CompDawnOrdeal>();
+                if (dawnComp != null)
+                {
+                    dawnComp.SetVioletChargeProgress(chargeProgress);
+                }
+
                 CompOrdealAnimator animator = fruit.TryGetComp<CompOrdealAnimator>();
                 if (animator != null)
                 {
                     animator.SetChargeIntensity(chargeProgress);
-                    if (chargeProgress > 0.72f && context.CurrentTick % 45 == 0)
-                    {
-                        animator.TriggerSpecial(30, new Color(0.84f, 0.56f, 1f), chargeProgress);
-                        OrdealVfxUtility.SpawnShockwave(map, fruit.DrawPos, 0.3f, 2.2f, new Color(0.68f, 0.24f, 0.96f, 0.75f), 26);
-                    }
+                }
+
+                if (chargeProgress > 0.72f && context.CurrentTick % 45 == 0)
+                {
+                    animator?.TriggerSpecial(30, new Color(0.84f, 0.56f, 1f), chargeProgress);
+                    OrdealVfxUtility.SpawnShockwave(map, fruit.DrawPos, 0.3f, 2.6f, new Color(0.68f, 0.24f, 0.96f, 0.82f), 26);
                 }
                 int attackerId = (int)context.GetLong(VioletAttackerKey(fruit.thingIDNumber), -1L);
                 int chaseUntil = (int)context.GetLong(VioletChaseUntilKey(fruit.thingIDNumber), -1L);

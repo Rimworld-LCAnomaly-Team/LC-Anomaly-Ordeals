@@ -187,7 +187,9 @@ namespace LCAnomalyOrdeals.Examinations
         {
             IntVec3 target = DecodeCell(context.GetLong(TargetKey(fixer.thingIDNumber), 0L));
             Vector3 targetPos = target.InBounds(map) ? target.ToVector3Shifted() : fixer.DrawPos + Vector3.right * 4f;
-            CompOrdealAnimator.TriggerAttackOn(fixer, 46);
+            Comps.CompWhiteAndIndigoOrdeal wiComp = fixer.TryGetComp<Comps.CompWhiteAndIndigoOrdeal>();
+            if (wiComp != null) wiComp.TriggerAttack(46, target);
+            else CompOrdealAnimator.TriggerAttackOn(fixer, 46);
             if (color == FixerColor.Red)
             {
                 OrdealDefOf.LCOrdeal_Sound_FixerRedAtk?.PlayOneShot(new TargetInfo(fixer.Position, map));
@@ -259,13 +261,15 @@ namespace LCAnomalyOrdeals.Examinations
                 if (victim != null)
                 {
                     OrdealDefOf.LCOrdeal_Sound_ClawNormal?.PlayOneShot(new TargetInfo(claw.Position, map));
-                    CompOrdealAnimator.TriggerAttackOn(claw, 28);
+                    Comps.CompWhiteAndIndigoOrdeal cComp = claw.TryGetComp<Comps.CompWhiteAndIndigoOrdeal>();
+                    if (cComp != null) cComp.TriggerAttack(40, victim.Position);
+                    else CompOrdealAnimator.TriggerAttackOn(claw, 28);
                     OrdealVfxUtility.SpawnSlash(map, victim.DrawPos, 2.8f, new Color(0.96f, 0.22f, 0.24f, 0.95f), 22);
-                    victim.TakeDamage(new DamageInfo(LCDamageDefOf.LC_RedDamage, settings.clawBasicAttackDamage, 0f, instigator: claw));
+                    victim.TakeDamage(new DamageInfo(LCDamageDefOf.LC_RedDamage, settings.clawBasicAttackDamage, 0.25f, instigator: claw, weapon: claw.def));
                     if (Rand.Chance(settings.clawBasicDoubleAttackChance) && !victim.Dead)
                     {
                         OrdealVfxUtility.SpawnSlash(map, victim.DrawPos, 3.2f, new Color(1f, 0.36f, 0.20f, 0.95f), 26);
-                        victim.TakeDamage(new DamageInfo(LCDamageDefOf.LC_RedDamage, settings.clawBasicAttackDamage, 0f, instigator: claw));
+                        victim.TakeDamage(new DamageInfo(LCDamageDefOf.LC_RedDamage, settings.clawBasicAttackDamage, 0.25f, instigator: claw, weapon: claw.def));
                     }
                 }
                 context.SetLong(BasicNextKey(claw.thingIDNumber), context.CurrentTick + settings.clawBasicAttackIntervalTicks);
@@ -275,6 +279,7 @@ namespace LCAnomalyOrdeals.Examinations
                 string next = context.GetLong(GreenRequestedKey(claw.thingIDNumber), 0L) != 0 ? "Green" : Rand.Chance(settings.clawOrangeChance) ? "Orange" : "Blue"; context.SetLong(GreenRequestedKey(claw.thingIDNumber), 0L); context.SetString(SpecialKey(claw.thingIDNumber), next); WriteFloat(context, PrepDamageKey(claw.thingIDNumber), 0f);
                 int telegraphTicks = next == "Orange" ? settings.clawOrangeTelegraphTicks : next == "Blue" ? settings.clawBlueTelegraphTicks : settings.clawGreenTelegraphTicks;
                 Pawn target = RandomTarget(map); if (target != null) context.SetLong(TargetKey(claw.thingIDNumber), EncodeCell(target.Position));
+                claw.TryGetComp<Comps.CompWhiteAndIndigoOrdeal>()?.TriggerSpecial(telegraphTicks, target?.Position);
                 if (next == "Orange")
                 {
                     Color orangeFx = new Color(1f, 0.56f, 0.14f, 0.92f);
@@ -370,7 +375,9 @@ namespace LCAnomalyOrdeals.Examinations
             context.SetLong(ResolveKey(pawn.thingIDNumber), context.CurrentTick + delay);
             FixerColor color;
             Color tint = TryFixerColor(pawn.kindDef, out color) ? FixerTint(color) : Color.white;
-            CompOrdealAnimator.TriggerSpecialOn(pawn, delay, tint, 0.9f);
+            Comps.CompWhiteAndIndigoOrdeal wiComp = pawn.TryGetComp<Comps.CompWhiteAndIndigoOrdeal>();
+            if (wiComp != null) wiComp.TriggerSpecial(delay, target.Position);
+            else CompOrdealAnimator.TriggerSpecialOn(pawn, delay, tint, 0.9f);
             OrdealVfxUtility.SpawnPawnAura(map, pawn, OrdealVfxUtility.TexHollowRing, 2.2f, tint, delay, rotateSpeed: 140f);
             OrdealVfxUtility.SpawnPawnAura(map, target, OrdealVfxUtility.TexTargetMark, 1.8f, tint, delay, rotateSpeed: 90f, riseHeight: 0.25f);
             FleckMaker.ThrowLightningGlow(target.Position.ToVector3Shifted(), map, 2f);
@@ -385,9 +392,9 @@ namespace LCAnomalyOrdeals.Examinations
         }
         private static Pawn RandomTarget(Map map) => OrdealTargetUtility.AllTargets(map).RandomElementWithFallback();
         private static IEnumerable<Pawn> PawnsAlongLine(Map map, IntVec3 origin, IntVec3 target, float width) { Vector2 a = new Vector2(origin.x, origin.z); Vector2 direction = (new Vector2(target.x, target.z) - a).normalized; return OrdealTargetUtility.AllTargets(map).Where(pawn => { Vector2 offset = new Vector2(pawn.Position.x, pawn.Position.z) - a; return Vector2.Dot(offset, direction) >= 0f && Mathf.Abs(offset.x * direction.y - offset.y * direction.x) <= width; }).ToList(); }
-        private static void DamageLine(Map map, IntVec3 origin, IntVec3 target, float width, float damage, DamageDef def, Thing instigator) { foreach (Pawn pawn in PawnsAlongLine(map, origin, target, width)) pawn.TakeDamage(new DamageInfo(def, damage, 0f, instigator: instigator)); }
-        private static void DamageRadius(Map map, IntVec3 center, float radius, float damage, DamageDef def, Thing instigator) { foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(center, radius))) pawn.TakeDamage(new DamageInfo(def, damage, 0f, instigator: instigator)); }
-        private static void DamageFan(Map map, IntVec3 center, Rot4 rotation, float radius, float angle, float damage, DamageDef def, Thing instigator) { Vector2 forward = new Vector2(rotation.FacingCell.x, rotation.FacingCell.z); foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(center, radius))) { Vector2 offset = new Vector2(pawn.Position.x - center.x, pawn.Position.z - center.z).normalized; if (Vector2.Angle(forward, offset) <= angle / 2f) pawn.TakeDamage(new DamageInfo(def, damage, 0f, instigator: instigator)); } }
+        private static void DamageLine(Map map, IntVec3 origin, IntVec3 target, float width, float damage, DamageDef def, Thing instigator) { foreach (Pawn pawn in PawnsAlongLine(map, origin, target, width)) pawn.TakeDamage(new DamageInfo(def, damage, 0.25f, instigator: instigator, weapon: instigator?.def)); }
+        private static void DamageRadius(Map map, IntVec3 center, float radius, float damage, DamageDef def, Thing instigator) { foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(center, radius))) pawn.TakeDamage(new DamageInfo(def, damage, 0.25f, instigator: instigator, weapon: instigator?.def)); }
+        private static void DamageFan(Map map, IntVec3 center, Rot4 rotation, float radius, float angle, float damage, DamageDef def, Thing instigator) { Vector2 forward = new Vector2(rotation.FacingCell.x, rotation.FacingCell.z); foreach (Pawn pawn in OrdealTargetUtility.AllTargets(map).Where(item => item.Position.InHorDistOf(center, radius))) { Vector2 offset = new Vector2(pawn.Position.x - center.x, pawn.Position.z - center.z).normalized; if (Vector2.Angle(forward, offset) <= angle / 2f) pawn.TakeDamage(new DamageInfo(def, damage, 0.25f, instigator: instigator, weapon: instigator?.def)); } }
         private static int ResetPlatforms(Map map, IntVec3 center, float radius) { int count = 0; foreach (Building_AbnormalityHoldingPlatform platform in map.listerBuildings.AllBuildingsColonistOfClass<Building_AbnormalityHoldingPlatform>()) { if (!platform.Position.InHorDistOf(center, radius)) continue; CompAbnormality comp = platform.HeldPawn?.TryGetComp<CompAbnormality>(); if (comp != null && comp.QliphothEnabled) { comp.QliphothCountCurrent = 0; count++; } } return count; }
         private static void Heal(Pawn pawn, float amount) { float left = amount; foreach (Hediff_Injury injury in pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().OrderByDescending(item => item.Severity).ToList()) { float value = Math.Min(left, injury.Severity); injury.Severity -= value; left -= value; if (left <= 0f) break; } }
         private static void AddSlow(Pawn pawn, int duration) { Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(OrdealDefOf.LCOrdeal_WhiteFogSlowness); if (hediff == null) { hediff = HediffMaker.MakeHediff(OrdealDefOf.LCOrdeal_WhiteFogSlowness, pawn); pawn.health.AddHediff(hediff); } HediffComp_Disappears comp = hediff.TryGetComp<HediffComp_Disappears>(); if (comp != null) comp.ticksToDisappear = Math.Max(comp.ticksToDisappear, duration); }

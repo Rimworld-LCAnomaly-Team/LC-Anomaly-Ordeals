@@ -142,13 +142,12 @@ namespace LCAnomalyOrdeals.Examinations
             DuskOrdealSettings settings = ActiveSettings(); Map map = pawn.Map; List<Pawn> spawned = new List<Pawn>();
             Color crimsonFx = new Color(0.94f, 0.16f, 0.22f, 0.90f);
             OrdealVfxUtility.SpawnShockwave(map, pawn.DrawPos, 0.6f, 5.0f, crimsonFx, 38);
-            OrdealVfxUtility.SpawnPortal(map, pawn.DrawPos, 3.4f, crimsonFx, 42);
+            OrdealVfxUtility.SpawnCircusTent(map, pawn.DrawPos, 3.6f, 56);
             if (pawn.kindDef == OrdealDefOf.LCOrdeal_CrimsonDusk)
             {
                 for (int i = 0; i < settings.crimsonNoonSplitCount; i++)
                 {
                     Pawn child = SpawnNear(map, pawn.Position, OrdealDefOf.LCOrdeal_CrimsonNoon, 5);
-                    if (child != null) OrdealVfxUtility.SpawnPortal(map, child.DrawPos, 2.4f, crimsonFx, 36);
                     spawned.Add(child);
                 }
             }
@@ -158,7 +157,6 @@ namespace LCAnomalyOrdeals.Examinations
                 {
                     IntVec3 cell; if (!RCellFinder.TryFindRandomPawnEntryCell(out cell, map, CellFinder.EdgeRoadChance_Hostile, true)) continue;
                     Pawn child = SpawnAt(map, cell, OrdealDefOf.LCOrdeal_CrimsonDawn);
-                    if (child != null) OrdealVfxUtility.SpawnPortal(map, child.DrawPos, 2.0f, crimsonFx, 36);
                     spawned.Add(child);
                 }
             }
@@ -215,24 +213,42 @@ namespace LCAnomalyOrdeals.Examinations
                 }
                 if (spawnCount > 0)
                 {
-                    OrdealDefOf.LCOrdeal_Sound_BugDuskSpawn?.PlayOneShot(new TargetInfo(parent.Position, map));
-                    CompOrdealAnimator.TriggerSpecialOn(parent, 40, new Color(0.95f, 0.65f, 0.25f), 0.85f);
+                    Comps.CompAmberOrdeal amberComp = parent.TryGetComp<Comps.CompAmberOrdeal>();
+                    if (amberComp != null) amberComp.TriggerSpawnRoar();
+                    else
+                    {
+                        OrdealDefOf.LCOrdeal_Sound_BugDuskSpawn?.PlayOneShot(new TargetInfo(parent.Position, map));
+                        CompOrdealAnimator.TriggerSpecialOn(parent, 40, new Color(0.95f, 0.65f, 0.25f), 0.85f);
+                    }
                     OrdealVfxUtility.SpawnCrater(map, parent.DrawPos, 3.6f, new Color(0.88f, 0.52f, 0.16f, 0.85f), 140);
                 }
                 if (victims.Count > 0)
                 {
-                    IntVec3 oldPos = parent.Position;
                     IntVec3 destination = CellFinder.RandomClosewalkCellNear(victims.RandomElement().Position, map, settings.amberBurrowRadius, cell => cell.Standable(map) && !cell.Fogged(map));
-                    Color amberFx = new Color(0.92f, 0.56f, 0.16f, 0.90f);
-                    OrdealVfxUtility.SpawnCrater(map, oldPos.ToVector3Shifted(), 3.6f, amberFx, 120);
-                    MoveByBurrow(parent, destination, map);
-                    OrdealDefOf.LCOrdeal_Sound_BugDuskDig?.PlayOneShot(new TargetInfo(parent.Position, map));
-                    CompOrdealAnimator.TriggerAttackOn(parent, 45);
-                    OrdealVfxUtility.SpawnCrater(map, parent.DrawPos, 4.4f, amberFx, 160);
-                    OrdealVfxUtility.SpawnShockwave(map, parent.DrawPos, 0.8f, settings.amberEmergenceRadius, amberFx, 38);
-                    FleckMaker.ThrowDustPuffThick(parent.Position.ToVector3Shifted(), map, 2.2f, new Color(0.75f, 0.48f, 0.18f));
-                    foreach (Pawn child in children.Where(item => item.Spawned).ToList()) MoveByBurrow(child, CellFinder.RandomClosewalkCellNear(destination, map, 4), map);
-                    DamageNearby(map, parent, settings.amberEmergenceRadius, settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage ?? DamageDefOf.Blunt);
+                    Comps.CompAmberOrdeal amberComp = parent.TryGetComp<Comps.CompAmberOrdeal>();
+                    if (amberComp != null && amberComp.BeginBurrow(destination))
+                    {
+                        foreach (Pawn child in children.Where(item => item.Spawned).ToList())
+                        {
+                            IntVec3 childDest = CellFinder.RandomClosewalkCellNear(destination, map, 4, c => c.Standable(map) && !c.Fogged(map));
+                            if (child.TryGetComp<Comps.CompDawnOrdeal>()?.BeginAmberBurrow(childDest) != true)
+                            {
+                                MoveByBurrow(child, childDest, map);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        IntVec3 oldPos = parent.Position;
+                        Color amberFx = new Color(0.92f, 0.56f, 0.16f, 0.90f);
+                        OrdealVfxUtility.SpawnCrater(map, oldPos.ToVector3Shifted(), 3.6f, amberFx, 120);
+                        MoveByBurrow(parent, destination, map);
+                        OrdealDefOf.LCOrdeal_Sound_BugDuskDig?.PlayOneShot(new TargetInfo(parent.Position, map));
+                        OrdealVfxUtility.SpawnCrater(map, parent.DrawPos, 4.4f, amberFx, 160);
+                        OrdealVfxUtility.SpawnShockwave(map, parent.DrawPos, 0.8f, settings.amberEmergenceRadius, amberFx, 38);
+                        foreach (Pawn child in children.Where(item => item.Spawned).ToList()) MoveByBurrow(child, CellFinder.RandomClosewalkCellNear(destination, map, 4), map);
+                        DamageNearby(map, parent, settings.amberEmergenceRadius, settings.amberEmergenceDamage, LCDamageDefOf.LC_RedDamage ?? DamageDefOf.Blunt);
+                    }
                 }
                 AssignAssaultLord(map, children.Where(item => item.GetLord() == null));
             }
@@ -247,15 +263,19 @@ namespace LCAnomalyOrdeals.Examinations
                 foreach (Pawn dusk in targets.Where(item => item.kindDef == OrdealDefOf.LCOrdeal_CrimsonDusk).ToList())
                 {
                     if (victims.Count == 0) break;
-                    IntVec3 oldPos = dusk.Position;
                     IntVec3 destination = CellFinder.RandomClosewalkCellNear(victims.RandomElement().Position, map, settings.crimsonRollArrivalRadius, cell => cell.Standable(map) && !cell.Fogged(map));
+                    Comps.CompCrimsonOrdeal crimsonComp = dusk.TryGetComp<Comps.CompCrimsonOrdeal>();
+                    if (crimsonComp != null && crimsonComp.BeginRollCharge(destination))
+                    {
+                        continue;
+                    }
+
+                    IntVec3 oldPos = dusk.Position;
                     MoveByBurrow(dusk, destination, map);
                     OrdealDefOf.LCOrdeal_Sound_CircusDuskMove?.PlayOneShot(new TargetInfo(dusk.Position, map));
-                    CompOrdealAnimator.TriggerAttackOn(dusk, 45);
                     Color crimsonFx = new Color(0.95f, 0.18f, 0.24f, 0.90f);
                     OrdealVfxUtility.SpawnBeamBetween(map, oldPos.ToVector3Shifted(), dusk.DrawPos, 1.4f, new Color(0.95f, 0.20f, 0.24f, 0.55f), 22);
                     OrdealVfxUtility.SpawnShockwave(map, dusk.DrawPos, 0.7f, settings.crimsonRollDamageRadius, crimsonFx, 34);
-                    OrdealVfxUtility.SpawnSlash(map, dusk.DrawPos, settings.crimsonRollDamageRadius * 1.2f, crimsonFx, 24);
                     DamageNearby(map, dusk, settings.crimsonRollDamageRadius, settings.crimsonRollDamage, LCDamageDefOf.LC_RedDamage ?? DamageDefOf.Blunt);
                 }
                 context.SetLong(NextSpecialTickKey, context.CurrentTick + settings.crimsonRollIntervalTicks);
@@ -287,7 +307,9 @@ namespace LCAnomalyOrdeals.Examinations
                 {
                     OrdealDefOf.LCOrdeal_Sound_MachineDuskProduce?.PlayOneShot(new TargetInfo(factory.Position, map));
                     Color emeraldFx = new Color(0.24f, 0.95f, 0.44f, 0.90f);
-                    CompOrdealAnimator.TriggerSpecialOn(factory, 60, emeraldFx, 0.9f);
+                    Comps.CompGreenOrdeal greenComp = factory.TryGetComp<Comps.CompGreenOrdeal>();
+                    if (greenComp != null) greenComp.TriggerFactoryCreate();
+                    else CompOrdealAnimator.TriggerSpecialOn(factory, 60, emeraldFx, 0.9f);
                     OrdealVfxUtility.SpawnPawnAura(map, factory, OrdealVfxUtility.TexHollowRing, 3.2f, emeraldFx, 54, rotateSpeed: 90f);
                     OrdealVfxUtility.SpawnShockwave(map, factory.DrawPos, 0.8f, 4.6f, emeraldFx, 38);
                     foreach (Pawn product in spawned)

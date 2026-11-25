@@ -44,272 +44,780 @@
     <tools><li><label>head</label><capacities><li>Blunt</li></capacities><power>17</power><cooldownTime>2.6</cooldownTime><linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup><ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable></li></tools>
   </ThingDef>
 
-  <!-- Every ordeal PawnKind owns a concrete race Def, even where anatomy/stats share an abstract family. -->
-  <!-- Dawn & Noon races carry authentic Lobotomy Corporation four-color resistances. -->
+  <!-- ==================== DAWN ORDEALS (TETH): ARTICULATED SPINE RIGS + FULL FOUR-COLOR COMBAT ==================== -->
+  <!-- 1. Amber Dawn: The Perfect Food (TETH | HP 35 swarm | RED melee & emergence ambush | R 2.0 / W 1.0 / B 1.0 / P 2.0) -->
   <ThingDef ParentName="LCOrdeal_RaceSmall">
     <defName>LCOrdeal_Race_AmberDawn</defName>
     <label>Perfect Food manifestation</label>
+    <description>A ravenous, segmented orange-spotted worm spawned by the Amber Dawn Ordeal (TETH). Individually fragile and highly vulnerable to RED and PALE damage, yet relentless in burrowing swarms that lunge with rapid RED-damage bites.</description>
+    <statBases>
+      <MoveSpeed>3.85</MoveSpeed>
+      <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.12</ArmorRating_Sharp>
+      <PsychicSensitivity>0.85</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_AmberDawn</renderTree>
+      <baseBodySize>0.65</baseBodySize>
+      <baseHealthScale>0.85</baseHealthScale>
+    </race>
+    <tools>
+      <li>
+        <label>chitinous mandibles</label>
+        <capacities><li>Bite</li></capacities>
+        <power>7.5</power>
+        <cooldownTime>1.15</cooldownTime>
+        <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_DawnOrdeal">
+        <archetype>Amber</archetype>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>TETH</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>2.0</redResistance>
         <whiteResistance>1.0</whiteResistance>
         <blackResistance>1.0</blackResistance>
         <paleResistance>2.0</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Red</damageType>
+        <riskLevel>TETH</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+
+  <!-- 2. Crimson Dawn: Cheers for the Beginning (TETH | HP 80 fast saboteur | tjzjtm jester clown | RED melee & death blast | R 0.8 / W 1.3 / B 1.3 / P 2.0) -->
   <ThingDef ParentName="LCOrdeal_RaceWalker">
     <defName>LCOrdeal_Race_CrimsonDawn</defName>
     <label>Cheers manifestation</label>
+    <description>A manic stitched jester clown with mismatched carnival hat ears spawned by the Crimson Dawn Ordeal (TETH). Sprints straight toward Abnormality Holding Platforms to drop Qliphoth Counters to zero before vanishing through a striped circus tent portal, and explodes in a RED-damage blast upon death.</description>
+    <statBases>
+      <MoveSpeed>4.8</MoveSpeed>
+      <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.18</ArmorRating_Sharp>
+      <PsychicSensitivity>0.85</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_CrimsonDawn</renderTree>
+      <bloodDef>Filth_Blood</bloodDef>
+      <baseBodySize>0.95</baseBodySize>
+      <baseHealthScale>1.15</baseHealthScale>
+    </race>
+    <tools>
+      <li>
+        <label>jester claws</label>
+        <capacities><li>Cut</li></capacities>
+        <power>9</power>
+        <cooldownTime>1.55</cooldownTime>
+        <linkedBodyPartsGroup>LeftBlade</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_DawnOrdeal">
+        <archetype>Crimson</archetype>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>TETH</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>0.8</redResistance>
         <whiteResistance>1.3</whiteResistance>
         <blackResistance>1.3</blackResistance>
         <paleResistance>2.0</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Red</damageType>
+        <riskLevel>TETH</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+
+  <!-- 3. Green Dawn: Doubt (TETH | HP 150 combat killer | RED spear + WHITE corpse execution | R 0.8 / W 1.3 / B 2.0 / P 1.0) -->
   <ThingDef ParentName="LCOrdeal_RaceWalker">
     <defName>LCOrdeal_Race_GreenDawn</defName>
     <label>Doubt manifestation</label>
+    <description>An existentially tormented skeletal automaton spawned by the Green Dawn Ordeal (TETH). The deadliest direct fighter among Dawn Ordeals: hunts down personnel with high-power RED spear thrusts and enters a brutal corpse-execution frenzy emitting WHITE mental shockwaves upon scoring a kill.</description>
+    <statBases>
+      <MoveSpeed>3.35</MoveSpeed>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.42</ArmorRating_Sharp>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_GreenDawn</renderTree>
+      <baseBodySize>1.25</baseBodySize>
+      <baseHealthScale>1.75</baseHealthScale>
+    </race>
+    <tools>
+      <li>
+        <label>bloodstained mechanical lance</label>
+        <capacities><li>Stab</li></capacities>
+        <power>14.5</power>
+        <cooldownTime>1.55</cooldownTime>
+        <linkedBodyPartsGroup>RightBlade</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+      <li>
+        <label>spiked iron arm</label>
+        <capacities><li>Cut</li></capacities>
+        <power>12.5</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>LeftBlade</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_DawnOrdeal">
+        <archetype>Green</archetype>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>TETH</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>0.8</redResistance>
         <whiteResistance>1.3</whiteResistance>
         <blackResistance>2.0</blackResistance>
         <paleResistance>1.0</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Red</damageType>
+        <riskLevel>TETH</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+
+  <!-- 4. Violet Dawn: The Fruit of Understanding (TETH | HP 190 ticking bomb | BLACK spores & melee + BLACK/WHITE suicide blast | R 1.0 / W 1.5 / B 1.0 / P 1.0) -->
   <ThingDef ParentName="LCOrdeal_RaceSmall">
     <defName>LCOrdeal_Race_VioletDawn</defName>
     <label>Understanding Fruit manifestation</label>
+    <description>An inscribed eldritch violet organism spawned by the Violet Dawn Ordeal (TETH). Creeps slowly while pulsing BLACK-damage spores; if not suppressed before its glowing core reaches maturity, it detonates in a massive BLACK and WHITE shockwave that drops nearby Abnormality Qliphoth Counters to zero.</description>
+    <statBases>
+      <MoveSpeed>2.1</MoveSpeed>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+      <PsychicSensitivity>0.80</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_VioletDawn</renderTree>
+      <baseBodySize>1.15</baseBodySize>
+      <baseHealthScale>2.15</baseHealthScale>
+    </race>
+    <tools>
+      <li>
+        <label>eldritch tendril</label>
+        <capacities><li>Blunt</li></capacities>
+        <power>7.5</power>
+        <cooldownTime>1.85</cooldownTime>
+        <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_DawnOrdeal">
+        <archetype>Violet</archetype>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>TETH</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>1.0</redResistance>
         <whiteResistance>1.5</whiteResistance>
         <blackResistance>1.0</blackResistance>
         <paleResistance>1.0</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Black</damageType>
+        <riskLevel>TETH</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+  <!-- Crimson Noon: Harmony of Skin (HE | HP 550 | CircusNoon clown-faced scorpion | RED 3-hit combo & 3x Dawn split | R 0.5 / W 1.2 / B 1.2 / P 1.5) -->
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_CrimsonNoon</defName>
     <label>Harmony manifestation</label>
+    <description>A grotesque scorpion-like mass of screaming clown faces spawned by the Crimson Noon Ordeal (HE). Strikes with towering scorpion-tail slams, snapping twin clown-jaw pincers, and full-body pounces for heavy RED damage, and splits into three Crimson Dawn jesters upon death.</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed>
+      <ArmorRating_Blunt>0.24</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.36</ArmorRating_Sharp>
+      <PsychicSensitivity>0.80</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_CrimsonNoon</renderTree>
+      <bloodDef>Filth_Blood</bloodDef>
+      <baseBodySize>1.65</baseBodySize>
+      <baseHealthScale>3.2</baseHealthScale>
+    </race>
+    <tools>
+      <li>
+        <label>scorpion-tail clown maw</label>
+        <capacities><li>Bite</li><li>Blunt</li></capacities>
+        <power>17</power>
+        <cooldownTime>1.85</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+      <li>
+        <label>twin clown-jaw pincers</label>
+        <capacities><li>Cut</li><li>Bite</li></capacities>
+        <power>15</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_CrimsonOrdeal">
+        <tier>Noon</tier>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>HE</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>0.5</redResistance>
         <whiteResistance>1.2</whiteResistance>
         <blackResistance>1.2</blackResistance>
         <paleResistance>1.5</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Red</damageType>
+        <riskLevel>HE</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+  <!-- Green Noon: Process of Understanding (HE | HP 300 | machine_Noon chainsaw+blaster mech | RED saw & overheat reboot | R 0.8 / W 1.3 / B 2.0 / P 1.0) -->
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_GreenNoon</defName>
     <label>Understanding Process manifestation</label>
+    <description>A heavy iron-plated automaton armed with a spinning circular saw and blaster cannon, spawned by the Green Noon Ordeal (HE). Shreds nearby targets with RED-damage saw sweeps before periodically overheating and crouching down to reboot.</description>
+    <statBases>
+      <MoveSpeed>3.25</MoveSpeed>
+      <ArmorRating_Blunt>0.34</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.54</ArmorRating_Sharp>
+      <PsychicSensitivity>0.70</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_GreenNoon</renderTree>
+      <baseBodySize>1.5</baseBodySize>
+      <baseHealthScale>2.6</baseHealthScale>
+    </race>
+    <tools>
+      <li>
+        <label>rotary chainsaw</label>
+        <capacities><li>Cut</li></capacities>
+        <power>18</power>
+        <cooldownTime>1.75</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+      <li>
+        <label>arm blaster bash</label>
+        <capacities><li>Blunt</li></capacities>
+        <power>14</power>
+        <cooldownTime>1.8</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_GreenOrdeal">
+        <tier>Noon</tier>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>HE</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>0.8</redResistance>
         <whiteResistance>1.3</whiteResistance>
         <blackResistance>2.0</blackResistance>
         <paleResistance>1.0</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Red</damageType>
+        <riskLevel>HE</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+  <!-- Violet Noon: Grant Us Love (HE | HP 350 | stone obsidian monolith + 6 whipping tentacles | BLACK drop & psychic waves | R 0.8 / W 2.0 / B 0.8 / P 1.0) -->
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_VioletNoon</defName>
     <label>Love monument manifestation</label>
+    <description>A falling obsidian monolith inscribed with glowing violet runes, spawned by the Violet Noon Ordeal (HE). Crushes everything beneath its landing zone for BLACK damage, then whips out six black tentacles to emit BLACK-damage waves and reduce Abnormality Qliphoth Counters.</description>
+    <statBases>
+      <MoveSpeed>0.1</MoveSpeed>
+      <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.42</ArmorRating_Sharp>
+      <PsychicSensitivity>0.85</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_VioletNoon</renderTree>
+      <baseBodySize>2.2</baseBodySize>
+      <baseHealthScale>3.4</baseHealthScale>
+    </race>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_VioletOrdeal">
+        <archetype>NoonMonolith</archetype>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>HE</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>0.8</redResistance>
         <whiteResistance>2.0</whiteResistance>
         <blackResistance>0.8</blackResistance>
         <paleResistance>1.0</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Black</damageType>
+        <riskLevel>HE</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+  <!-- Indigo Noon: Sweeper (HE | cleaner gas-mask scavenger | BLACK hooks & corpse feast | R 1.0 / W 1.2 / B 0.5 / P 0.8) -->
   <ThingDef ParentName="LCOrdeal_RaceWalker">
     <defName>LCOrdeal_Race_IndigoNoon</defName>
     <label>Sweeper manifestation</label>
+    <description>A hunched gas-mask scavenger carrying a blood-fuel tank and dual curved crimson hooks, spawned by the Indigo Noon Ordeal (HE). Hunts in packs, slashing targets for BLACK damage while leeching vitality, and devours fallen corpses to fully regenerate.</description>
+    <statBases>
+      <MoveSpeed>4.4</MoveSpeed>
+      <ArmorRating_Blunt>0.24</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.38</ArmorRating_Sharp>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_IndigoNoon</renderTree>
+      <bloodDef>Filth_Blood</bloodDef>
+      <baseBodySize>1.1</baseBodySize>
+      <baseHealthScale>2.1</baseHealthScale>
+    </race>
+    <tools>
+      <li>
+        <label>crimson meat hook</label>
+        <capacities><li>Cut</li><li>Stab</li></capacities>
+        <power>15</power>
+        <cooldownTime>1.55</cooldownTime>
+        <linkedBodyPartsGroup>LeftBlade</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+      <li>
+        <label>sweeper claw hook</label>
+        <capacities><li>Cut</li></capacities>
+        <power>15</power>
+        <cooldownTime>1.55</cooldownTime>
+        <linkedBodyPartsGroup>RightBlade</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_WhiteAndIndigoOrdeal">
+        <archetype>IndigoSweeper</archetype>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>HE</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>1.0</redResistance>
         <whiteResistance>1.2</whiteResistance>
         <blackResistance>0.5</blackResistance>
         <paleResistance>0.8</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Black</damageType>
+        <riskLevel>HE</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
   <!-- Dusk & Midnight races carry authentic Lobotomy Corporation four-color resistances. -->
+  <!-- Amber Dusk: The Food Chain (WAW | HP 550 | BugDusk armored egg-sac worm | RED bite & 3-phase burrow + Dawn spawn | R 1.2 / W 0.8 / B 0.5 / P 2.0) -->
   <ThingDef ParentName="LCOrdeal_RaceLarge">
     <defName>LCOrdeal_Race_AmberDusk</defName>
     <label>Food Chain manifestation</label>
+    <description>A massive armored burrowing worm with a glowing amber egg-sac on its back, spawned by the Amber Dusk Ordeal (WAW). Arches its carapace to vomit swarms of Amber Dawn worms before burrowing underground and erupting beneath targets for heavy RED damage.</description>
+    <statBases>
+      <MoveSpeed>3.4</MoveSpeed>
+      <ArmorRating_Blunt>0.26</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.42</ArmorRating_Sharp>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_AmberDusk</renderTree>
+      <bloodDef>Filth_Blood</bloodDef>
+      <baseBodySize>1.85</baseBodySize>
+      <baseHealthScale>3.6</baseHealthScale>
+    </race>
+    <tools>
+      <li>
+        <label>armored crushing jaws</label>
+        <capacities><li>Bite</li><li>Blunt</li></capacities>
+        <power>18</power>
+        <cooldownTime>1.85</cooldownTime>
+        <linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_AmberOrdeal">
+        <tier>Dusk</tier>
+        <emergenceRadius>3.8</emergenceRadius>
+        <emergenceDamageMin>20</emergenceDamageMin>
+        <emergenceDamageMax>28</emergenceDamageMax>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>WAW</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>1.2</redResistance>
         <whiteResistance>0.8</whiteResistance>
         <blackResistance>0.5</blackResistance>
         <paleResistance>2.0</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Red</damageType>
+        <riskLevel>WAW</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+  <!-- Crimson Dusk: The Struggle at the Climax (WAW | HP 850 | circus_night rolling flesh boulder | RED roll crush, cleaver, hammer & 2x Noon split | R 0.6 / W 0.8 / B 0.8 / P 1.5) -->
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_CrimsonDusk</defName>
     <label>Climax manifestation</label>
+    <description>A colossal stitched flesh boulder driven by a grinning clown within its gaping maw, spawned by the Crimson Dusk Ordeal (WAW). Tumbles across the facility at high speed crushing everything in its path for massive RED damage, smashes foes with a butcher cleaver, iron skewer, and giant meat tenderizer, and splits into two Crimson Noon abominations upon death.</description>
+    <statBases>
+      <MoveSpeed>3.2</MoveSpeed>
+      <ArmorRating_Blunt>0.32</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.46</ArmorRating_Sharp>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_CrimsonDusk</renderTree>
+      <bloodDef>Filth_Blood</bloodDef>
+      <baseBodySize>2.2</baseBodySize>
+      <baseHealthScale>5.0</baseHealthScale>
+    </race>
+    <tools>
+      <li>
+        <label>giant meat tenderizer</label>
+        <capacities><li>Blunt</li></capacities>
+        <power>21</power>
+        <cooldownTime>2.05</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+      <li>
+        <label>butcher cleaver</label>
+        <capacities><li>Cut</li><li>Stab</li></capacities>
+        <power>19</power>
+        <cooldownTime>1.8</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_CrimsonOrdeal">
+        <tier>Dusk</tier>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>WAW</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>0.6</redResistance>
         <whiteResistance>0.8</whiteResistance>
         <blackResistance>0.8</blackResistance>
         <paleResistance>1.5</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Red</damageType>
+        <riskLevel>WAW</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+  <!-- Green Dusk: Where We Must Reach (WAW | HP 1000 | machineDusk automaton factory | spawns Green Dawn/Noon | R 0.8 / W 1.0 / B 1.2 / P 1.0) -->
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_GreenDusk</defName>
     <label>Factory manifestation</label>
+    <description>A colossal industrial automaton foundry spawned by the Green Dusk Ordeal (WAW). Charges its green furnace gauges and lifts its blast gate wide open to continuously manufacture and deploy Green Dawn and Green Noon war machines.</description>
+    <statBases>
+      <MoveSpeed>0.1</MoveSpeed>
+      <ArmorRating_Blunt>0.42</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.62</ArmorRating_Sharp>
+      <PsychicSensitivity>0.55</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_GreenDusk</renderTree>
+      <baseBodySize>2.8</baseBodySize>
+      <baseHealthScale>5.8</baseHealthScale>
+    </race>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_GreenOrdeal">
+        <tier>Dusk</tier>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>WAW</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>0.8</redResistance>
         <whiteResistance>1.0</whiteResistance>
         <blackResistance>1.2</blackResistance>
         <paleResistance>1.0</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Red</damageType>
+        <riskLevel>WAW</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+  <!-- Amber Midnight: The Eternal Meal (ALEPH | HP 7000 | ThirdType split-jaw titan worm | RED colossal eruption & Dusk brood | R 1.0 / W 0.6 / B 0.4 / P 0.8) -->
   <ThingDef ParentName="LCOrdeal_RaceLarge">
     <defName>LCOrdeal_Race_AmberMidnight</defName>
     <label>Eternal Meal manifestation</label>
+    <description>A colossal vertical brood-titan worm spawned by the Amber Midnight Ordeal (ALEPH). Splits its egg-sac armored petals wide open to expose snapping serrated inner jaws, spewing Amber Dusk worms and erupting from beneath the earth with devastating RED-damage shockwaves.</description>
+    <statBases>
+      <MoveSpeed>2.0</MoveSpeed>
+      <ArmorRating_Blunt>0.42</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.58</ArmorRating_Sharp>
+      <PsychicSensitivity>0.55</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_AmberMidnight</renderTree>
+      <bloodDef>Filth_Blood</bloodDef>
+      <baseBodySize>3.2</baseBodySize>
+      <baseHealthScale>9.5</baseHealthScale>
+    </race>
+    <tools>
+      <li>
+        <label>serrated abyssal maw</label>
+        <capacities><li>Bite</li><li>Blunt</li></capacities>
+        <power>28</power>
+        <cooldownTime>2.1</cooldownTime>
+        <linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_AmberOrdeal">
+        <tier>Midnight</tier>
+        <emergenceRadius>5.4</emergenceRadius>
+        <emergenceDamageMin>34</emergenceDamageMin>
+        <emergenceDamageMax>46</emergenceDamageMax>
+        <spawnShockwaveRadius>5.8</spawnShockwaveRadius>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>ALEPH</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>1.0</redResistance>
         <whiteResistance>0.6</whiteResistance>
         <blackResistance>0.4</blackResistance>
         <paleResistance>0.8</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Red</damageType>
+        <riskLevel>ALEPH</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+  <!-- Green Midnight: Helix of the End (ALEPH | HP 22000 | machine_Midnight 360 laser tower | BLACK sweeping beam | R 0.5 / W 0.8 / B 1.2 / P 1.0) -->
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_GreenMidnight</defName>
     <label>Helix manifestation</label>
+    <description>The apocalyptic Helix of the End laser tower spawned by the Green Midnight Ordeal (ALEPH). Splits its armored dome shell apart to elevate a glowing emerald emitter that rotates 360 degrees, sweeping the entire map with lethal BLACK-damage beams.</description>
+    <statBases>
+      <MoveSpeed>0.1</MoveSpeed>
+      <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
+      <PsychicSensitivity>0.40</PsychicSensitivity>
+    </statBases>
+    <race>
+      <renderTree>LCOrdeal_Tree_GreenMidnight</renderTree>
+      <baseBodySize>3.4</baseBodySize>
+      <baseHealthScale>14.0</baseHealthScale>
+    </race>
+    <comps>
+      <li Class="LCAnomalyOrdeals.Comps.CompProperties_GreenOrdeal">
+        <tier>Midnight</tier>
+      </li>
+    </comps>
     <modExtensions>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory">
+        <abnormalityCategoryDef>ALEPH</abnormalityCategoryDef>
+      </li>
       <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
+        <targetKind>Abnormality</targetKind>
         <redResistance>0.5</redResistance>
         <whiteResistance>0.8</whiteResistance>
         <blackResistance>1.2</blackResistance>
         <paleResistance>1.0</paleResistance>
       </li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension">
+        <damageType>Black</damageType>
+        <riskLevel>ALEPH</riskLevel>
+      </li>
     </modExtensions>
   </ThingDef>
+  <!-- Violet Midnight: God's Delusion (ALEPH | 4 Colored Eldritch Shrines absorbing own color & summoning Tentacle/PaleEye portals) -->
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_VioletMidnightRed</defName>
     <label>red shrine manifestation</label>
+    <description>The Crimson Altar of the Violet Midnight Ordeal (ALEPH). Absorbs all RED damage and tears open bloody portals to lash targets with clawed RED-damage tentacles.</description>
+    <statBases><MoveSpeed>0.1</MoveSpeed><ArmorRating_Blunt>0.40</ArmorRating_Blunt><ArmorRating_Sharp>0.55</ArmorRating_Sharp></statBases>
+    <race><renderTree>LCOrdeal_Tree_VioletMidnightRed</renderTree><baseBodySize>2.8</baseBodySize><baseHealthScale>8.2</baseHealthScale></race>
+    <comps><li Class="LCAnomalyOrdeals.Comps.CompProperties_VioletOrdeal"><archetype>MidnightRed</archetype></li></comps>
     <modExtensions>
-      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
-        <redResistance>0.0</redResistance>
-        <whiteResistance>0.7</whiteResistance>
-        <blackResistance>1.2</blackResistance>
-        <paleResistance>1.0</paleResistance>
-      </li>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory"><abnormalityCategoryDef>ALEPH</abnormalityCategoryDef></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension"><targetKind>Abnormality</targetKind><redResistance>0.0</redResistance><whiteResistance>0.7</whiteResistance><blackResistance>1.2</blackResistance><paleResistance>1.0</paleResistance></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension"><damageType>Red</damageType><riskLevel>ALEPH</riskLevel></li>
     </modExtensions>
   </ThingDef>
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_VioletMidnightWhite</defName>
     <label>white shrine manifestation</label>
+    <description>The Ivory Altar of the Violet Midnight Ordeal (ALEPH). Absorbs all WHITE damage and opens spectral portals releasing swirling WHITE-damage spirit tentacles.</description>
+    <statBases><MoveSpeed>0.1</MoveSpeed><ArmorRating_Blunt>0.40</ArmorRating_Blunt><ArmorRating_Sharp>0.55</ArmorRating_Sharp></statBases>
+    <race><renderTree>LCOrdeal_Tree_VioletMidnightWhite</renderTree><baseBodySize>2.8</baseBodySize><baseHealthScale>8.2</baseHealthScale></race>
+    <comps><li Class="LCAnomalyOrdeals.Comps.CompProperties_VioletOrdeal"><archetype>MidnightWhite</archetype></li></comps>
     <modExtensions>
-      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
-        <redResistance>1.0</redResistance>
-        <whiteResistance>0.0</whiteResistance>
-        <blackResistance>1.0</blackResistance>
-        <paleResistance>1.2</paleResistance>
-      </li>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory"><abnormalityCategoryDef>ALEPH</abnormalityCategoryDef></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension"><targetKind>Abnormality</targetKind><redResistance>1.0</redResistance><whiteResistance>0.0</whiteResistance><blackResistance>1.0</blackResistance><paleResistance>1.2</paleResistance></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension"><damageType>White</damageType><riskLevel>ALEPH</riskLevel></li>
     </modExtensions>
   </ThingDef>
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_VioletMidnightBlack</defName>
     <label>black shrine manifestation</label>
+    <description>The Obsidian Altar of the Violet Midnight Ordeal (ALEPH). Absorbs all BLACK damage and fires barbed-wire purple lance tentacles through dimensional rifts for piercing BLACK damage.</description>
+    <statBases><MoveSpeed>0.1</MoveSpeed><ArmorRating_Blunt>0.40</ArmorRating_Blunt><ArmorRating_Sharp>0.55</ArmorRating_Sharp></statBases>
+    <race><renderTree>LCOrdeal_Tree_VioletMidnightBlack</renderTree><baseBodySize>2.8</baseBodySize><baseHealthScale>8.2</baseHealthScale></race>
+    <comps><li Class="LCAnomalyOrdeals.Comps.CompProperties_VioletOrdeal"><archetype>MidnightBlack</archetype></li></comps>
     <modExtensions>
-      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
-        <redResistance>1.2</redResistance>
-        <whiteResistance>0.7</whiteResistance>
-        <blackResistance>0.0</blackResistance>
-        <paleResistance>1.0</paleResistance>
-      </li>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory"><abnormalityCategoryDef>ALEPH</abnormalityCategoryDef></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension"><targetKind>Abnormality</targetKind><redResistance>1.2</redResistance><whiteResistance>0.7</whiteResistance><blackResistance>0.0</blackResistance><paleResistance>1.0</paleResistance></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension"><damageType>Black</damageType><riskLevel>ALEPH</riskLevel></li>
     </modExtensions>
   </ThingDef>
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_VioletMidnightPale</defName>
     <label>pale shrine manifestation</label>
+    <description>The Pale Altar of the Violet Midnight Ordeal (ALEPH). Absorbs all PALE damage and manifests the all-seeing Pale Eye in swirling black mist to inflict lethal PALE damage.</description>
+    <statBases><MoveSpeed>0.1</MoveSpeed><ArmorRating_Blunt>0.40</ArmorRating_Blunt><ArmorRating_Sharp>0.55</ArmorRating_Sharp></statBases>
+    <race><renderTree>LCOrdeal_Tree_VioletMidnightPale</renderTree><baseBodySize>2.8</baseBodySize><baseHealthScale>8.2</baseHealthScale></race>
+    <comps><li Class="LCAnomalyOrdeals.Comps.CompProperties_VioletOrdeal"><archetype>MidnightPale</archetype></li></comps>
     <modExtensions>
-      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
-        <redResistance>0.7</redResistance>
-        <whiteResistance>1.0</whiteResistance>
-        <blackResistance>0.7</blackResistance>
-        <paleResistance>0.0</paleResistance>
-      </li>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory"><abnormalityCategoryDef>ALEPH</abnormalityCategoryDef></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension"><targetKind>Abnormality</targetKind><redResistance>0.7</redResistance><whiteResistance>1.0</whiteResistance><blackResistance>0.7</blackResistance><paleResistance>0.0</paleResistance></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension"><damageType>Pale</damageType><riskLevel>ALEPH</riskLevel></li>
     </modExtensions>
   </ThingDef>
-  <!-- White Ordeal Fixers & The Claw carry authentic Lobotomy Corporation four-color resistances. -->
+  <!-- White Ordeal Fixers (WAW) & The Claw (ALEPH): Articulated Spine rigs + full Four-Color combat -->
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_WhiteFixerRed</defName>
     <label>red Fixer manifestation</label>
+    <description>The Crimson Fixer of the White Ordeals (WAW). Clad in red-visor combat armor, absorbs RED damage and cleaves through personnel with spinning crimson gauntlet blades and piercing RED laser volleys.</description>
+    <statBases><MoveSpeed>3.8</MoveSpeed><ArmorRating_Blunt>0.38</ArmorRating_Blunt><ArmorRating_Sharp>0.58</ArmorRating_Sharp></statBases>
+    <race><renderTree>LCOrdeal_Tree_WhiteFixerRed</renderTree><bloodDef>Filth_Blood</bloodDef><baseBodySize>1.35</baseBodySize><baseHealthScale>4.8</baseHealthScale></race>
+    <tools><li><label>crimson energy blade</label><capacities><li>Cut</li><li>Stab</li></capacities><power>20</power><cooldownTime>1.65</cooldownTime><linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup><ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable></li></tools>
+    <comps><li Class="LCAnomalyOrdeals.Comps.CompProperties_WhiteAndIndigoOrdeal"><archetype>FixerRed</archetype></li></comps>
     <modExtensions>
-      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
-        <redResistance>0.0</redResistance>
-        <whiteResistance>0.5</whiteResistance>
-        <blackResistance>1.0</blackResistance>
-        <paleResistance>0.5</paleResistance>
-      </li>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory"><abnormalityCategoryDef>WAW</abnormalityCategoryDef></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension"><targetKind>Abnormality</targetKind><redResistance>0.0</redResistance><whiteResistance>0.5</whiteResistance><blackResistance>1.0</blackResistance><paleResistance>0.5</paleResistance></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension"><damageType>Red</damageType><riskLevel>WAW</riskLevel></li>
     </modExtensions>
   </ThingDef>
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_WhiteFixerWhite</defName>
     <label>white Fixer manifestation</label>
+    <description>The Ivory Fixer of the White Ordeals (WAW). Crowned with a levitating halo and armed with a twin-faced holy cannon, absorbs WHITE damage and unleashes blinding WHITE beams and lingering mental fog.</description>
+    <statBases><MoveSpeed>3.6</MoveSpeed><ArmorRating_Blunt>0.36</ArmorRating_Blunt><ArmorRating_Sharp>0.54</ArmorRating_Sharp></statBases>
+    <race><renderTree>LCOrdeal_Tree_WhiteFixerWhite</renderTree><bloodDef>Filth_Blood</bloodDef><baseBodySize>1.35</baseBodySize><baseHealthScale>4.8</baseHealthScale></race>
+    <tools><li><label>seraphic cannon strike</label><capacities><li>Blunt</li></capacities><power>18</power><cooldownTime>1.75</cooldownTime><linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup><ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable></li></tools>
+    <comps><li Class="LCAnomalyOrdeals.Comps.CompProperties_WhiteAndIndigoOrdeal"><archetype>FixerWhite</archetype></li></comps>
     <modExtensions>
-      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
-        <redResistance>0.5</redResistance>
-        <whiteResistance>0.0</whiteResistance>
-        <blackResistance>0.5</blackResistance>
-        <paleResistance>1.0</paleResistance>
-      </li>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory"><abnormalityCategoryDef>WAW</abnormalityCategoryDef></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension"><targetKind>Abnormality</targetKind><redResistance>0.5</redResistance><whiteResistance>0.0</whiteResistance><blackResistance>0.5</blackResistance><paleResistance>1.0</paleResistance></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension"><damageType>White</damageType><riskLevel>WAW</riskLevel></li>
     </modExtensions>
   </ThingDef>
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_WhiteFixerBlack</defName>
     <label>black Fixer manifestation</label>
+    <description>The Obsidian Fixer of the White Ordeals (WAW). Wields a colossal spiked resonance hammer, absorbs BLACK damage, and triggers crushing BLACK shockwave pulses that breach nearby containment units.</description>
+    <statBases><MoveSpeed>3.4</MoveSpeed><ArmorRating_Blunt>0.42</ArmorRating_Blunt><ArmorRating_Sharp>0.58</ArmorRating_Sharp></statBases>
+    <race><renderTree>LCOrdeal_Tree_WhiteFixerBlack</renderTree><bloodDef>Filth_Blood</bloodDef><baseBodySize>1.45</baseBodySize><baseHealthScale>5.2</baseHealthScale></race>
+    <tools><li><label>obsidian resonance hammer</label><capacities><li>Blunt</li></capacities><power>22</power><cooldownTime>1.9</cooldownTime><linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup><ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable></li></tools>
+    <comps><li Class="LCAnomalyOrdeals.Comps.CompProperties_WhiteAndIndigoOrdeal"><archetype>FixerBlack</archetype></li></comps>
     <modExtensions>
-      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
-        <redResistance>1.0</redResistance>
-        <whiteResistance>0.5</whiteResistance>
-        <blackResistance>0.0</blackResistance>
-        <paleResistance>0.5</paleResistance>
-      </li>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory"><abnormalityCategoryDef>WAW</abnormalityCategoryDef></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension"><targetKind>Abnormality</targetKind><redResistance>1.0</redResistance><whiteResistance>0.5</whiteResistance><blackResistance>0.0</blackResistance><paleResistance>0.5</paleResistance></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension"><damageType>Black</damageType><riskLevel>WAW</riskLevel></li>
     </modExtensions>
   </ThingDef>
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_WhiteFixerPale</defName>
     <label>pale Fixer manifestation</label>
+    <description>The Pale Fixer of the White Ordeals (WAW). A fedora-clad executioner armed with a pale pistol and briefcase blade who absorbs PALE damage and blinks behind targets via dimensional portals to inflict lethal PALE strikes.</description>
+    <statBases><MoveSpeed>4.1</MoveSpeed><ArmorRating_Blunt>0.34</ArmorRating_Blunt><ArmorRating_Sharp>0.52</ArmorRating_Sharp></statBases>
+    <race><renderTree>LCOrdeal_Tree_WhiteFixerPale</renderTree><bloodDef>Filth_Blood</bloodDef><baseBodySize>1.35</baseBodySize><baseHealthScale>4.8</baseHealthScale></race>
+    <tools><li><label>pale execution blade</label><capacities><li>Cut</li><li>Stab</li></capacities><power>18</power><cooldownTime>1.6</cooldownTime><linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup><ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable></li></tools>
+    <comps><li Class="LCAnomalyOrdeals.Comps.CompProperties_WhiteAndIndigoOrdeal"><archetype>FixerPale</archetype></li></comps>
     <modExtensions>
-      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
-        <redResistance>0.5</redResistance>
-        <whiteResistance>1.0</whiteResistance>
-        <blackResistance>0.5</blackResistance>
-        <paleResistance>0.0</paleResistance>
-      </li>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory"><abnormalityCategoryDef>WAW</abnormalityCategoryDef></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension"><targetKind>Abnormality</targetKind><redResistance>0.5</redResistance><whiteResistance>1.0</whiteResistance><blackResistance>0.5</blackResistance><paleResistance>0.0</paleResistance></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension"><damageType>Pale</damageType><riskLevel>WAW</riskLevel></li>
     </modExtensions>
   </ThingDef>
   <ThingDef ParentName="LCOrdeal_RaceHeavy">
     <defName>LCOrdeal_Race_WhiteClaw</defName>
     <label>Claw manifestation</label>
+    <description>An executioner of the Head spawned by the White Midnight Ordeal (ALEPH). Equipped with a mechanized execution claw and three singularity serums (Orange dash, Blue warp-shred, Green regeneration), resisting all four damage types equally at 0.4.</description>
+    <statBases><MoveSpeed>4.35</MoveSpeed><ArmorRating_Blunt>0.52</ArmorRating_Blunt><ArmorRating_Sharp>0.68</ArmorRating_Sharp><PsychicSensitivity>0.40</PsychicSensitivity></statBases>
+    <race><renderTree>LCOrdeal_Tree_WhiteClaw</renderTree><bloodDef>Filth_Blood</bloodDef><baseBodySize>1.75</baseBodySize><baseHealthScale>10.5</baseHealthScale></race>
+    <tools><li><label>executioner mechanical claw</label><capacities><li>Cut</li><li>Stab</li></capacities><power>28</power><cooldownTime>1.55</cooldownTime><linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup><ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable></li></tools>
+    <comps><li Class="LCAnomalyOrdeals.Comps.CompProperties_WhiteAndIndigoOrdeal"><archetype>TheClaw</archetype></li></comps>
     <modExtensions>
-      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension">
-        <redResistance>0.4</redResistance>
-        <whiteResistance>0.4</whiteResistance>
-        <blackResistance>0.4</blackResistance>
-        <paleResistance>0.4</paleResistance>
-      </li>
+      <li Class="LCAnomalyCore.ModExtensions.ModExtension_AbnormalityCategory"><abnormalityCategoryDef>ALEPH</abnormalityCategoryDef></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorTargetExtension"><targetKind>Abnormality</targetKind><redResistance>0.4</redResistance><whiteResistance>0.4</whiteResistance><blackResistance>0.4</blackResistance><paleResistance>0.4</paleResistance></li>
+      <li Class="LCAnomalyCore.ModExtensions.FourColorWeaponExtension"><damageType>Red</damageType><riskLevel>ALEPH</riskLevel></li>
     </modExtensions>
   </ThingDef>
 </Defs>

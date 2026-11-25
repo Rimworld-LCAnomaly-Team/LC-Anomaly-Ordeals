@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using HarmonyLib;
+using LCAnomalyOrdeals.Comps;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Examinations;
@@ -75,9 +76,46 @@ namespace LCAnomalyOrdeals.Patches
 
             if (totalDamageDealt > 0f && dinfo.Instigator is Pawn instigator)
             {
-                if (OrdealTargetUtility.IsOrdealPawn(instigator))
+                CompDawnOrdeal dawnComp = instigator.TryGetComp<CompDawnOrdeal>();
+                if (dawnComp != null)
                 {
-                    CompOrdealAnimator.TriggerAttackOn(instigator, 26);
+                    dawnComp.NotifyMeleeAttack(__instance);
+                }
+                else
+                {
+                    CompCrimsonOrdeal crimsonComp = instigator.TryGetComp<CompCrimsonOrdeal>();
+                    if (crimsonComp != null)
+                    {
+                        crimsonComp.NotifyMeleeAttack(__instance);
+                    }
+                    else
+                    {
+                        CompAmberOrdeal amberComp = instigator.TryGetComp<CompAmberOrdeal>();
+                        if (amberComp != null)
+                        {
+                            amberComp.NotifyMeleeAttack(__instance);
+                        }
+                        else
+                        {
+                            CompGreenOrdeal greenComp = instigator.TryGetComp<CompGreenOrdeal>();
+                            if (greenComp != null)
+                            {
+                                greenComp.NotifyMeleeAttack(__instance);
+                            }
+                            else
+                            {
+                                CompWhiteAndIndigoOrdeal wiComp = instigator.TryGetComp<CompWhiteAndIndigoOrdeal>();
+                                if (wiComp != null)
+                                {
+                                    wiComp.NotifyMeleeAttack(__instance);
+                                }
+                                else if (OrdealTargetUtility.IsOrdealPawn(instigator))
+                                {
+                                    CompOrdealAnimator.TriggerAttackOn(instigator, 26);
+                                }
+                            }
+                        }
+                    }
                 }
                 NoonOrdealWorker.NotifyIndigoDamage(instigator, totalDamageDealt);
             }
@@ -141,8 +179,9 @@ namespace LCAnomalyOrdeals.Patches
             {
                 DawnOrdealSettings settings = DawnOrdealWorker.ActiveSettings();
                 Vector3 blastPos = __instance.DrawPos;
-                OrdealVfxUtility.SpawnShockwave(__instance.Map, blastPos, 0.5f, settings.crimsonExplosionRadius * 1.25f, new Color(0.95f, 0.16f, 0.20f, 0.92f), 32);
-                OrdealVfxUtility.SpawnSlash(__instance.Map, blastPos, settings.crimsonExplosionRadius * 1.1f, new Color(1f, 0.25f, 0.25f, 0.88f), 22);
+                OrdealVfxUtility.SpawnShockwave(__instance.Map, blastPos, 0.5f, settings.crimsonExplosionRadius * 1.35f, new Color(0.96f, 0.16f, 0.22f, 0.95f), 34);
+                OrdealVfxUtility.SpawnSlash(__instance.Map, blastPos, settings.crimsonExplosionRadius * 1.25f, new Color(1f, 0.25f, 0.25f, 0.90f), 24);
+                OrdealVfxUtility.SpawnStrikeSprite(__instance.Map, blastPos, OrdealVfxUtility.TexLaserHit, 1.0f, 3.6f, new Color(0.98f, 0.18f, 0.22f, 0.92f), 28, riseHeight: 0.2f, rotateSpeed: 120f, additive: true);
                 DamageDef redBlast = LCAnomalyCore.Defs.DamageDefOf.LC_RedDamage ?? DamageDefOf.Bomb;
                 GenExplosion.DoExplosion(
                     __instance.Position,
@@ -153,6 +192,7 @@ namespace LCAnomalyOrdeals.Patches
                     settings.crimsonExplosionDamage,
                     settings.crimsonExplosionArmorPenetration,
                     explosionSound: OrdealDefOf.LCOrdeal_Sound_CircusDawnDead ?? DamageDefOf.Bomb.soundExplosion,
+                    weapon: __instance.def,
                     ignoredThings: new List<Thing> { __instance },
                     damageFalloff: true);
             }
@@ -162,6 +202,7 @@ namespace LCAnomalyOrdeals.Patches
         {
             SoundDef sound = null;
             if (pawn.kindDef == OrdealDefOf.LCOrdeal_AmberDawn) sound = OrdealDefOf.LCOrdeal_Sound_Bug1Dead;
+            else if (pawn.kindDef == OrdealDefOf.LCOrdeal_GreenDawn) sound = OrdealDefOf.LCOrdeal_Sound_MachineBroke;
             else if (pawn.kindDef == OrdealDefOf.LCOrdeal_VioletDawn) sound = OrdealDefOf.LCOrdeal_Sound_OutterGodDawnDead;
             else if (pawn.kindDef == OrdealDefOf.LCOrdeal_CrimsonNoon) sound = OrdealDefOf.LCOrdeal_Sound_CircusNoonDead;
             else if (pawn.kindDef == OrdealDefOf.LCOrdeal_GreenNoon) sound = OrdealDefOf.LCOrdeal_Sound_MachineNoonDead;
@@ -194,6 +235,13 @@ namespace LCAnomalyOrdeals.Patches
                 || __state.greenKiller.kindDef != OrdealDefOf.LCOrdeal_GreenDawn
                 || OrdealTargetUtility.IsOrdealPawn(__instance))
             {
+                return;
+            }
+
+            CompDawnOrdeal greenComp = __state.greenKiller.TryGetComp<CompDawnOrdeal>();
+            if (greenComp != null && __state.greenKiller.Spawned && !__state.greenKiller.Dead)
+            {
+                greenComp.BeginGreenExecution(__state.position);
                 return;
             }
 

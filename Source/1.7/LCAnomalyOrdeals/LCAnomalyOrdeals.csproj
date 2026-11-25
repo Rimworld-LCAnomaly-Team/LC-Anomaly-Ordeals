@@ -6,6 +6,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bootstrap.cs" />
+    <Compile Include="Comps\CompAmberOrdeal.cs" />
+    <Compile Include="Comps\CompCrimsonOrdeal.cs" />
+    <Compile Include="Comps\CompDawnOrdeal.cs" />
+    <Compile Include="Comps\CompGreenOrdeal.cs" />
+    <Compile Include="Comps\CompVioletOrdeal.cs" />
+    <Compile Include="Comps\CompWhiteAndIndigoOrdeal.cs" />
     <Compile Include="DefOfs\OrdealDefOf.cs" />
     <Compile Include="Debugging\OrdealDebugActions.cs" />
     <Compile Include="Defs\DawnOrdealSettings.cs" />
@@ -25,6 +31,8 @@
     <Compile Include="Presentation\GameComponent_WhitePresentation.cs" />
     <Compile Include="Patches\OrdealPawnPatches.cs" />
     <Compile Include="Render\CompOrdealAnimator.cs" />
+    <Compile Include="Render\IOrdealArticulatedComp.cs" />
+    <Compile Include="Render\PawnRenderNode_DawnPart.cs" />
     <Compile Include="Render\PawnRenderNode_OrdealAnimated.cs" />
     <Compile Include="Utilities\OrdealTargetUtility.cs" />
     <Compile Include="Vfx\MapComponent_OrdealVfx.cs" />

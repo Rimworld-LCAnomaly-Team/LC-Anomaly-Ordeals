@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== Green Noon, Dusk & Midnight PawnRenderNodeTagDefs ==================== -->
+  <!-- Green Noon (Process of Understanding / machine_Noon — 7-part chainsaw + blaster mech) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenNoon_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenNoon_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenNoon_BackLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenNoon_FrontLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenNoon_Head</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenNoon_SawArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenNoon_SawBlade</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenNoon_GunArm</defName></PawnRenderNodeTagDef>
+
+  <!-- Green Dusk (Where We Must Reach / machineDusk — 6-part industrial automaton factory) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenDusk_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenDusk_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenDusk_FurnaceBack</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenDusk_Gears</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenDusk_ExhaustPipes</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenDusk_ChargeGauge</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenDusk_BlastGate</defName></PawnRenderNodeTagDef>
+
+  <!-- Green Midnight (Helix of the End / machine_Midnight — 5-part splitting dome & 360 laser) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenMidnight_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenMidnight_BaseCore</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenMidnight_LeftShell</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenMidnight_RightShell</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenMidnight_Emitter</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_GreenMidnight_EmitterGlow</defName></PawnRenderNodeTagDef>
+
+  <!-- ==================== 1. GREEN NOON ARTICULATED RENDER TREE (machine_Noon) ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_GreenNoon</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>GreenNoonRoot</debugLabel>
+          <tagDef>LCOrdeal_GreenNoon_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot>
+          <useGraphic>false</useGraphic>
+          <drawScale>2.35</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel>
+              <tagDef>LCOrdeal_GreenNoon_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/GreenNoon/Parts/Body</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/GreenNoon/Parts/Body_L</texPathLeft>
+              <baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>BackLeg</debugLabel>
+                  <tagDef>LCOrdeal_GreenNoon_BackLeg</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenNoon/Parts/BackLeg</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenNoon/Parts/BackLeg_L</texPathLeft>
+                  <baseLayer>7.8</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>SawArm</debugLabel>
+                  <tagDef>LCOrdeal_GreenNoon_SawArm</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenNoon/Parts/SawArm</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenNoon/Parts/SawArm_L</texPathLeft>
+                  <baseLayer>8.2</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                      <debugLabel>SawBlade</debugLabel>
+                      <tagDef>LCOrdeal_GreenNoon_SawBlade</tagDef>
+                      <texPath>Things/Pawn/Ordeals/GreenNoon/Parts/SawBlade</texPath>
+                      <texPathLeft>Things/Pawn/Ordeals/GreenNoon/Parts/SawBlade_L</texPathLeft>
+                      <baseLayer>8.4</baseLayer>
+                    </li>
+                  </children>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>FrontLeg</debugLabel>
+                  <tagDef>LCOrdeal_GreenNoon_FrontLeg</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenNoon/Parts/FrontLeg</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenNoon/Parts/FrontLeg_L</texPathLeft>
+                  <baseLayer>9.5</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Head</debugLabel>
+                  <tagDef>LCOrdeal_GreenNoon_Head</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenNoon/Parts/Head</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenNoon/Parts/Head_L</texPathLeft>
+                  <baseLayer>10.2</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>GunArm</debugLabel>
+                  <tagDef>LCOrdeal_GreenNoon_GunArm</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenNoon/Parts/GunArm</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenNoon/Parts/GunArm_L</texPathLeft>
+                  <baseLayer>10.8</baseLayer>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 2. GREEN DUSK ARTICULATED RENDER TREE (machineDusk) ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_GreenDusk</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>GreenDuskRoot</debugLabel>
+          <tagDef>LCOrdeal_GreenDusk_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot>
+          <useGraphic>false</useGraphic>
+          <drawScale>3.35</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel>
+              <tagDef>LCOrdeal_GreenDusk_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/GreenDusk/Parts/Body</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/GreenDusk/Parts/Body_L</texPathLeft>
+              <baseLayer>9.2</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>FurnaceBack</debugLabel>
+                  <tagDef>LCOrdeal_GreenDusk_FurnaceBack</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenDusk/Parts/FurnaceBack</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenDusk/Parts/FurnaceBack_L</texPathLeft>
+                  <baseLayer>7.8</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Gears</debugLabel>
+                  <tagDef>LCOrdeal_GreenDusk_Gears</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenDusk/Parts/Gears</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenDusk/Parts/Gears_L</texPathLeft>
+                  <baseLayer>8.4</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>ExhaustPipes</debugLabel>
+                  <tagDef>LCOrdeal_GreenDusk_ExhaustPipes</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenDusk/Parts/ExhaustPipes</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenDusk/Parts/ExhaustPipes_L</texPathLeft>
+                  <baseLayer>8.6</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>ChargeGauge</debugLabel>
+                  <tagDef>LCOrdeal_GreenDusk_ChargeGauge</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenDusk/Parts/ChargeGauge</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenDusk/Parts/ChargeGauge_L</texPathLeft>
+                  <isChargeCore>true</isChargeCore>
+                  <baseLayer>10.0</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>BlastGate</debugLabel>
+                  <tagDef>LCOrdeal_GreenDusk_BlastGate</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenDusk/Parts/BlastGate</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenDusk/Parts/BlastGate_L</texPathLeft>
+                  <baseLayer>10.5</baseLayer>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 3. GREEN MIDNIGHT ARTICULATED RENDER TREE (machine_Midnight) ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_GreenMidnight</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>GreenMidnightRoot</debugLabel>
+          <tagDef>LCOrdeal_GreenMidnight_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot>
+          <useGraphic>false</useGraphic>
+          <drawScale>3.85</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>BaseCore</debugLabel>
+              <tagDef>LCOrdeal_GreenMidnight_BaseCore</tagDef>
+              <texPath>Things/Pawn/Ordeals/GreenMidnight/Parts/BaseCore</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/GreenMidnight/Parts/BaseCore_L</texPathLeft>
+              <baseLayer>8.6</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LeftShell</debugLabel>
+                  <tagDef>LCOrdeal_GreenMidnight_LeftShell</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenMidnight/Parts/LeftShell</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenMidnight/Parts/LeftShell_L</texPathLeft>
+                  <baseLayer>9.4</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>RightShell</debugLabel>
+                  <tagDef>LCOrdeal_GreenMidnight_RightShell</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenMidnight/Parts/RightShell</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenMidnight/Parts/RightShell_L</texPathLeft>
+                  <baseLayer>9.6</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Emitter</debugLabel>
+                  <tagDef>LCOrdeal_GreenMidnight_Emitter</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenMidnight/Parts/Emitter</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenMidnight/Parts/Emitter_L</texPathLeft>
+                  <useEmitterSpin>true</useEmitterSpin>
+                  <baseLayer>10.2</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                      <debugLabel>EmitterGlow</debugLabel>
+                      <tagDef>LCOrdeal_GreenMidnight_EmitterGlow</tagDef>
+                      <texPath>Things/Pawn/Ordeals/GreenMidnight/Parts/EmitterGlow</texPath>
+                      <texPathLeft>Things/Pawn/Ordeals/GreenMidnight/Parts/EmitterGlow_L</texPathLeft>
+                      <useTransparentShader>true</useTransparentShader>
+                      <showOnlyWhenAlert>true</showOnlyWhenAlert>
+                      <baseLayer>10.8</baseLayer>
+                    </li>
+                  </children>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+</Defs>

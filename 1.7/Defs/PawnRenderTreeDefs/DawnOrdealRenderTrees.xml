@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== Dawn Ordeal PawnRenderNodeTagDefs ==================== -->
+  <!-- Amber Dawn (The Perfect Food / Bug1) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Amber_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Amber_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Amber_UpperJaw</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Amber_LowerJaw</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Amber_LegFront</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Amber_LegMid</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Amber_LegBack</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Amber_PlatesFront</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Amber_PlatesBack</defName></PawnRenderNodeTagDef>
+
+  <!-- Crimson Dawn (Cheers for the Beginning / tjzjtm — authentic two-toned jester clown) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Crimson_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Crimson_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Crimson_LeftLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Crimson_RightLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Crimson_LeftArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Crimson_RightArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Crimson_Head</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Crimson_HatBlack</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Crimson_HatCheckered</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Crimson_Tongue</defName></PawnRenderNodeTagDef>
+
+  <!-- Green Dawn (Doubt / Machine_Dawn) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_Pelvis</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_Torso</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_ClothBack</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_ClothFront</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_BackLegUpper</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_BackLegLower</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_FrontLegUpper</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_FrontLegLower</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_Head</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_WeaponArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Green_WeaponSpear</defName></PawnRenderNodeTagDef>
+
+  <!-- Violet Dawn (The Fruit of Understanding / cosmic_dawn) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Violet_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Violet_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Violet_Tail</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Violet_CrawlLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Violet_LightCore</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Violet_Tendril1</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Violet_Tendril2</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Violet_Tendril3</defName></PawnRenderNodeTagDef>
+
+  <!-- ==================== 1. AMBER DAWN ARTICULATED RENDER TREE ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_AmberDawn</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>AmberRoot</debugLabel>
+          <tagDef>LCOrdeal_Amber_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot>
+          <useGraphic>false</useGraphic>
+          <drawScale>1.55</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel>
+              <tagDef>LCOrdeal_Amber_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/AmberDawn/Parts/Body</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/AmberDawn/Parts/Body_L</texPathLeft>
+              <baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LowerJaw</debugLabel>
+                  <tagDef>LCOrdeal_Amber_LowerJaw</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDawn/Parts/LowerJaw</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDawn/Parts/LowerJaw_L</texPathLeft>
+                  <baseLayer>9.4</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>UpperJaw</debugLabel>
+                  <tagDef>LCOrdeal_Amber_UpperJaw</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDawn/Parts/UpperJaw</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDawn/Parts/UpperJaw_L</texPathLeft>
+                  <baseLayer>9.6</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>PlatesBack</debugLabel>
+                  <tagDef>LCOrdeal_Amber_PlatesBack</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDawn/Parts/PlatesBack</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDawn/Parts/PlatesBack_L</texPathLeft>
+                  <baseLayer>10.0</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>PlatesFront</debugLabel>
+                  <tagDef>LCOrdeal_Amber_PlatesFront</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDawn/Parts/PlatesFront</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDawn/Parts/PlatesFront_L</texPathLeft>
+                  <baseLayer>10.2</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LegBack</debugLabel>
+                  <tagDef>LCOrdeal_Amber_LegBack</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDawn/Parts/LegBack</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDawn/Parts/LegBack_L</texPathLeft>
+                  <baseLayer>10.4</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LegMid</debugLabel>
+                  <tagDef>LCOrdeal_Amber_LegMid</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDawn/Parts/LegMid</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDawn/Parts/LegMid_L</texPathLeft>
+                  <baseLayer>10.6</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LegFront</debugLabel>
+                  <tagDef>LCOrdeal_Amber_LegFront</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDawn/Parts/LegFront</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDawn/Parts/LegFront_L</texPathLeft>
+                  <baseLayer>10.8</baseLayer>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 2. CRIMSON DAWN ARTICULATED RENDER TREE (tjzjtm) ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_CrimsonDawn</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>CrimsonRoot</debugLabel>
+          <tagDef>LCOrdeal_Crimson_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot>
+          <useGraphic>false</useGraphic>
+          <drawScale>1.58</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel>
+              <tagDef>LCOrdeal_Crimson_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/CrimsonDawn/Parts/Body</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/CrimsonDawn/Parts/Body_L</texPathLeft>
+              <baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LeftLeg</debugLabel>
+                  <tagDef>LCOrdeal_Crimson_LeftLeg</tagDef>
+                  <texPath>Things/Pawn/Ordeals/CrimsonDawn/Parts/LeftLeg</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/CrimsonDawn/Parts/LeftLeg_L</texPathLeft>
+                  <baseLayer>8.2</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>RightLeg</debugLabel>
+                  <tagDef>LCOrdeal_Crimson_RightLeg</tagDef>
+                  <texPath>Things/Pawn/Ordeals/CrimsonDawn/Parts/RightLeg</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/CrimsonDawn/Parts/RightLeg_L</texPathLeft>
+                  <baseLayer>8.4</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LeftArm</debugLabel>
+                  <tagDef>LCOrdeal_Crimson_LeftArm</tagDef>
+                  <texPath>Things/Pawn/Ordeals/CrimsonDawn/Parts/LeftArm</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/CrimsonDawn/Parts/LeftArm_L</texPathLeft>
+                  <baseLayer>8.6</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>RightArm</debugLabel>
+                  <tagDef>LCOrdeal_Crimson_RightArm</tagDef>
+                  <texPath>Things/Pawn/Ordeals/CrimsonDawn/Parts/RightArm</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/CrimsonDawn/Parts/RightArm_L</texPathLeft>
+                  <baseLayer>9.4</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Head</debugLabel>
+                  <tagDef>LCOrdeal_Crimson_Head</tagDef>
+                  <texPath>Things/Pawn/Ordeals/CrimsonDawn/Parts/Head</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/CrimsonDawn/Parts/Head_L</texPathLeft>
+                  <baseLayer>10.0</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                      <debugLabel>HatBlack</debugLabel>
+                      <tagDef>LCOrdeal_Crimson_HatBlack</tagDef>
+                      <texPath>Things/Pawn/Ordeals/CrimsonDawn/Parts/HatBlack</texPath>
+                      <texPathLeft>Things/Pawn/Ordeals/CrimsonDawn/Parts/HatBlack_L</texPathLeft>
+                      <baseLayer>9.8</baseLayer>
+                    </li>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                      <debugLabel>HatCheckered</debugLabel>
+                      <tagDef>LCOrdeal_Crimson_HatCheckered</tagDef>
+                      <texPath>Things/Pawn/Ordeals/CrimsonDawn/Parts/HatCheckered</texPath>
+                      <texPathLeft>Things/Pawn/Ordeals/CrimsonDawn/Parts/HatCheckered_L</texPathLeft>
+                      <baseLayer>9.9</baseLayer>
+                    </li>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                      <debugLabel>Tongue</debugLabel>
+                      <tagDef>LCOrdeal_Crimson_Tongue</tagDef>
+                      <texPath>Things/Pawn/Ordeals/CrimsonDawn/Parts/Tongue</texPath>
+                      <texPathLeft>Things/Pawn/Ordeals/CrimsonDawn/Parts/Tongue_L</texPathLeft>
+                      <baseLayer>10.4</baseLayer>
+                    </li>
+                  </children>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 3. GREEN DAWN ARTICULATED RENDER TREE ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_GreenDawn</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>GreenRoot</debugLabel>
+          <tagDef>LCOrdeal_Green_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot>
+          <useGraphic>false</useGraphic>
+          <drawScale>2.12</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Pelvis</debugLabel>
+              <tagDef>LCOrdeal_Green_Pelvis</tagDef>
+              <texPath>Things/Pawn/Ordeals/GreenDawn/Parts/Pelvis</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/Pelvis_L</texPathLeft>
+              <baseLayer>8.8</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>ClothBack</debugLabel>
+                  <tagDef>LCOrdeal_Green_ClothBack</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenDawn/Parts/ClothBack</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/ClothBack_L</texPathLeft>
+                  <baseLayer>7.2</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>BackLegUpper</debugLabel>
+                  <tagDef>LCOrdeal_Green_BackLegUpper</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenDawn/Parts/BackLegUpper</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/BackLegUpper_L</texPathLeft>
+                  <baseLayer>7.8</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                      <debugLabel>BackLegLower</debugLabel>
+                      <tagDef>LCOrdeal_Green_BackLegLower</tagDef>
+                      <texPath>Things/Pawn/Ordeals/GreenDawn/Parts/BackLegLower</texPath>
+                      <texPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/BackLegLower_L</texPathLeft>
+                      <baseLayer>8.0</baseLayer>
+                    </li>
+                  </children>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>FrontLegUpper</debugLabel>
+                  <tagDef>LCOrdeal_Green_FrontLegUpper</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenDawn/Parts/FrontLegUpper</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/FrontLegUpper_L</texPathLeft>
+                  <baseLayer>9.8</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                      <debugLabel>FrontLegLower</debugLabel>
+                      <tagDef>LCOrdeal_Green_FrontLegLower</tagDef>
+                      <texPath>Things/Pawn/Ordeals/GreenDawn/Parts/FrontLegLower</texPath>
+                      <texPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/FrontLegLower_L</texPathLeft>
+                      <baseLayer>10.0</baseLayer>
+                    </li>
+                  </children>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Torso</debugLabel>
+                  <tagDef>LCOrdeal_Green_Torso</tagDef>
+                  <texPath>Things/Pawn/Ordeals/GreenDawn/Parts/Torso</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/Torso_L</texPathLeft>
+                  <baseLayer>9.2</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                      <debugLabel>ClothFront</debugLabel>
+                      <tagDef>LCOrdeal_Green_ClothFront</tagDef>
+                      <texPath>Things/Pawn/Ordeals/GreenDawn/Parts/ClothFront</texPath>
+                      <texPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/ClothFront_L</texPathLeft>
+                      <baseLayer>9.6</baseLayer>
+                    </li>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                      <debugLabel>Head</debugLabel>
+                      <tagDef>LCOrdeal_Green_Head</tagDef>
+                      <texPath>Things/Pawn/Ordeals/GreenDawn/Parts/Head_Green</texPath>
+                      <texPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/Head_Green_L</texPathLeft>
+                      <altTexPath>Things/Pawn/Ordeals/GreenDawn/Parts/Head_Red</altTexPath>
+                      <altTexPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/Head_Red_L</altTexPathLeft>
+                      <useAltWhenAlert>true</useAltWhenAlert>
+                      <baseLayer>10.6</baseLayer>
+                    </li>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                      <debugLabel>WeaponArm</debugLabel>
+                      <tagDef>LCOrdeal_Green_WeaponArm</tagDef>
+                      <texPath>Things/Pawn/Ordeals/GreenDawn/Parts/WeaponArm</texPath>
+                      <texPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/WeaponArm_L</texPathLeft>
+                      <baseLayer>10.8</baseLayer>
+                      <children>
+                        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                          <debugLabel>WeaponSpear</debugLabel>
+                          <tagDef>LCOrdeal_Green_WeaponSpear</tagDef>
+                          <texPath>Things/Pawn/Ordeals/GreenDawn/Parts/WeaponSpear</texPath>
+                          <texPathLeft>Things/Pawn/Ordeals/GreenDawn/Parts/WeaponSpear_L</texPathLeft>
+                          <baseLayer>11.0</baseLayer>
+                        </li>
+                      </children>
+                    </li>
+                  </children>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 4. VIOLET DAWN ARTICULATED RENDER TREE ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_VioletDawn</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>VioletRoot</debugLabel>
+          <tagDef>LCOrdeal_Violet_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot>
+          <useGraphic>false</useGraphic>
+          <drawScale>1.78</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel>
+              <tagDef>LCOrdeal_Violet_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/VioletDawn/Parts/Body</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/VioletDawn/Parts/Body_L</texPathLeft>
+              <baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Tail</debugLabel>
+                  <tagDef>LCOrdeal_Violet_Tail</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletDawn/Parts/Tail</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletDawn/Parts/Tail_L</texPathLeft>
+                  <baseLayer>8.4</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>CrawlLeg</debugLabel>
+                  <tagDef>LCOrdeal_Violet_CrawlLeg</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletDawn/Parts/CrawlLeg</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletDawn/Parts/CrawlLeg_L</texPathLeft>
+                  <baseLayer>9.4</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LightCore</debugLabel>
+                  <tagDef>LCOrdeal_Violet_LightCore</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletDawn/Parts/LightCore</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletDawn/Parts/LightCore_L</texPathLeft>
+                  <useTransparentShader>true</useTransparentShader>
+                  <isChargeCore>true</isChargeCore>
+                  <baseLayer>9.8</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Tendril1</debugLabel>
+                  <tagDef>LCOrdeal_Violet_Tendril1</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletDawn/Parts/Tendril1</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletDawn/Parts/Tendril1_L</texPathLeft>
+                  <baseLayer>10.1</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Tendril2</debugLabel>
+                  <tagDef>LCOrdeal_Violet_Tendril2</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletDawn/Parts/Tendril2</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletDawn/Parts/Tendril2_L</texPathLeft>
+                  <baseLayer>10.3</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Tendril3</debugLabel>
+                  <tagDef>LCOrdeal_Violet_Tendril3</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletDawn/Parts/Tendril3</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletDawn/Parts/Tendril3_L</texPathLeft>
+                  <baseLayer>10.5</baseLayer>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+</Defs>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== Amber Dusk & Midnight PawnRenderNodeTagDefs ==================== -->
+  <!-- Amber Dusk (The Food Chain / BugDusk — 9-part armored egg-sac worm) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberDusk_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberDusk_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberDusk_UpperJaw</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberDusk_LowerJaw</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberDusk_PlatesBack</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberDusk_PlatesMid</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberDusk_PlatesFront</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberDusk_LegFront</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberDusk_LegMid</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberDusk_LegBack</defName></PawnRenderNodeTagDef>
+
+  <!-- Amber Midnight (The Eternal Meal / ThirdType — 5-part split-jaw titan worm) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberMidnight_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberMidnight_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberMidnight_InnerJawLeft</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberMidnight_InnerJawRight</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberMidnight_LeftWing</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_AmberMidnight_RightWing</defName></PawnRenderNodeTagDef>
+
+  <!-- ==================== 1. AMBER DUSK ARTICULATED RENDER TREE (BugDusk) ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_AmberDusk</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>AmberDuskRoot</debugLabel>
+          <tagDef>LCOrdeal_AmberDusk_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot>
+          <useGraphic>false</useGraphic>
+          <drawScale>2.55</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel>
+              <tagDef>LCOrdeal_AmberDusk_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/AmberDusk/Parts/Body</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/AmberDusk/Parts/Body_L</texPathLeft>
+              <baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LowerJaw</debugLabel>
+                  <tagDef>LCOrdeal_AmberDusk_LowerJaw</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDusk/Parts/LowerJaw</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDusk/Parts/LowerJaw_L</texPathLeft>
+                  <baseLayer>9.3</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>UpperJaw</debugLabel>
+                  <tagDef>LCOrdeal_AmberDusk_UpperJaw</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDusk/Parts/UpperJaw</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDusk/Parts/UpperJaw_L</texPathLeft>
+                  <baseLayer>9.5</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>PlatesFront</debugLabel>
+                  <tagDef>LCOrdeal_AmberDusk_PlatesFront</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDusk/Parts/PlatesFront</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDusk/Parts/PlatesFront_L</texPathLeft>
+                  <baseLayer>9.7</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>PlatesMid</debugLabel>
+                  <tagDef>LCOrdeal_AmberDusk_PlatesMid</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDusk/Parts/PlatesMid</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDusk/Parts/PlatesMid_L</texPathLeft>
+                  <baseLayer>9.9</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>PlatesBack</debugLabel>
+                  <tagDef>LCOrdeal_AmberDusk_PlatesBack</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDusk/Parts/PlatesBack</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDusk/Parts/PlatesBack_L</texPathLeft>
+                  <baseLayer>10.1</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LegBack</debugLabel>
+                  <tagDef>LCOrdeal_AmberDusk_LegBack</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDusk/Parts/LegBack</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDusk/Parts/LegBack_L</texPathLeft>
+                  <baseLayer>10.4</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LegMid</debugLabel>
+                  <tagDef>LCOrdeal_AmberDusk_LegMid</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDusk/Parts/LegMid</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDusk/Parts/LegMid_L</texPathLeft>
+                  <baseLayer>10.6</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LegFront</debugLabel>
+                  <tagDef>LCOrdeal_AmberDusk_LegFront</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberDusk/Parts/LegFront</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberDusk/Parts/LegFront_L</texPathLeft>
+                  <baseLayer>10.8</baseLayer>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 2. AMBER MIDNIGHT ARTICULATED RENDER TREE (ThirdType) ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_AmberMidnight</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>AmberMidnightRoot</debugLabel>
+          <tagDef>LCOrdeal_AmberMidnight_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot>
+          <useGraphic>false</useGraphic>
+          <drawScale>3.45</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel>
+              <tagDef>LCOrdeal_AmberMidnight_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/AmberMidnight/Parts/Body</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/AmberMidnight/Parts/Body_L</texPathLeft>
+              <baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>InnerJawLeft</debugLabel>
+                  <tagDef>LCOrdeal_AmberMidnight_InnerJawLeft</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberMidnight/Parts/InnerJawLeft</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberMidnight/Parts/InnerJawLeft_L</texPathLeft>
+                  <baseLayer>8.4</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>InnerJawRight</debugLabel>
+                  <tagDef>LCOrdeal_AmberMidnight_InnerJawRight</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberMidnight/Parts/InnerJawRight</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberMidnight/Parts/InnerJawRight_L</texPathLeft>
+                  <baseLayer>8.6</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>LeftWing</debugLabel>
+                  <tagDef>LCOrdeal_AmberMidnight_LeftWing</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberMidnight/Parts/LeftWing</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberMidnight/Parts/LeftWing_L</texPathLeft>
+                  <baseLayer>10.0</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>RightWing</debugLabel>
+                  <tagDef>LCOrdeal_AmberMidnight_RightWing</tagDef>
+                  <texPath>Things/Pawn/Ordeals/AmberMidnight/Parts/RightWing</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/AmberMidnight/Parts/RightWing_L</texPathLeft>
+                  <baseLayer>10.2</baseLayer>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+</Defs>

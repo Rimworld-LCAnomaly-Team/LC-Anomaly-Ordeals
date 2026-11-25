@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== Violet Noon & Midnight PawnRenderNodeTagDefs ==================== -->
+  <!-- Violet Noon (Grant Us Love / stone — 8-part runed monolith + 6 whipping black tentacles) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletNoon_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletNoon_Monolith</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletNoon_RunesGlow</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletNoon_Tentacle1</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletNoon_Tentacle2</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletNoon_Tentacle3</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletNoon_Tentacle4</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletNoon_Tentacle5</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletNoon_Tentacle6</defName></PawnRenderNodeTagDef>
+
+  <!-- Violet Midnight Shrines (God's Delusion — shared articulated shrine tags for all 4 altars) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletShrine_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletShrine_Base</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_VioletShrine_Aura</defName></PawnRenderNodeTagDef>
+
+  <!-- ==================== 1. VIOLET NOON ARTICULATED RENDER TREE (stone) ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_VioletNoon</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>VioletNoonRoot</debugLabel>
+          <tagDef>LCOrdeal_VioletNoon_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot>
+          <useGraphic>false</useGraphic>
+          <drawScale>2.95</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Monolith</debugLabel>
+              <tagDef>LCOrdeal_VioletNoon_Monolith</tagDef>
+              <texPath>Things/Pawn/Ordeals/VioletNoon/Parts/Monolith</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/VioletNoon/Parts/Monolith_L</texPathLeft>
+              <baseLayer>9.4</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Tentacle1</debugLabel>
+                  <tagDef>LCOrdeal_VioletNoon_Tentacle1</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle1</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle1_L</texPathLeft>
+                  <baseLayer>8.0</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Tentacle2</debugLabel>
+                  <tagDef>LCOrdeal_VioletNoon_Tentacle2</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle2</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle2_L</texPathLeft>
+                  <baseLayer>8.2</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Tentacle3</debugLabel>
+                  <tagDef>LCOrdeal_VioletNoon_Tentacle3</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle3</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle3_L</texPathLeft>
+                  <baseLayer>8.4</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Tentacle4</debugLabel>
+                  <tagDef>LCOrdeal_VioletNoon_Tentacle4</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle4</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle4_L</texPathLeft>
+                  <baseLayer>8.6</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Tentacle5</debugLabel>
+                  <tagDef>LCOrdeal_VioletNoon_Tentacle5</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle5</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle5_L</texPathLeft>
+                  <baseLayer>8.8</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Tentacle6</debugLabel>
+                  <tagDef>LCOrdeal_VioletNoon_Tentacle6</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle6</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletNoon/Parts/Tentacle6_L</texPathLeft>
+                  <baseLayer>9.0</baseLayer>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>RunesGlow</debugLabel>
+                  <tagDef>LCOrdeal_VioletNoon_RunesGlow</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletNoon/Parts/RunesGlow</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletNoon/Parts/RunesGlow_L</texPathLeft>
+                  <useTransparentShader>true</useTransparentShader>
+                  <isChargeCore>true</isChargeCore>
+                  <baseLayer>10.4</baseLayer>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 2. VIOLET MIDNIGHT 4 SHRINE RENDER TREES ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_VioletMidnightRed</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel><tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>ShrineRoot</debugLabel><tagDef>LCOrdeal_VioletShrine_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot><useGraphic>false</useGraphic><drawScale>3.25</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>ShrineBase</debugLabel><tagDef>LCOrdeal_VioletShrine_Base</tagDef>
+              <texPath>Things/Pawn/Ordeals/VioletMidnightRed/Parts/ShrineBase</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/VioletMidnightRed/Parts/ShrineBase_L</texPathLeft>
+              <baseLayer>9.2</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>RuneAura</debugLabel><tagDef>LCOrdeal_VioletShrine_Aura</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletMidnightRed/Parts/RuneAura</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletMidnightRed/Parts/RuneAura_L</texPathLeft>
+                  <useTransparentShader>true</useTransparentShader><isChargeCore>true</isChargeCore><baseLayer>10.4</baseLayer>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_VioletMidnightWhite</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel><tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>ShrineRoot</debugLabel><tagDef>LCOrdeal_VioletShrine_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot><useGraphic>false</useGraphic><drawScale>3.25</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>ShrineBase</debugLabel><tagDef>LCOrdeal_VioletShrine_Base</tagDef>
+              <texPath>Things/Pawn/Ordeals/VioletMidnightWhite/Parts/ShrineBase</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/VioletMidnightWhite/Parts/ShrineBase_L</texPathLeft>
+              <baseLayer>9.2</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>RuneAura</debugLabel><tagDef>LCOrdeal_VioletShrine_Aura</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletMidnightWhite/Parts/RuneAura</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletMidnightWhite/Parts/RuneAura_L</texPathLeft>
+                  <useTransparentShader>true</useTransparentShader><isChargeCore>true</isChargeCore><baseLayer>10.4</baseLayer>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_VioletMidnightBlack</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel><tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>ShrineRoot</debugLabel><tagDef>LCOrdeal_VioletShrine_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot><useGraphic>false</useGraphic><drawScale>3.25</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>ShrineBase</debugLabel><tagDef>LCOrdeal_VioletShrine_Base</tagDef>
+              <texPath>Things/Pawn/Ordeals/VioletMidnightBlack/Parts/ShrineBase</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/VioletMidnightBlack/Parts/ShrineBase_L</texPathLeft>
+              <baseLayer>9.2</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>RuneAura</debugLabel><tagDef>LCOrdeal_VioletShrine_Aura</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletMidnightBlack/Parts/RuneAura</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletMidnightBlack/Parts/RuneAura_L</texPathLeft>
+                  <useTransparentShader>true</useTransparentShader><isChargeCore>true</isChargeCore><baseLayer>10.4</baseLayer>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_VioletMidnightPale</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel><tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>ShrineRoot</debugLabel><tagDef>LCOrdeal_VioletShrine_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot><useGraphic>false</useGraphic><drawScale>3.25</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>ShrineBase</debugLabel><tagDef>LCOrdeal_VioletShrine_Base</tagDef>
+              <texPath>Things/Pawn/Ordeals/VioletMidnightPale/Parts/ShrineBase</texPath>
+              <texPathLeft>Things/Pawn/Ordeals/VioletMidnightPale/Parts/ShrineBase_L</texPathLeft>
+              <baseLayer>9.2</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>RuneAura</debugLabel><tagDef>LCOrdeal_VioletShrine_Aura</tagDef>
+                  <texPath>Things/Pawn/Ordeals/VioletMidnightPale/Parts/RuneAura</texPath>
+                  <texPathLeft>Things/Pawn/Ordeals/VioletMidnightPale/Parts/RuneAura_L</texPathLeft>
+                  <useTransparentShader>true</useTransparentShader><isChargeCore>true</isChargeCore><baseLayer>10.4</baseLayer>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+</Defs>

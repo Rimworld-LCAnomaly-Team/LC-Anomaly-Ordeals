@@ -8,6 +8,7 @@
   <LCOrdeal_DawnVariant>Active Ordeal</LCOrdeal_DawnVariant>
   <LCOrdeal_VioletTime>Time until the Fruit matures</LCOrdeal_VioletTime>
   <LCOrdeal_VioletDetonated>The Fruits of Understanding matured. Their psychic blasts reduced {0} nearby containment counter(s) to zero.</LCOrdeal_VioletDetonated>
+  <LCOrdeal_CrimsonSabotagedPlatform>A Crimson Dawn clown sabotaged the containment unit of {0}, dropping its Qliphoth Counter to zero!</LCOrdeal_CrimsonSabotagedPlatform>
   <LCOrdeal_AmberName>The Perfect Food</LCOrdeal_AmberName>
   <LCOrdeal_AmberQuote>A perfect meal, an excellent substitute.</LCOrdeal_AmberQuote>
   <LCOrdeal_CrimsonName>Cheers for the Beginning</LCOrdeal_CrimsonName>

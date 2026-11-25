@@ -706,4 +706,179 @@
       </li>
     </subSounds>
   </SoundDef>
+  <!-- Authentic Dawn Ordeal Expanded Combat & Behavior SFX -->
+  <SoundDef>
+    <defName>LCOrdeal_Sound_Bug1Attack</defName>
+    <context>MapOnly</context><maxSimultaneous>4</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug1_Attack</clipPath></li></grains><volumeRange>40~48</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_Bug1Birth</defName>
+    <context>MapOnly</context><maxSimultaneous>4</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug1_Birth</clipPath></li></grains><volumeRange>40~48</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_Bug1DigIn</defName>
+    <context>MapOnly</context><maxSimultaneous>4</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug1_DigIn</clipPath></li></grains><volumeRange>42~50</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_Bug1DigOut</defName>
+    <context>MapOnly</context><maxSimultaneous>4</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug1_DigOut</clipPath></li></grains><volumeRange>46~54</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusClick</defName>
+    <context>MapOnly</context><maxSimultaneous>4</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Circus_Click</clipPath></li></grains><volumeRange>44~52</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusCreate</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Circus_Create</clipPath></li></grains><volumeRange>46~54</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusTentOn</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Circus_Tent_On</clipPath></li></grains><volumeRange>48~56</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusTentOff</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Circus_Tent_Off</clipPath></li></grains><volumeRange>48~56</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineFinish</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Finish</clipPath></li></grains><volumeRange>48~56</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineDefault</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Default</clipPath></li></grains><volumeRange>42~50</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineBroke</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Broke</clipPath></li></grains><volumeRange>48~56</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_OutterGodAtk</defName>
+    <context>MapOnly</context><maxSimultaneous>4</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGod_Atk</clipPath></li></grains><volumeRange>44~52</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_OutterGodDawnWalk</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/OutterGodDawn_Walk</clipPath></li></grains><volumeRange>36~44</volumeRange></li></subSounds>
+  </SoundDef>
+  <!-- Authentic Crimson Ordeal Suite (Dawn / Noon / Dusk / Tent) SFX -->
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusWalk</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Circus_Walk</clipPath></li></grains><volumeRange>36~44</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusTentCreate</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Circus_Tent_Create</clipPath></li></grains><volumeRange>48~56</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusNoonAtk1</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/CircusNoon_Atk1</clipPath></li></grains><volumeRange>48~56</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusNoonAtk2</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/CircusNoon_Atk2</clipPath></li></grains><volumeRange>48~56</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusNoonAtk3</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/CircusNoon_Atk3</clipPath></li></grains><volumeRange>50~58</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusDuskAtk1</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/CircusDusk_Atk1</clipPath></li></grains><volumeRange>52~60</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusDuskAtk2</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/CircusDusk_Atk2</clipPath></li></grains><volumeRange>54~62</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusDuskBleed1</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/CircusDusk_Bleed1</clipPath></li></grains><volumeRange>48~56</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_CircusDuskBleed2</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/CircusDusk_Bleed2</clipPath></li></grains><volumeRange>48~56</volumeRange></li></subSounds>
+  </SoundDef>
+  <!-- Authentic Amber Dusk & Midnight SFX -->
+  <SoundDef>
+    <defName>LCOrdeal_Sound_BugDuskDigIn</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/BugDusk_DigIn</clipPath></li></grains><volumeRange>48~56</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_BugDuskDigOut</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/BugDusk_DigOut</clipPath></li></grains><volumeRange>50~58</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_BugDuskEat</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/BugDusk_Eat</clipPath></li></grains><volumeRange>46~54</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_Bug3DigIn</defName>
+    <context>MapOnly</context><maxSimultaneous>2</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug3_DigIn</clipPath></li></grains><volumeRange>54~62</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_Bug3DigOut</defName>
+    <context>MapOnly</context><maxSimultaneous>2</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug3_Digout</clipPath></li></grains><volumeRange>56~64</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_Bug3Shout</defName>
+    <context>MapOnly</context><maxSimultaneous>2</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Bug3_Shout</clipPath></li></grains><volumeRange>56~64</volumeRange></li></subSounds>
+  </SoundDef>
+  <!-- Authentic Green Noon, Dusk & Midnight SFX -->
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineNoonDefault</defName>
+    <context>MapOnly</context><maxSimultaneous>3</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Noon_Default</clipPath></li></grains><volumeRange>42~50</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineDusk1</defName>
+    <context>MapOnly</context><maxSimultaneous>2</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Dusk_1</clipPath></li></grains><volumeRange>48~56</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_MachineMidnightStart</defName>
+    <context>MapOnly</context><maxSimultaneous>2</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Machine_Midnight_1</clipPath></li></grains><volumeRange>54~62</volumeRange></li></subSounds>
+  </SoundDef>
+  <!-- Authentic Indigo Sweeper & White Midnight Claw Expanded SFX -->
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ScavengerAtk</defName>
+    <context>MapOnly</context><maxSimultaneous>4</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/ScavengerNoon_Atk1</clipPath></li><li Class="AudioGrain_Clip"><clipPath>Ordeals/ScavengerNoon_Atk2</clipPath></li></grains><volumeRange>44~52</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ClawStrong</defName>
+    <context>MapOnly</context><maxSimultaneous>2</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Claw_Strong</clipPath></li><li Class="AudioGrain_Clip"><clipPath>Ordeals/Claw_Strong2</clipPath></li></grains><volumeRange>56~64</volumeRange></li></subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>LCOrdeal_Sound_ClawInjection</defName>
+    <context>MapOnly</context><maxSimultaneous>2</maxSimultaneous>
+    <subSounds><li><grains><li Class="AudioGrain_Clip"><clipPath>Ordeals/Claw_Injection</clipPath></li></grains><volumeRange>54~62</volumeRange></li></subSounds>
+  </SoundDef>
 </Defs>

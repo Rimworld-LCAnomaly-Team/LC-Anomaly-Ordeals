@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== Indigo Noon (Sweeper) & White Ordeals (4 Fixers + The Claw) Tags ==================== -->
+  <!-- Indigo Noon (Sweeper / cleaner) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Indigo_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Indigo_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Indigo_Head</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Indigo_BackLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Indigo_FrontLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Indigo_BackArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Indigo_FrontArm</defName></PawnRenderNodeTagDef>
+
+  <!-- Red Fixer -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerRed_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerRed_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerRed_Head</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerRed_BackLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerRed_FrontLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerRed_BackArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerRed_FrontArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerRed_Weapon</defName></PawnRenderNodeTagDef>
+
+  <!-- White Fixer -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerWhite_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerWhite_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerWhite_Head</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerWhite_Halo</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerWhite_BackLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerWhite_FrontLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerWhite_BackArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerWhite_FrontArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerWhite_Cannon</defName></PawnRenderNodeTagDef>
+
+  <!-- Black Fixer -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerBlack_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerBlack_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerBlack_Head</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerBlack_BackLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerBlack_FrontLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerBlack_BackArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerBlack_FrontArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerBlack_Hammer</defName></PawnRenderNodeTagDef>
+
+  <!-- Pale Fixer -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerPale_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerPale_Body</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerPale_Head</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerPale_BackLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerPale_FrontLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerPale_BackArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerPale_Pistol</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerPale_FrontArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_FixerPale_Briefcase</defName></PawnRenderNodeTagDef>
+
+  <!-- The Claw (White Midnight) -->
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Claw_Root</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Claw_Torso</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Claw_Head</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Claw_SerumGreen</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Claw_BackLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Claw_FrontLeg</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Claw_BackArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Claw_UpperArm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Claw_Forearm</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>LCOrdeal_Claw_Hand</defName></PawnRenderNodeTagDef>
+
+  <!-- ==================== 1. INDIGO NOON (SWEEPER / cleaner) ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_IndigoNoon</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel><tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>IndigoRoot</debugLabel><tagDef>LCOrdeal_Indigo_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot><useGraphic>false</useGraphic><drawScale>1.75</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel><tagDef>LCOrdeal_Indigo_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/IndigoNoon/Parts/Body</texPath><texPathLeft>Things/Pawn/Ordeals/IndigoNoon/Parts/Body_L</texPathLeft><baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>BackArm</debugLabel><tagDef>LCOrdeal_Indigo_BackArm</tagDef><texPath>Things/Pawn/Ordeals/IndigoNoon/Parts/BackArm</texPath><texPathLeft>Things/Pawn/Ordeals/IndigoNoon/Parts/BackArm_L</texPathLeft><baseLayer>8.0</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>BackLeg</debugLabel><tagDef>LCOrdeal_Indigo_BackLeg</tagDef><texPath>Things/Pawn/Ordeals/IndigoNoon/Parts/BackLeg</texPath><texPathLeft>Things/Pawn/Ordeals/IndigoNoon/Parts/BackLeg_L</texPathLeft><baseLayer>8.4</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>FrontLeg</debugLabel><tagDef>LCOrdeal_Indigo_FrontLeg</tagDef><texPath>Things/Pawn/Ordeals/IndigoNoon/Parts/FrontLeg</texPath><texPathLeft>Things/Pawn/Ordeals/IndigoNoon/Parts/FrontLeg_L</texPathLeft><baseLayer>9.6</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>Head</debugLabel><tagDef>LCOrdeal_Indigo_Head</tagDef><texPath>Things/Pawn/Ordeals/IndigoNoon/Parts/Head</texPath><texPathLeft>Things/Pawn/Ordeals/IndigoNoon/Parts/Head_L</texPathLeft><baseLayer>10.2</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>FrontArm</debugLabel><tagDef>LCOrdeal_Indigo_FrontArm</tagDef><texPath>Things/Pawn/Ordeals/IndigoNoon/Parts/FrontArm</texPath><texPathLeft>Things/Pawn/Ordeals/IndigoNoon/Parts/FrontArm_L</texPathLeft><baseLayer>10.8</baseLayer></li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 2. WHITE FIXER RED ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_WhiteFixerRed</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel><tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>FixerRedRoot</debugLabel><tagDef>LCOrdeal_FixerRed_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot><useGraphic>false</useGraphic><drawScale>2.05</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel><tagDef>LCOrdeal_FixerRed_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/WhiteFixerRed/Parts/Body</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerRed/Parts/Body_L</texPathLeft><baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>BackArm</debugLabel><tagDef>LCOrdeal_FixerRed_BackArm</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerRed/Parts/BackArm</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerRed/Parts/BackArm_L</texPathLeft><baseLayer>8.0</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>BackLeg</debugLabel><tagDef>LCOrdeal_FixerRed_BackLeg</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerRed/Parts/BackLeg</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerRed/Parts/BackLeg_L</texPathLeft><baseLayer>8.4</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>FrontLeg</debugLabel><tagDef>LCOrdeal_FixerRed_FrontLeg</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerRed/Parts/FrontLeg</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerRed/Parts/FrontLeg_L</texPathLeft><baseLayer>9.5</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>Head</debugLabel><tagDef>LCOrdeal_FixerRed_Head</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerRed/Parts/Head</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerRed/Parts/Head_L</texPathLeft><baseLayer>10.0</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>FrontArm</debugLabel><tagDef>LCOrdeal_FixerRed_FrontArm</tagDef>
+                  <texPath>Things/Pawn/Ordeals/WhiteFixerRed/Parts/FrontArm</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerRed/Parts/FrontArm_L</texPathLeft><baseLayer>10.5</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>Weapon</debugLabel><tagDef>LCOrdeal_FixerRed_Weapon</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerRed/Parts/Weapon</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerRed/Parts/Weapon_L</texPathLeft><baseLayer>10.9</baseLayer></li>
+                  </children>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 3. WHITE FIXER WHITE ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_WhiteFixerWhite</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel><tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>FixerWhiteRoot</debugLabel><tagDef>LCOrdeal_FixerWhite_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot><useGraphic>false</useGraphic><drawScale>2.05</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel><tagDef>LCOrdeal_FixerWhite_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/Body</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/Body_L</texPathLeft><baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>Cannon</debugLabel><tagDef>LCOrdeal_FixerWhite_Cannon</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/Cannon</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/Cannon_L</texPathLeft><baseLayer>7.8</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>BackArm</debugLabel><tagDef>LCOrdeal_FixerWhite_BackArm</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/BackArm</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/BackArm_L</texPathLeft><baseLayer>8.2</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>BackLeg</debugLabel><tagDef>LCOrdeal_FixerWhite_BackLeg</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/BackLeg</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/BackLeg_L</texPathLeft><baseLayer>8.5</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>FrontLeg</debugLabel><tagDef>LCOrdeal_FixerWhite_FrontLeg</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/FrontLeg</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/FrontLeg_L</texPathLeft><baseLayer>9.5</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Head</debugLabel><tagDef>LCOrdeal_FixerWhite_Head</tagDef>
+                  <texPath>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/Head</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/Head_L</texPathLeft><baseLayer>10.1</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>Halo</debugLabel><tagDef>LCOrdeal_FixerWhite_Halo</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/Halo</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/Halo_L</texPathLeft><baseLayer>10.6</baseLayer></li>
+                  </children>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>FrontArm</debugLabel><tagDef>LCOrdeal_FixerWhite_FrontArm</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/FrontArm</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerWhite/Parts/FrontArm_L</texPathLeft><baseLayer>10.8</baseLayer></li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 4. WHITE FIXER BLACK ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_WhiteFixerBlack</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel><tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>FixerBlackRoot</debugLabel><tagDef>LCOrdeal_FixerBlack_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot><useGraphic>false</useGraphic><drawScale>2.45</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel><tagDef>LCOrdeal_FixerBlack_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/Body</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/Body_L</texPathLeft><baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>BackArm</debugLabel><tagDef>LCOrdeal_FixerBlack_BackArm</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/BackArm</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/BackArm_L</texPathLeft><baseLayer>8.0</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>BackLeg</debugLabel><tagDef>LCOrdeal_FixerBlack_BackLeg</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/BackLeg</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/BackLeg_L</texPathLeft><baseLayer>8.4</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>FrontLeg</debugLabel><tagDef>LCOrdeal_FixerBlack_FrontLeg</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/FrontLeg</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/FrontLeg_L</texPathLeft><baseLayer>9.5</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>Head</debugLabel><tagDef>LCOrdeal_FixerBlack_Head</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/Head</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/Head_L</texPathLeft><baseLayer>10.1</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>FrontArm</debugLabel><tagDef>LCOrdeal_FixerBlack_FrontArm</tagDef>
+                  <texPath>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/FrontArm</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/FrontArm_L</texPathLeft><baseLayer>10.5</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>Hammer</debugLabel><tagDef>LCOrdeal_FixerBlack_Hammer</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/Hammer</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerBlack/Parts/Hammer_L</texPathLeft><baseLayer>10.9</baseLayer></li>
+                  </children>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 5. WHITE FIXER PALE ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_WhiteFixerPale</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel><tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>FixerPaleRoot</debugLabel><tagDef>LCOrdeal_FixerPale_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot><useGraphic>false</useGraphic><drawScale>2.05</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Body</debugLabel><tagDef>LCOrdeal_FixerPale_Body</tagDef>
+              <texPath>Things/Pawn/Ordeals/WhiteFixerPale/Parts/Body</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerPale/Parts/Body_L</texPathLeft><baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>BackArm</debugLabel><tagDef>LCOrdeal_FixerPale_BackArm</tagDef>
+                  <texPath>Things/Pawn/Ordeals/WhiteFixerPale/Parts/BackArm</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerPale/Parts/BackArm_L</texPathLeft><baseLayer>8.0</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>Pistol</debugLabel><tagDef>LCOrdeal_FixerPale_Pistol</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerPale/Parts/Pistol</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerPale/Parts/Pistol_L</texPathLeft><baseLayer>8.3</baseLayer></li>
+                  </children>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>BackLeg</debugLabel><tagDef>LCOrdeal_FixerPale_BackLeg</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerPale/Parts/BackLeg</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerPale/Parts/BackLeg_L</texPathLeft><baseLayer>8.5</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>FrontLeg</debugLabel><tagDef>LCOrdeal_FixerPale_FrontLeg</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerPale/Parts/FrontLeg</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerPale/Parts/FrontLeg_L</texPathLeft><baseLayer>9.5</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>Head</debugLabel><tagDef>LCOrdeal_FixerPale_Head</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerPale/Parts/Head</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerPale/Parts/Head_L</texPathLeft><baseLayer>10.1</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>FrontArm</debugLabel><tagDef>LCOrdeal_FixerPale_FrontArm</tagDef>
+                  <texPath>Things/Pawn/Ordeals/WhiteFixerPale/Parts/FrontArm</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerPale/Parts/FrontArm_L</texPathLeft><baseLayer>10.5</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>Briefcase</debugLabel><tagDef>LCOrdeal_FixerPale_Briefcase</tagDef><texPath>Things/Pawn/Ordeals/WhiteFixerPale/Parts/Briefcase</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteFixerPale/Parts/Briefcase_L</texPathLeft><baseLayer>10.9</baseLayer></li>
+                  </children>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+  <!-- ==================== 6. THE CLAW (WHITE MIDNIGHT / skeleton #223153) ==================== -->
+  <PawnRenderTreeDef>
+    <defName>LCOrdeal_Tree_WhiteClaw</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel><tagDef>Root</tagDef>
+      <children>
+        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+          <debugLabel>ClawRoot</debugLabel><tagDef>LCOrdeal_Claw_Root</tagDef>
+          <isGroupRoot>true</isGroupRoot><useGraphic>false</useGraphic><drawScale>2.55</drawScale>
+          <children>
+            <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+              <debugLabel>Torso</debugLabel><tagDef>LCOrdeal_Claw_Torso</tagDef>
+              <texPath>Things/Pawn/Ordeals/WhiteClaw/Parts/Torso</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteClaw/Parts/Torso_L</texPathLeft><baseLayer>9.0</baseLayer>
+              <children>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>BackArm</debugLabel><tagDef>LCOrdeal_Claw_BackArm</tagDef><texPath>Things/Pawn/Ordeals/WhiteClaw/Parts/BackArm</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteClaw/Parts/BackArm_L</texPathLeft><baseLayer>7.8</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>BackLeg</debugLabel><tagDef>LCOrdeal_Claw_BackLeg</tagDef><texPath>Things/Pawn/Ordeals/WhiteClaw/Parts/BackLeg</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteClaw/Parts/BackLeg_L</texPathLeft><baseLayer>8.2</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>FrontLeg</debugLabel><tagDef>LCOrdeal_Claw_FrontLeg</tagDef><texPath>Things/Pawn/Ordeals/WhiteClaw/Parts/FrontLeg</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteClaw/Parts/FrontLeg_L</texPathLeft><baseLayer>9.4</baseLayer></li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>Head</debugLabel><tagDef>LCOrdeal_Claw_Head</tagDef>
+                  <texPath>Things/Pawn/Ordeals/WhiteClaw/Parts/Head</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteClaw/Parts/Head_L</texPathLeft><baseLayer>9.9</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>SerumGreen</debugLabel><tagDef>LCOrdeal_Claw_SerumGreen</tagDef><texPath>Things/Pawn/Ordeals/WhiteClaw/Parts/SerumGreen</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteClaw/Parts/SerumGreen_L</texPathLeft><baseLayer>10.2</baseLayer></li>
+                  </children>
+                </li>
+                <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                  <debugLabel>ClawUpperArm</debugLabel><tagDef>LCOrdeal_Claw_UpperArm</tagDef>
+                  <texPath>Things/Pawn/Ordeals/WhiteClaw/Parts/ClawUpperArm</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteClaw/Parts/ClawUpperArm_L</texPathLeft><baseLayer>10.4</baseLayer>
+                  <children>
+                    <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart">
+                      <debugLabel>ClawForearm</debugLabel><tagDef>LCOrdeal_Claw_Forearm</tagDef>
+                      <texPath>Things/Pawn/Ordeals/WhiteClaw/Parts/ClawForearm</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteClaw/Parts/ClawForearm_L</texPathLeft><baseLayer>10.7</baseLayer>
+                      <children>
+                        <li Class="LCAnomalyOrdeals.Render.PawnRenderNodeProperties_DawnPart"><debugLabel>ClawHand</debugLabel><tagDef>LCOrdeal_Claw_Hand</tagDef><texPath>Things/Pawn/Ordeals/WhiteClaw/Parts/ClawHand</texPath><texPathLeft>Things/Pawn/Ordeals/WhiteClaw/Parts/ClawHand_L</texPathLeft><baseLayer>11.0</baseLayer></li>
+                      </children>
+                    </li>
+                  </children>
+                </li>
+              </children>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+</Defs>

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ======================================================================================== -->
+  <!-- 1. GREEN NOON (PROCESS OF UNDERSTANDING / machine_Noon) — 4 ARTICULATED ANIMATIONS       -->
+  <!-- ======================================================================================== -->
+  <AnimationDef>
+    <defName>LCOrdeal_GreenNoon_Idle</defName>
+    <durationTicks>72</durationTicks>
+    <startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_GreenNoon_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3965, 0.4116)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>-1.5</angle></li>
+            <li><tick>36</tick><offset>(0,0,0.024)</offset><angle>1.5</angle></li>
+            <li><tick>72</tick><offset>(0,0,0)</offset><angle>-1.5</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_SawBlade</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.7710, 0.3665)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>36</tick><angle>180</angle></li>
+            <li><tick>72</tick><angle>360</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_Head</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3895, 0.5116)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-4</angle></li>
+            <li><tick>36</tick><angle>5</angle></li>
+            <li><tick>72</tick><angle>-4</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_GunArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3229, 0.5088)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-5</angle></li>
+            <li><tick>36</tick><angle>5</angle></li>
+            <li><tick>72</tick><angle>-5</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <AnimationDef>
+    <defName>LCOrdeal_GreenNoon_Walk</defName>
+    <durationTicks>44</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_GreenNoon_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3965, 0.4116)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>-5</angle></li>
+            <li><tick>11</tick><offset>(0.02,0,0.05)</offset><angle>3</angle></li>
+            <li><tick>22</tick><offset>(0,0,0)</offset><angle>6</angle></li>
+            <li><tick>33</tick><offset>(-0.02,0,0.05)</offset><angle>-3</angle></li>
+            <li><tick>44</tick><offset>(0,0,0)</offset><angle>-5</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_FrontLeg</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3131, 0.3740)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-26</angle></li>
+            <li><tick>22</tick><angle>28</angle></li>
+            <li><tick>44</tick><angle>-26</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_BackLeg</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4576, 0.3685)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>28</angle></li>
+            <li><tick>22</tick><angle>-26</angle></li>
+            <li><tick>44</tick><angle>28</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_SawBlade</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.7710, 0.3665)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>22</tick><angle>180</angle></li>
+            <li><tick>44</tick><angle>360</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_GunArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3229, 0.5088)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-14</angle></li>
+            <li><tick>22</tick><angle>16</angle></li>
+            <li><tick>44</tick><angle>-14</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Attack: Chainsaw lunge + heavy blaster recoil (video t=28.8s-30s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_GreenNoon_Attack</defName>
+    <durationTicks>40</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_GreenNoon_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3965, 0.4116)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle></li>
+            <li><tick>13</tick><offset>(-0.08,0,0.04)</offset><angle>-14</angle></li>
+            <li><tick>23</tick><offset>(0.18,0,-0.02)</offset><angle>16</angle></li>
+            <li><tick>40</tick><offset>(0,0,0)</offset><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_SawArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5088, 0.4858)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>13</tick><angle>-48</angle></li>
+            <li><tick>23</tick><angle>44</angle></li>
+            <li><tick>40</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_SawBlade</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.7710, 0.3665)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>20</tick><angle>360</angle></li>
+            <li><tick>40</tick><angle>720</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_GunArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3229, 0.5088)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle></li>
+            <li><tick>18</tick><offset>(-0.08,0,0.02)</offset><angle>-18</angle></li>
+            <li><tick>28</tick><offset>(0.06,0,0)</offset><angle>8</angle></li>
+            <li><tick>40</tick><offset>(0,0,0)</offset><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Cooldown / Shutdown: Crouches down low with arms tucked during overheat reboot (video t=31.2s-33.8s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_GreenNoon_Cooldown</defName>
+    <durationTicks>60</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_GreenNoon_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3965, 0.4116)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,-0.09)</offset><angle>6</angle><scale>(1.04,1,0.92)</scale></li>
+            <li><tick>30</tick><offset>(0,0,-0.11)</offset><angle>9</angle><scale>(1.06,1,0.90)</scale></li>
+            <li><tick>60</tick><offset>(0,0,-0.09)</offset><angle>6</angle><scale>(1.04,1,0.92)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_Head</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3895, 0.5116)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>14</angle></li>
+            <li><tick>30</tick><angle>20</angle></li>
+            <li><tick>60</tick><angle>14</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenNoon_GunArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3229, 0.5088)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>22</angle></li>
+            <li><tick>60</tick><angle>22</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- ======================================================================================== -->
+  <!-- 2. GREEN DUSK (WHERE WE MUST REACH / machineDusk) — 2 ARTICULATED FACTORY ANIMATIONS     -->
+  <!-- ======================================================================================== -->
+  <AnimationDef>
+    <defName>LCOrdeal_GreenDusk_Idle</defName>
+    <durationTicks>72</durationTicks>
+    <startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_GreenDusk_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4210, 0.2018)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><scale>(1.01,1,0.99)</scale></li>
+            <li><tick>36</tick><offset>(0,0,0.015)</offset><scale>(0.99,1,1.02)</scale></li>
+            <li><tick>72</tick><offset>(0,0,0)</offset><scale>(1.01,1,0.99)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenDusk_Gears</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3838, 0.4946)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-10</angle></li>
+            <li><tick>36</tick><angle>10</angle></li>
+            <li><tick>72</tick><angle>-10</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenDusk_ExhaustPipes</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.7891, 0.3764)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset></li>
+            <li><tick>24</tick><offset>(0.05,0,0)</offset></li>
+            <li><tick>48</tick><offset>(0,0,0)</offset></li>
+            <li><tick>72</tick><offset>(0,0,0)</offset></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Create: Front blast gate lifts open 90° horizontally while exhausts pump (video t=50s-52.5s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_GreenDusk_Create</defName>
+    <durationTicks>66</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_GreenDusk_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4210, 0.2018)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><scale>(1,1,1)</scale></li>
+            <li><tick>20</tick><offset>(0,0,0.03)</offset><scale>(1.03,1,0.98)</scale></li>
+            <li><tick>46</tick><offset>(0,0,0.02)</offset><scale>(0.98,1,1.03)</scale></li>
+            <li><tick>66</tick><offset>(0,0,0)</offset><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenDusk_BlastGate</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.1307, 0.7091)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>18</tick><angle>92</angle></li>
+            <li><tick>48</tick><angle>92</angle></li>
+            <li><tick>66</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenDusk_ExhaustPipes</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.7891, 0.3764)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset></li>
+            <li><tick>16</tick><offset>(0.10,0,0)</offset></li>
+            <li><tick>34</tick><offset>(0.04,0,0)</offset></li>
+            <li><tick>50</tick><offset>(0.10,0,0)</offset></li>
+            <li><tick>66</tick><offset>(0,0,0)</offset></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- ======================================================================================== -->
+  <!-- 3. GREEN MIDNIGHT (HELIX OF THE END / machine_Midnight) — 3 ARTICULATED ANIMATIONS       -->
+  <!-- ======================================================================================== -->
+  <!-- Idle / Closed Dome: Shells tucked inward around retracted emitter (video t=57.5s-60s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_GreenMidnight_Idle</defName>
+    <durationTicks>90</durationTicks>
+    <startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_GreenMidnight_LeftShell</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3086, 0.3264)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0.08,0,0)</offset></li>
+            <li><tick>45</tick><offset>(0.06,0,0)</offset></li>
+            <li><tick>90</tick><offset>(0.08,0,0)</offset></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenMidnight_RightShell</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.7189, 0.3353)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(-0.08,0,0)</offset></li>
+            <li><tick>45</tick><offset>(-0.06,0,0)</offset></li>
+            <li><tick>90</tick><offset>(-0.08,0,0)</offset></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenMidnight_Emitter</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4969, 0.4843)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,-0.12)</offset></li>
+            <li><tick>90</tick><offset>(0,0,-0.12)</offset></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Charging / Opening: Dome splits wide open and twin-pronged emitter rises (video t=61.2s-67.5s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_GreenMidnight_Charge</defName>
+    <durationTicks>60</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_GreenMidnight_LeftShell</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3086, 0.3264)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(-0.03,0,0)</offset></li>
+            <li><tick>30</tick><offset>(-0.05,0,0)</offset></li>
+            <li><tick>60</tick><offset>(-0.03,0,0)</offset></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenMidnight_RightShell</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.7189, 0.3353)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0.03,0,0)</offset></li>
+            <li><tick>30</tick><offset>(0.05,0,0)</offset></li>
+            <li><tick>60</tick><offset>(0.03,0,0)</offset></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenMidnight_Emitter</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4969, 0.4843)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0.02)</offset><scale>(1,1,1)</scale></li>
+            <li><tick>30</tick><offset>(0,0,0.07)</offset><scale>(1.05,1,1.08)</scale></li>
+            <li><tick>60</tick><offset>(0,0,0.02)</offset><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Exterminate / Firing: Shells split wide open, Emitter raised & glowing (360° spin driven by EmitterSpinAngle!) -->
+  <AnimationDef>
+    <defName>LCOrdeal_GreenMidnight_Fire</defName>
+    <durationTicks>48</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_GreenMidnight_LeftShell</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.3086, 0.3264)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(-0.06,0,0)</offset></li>
+            <li><tick>24</tick><offset>(-0.08,0,0)</offset></li>
+            <li><tick>48</tick><offset>(-0.06,0,0)</offset></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenMidnight_RightShell</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.7189, 0.3353)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0.06,0,0)</offset></li>
+            <li><tick>24</tick><offset>(0.08,0,0)</offset></li>
+            <li><tick>48</tick><offset>(0.06,0,0)</offset></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_GreenMidnight_Emitter</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4969, 0.4843)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0.06)</offset><scale>(1.04,1,1.06)</scale></li>
+            <li><tick>24</tick><offset>(0,0,0.08)</offset><scale>(1.08,1,1.10)</scale></li>
+            <li><tick>48</tick><offset>(0,0,0.06)</offset><scale>(1.04,1,1.06)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+</Defs>

@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ======================================================================================== -->
+  <!-- 1. CRIMSON NOON (HARMONY OF SKIN / CircusNoon.txt) — 5 ARTICULATED KEYFRAME ANIMATIONS   -->
+  <!-- ======================================================================================== -->
+  <AnimationDef>
+    <defName>LCOrdeal_CrimsonNoon_Idle</defName>
+    <durationTicks>84</durationTicks>
+    <startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.6278, 0.3409)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>-2</angle><scale>(1.02,1,0.98)</scale></li>
+            <li><tick>42</tick><offset>(0,0,0.030)</offset><angle>2.5</angle><scale>(0.98,1,1.03)</scale></li>
+            <li><tick>84</tick><offset>(0,0,0)</offset><angle>-2</angle><scale>(1.02,1,0.98)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_TailBase</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.1660, 0.5267)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-6</angle></li>
+            <li><tick>42</tick><angle>8</angle></li>
+            <li><tick>84</tick><angle>-6</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_TailHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2372, 0.7388)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-10</angle></li>
+            <li><tick>21</tick><angle>14</angle></li>
+            <li><tick>42</tick><angle>-8</angle></li>
+            <li><tick>63</tick><angle>16</angle></li>
+            <li><tick>84</tick><angle>-10</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_FrontPincerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5335, 0.3256)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-8</angle></li>
+            <li><tick>42</tick><angle>10</angle></li>
+            <li><tick>84</tick><angle>-8</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_FrontPincerHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.6748, 0.2242)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-14</angle></li>
+            <li><tick>42</tick><angle>14</angle></li>
+            <li><tick>84</tick><angle>-14</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_BackPincerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5462, 0.3978)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>10</angle></li>
+            <li><tick>42</tick><angle>-8</angle></li>
+            <li><tick>84</tick><angle>10</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_BackPincerHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.6224, 0.5379)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>12</angle></li>
+            <li><tick>42</tick><angle>-14</angle></li>
+            <li><tick>84</tick><angle>12</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <AnimationDef>
+    <defName>LCOrdeal_CrimsonNoon_Walk</defName>
+    <durationTicks>36</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.6278, 0.3409)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>-6</angle><scale>(1.05,1,0.94)</scale></li>
+            <li><tick>9</tick><offset>(0.03,0,0.065)</offset><angle>5</angle><scale>(0.96,1,1.06)</scale></li>
+            <li><tick>18</tick><offset>(0,0,0)</offset><angle>7</angle><scale>(1.05,1,0.94)</scale></li>
+            <li><tick>27</tick><offset>(-0.02,0,0.060)</offset><angle>-4</angle><scale>(0.96,1,1.06)</scale></li>
+            <li><tick>36</tick><offset>(0,0,0)</offset><angle>-6</angle><scale>(1.05,1,0.94)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_FrontLeg1</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4833, 0.3418)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-32</angle></li>
+            <li><tick>18</tick><angle>34</angle></li>
+            <li><tick>36</tick><angle>-32</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_FrontLeg2</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2652, 0.3617)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>34</angle></li>
+            <li><tick>18</tick><angle>-32</angle></li>
+            <li><tick>36</tick><angle>34</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_BackLeg1</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2943, 0.3861)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-34</angle></li>
+            <li><tick>18</tick><angle>32</angle></li>
+            <li><tick>36</tick><angle>-34</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_BackLeg2</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5061, 0.3780)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>32</angle></li>
+            <li><tick>18</tick><angle>-34</angle></li>
+            <li><tick>36</tick><angle>32</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_TailBase</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.1660, 0.5267)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-14</angle></li>
+            <li><tick>18</tick><angle>14</angle></li>
+            <li><tick>36</tick><angle>-14</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_TailHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2372, 0.7388)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>18</angle></li>
+            <li><tick>18</tick><angle>-20</angle></li>
+            <li><tick>36</tick><angle>18</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_FrontPincerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5335, 0.3256)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-20</angle></li>
+            <li><tick>18</tick><angle>22</angle></li>
+            <li><tick>36</tick><angle>-20</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_BackPincerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5462, 0.3978)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>22</angle></li>
+            <li><tick>18</tick><angle>-20</angle></li>
+            <li><tick>36</tick><angle>22</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Attack1: Towering overhead scorpion-tail whip & slam (video t=16s-17s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_CrimsonNoon_Attack1</defName>
+    <durationTicks>44</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.6278, 0.3409)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+            <li><tick>16</tick><offset>(-0.08,0,0.06)</offset><angle>-14</angle><scale>(0.93,1,1.08)</scale></li>
+            <li><tick>25</tick><offset>(0.14,0,-0.02)</offset><angle>14</angle><scale>(1.10,1,0.92)</scale></li>
+            <li><tick>44</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_TailBase</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.1660, 0.5267)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>16</tick><angle>-38</angle></li>
+            <li><tick>25</tick><angle>68</angle></li>
+            <li><tick>44</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_TailHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2372, 0.7388)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle><scale>(1,1,1)</scale></li>
+            <li><tick>16</tick><angle>-32</angle><scale>(1.10,1,1.10)</scale></li>
+            <li><tick>25</tick><angle>46</angle><scale>(1.24,1,1.24)</scale></li>
+            <li><tick>44</tick><angle>0</angle><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_FrontPincerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5335, 0.3256)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>16</tick><angle>-26</angle></li>
+            <li><tick>25</tick><angle>22</angle></li>
+            <li><tick>44</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Attack2: Twin front clown-jaw pincer lunge & chomp (video t=19s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_CrimsonNoon_Attack2</defName>
+    <durationTicks>40</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.6278, 0.3409)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+            <li><tick>13</tick><offset>(-0.10,0,-0.02)</offset><angle>-10</angle><scale>(0.90,1,1.08)</scale></li>
+            <li><tick>22</tick><offset>(0.22,0,0.02)</offset><angle>10</angle><scale>(1.14,1,0.90)</scale></li>
+            <li><tick>40</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_FrontPincerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5335, 0.3256)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>13</tick><angle>-44</angle></li>
+            <li><tick>22</tick><angle>48</angle></li>
+            <li><tick>40</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_FrontPincerHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.6748, 0.2242)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle><scale>(1,1,1)</scale></li>
+            <li><tick>13</tick><angle>-36</angle><scale>(1.18,1,1.18)</scale></li>
+            <li><tick>22</tick><angle>28</angle><scale>(1.08,1,1.08)</scale></li>
+            <li><tick>40</tick><angle>0</angle><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_BackPincerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5462, 0.3978)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>13</tick><angle>-48</angle></li>
+            <li><tick>22</tick><angle>52</angle></li>
+            <li><tick>40</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_BackPincerHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.6224, 0.5379)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle><scale>(1,1,1)</scale></li>
+            <li><tick>13</tick><angle>-32</angle><scale>(1.18,1,1.18)</scale></li>
+            <li><tick>22</tick><angle>34</angle><scale>(1.08,1,1.08)</scale></li>
+            <li><tick>40</tick><angle>0</angle><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Attack3: Violent full-body leap/pounce crush (video t=21s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_CrimsonNoon_Attack3</defName>
+    <durationTicks>48</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.6278, 0.3409)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+            <li><tick>12</tick><offset>(-0.08,0,-0.06)</offset><angle>-16</angle><scale>(1.08,1,0.86)</scale></li>
+            <li><tick>24</tick><offset>(0.18,0,0.22)</offset><angle>14</angle><scale>(0.94,1,1.16)</scale></li>
+            <li><tick>34</tick><offset>(0.24,0,-0.05)</offset><angle>22</angle><scale>(1.18,1,0.84)</scale></li>
+            <li><tick>48</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_TailBase</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.1660, 0.5267)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>12</tick><angle>-30</angle></li>
+            <li><tick>24</tick><angle>-20</angle></li>
+            <li><tick>34</tick><angle>58</angle></li>
+            <li><tick>48</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_FrontPincerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5335, 0.3256)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>24</tick><angle>-42</angle></li>
+            <li><tick>34</tick><angle>50</angle></li>
+            <li><tick>48</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonNoon_BackPincerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5462, 0.3978)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>24</tick><angle>-46</angle></li>
+            <li><tick>34</tick><angle>54</angle></li>
+            <li><tick>48</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- ======================================================================================== -->
+  <!-- 2. CRIMSON DUSK (THE STRUGGLE AT THE CLIMAX / circus_night.txt) — 5 ARTICULATED ANIMS    -->
+  <!-- ======================================================================================== -->
+  <AnimationDef>
+    <defName>LCOrdeal_CrimsonDusk_Idle</defName>
+    <durationTicks>96</durationTicks>
+    <startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4111, 0.3932)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>-2</angle><scale>(1.03,1,0.97)</scale></li>
+            <li><tick>48</tick><offset>(0,0,0.032)</offset><angle>3</angle><scale>(0.97,1,1.04)</scale></li>
+            <li><tick>96</tick><offset>(0,0,0)</offset><angle>-2</angle><scale>(1.03,1,0.97)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_ClownHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4330, 0.4532)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>-8</angle></li>
+            <li><tick>48</tick><offset>(0.05,0,0.01)</offset><angle>12</angle></li>
+            <li><tick>96</tick><offset>(0,0,0)</offset><angle>-8</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_WeaponRight</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5716, 0.4458)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-10</angle></li>
+            <li><tick>48</tick><angle>12</angle></li>
+            <li><tick>96</tick><angle>-10</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_WeaponBack</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4856, 0.6435)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>8</angle></li>
+            <li><tick>48</tick><angle>-12</angle></li>
+            <li><tick>96</tick><angle>8</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_HammerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2827, 0.4715)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-6</angle></li>
+            <li><tick>48</tick><angle>10</angle></li>
+            <li><tick>96</tick><angle>-6</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_HammerHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2224, 0.3007)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-8</angle></li>
+            <li><tick>48</tick><angle>8</angle></li>
+            <li><tick>96</tick><angle>-8</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <AnimationDef>
+    <defName>LCOrdeal_CrimsonDusk_Walk</defName>
+    <durationTicks>48</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4111, 0.3932)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>-7</angle><scale>(1.05,1,0.95)</scale></li>
+            <li><tick>12</tick><offset>(0.02,0,0.06)</offset><angle>4</angle><scale>(0.96,1,1.06)</scale></li>
+            <li><tick>24</tick><offset>(0,0,0)</offset><angle>8</angle><scale>(1.05,1,0.95)</scale></li>
+            <li><tick>36</tick><offset>(-0.02,0,0.06)</offset><angle>-4</angle><scale>(0.96,1,1.06)</scale></li>
+            <li><tick>48</tick><offset>(0,0,0)</offset><angle>-7</angle><scale>(1.05,1,0.95)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_FrontLeg</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2827, 0.3213)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-28</angle></li>
+            <li><tick>24</tick><angle>28</angle></li>
+            <li><tick>48</tick><angle>-28</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_BackLeg</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5241, 0.3225)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>28</angle></li>
+            <li><tick>24</tick><angle>-28</angle></li>
+            <li><tick>48</tick><angle>28</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_WeaponRight</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5716, 0.4458)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-22</angle></li>
+            <li><tick>24</tick><angle>24</angle></li>
+            <li><tick>48</tick><angle>-22</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_HammerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2827, 0.4715)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>22</angle></li>
+            <li><tick>24</tick><angle>-22</angle></li>
+            <li><tick>48</tick><angle>22</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_ClownHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4330, 0.4532)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-14</angle></li>
+            <li><tick>24</tick><angle>16</angle></li>
+            <li><tick>48</tick><angle>-14</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Roll: Somersaulting stitched flesh boulder charge with weapons flailing (video t=29s-33s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_CrimsonDusk_Roll</defName>
+    <durationTicks>28</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4111, 0.3932)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0.02)</offset><angle>0</angle><scale>(1.06,1,0.94)</scale></li>
+            <li><tick>7</tick><offset>(0,0,0.12)</offset><angle>90</angle><scale>(0.95,1,1.06)</scale></li>
+            <li><tick>14</tick><offset>(0,0,0.02)</offset><angle>180</angle><scale>(1.06,1,0.94)</scale></li>
+            <li><tick>21</tick><offset>(0,0,0.12)</offset><angle>270</angle><scale>(0.95,1,1.06)</scale></li>
+            <li><tick>28</tick><offset>(0,0,0.02)</offset><angle>360</angle><scale>(1.06,1,0.94)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_WeaponRight</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5716, 0.4458)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-35</angle></li>
+            <li><tick>14</tick><angle>45</angle></li>
+            <li><tick>28</tick><angle>-35</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_WeaponBack</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4856, 0.6435)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>30</angle></li>
+            <li><tick>14</tick><angle>-42</angle></li>
+            <li><tick>28</tick><angle>30</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_HammerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2827, 0.4715)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>-40</angle></li>
+            <li><tick>14</tick><angle>36</angle></li>
+            <li><tick>28</tick><angle>-40</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_ClownHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4330, 0.4532)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(-0.04,0,0)</offset><angle>-18</angle></li>
+            <li><tick>14</tick><offset>(0.02,0,0)</offset><angle>22</angle></li>
+            <li><tick>28</tick><offset>(-0.04,0,0)</offset><angle>-18</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Attack1: Butcher cleaver chop + skewer stab + clown head lunge (video t=35s-38s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_CrimsonDusk_Attack1</defName>
+    <durationTicks>44</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4111, 0.3932)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+            <li><tick>15</tick><offset>(-0.09,0,0.05)</offset><angle>-14</angle><scale>(0.94,1,1.08)</scale></li>
+            <li><tick>25</tick><offset>(0.18,0,-0.02)</offset><angle>14</angle><scale>(1.12,1,0.90)</scale></li>
+            <li><tick>44</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_WeaponRight</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5716, 0.4458)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>15</tick><angle>-64</angle></li>
+            <li><tick>25</tick><angle>72</angle></li>
+            <li><tick>44</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_WeaponBack</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4856, 0.6435)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>15</tick><angle>-34</angle></li>
+            <li><tick>25</tick><angle>52</angle></li>
+            <li><tick>44</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_ClownHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4330, 0.4532)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle></li>
+            <li><tick>15</tick><offset>(-0.04,0,0)</offset><angle>-18</angle></li>
+            <li><tick>25</tick><offset>(0.14,0,0.02)</offset><angle>24</angle></li>
+            <li><tick>44</tick><offset>(0,0,0)</offset><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- Attack2: Giant meat tenderizer hammer overhead slam (video t=39s-41s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_CrimsonDusk_Attack2</defName>
+    <durationTicks>50</durationTicks>
+    <keyframeParts>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_Body</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.4111, 0.3932)</pivot>
+          <keyframes>
+            <li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+            <li><tick>18</tick><offset>(-0.08,0,0.10)</offset><angle>-18</angle><scale>(0.92,1,1.12)</scale></li>
+            <li><tick>29</tick><offset>(0.20,0,-0.06)</offset><angle>20</angle><scale>(1.16,1,0.86)</scale></li>
+            <li><tick>50</tick><offset>(0,0,0)</offset><angle>0</angle><scale>(1,1,1)</scale></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_HammerArm</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2827, 0.4715)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>18</tick><angle>-86</angle></li>
+            <li><tick>29</tick><angle>58</angle></li>
+            <li><tick>50</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_HammerHead</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.2224, 0.3007)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>18</tick><angle>-38</angle></li>
+            <li><tick>29</tick><angle>44</angle></li>
+            <li><tick>50</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+      <li>
+        <key>LCOrdeal_CrimsonDusk_WeaponRight</key>
+        <value>
+          <workerType>AnimationWorker_Keyframes</workerType>
+          <pivot>(0.5716, 0.4458)</pivot>
+          <keyframes>
+            <li><tick>0</tick><angle>0</angle></li>
+            <li><tick>18</tick><angle>-28</angle></li>
+            <li><tick>29</tick><angle>34</angle></li>
+            <li><tick>50</tick><angle>0</angle></li>
+          </keyframes>
+        </value>
+      </li>
+    </keyframeParts>
+  </AnimationDef>
+
+</Defs>

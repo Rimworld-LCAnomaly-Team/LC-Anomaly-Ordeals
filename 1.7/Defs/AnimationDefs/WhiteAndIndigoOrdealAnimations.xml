@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ======================================================================================== -->
+  <!-- 1. INDIGO NOON (SWEEPER / cleaner) — 4 ARTICULATED ANIMATIONS                            -->
+  <!-- ======================================================================================== -->
+  <AnimationDef>
+    <defName>LCOrdeal_IndigoNoon_Idle</defName><durationTicks>84</durationTicks><startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li><key>LCOrdeal_Indigo_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3777, 0.3959)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>-3</angle></li><li><tick>42</tick><offset>(0,0,0.025)</offset><angle>3</angle></li><li><tick>84</tick><offset>(0,0,0)</offset><angle>-3</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Indigo_Head</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4204, 0.5666)</pivot><keyframes><li><tick>0</tick><angle>-6</angle></li><li><tick>42</tick><angle>8</angle></li><li><tick>84</tick><angle>-6</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Indigo_FrontArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3880, 0.5282)</pivot><keyframes><li><tick>0</tick><angle>-10</angle></li><li><tick>42</tick><angle>12</angle></li><li><tick>84</tick><angle>-10</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Indigo_BackArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4811, 0.5302)</pivot><keyframes><li><tick>0</tick><angle>12</angle></li><li><tick>42</tick><angle>-10</angle></li><li><tick>84</tick><angle>12</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_IndigoNoon_Walk</defName><durationTicks>36</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_Indigo_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3777, 0.3959)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>6</angle></li><li><tick>9</tick><offset>(0.02,0,0.06)</offset><angle>12</angle></li><li><tick>18</tick><offset>(0,0,0)</offset><angle>6</angle></li><li><tick>27</tick><offset>(-0.02,0,0.06)</offset><angle>12</angle></li><li><tick>36</tick><offset>(0,0,0)</offset><angle>6</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Indigo_FrontLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3395, 0.3583)</pivot><keyframes><li><tick>0</tick><angle>-34</angle></li><li><tick>18</tick><angle>36</angle></li><li><tick>36</tick><angle>-34</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Indigo_BackLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4426, 0.3684)</pivot><keyframes><li><tick>0</tick><angle>36</angle></li><li><tick>18</tick><angle>-34</angle></li><li><tick>36</tick><angle>36</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Indigo_FrontArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3880, 0.5282)</pivot><keyframes><li><tick>0</tick><angle>30</angle></li><li><tick>18</tick><angle>-30</angle></li><li><tick>36</tick><angle>30</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Indigo_BackArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4811, 0.5302)</pivot><keyframes><li><tick>0</tick><angle>-30</angle></li><li><tick>18</tick><angle>30</angle></li><li><tick>36</tick><angle>-30</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_IndigoNoon_Attack</defName><durationTicks>38</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_Indigo_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3777, 0.3959)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle></li><li><tick>12</tick><offset>(-0.08,0,0.06)</offset><angle>-16</angle></li><li><tick>22</tick><offset>(0.18,0,-0.02)</offset><angle>22</angle></li><li><tick>38</tick><offset>(0,0,0)</offset><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Indigo_FrontArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3880, 0.5282)</pivot><keyframes><li><tick>0</tick><angle>0</angle></li><li><tick>12</tick><angle>-85</angle></li><li><tick>22</tick><angle>68</angle></li><li><tick>38</tick><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Indigo_BackArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4811, 0.5302)</pivot><keyframes><li><tick>0</tick><angle>0</angle></li><li><tick>12</tick><angle>-72</angle></li><li><tick>22</tick><angle>60</angle></li><li><tick>38</tick><angle>0</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_IndigoNoon_Eat</defName><durationTicks>48</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_Indigo_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3777, 0.3959)</pivot><keyframes><li><tick>0</tick><offset>(0,0,-0.08)</offset><angle>22</angle></li><li><tick>12</tick><offset>(0.04,0,-0.12)</offset><angle>34</angle></li><li><tick>24</tick><offset>(0,0,-0.08)</offset><angle>22</angle></li><li><tick>36</tick><offset>(0.04,0,-0.12)</offset><angle>34</angle></li><li><tick>48</tick><offset>(0,0,-0.08)</offset><angle>22</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Indigo_FrontArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3880, 0.5282)</pivot><keyframes><li><tick>0</tick><angle>-28</angle></li><li><tick>12</tick><angle>44</angle></li><li><tick>24</tick><angle>-28</angle></li><li><tick>36</tick><angle>44</angle></li><li><tick>48</tick><angle>-28</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Indigo_BackArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4811, 0.5302)</pivot><keyframes><li><tick>0</tick><angle>44</angle></li><li><tick>12</tick><angle>-28</angle></li><li><tick>24</tick><angle>44</angle></li><li><tick>36</tick><angle>-28</angle></li><li><tick>48</tick><angle>44</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- ======================================================================================== -->
+  <!-- 2. RED FIXER — 4 ARTICULATED ANIMATIONS                                                  -->
+  <!-- ======================================================================================== -->
+  <AnimationDef>
+    <defName>LCOrdeal_FixerRed_Idle</defName><durationTicks>84</durationTicks><startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerRed_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5076, 0.3785)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset></li><li><tick>42</tick><offset>(0,0,0.02)</offset></li><li><tick>84</tick><offset>(0,0,0)</offset></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerRed_Head</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4958, 0.5262)</pivot><keyframes><li><tick>0</tick><angle>-3</angle></li><li><tick>42</tick><angle>4</angle></li><li><tick>84</tick><angle>-3</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerRed_FrontArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4507, 0.5019)</pivot><keyframes><li><tick>0</tick><angle>-6</angle></li><li><tick>42</tick><angle>8</angle></li><li><tick>84</tick><angle>-6</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_FixerRed_Walk</defName><durationTicks>38</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerRed_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5076, 0.3785)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>-4</angle></li><li><tick>10</tick><offset>(0,0,0.045)</offset><angle>4</angle></li><li><tick>19</tick><offset>(0,0,0)</offset><angle>5</angle></li><li><tick>29</tick><offset>(0,0,0.045)</offset><angle>-3</angle></li><li><tick>38</tick><offset>(0,0,0)</offset><angle>-4</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerRed_FrontLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4485, 0.3009)</pivot><keyframes><li><tick>0</tick><angle>-30</angle></li><li><tick>19</tick><angle>32</angle></li><li><tick>38</tick><angle>-30</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerRed_BackLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5644, 0.2978)</pivot><keyframes><li><tick>0</tick><angle>32</angle></li><li><tick>19</tick><angle>-30</angle></li><li><tick>38</tick><angle>32</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerRed_FrontArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4507, 0.5019)</pivot><keyframes><li><tick>0</tick><angle>22</angle></li><li><tick>19</tick><angle>-24</angle></li><li><tick>38</tick><angle>22</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_FixerRed_Attack</defName><durationTicks>40</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerRed_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5076, 0.3785)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle></li><li><tick>13</tick><offset>(-0.08,0,0.04)</offset><angle>-14</angle></li><li><tick>23</tick><offset>(0.16,0,0)</offset><angle>16</angle></li><li><tick>40</tick><offset>(0,0,0)</offset><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerRed_FrontArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4507, 0.5019)</pivot><keyframes><li><tick>0</tick><angle>0</angle></li><li><tick>13</tick><angle>-70</angle></li><li><tick>23</tick><angle>62</angle></li><li><tick>40</tick><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerRed_Weapon</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3994, 0.3474)</pivot><keyframes><li><tick>0</tick><scale>(1,1,1)</scale></li><li><tick>23</tick><scale>(1.28,1,1.28)</scale></li><li><tick>40</tick><scale>(1,1,1)</scale></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_FixerRed_Special</defName><durationTicks>46</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerRed_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5076, 0.3785)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>-8</angle></li><li><tick>20</tick><offset>(-0.10,0,0.03)</offset><angle>-12</angle></li><li><tick>30</tick><offset>(0.08,0,0)</offset><angle>10</angle></li><li><tick>46</tick><offset>(0,0,0)</offset><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerRed_FrontArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4507, 0.5019)</pivot><keyframes><li><tick>0</tick><angle>-45</angle></li><li><tick>20</tick><angle>-82</angle></li><li><tick>30</tick><angle>-78</angle></li><li><tick>46</tick><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerRed_Weapon</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3994, 0.3474)</pivot><keyframes><li><tick>0</tick><scale>(1.1,1,1.1)</scale></li><li><tick>26</tick><scale>(1.38,1,1.38)</scale></li><li><tick>46</tick><scale>(1,1,1)</scale></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- ======================================================================================== -->
+  <!-- 3. WHITE FIXER — 4 ARTICULATED ANIMATIONS                                                -->
+  <!-- ======================================================================================== -->
+  <AnimationDef>
+    <defName>LCOrdeal_FixerWhite_Idle</defName><durationTicks>90</durationTicks><startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerWhite_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5173, 0.3713)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset></li><li><tick>45</tick><offset>(0,0,0.032)</offset></li><li><tick>90</tick><offset>(0,0,0)</offset></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerWhite_Halo</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5007, 0.8513)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>-4</angle></li><li><tick>45</tick><offset>(0,0,0.04)</offset><angle>4</angle></li><li><tick>90</tick><offset>(0,0,0)</offset><angle>-4</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerWhite_Cannon</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4911, 0.4198)</pivot><keyframes><li><tick>0</tick><angle>-5</angle></li><li><tick>45</tick><angle>6</angle></li><li><tick>90</tick><angle>-5</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_FixerWhite_Walk</defName><durationTicks>42</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerWhite_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5173, 0.3713)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>-3</angle></li><li><tick>21</tick><offset>(0,0,0.05)</offset><angle>4</angle></li><li><tick>42</tick><offset>(0,0,0)</offset><angle>-3</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerWhite_FrontLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4641, 0.3016)</pivot><keyframes><li><tick>0</tick><angle>-26</angle></li><li><tick>21</tick><angle>28</angle></li><li><tick>42</tick><angle>-26</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerWhite_BackLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5682, 0.2988)</pivot><keyframes><li><tick>0</tick><angle>28</angle></li><li><tick>21</tick><angle>-26</angle></li><li><tick>42</tick><angle>28</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerWhite_Halo</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5007, 0.8513)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset></li><li><tick>21</tick><offset>(0,0,0.04)</offset></li><li><tick>42</tick><offset>(0,0,0)</offset></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_FixerWhite_Attack</defName><durationTicks>44</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerWhite_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5173, 0.3713)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle></li><li><tick>16</tick><offset>(-0.08,0,0.05)</offset><angle>-10</angle></li><li><tick>26</tick><offset>(0.10,0,0.02)</offset><angle>12</angle></li><li><tick>44</tick><offset>(0,0,0)</offset><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerWhite_Cannon</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4911, 0.4198)</pivot><keyframes><li><tick>0</tick><angle>0</angle><scale>(1,1,1)</scale></li><li><tick>16</tick><angle>-58</angle><scale>(1.14,1,1.14)</scale></li><li><tick>26</tick><angle>-45</angle><scale>(1.24,1,1.24)</scale></li><li><tick>44</tick><angle>0</angle><scale>(1,1,1)</scale></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_FixerWhite_Special</defName><durationTicks>54</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerWhite_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5173, 0.3713)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset></li><li><tick>22</tick><offset>(0,0,0.09)</offset></li><li><tick>54</tick><offset>(0,0,0)</offset></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerWhite_Cannon</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4911, 0.4198)</pivot><keyframes><li><tick>0</tick><angle>0</angle><scale>(1,1,1)</scale></li><li><tick>22</tick><angle>-64</angle><scale>(1.30,1,1.30)</scale></li><li><tick>40</tick><angle>-60</angle><scale>(1.25,1,1.25)</scale></li><li><tick>54</tick><angle>0</angle><scale>(1,1,1)</scale></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerWhite_Halo</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5007, 0.8513)</pivot><keyframes><li><tick>0</tick><scale>(1,1,1)</scale></li><li><tick>22</tick><scale>(1.35,1,1.35)</scale></li><li><tick>54</tick><scale>(1,1,1)</scale></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- ======================================================================================== -->
+  <!-- 4. BLACK FIXER — 3 ARTICULATED ANIMATIONS                                                -->
+  <!-- ======================================================================================== -->
+  <AnimationDef>
+    <defName>LCOrdeal_FixerBlack_Idle</defName><durationTicks>90</durationTicks><startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerBlack_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3507, 0.4850)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset></li><li><tick>45</tick><offset>(0,0,0.025)</offset></li><li><tick>90</tick><offset>(0,0,0)</offset></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerBlack_Hammer</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3911, 0.4241)</pivot><keyframes><li><tick>0</tick><angle>-6</angle></li><li><tick>45</tick><angle>8</angle></li><li><tick>90</tick><angle>-6</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_FixerBlack_Walk</defName><durationTicks>44</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerBlack_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3507, 0.4850)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>-4</angle></li><li><tick>22</tick><offset>(0,0,0.05)</offset><angle>5</angle></li><li><tick>44</tick><offset>(0,0,0)</offset><angle>-4</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerBlack_FrontLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3910, 0.4322)</pivot><keyframes><li><tick>0</tick><angle>-28</angle></li><li><tick>22</tick><angle>28</angle></li><li><tick>44</tick><angle>-28</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerBlack_BackLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3121, 0.4301)</pivot><keyframes><li><tick>0</tick><angle>28</angle></li><li><tick>22</tick><angle>-28</angle></li><li><tick>44</tick><angle>28</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerBlack_Hammer</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3911, 0.4241)</pivot><keyframes><li><tick>0</tick><angle>-14</angle></li><li><tick>22</tick><angle>14</angle></li><li><tick>44</tick><angle>-14</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_FixerBlack_Attack</defName><durationTicks>48</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerBlack_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3507, 0.4850)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle></li><li><tick>18</tick><offset>(-0.08,0,0.08)</offset><angle>-16</angle></li><li><tick>28</tick><offset>(0.18,0,-0.04)</offset><angle>18</angle></li><li><tick>48</tick><offset>(0,0,0)</offset><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerBlack_FrontArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3895, 0.5690)</pivot><keyframes><li><tick>0</tick><angle>0</angle></li><li><tick>18</tick><angle>-85</angle></li><li><tick>28</tick><angle>48</angle></li><li><tick>48</tick><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerBlack_Hammer</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3911, 0.4241)</pivot><keyframes><li><tick>0</tick><angle>0</angle></li><li><tick>18</tick><angle>-45</angle></li><li><tick>28</tick><angle>36</angle></li><li><tick>48</tick><angle>0</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- ======================================================================================== -->
+  <!-- 5. PALE FIXER — 3 ARTICULATED ANIMATIONS                                                 -->
+  <!-- ======================================================================================== -->
+  <AnimationDef>
+    <defName>LCOrdeal_FixerPale_Idle</defName><durationTicks>84</durationTicks><startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerPale_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5033, 0.4053)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset></li><li><tick>42</tick><offset>(0,0,0.02)</offset></li><li><tick>84</tick><offset>(0,0,0)</offset></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerPale_BackArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5288, 0.5086)</pivot><keyframes><li><tick>0</tick><angle>-6</angle></li><li><tick>42</tick><angle>8</angle></li><li><tick>84</tick><angle>-6</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerPale_Briefcase</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.3949, 0.3239)</pivot><keyframes><li><tick>0</tick><angle>5</angle></li><li><tick>42</tick><angle>-5</angle></li><li><tick>84</tick><angle>5</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_FixerPale_Walk</defName><durationTicks>36</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerPale_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5033, 0.4053)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>-4</angle></li><li><tick>18</tick><offset>(0,0,0.05)</offset><angle>5</angle></li><li><tick>36</tick><offset>(0,0,0)</offset><angle>-4</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerPale_FrontLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4497, 0.3351)</pivot><keyframes><li><tick>0</tick><angle>-32</angle></li><li><tick>18</tick><angle>32</angle></li><li><tick>36</tick><angle>-32</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerPale_BackLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5546, 0.3323)</pivot><keyframes><li><tick>0</tick><angle>32</angle></li><li><tick>18</tick><angle>-32</angle></li><li><tick>36</tick><angle>32</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_FixerPale_Attack</defName><durationTicks>38</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_FixerPale_Body</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5033, 0.4053)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle></li><li><tick>12</tick><offset>(-0.08,0,0.04)</offset><angle>-14</angle></li><li><tick>22</tick><offset>(0.18,0,0)</offset><angle>14</angle></li><li><tick>38</tick><offset>(0,0,0)</offset><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerPale_BackArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5288, 0.5086)</pivot><keyframes><li><tick>0</tick><angle>0</angle></li><li><tick>12</tick><angle>-78</angle></li><li><tick>22</tick><angle>-68</angle></li><li><tick>38</tick><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_FixerPale_FrontArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4517, 0.5170)</pivot><keyframes><li><tick>0</tick><angle>0</angle></li><li><tick>12</tick><angle>35</angle></li><li><tick>22</tick><angle>-52</angle></li><li><tick>38</tick><angle>0</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+
+  <!-- ======================================================================================== -->
+  <!-- 6. THE CLAW (WHITE MIDNIGHT / skeleton #223153) — 5 ARTICULATED ANIMATIONS               -->
+  <!-- ======================================================================================== -->
+  <AnimationDef>
+    <defName>LCOrdeal_WhiteClaw_Idle</defName><durationTicks>96</durationTicks><startOnRandomTick>true</startOnRandomTick>
+    <keyframeParts>
+      <li><key>LCOrdeal_Claw_Torso</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5498, 0.5318)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>-1.5</angle></li><li><tick>48</tick><offset>(0,0,0.022)</offset><angle>1.5</angle></li><li><tick>96</tick><offset>(0,0,0)</offset><angle>-1.5</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_UpperArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4546, 0.6986)</pivot><keyframes><li><tick>0</tick><angle>-4</angle></li><li><tick>48</tick><angle>5</angle></li><li><tick>96</tick><angle>-4</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_Hand</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4207, 0.4555)</pivot><keyframes><li><tick>0</tick><angle>-8</angle></li><li><tick>48</tick><angle>10</angle></li><li><tick>96</tick><angle>-8</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <AnimationDef>
+    <defName>LCOrdeal_WhiteClaw_Walk</defName><durationTicks>44</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_Claw_Torso</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5498, 0.5318)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>4</angle></li><li><tick>11</tick><offset>(0,0,0.045)</offset><angle>8</angle></li><li><tick>22</tick><offset>(0,0,0)</offset><angle>4</angle></li><li><tick>33</tick><offset>(0,0,0.045)</offset><angle>8</angle></li><li><tick>44</tick><offset>(0,0,0)</offset><angle>4</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_FrontLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5721, 0.5049)</pivot><keyframes><li><tick>0</tick><angle>-26</angle></li><li><tick>22</tick><angle>28</angle></li><li><tick>44</tick><angle>-26</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_BackLeg</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5123, 0.5003)</pivot><keyframes><li><tick>0</tick><angle>28</angle></li><li><tick>22</tick><angle>-26</angle></li><li><tick>44</tick><angle>28</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_UpperArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4546, 0.6986)</pivot><keyframes><li><tick>0</tick><angle>14</angle></li><li><tick>22</tick><angle>-14</angle></li><li><tick>44</tick><angle>14</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <!-- Attack: Massive armored claw forward lunge (video claw_sheet1 t=22.5s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_WhiteClaw_Attack</defName><durationTicks>44</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_Claw_Torso</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5498, 0.5318)</pivot><keyframes><li><tick>0</tick><offset>(0,0,0)</offset><angle>0</angle></li><li><tick>14</tick><offset>(-0.10,0,0.04)</offset><angle>-16</angle></li><li><tick>24</tick><offset>(0.24,0,-0.04)</offset><angle>20</angle></li><li><tick>44</tick><offset>(0,0,0)</offset><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_UpperArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4546, 0.6986)</pivot><keyframes><li><tick>0</tick><angle>0</angle></li><li><tick>14</tick><angle>42</angle></li><li><tick>24</tick><angle>-88</angle></li><li><tick>44</tick><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_Forearm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4203, 0.5611)</pivot><keyframes><li><tick>0</tick><angle>0</angle></li><li><tick>14</tick><angle>-32</angle></li><li><tick>24</tick><angle>18</angle></li><li><tick>44</tick><angle>0</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_Hand</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4207, 0.4555)</pivot><keyframes><li><tick>0</tick><scale>(1,1,1)</scale></li><li><tick>24</tick><scale>(1.30,1,1.30)</scale></li><li><tick>44</tick><scale>(1,1,1)</scale></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <!-- Serum: Crouched serum injection & warp/charge preparation (video t=32.5s-52.5s & t=65s-75s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_WhiteClaw_Serum</defName><durationTicks>54</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_Claw_Torso</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5498, 0.5318)</pivot><keyframes><li><tick>0</tick><offset>(0,0,-0.08)</offset><angle>14</angle></li><li><tick>27</tick><offset>(0.02,0,-0.12)</offset><angle>20</angle></li><li><tick>54</tick><offset>(0,0,-0.08)</offset><angle>14</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_UpperArm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4546, 0.6986)</pivot><keyframes><li><tick>0</tick><angle>-48</angle></li><li><tick>27</tick><angle>-64</angle></li><li><tick>54</tick><angle>-48</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_Forearm</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.4203, 0.5611)</pivot><keyframes><li><tick>0</tick><angle>-36</angle></li><li><tick>27</tick><angle>-50</angle></li><li><tick>54</tick><angle>-36</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_Head</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5202, 0.6890)</pivot><keyframes><li><tick>0</tick><angle>-14</angle></li><li><tick>27</tick><angle>-24</angle></li><li><tick>54</tick><angle>-14</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+  <!-- Groggy: Kneeling stunned stance after interrupted serum injection (video t=10s-12.5s) -->
+  <AnimationDef>
+    <defName>LCOrdeal_WhiteClaw_Groggy</defName><durationTicks>60</durationTicks>
+    <keyframeParts>
+      <li><key>LCOrdeal_Claw_Torso</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5498, 0.5318)</pivot><keyframes><li><tick>0</tick><offset>(0,0,-0.16)</offset><angle>22</angle></li><li><tick>30</tick><offset>(0,0,-0.19)</offset><angle>26</angle></li><li><tick>60</tick><offset>(0,0,-0.16)</offset><angle>22</angle></li></keyframes></value></li>
+      <li><key>LCOrdeal_Claw_Head</key><value><workerType>AnimationWorker_Keyframes</workerType><pivot>(0.5202, 0.6890)</pivot><keyframes><li><tick>0</tick><angle>32</angle></li><li><tick>30</tick><angle>40</angle></li><li><tick>60</tick><angle>32</angle></li></keyframes></value></li>
+    </keyframeParts>
+  </AnimationDef>
+
+</Defs>

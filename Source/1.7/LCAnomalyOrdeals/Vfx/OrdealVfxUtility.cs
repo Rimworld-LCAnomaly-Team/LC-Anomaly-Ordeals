@@ -22,6 +22,7 @@ namespace LCAnomalyOrdeals.Vfx
         public const string TexTentacleWhite = "FX/Ordeals/TentacleWhite";
         public const string TexTentacleBlack = "FX/Ordeals/TentacleBlack";
         public const string TexPaleEye = "FX/Ordeals/PaleEye";
+        public const string TexCircusTent = "FX/Ordeals/CircusTent";
 
         public static void SpawnBeam(
             Map map, Vector3 origin, float angleDegrees, float length, float width,
@@ -131,6 +132,12 @@ namespace LCAnomalyOrdeals.Vfx
         public static void SpawnSlash(Map map, Vector3 center, float size, Color color, int durationTicks = 24)
         {
             SpawnStrikeSprite(map, center, TexSlashArc, size * 0.6f, size, color, durationTicks, riseHeight: 0.1f, angleDegrees: Rand.Range(0f, 360f), rotateSpeed: 90f, additive: true);
+        }
+
+        public static void SpawnCircusTent(Map map, Vector3 center, float size = 2.6f, int durationTicks = 54)
+        {
+            SpawnStrikeSprite(map, center, TexCircusTent, size * 0.45f, size, Color.white, durationTicks, riseHeight: 0.35f, additive: false);
+            SpawnShockwave(map, center, 0.4f, size * 0.95f, new Color(0.95f, 0.18f, 0.24f, 0.85f), Mathf.Min(36, durationTicks));
         }
 
         public static void SpawnPawnAura(
