@@ -357,7 +357,7 @@ namespace LCAnomalyOrdeals.Examinations
 
         private static void RetargetCrimsonSaboteurs(Map map, IEnumerable<Pawn> targets)
         {
-            List<Building> priorities = map.listerThings.AllThings.OfType<Building>().Where(building => building.Faction == Faction.OfPlayer && (building.def.defName == "LC_HoldingPlatform" || building.TryGetComp<CompPowerTrader>() != null)).ToList();
+            List<Building> priorities = map.listerThings.AllThings.OfType<Building>().Where(building => building.Faction == Faction.OfPlayer && (building.def.defName == "LC_ContainmentTerminal" || building.TryGetComp<CompPowerTrader>() != null)).ToList();
             if (priorities.Count == 0) return;
             foreach (Pawn pawn in targets)
             {

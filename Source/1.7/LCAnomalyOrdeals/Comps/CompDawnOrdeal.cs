@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using LCAnomalyCore.Buildings;
 using LCAnomalyCore.Comp;
+using LCAnomalyCore.Interface;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Examinations;
@@ -408,13 +409,13 @@ namespace LCAnomalyOrdeals.Comps
             tamperTicksDone = 0;
             tamperTargetId = -1;
 
-            if (targetBuilding is Building_AbnormalityHoldingPlatform platform)
+            if (targetBuilding is IAbnormalityContainmentUnit unit)
             {
-                CompAbnormality abn = platform.HeldPawn?.TryGetComp<CompAbnormality>();
+                CompAbnormality abn = unit.HeldPawn?.TryGetComp<CompAbnormality>();
                 if (abn != null && abn.QliphothEnabled && abn.QliphothCountCurrent > 0)
                 {
                     abn.QliphothCountCurrent = 0;
-                    Messages.Message("LCOrdeal_CrimsonSabotagedPlatform".Translate(platform.HeldPawn.LabelCap), platform, MessageTypeDefOf.NegativeEvent);
+                    Messages.Message("LCOrdeal_CrimsonSabotagedPlatform".Translate(unit.HeldPawn.LabelCap), targetBuilding, MessageTypeDefOf.NegativeEvent);
                 }
             }
             else
@@ -427,8 +428,8 @@ namespace LCAnomalyOrdeals.Comps
             OrdealVfxUtility.SpawnCircusTent(map, pawn.DrawPos, 2.7f, 52);
 
             IntVec3 nextDest = IntVec3.Invalid;
-            Building otherPlatform = map.listerBuildings.AllBuildingsColonistOfClass<Building_AbnormalityHoldingPlatform>()
-                .Where(p => p != targetBuilding && p.HeldPawn?.TryGetComp<CompAbnormality>()?.QliphothCountCurrent > 0)
+            Building otherPlatform = map.listerBuildings.allBuildingsColonist
+                .Where(b => b != targetBuilding && b is IAbnormalityContainmentUnit u && u.HeldPawn?.TryGetComp<CompAbnormality>()?.QliphothCountCurrent > 0)
                 .RandomElementWithFallback();
             if (otherPlatform != null)
             {
@@ -451,13 +452,12 @@ namespace LCAnomalyOrdeals.Comps
 
         private static Building FindCrimsonTargetBuilding(Pawn pawn, Map map)
         {
-            List<Building_AbnormalityHoldingPlatform> activePlatforms = map.listerBuildings
-                .AllBuildingsColonistOfClass<Building_AbnormalityHoldingPlatform>()
-                .Where(p => p.Spawned && p.HeldPawn?.TryGetComp<CompAbnormality>() is CompAbnormality abn && abn.QliphothEnabled && abn.QliphothCountCurrent > 0)
+            List<Building> activeUnits = map.listerBuildings.allBuildingsColonist
+                .Where(b => b.Spawned && b is IAbnormalityContainmentUnit u && u.HeldPawn?.TryGetComp<CompAbnormality>() is CompAbnormality abn && abn.QliphothEnabled && abn.QliphothCountCurrent > 0)
                 .ToList();
-            if (activePlatforms.Count > 0)
+            if (activeUnits.Count > 0)
             {
-                return activePlatforms.MinBy(p => p.Position.DistanceToSquared(pawn.Position));
+                return activeUnits.MinBy(b => b.Position.DistanceToSquared(pawn.Position));
             }
 
             List<Building> powerBuildings = map.listerThings.AllThings

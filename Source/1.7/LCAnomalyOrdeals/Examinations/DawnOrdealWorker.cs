@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using LCAnomalyCore.Buildings;
 using LCAnomalyCore.Comp;
+using LCAnomalyCore.Interface;
 using LCAnomalyOrdeals.Comps;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
@@ -389,7 +390,7 @@ namespace LCAnomalyOrdeals.Examinations
             List<Building> priorities = map.listerThings.AllThings
                 .OfType<Building>()
                 .Where(building => building.Faction == Faction.OfPlayer
-                    && (building.def.defName == "LC_HoldingPlatform"
+                    && (building.def.defName == "LC_ContainmentTerminal"
                         || building.TryGetComp<CompPowerTrader>() != null))
                 .ToList();
             if (priorities.Count == 0)
@@ -451,15 +452,14 @@ namespace LCAnomalyOrdeals.Examinations
             PulseBlackDamage(map, fruit, settings.violetPsychicDamage, settings.violetBlastRadius);
 
             int affectedPlatforms = 0;
-            foreach (Building_AbnormalityHoldingPlatform platform in map.listerBuildings
-                .AllBuildingsColonistOfClass<Building_AbnormalityHoldingPlatform>())
+            foreach (Building building in map.listerBuildings.allBuildingsColonist)
             {
-                if (!platform.Position.InHorDistOf(center, settings.violetBlastRadius))
+                if (!(building is IAbnormalityContainmentUnit unit) || !building.Position.InHorDistOf(center, settings.violetBlastRadius))
                 {
                     continue;
                 }
 
-                CompAbnormality abnormality = platform.HeldPawn?.TryGetComp<CompAbnormality>();
+                CompAbnormality abnormality = unit.HeldPawn?.TryGetComp<CompAbnormality>();
                 if (abnormality != null && abnormality.QliphothEnabled)
                 {
                     abnormality.QliphothCountCurrent = 0;

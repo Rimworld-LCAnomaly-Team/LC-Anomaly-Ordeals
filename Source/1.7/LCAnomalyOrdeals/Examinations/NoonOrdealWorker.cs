@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using LCAnomalyCore.Buildings;
 using LCAnomalyCore.Comp;
+using LCAnomalyCore.Interface;
 using LCAnomalyOrdeals.DefOfs;
 using LCAnomalyOrdeals.Defs;
 using LCAnomalyOrdeals.Presentation;
@@ -346,15 +347,15 @@ namespace LCAnomalyOrdeals.Examinations
             }
             if (context.CurrentTick >= context.GetLong(NextSecondaryTickKey, int.MaxValue))
             {
-                List<Building_AbnormalityHoldingPlatform> platforms = map.listerBuildings.AllBuildingsColonistOfClass<Building_AbnormalityHoldingPlatform>().ToList();
+                List<Building> units = map.listerBuildings.allBuildingsColonist.Where(b => b is IAbnormalityContainmentUnit).ToList();
                 foreach (Pawn monolith in targets)
                 {
-                    Building_AbnormalityHoldingPlatform platform = platforms.Where(item => item.HeldPawn?.TryGetComp<CompAbnormality>()?.QliphothEnabled == true).RandomElementWithFallback();
-                    CompAbnormality abnormality = platform?.HeldPawn?.TryGetComp<CompAbnormality>();
+                    Building unitBuilding = units.Where(item => (item as IAbnormalityContainmentUnit)?.HeldPawn?.TryGetComp<CompAbnormality>()?.QliphothEnabled == true).RandomElementWithFallback();
+                    CompAbnormality abnormality = (unitBuilding as IAbnormalityContainmentUnit)?.HeldPawn?.TryGetComp<CompAbnormality>();
                     if (abnormality != null)
                     {
                         abnormality.QliphothCountCurrent = Math.Max(0, abnormality.QliphothCountCurrent - settings.violetCounterReduction);
-                        OrdealVfxUtility.SpawnPortal(map, platform.DrawPos, 2.2f, new Color(0.66f, 0.22f, 0.96f, 0.86f), 45);
+                        OrdealVfxUtility.SpawnPortal(map, unitBuilding.DrawPos, 2.2f, new Color(0.66f, 0.22f, 0.96f, 0.86f), 45);
                     }
                 }
                 context.SetLong(NextSecondaryTickKey, context.CurrentTick + settings.violetCounterIntervalTicks);
@@ -433,7 +434,7 @@ namespace LCAnomalyOrdeals.Examinations
 
         private static void RetargetCrimsonSaboteurs(Map map, IEnumerable<Pawn> targets)
         {
-            List<Building> priorities = map.listerThings.AllThings.OfType<Building>().Where(building => building.Faction == Faction.OfPlayer && (building.def.defName == "LC_HoldingPlatform" || building.TryGetComp<CompPowerTrader>() != null)).ToList();
+            List<Building> priorities = map.listerThings.AllThings.OfType<Building>().Where(building => building.Faction == Faction.OfPlayer && (building.def.defName == "LC_ContainmentTerminal" || building.TryGetComp<CompPowerTrader>() != null)).ToList();
             if (priorities.Count == 0) return;
             foreach (Pawn pawn in targets)
             {
