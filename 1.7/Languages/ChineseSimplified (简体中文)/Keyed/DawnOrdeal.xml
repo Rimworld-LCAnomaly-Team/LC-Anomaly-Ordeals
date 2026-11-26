@@ -115,4 +115,10 @@
   <LCOrdeal_DebugUnavailable>考验框架或考验定义当前不可用。</LCOrdeal_DebugUnavailable>
   <LCOrdeal_DebugStartFailed>无法触发考验：{0}</LCOrdeal_DebugStartFailed>
   <LCOrdeal_DebugUnknown>未知原因</LCOrdeal_DebugUnknown>
+  <LCOrdeal_Milestone_Dawn>黎明考验</LCOrdeal_Milestone_Dawn>
+  <LCOrdeal_Milestone_Noon>正午考验</LCOrdeal_Milestone_Noon>
+  <LCOrdeal_Milestone_Dusk>黄昏考验</LCOrdeal_Milestone_Dusk>
+  <LCOrdeal_Milestone_Midnight>午夜考验</LCOrdeal_Milestone_Midnight>
+  <LCOrdeal_MeltdownNextMilestone>下一考验里程碑：熔毁 {1} 级 · {0}</LCOrdeal_MeltdownNextMilestone>
+  <LCOrdeal_MeltdownTriggeredOrdeal>逆卡巴拉熔毁 {1} 级触发了考验：{0}！</LCOrdeal_MeltdownTriggeredOrdeal>
 </LanguageData>

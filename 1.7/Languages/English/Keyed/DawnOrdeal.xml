@@ -115,4 +115,10 @@
   <LCOrdeal_DebugUnavailable>The ordeal framework or definition is unavailable.</LCOrdeal_DebugUnavailable>
   <LCOrdeal_DebugStartFailed>Could not start the ordeal: {0}</LCOrdeal_DebugStartFailed>
   <LCOrdeal_DebugUnknown>unknown reason</LCOrdeal_DebugUnknown>
+  <LCOrdeal_Milestone_Dawn>Dawn Ordeal</LCOrdeal_Milestone_Dawn>
+  <LCOrdeal_Milestone_Noon>Noon Ordeal</LCOrdeal_Milestone_Noon>
+  <LCOrdeal_Milestone_Dusk>Dusk Ordeal</LCOrdeal_Milestone_Dusk>
+  <LCOrdeal_Milestone_Midnight>Midnight Ordeal</LCOrdeal_Milestone_Midnight>
+  <LCOrdeal_MeltdownNextMilestone>Next Ordeal milestone: {0} at Meltdown Lv.{1}</LCOrdeal_MeltdownNextMilestone>
+  <LCOrdeal_MeltdownTriggeredOrdeal>Qliphoth Meltdown Lv.{1} triggered {0}!</LCOrdeal_MeltdownTriggeredOrdeal>
 </LanguageData>
