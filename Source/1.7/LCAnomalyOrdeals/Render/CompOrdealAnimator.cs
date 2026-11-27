@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
@@ -126,6 +127,28 @@ namespace LCAnomalyOrdeals.Render
         public void SetChargeIntensity(float intensity)
         {
             chargeIntensity = Mathf.Clamp01(intensity);
+        }
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            if (!respawningAfterLoad && parent != null && parent.Spawned && parent.Map != null && !parent.Position.Fogged(parent.Map))
+            {
+                LCAnomalyCore.Util.AbnormalityUtility.Discover(parent.def);
+            }
+        }
+
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            foreach (Gizmo g in base.CompGetGizmosExtra())
+            {
+                yield return g;
+            }
+
+            if (parent != null)
+            {
+                yield return LCAnomalyCore.Util.Gizmos.Get_EntityCodex(parent);
+            }
         }
 
         public override void CompTick()

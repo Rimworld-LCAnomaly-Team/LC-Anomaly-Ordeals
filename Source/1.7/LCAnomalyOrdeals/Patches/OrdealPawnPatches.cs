@@ -228,6 +228,11 @@ namespace LCAnomalyOrdeals.Patches
 
         private static void Postfix(Pawn __instance, KillState __state)
         {
+            if (OrdealTargetUtility.IsOrdealPawn(__instance))
+            {
+                LCAnomalyCore.GameComponent.GameComponent_LC.Instance?.RecordOrdealKill(__instance.def);
+            }
+
             if (__state != null) WhiteOrdealWorker.NotifyKilled(__instance, __state.map, __state.position, __state.rotation);
             if (__state == null
                 || __state.map == null

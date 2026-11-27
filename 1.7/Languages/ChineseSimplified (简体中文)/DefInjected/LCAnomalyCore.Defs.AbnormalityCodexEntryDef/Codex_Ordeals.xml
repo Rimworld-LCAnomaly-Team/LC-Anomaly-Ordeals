@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <LCOrdeal_Codex_AmberDawn.label>新鲜的食物</LCOrdeal_Codex_AmberDawn.label>
+  <LCOrdeal_Codex_AmberDawn.description>琥珀色黎明考验（TETH）生成的节肢蠕虫群。个体脆弱且极易受到物理（RED）与灵魂（PALE）伤害，但会成群结队钻入地下突袭殖民者，并以高频物理撕咬吞噬落单员工。</LCOrdeal_Codex_AmberDawn.description>
+
+  <LCOrdeal_Codex_CrimsonDawn.label>开始欢呼吧！</LCOrdeal_Codex_CrimsonDawn.label>
+  <LCOrdeal_Codex_CrimsonDawn.description>深红色黎明考验（TETH）生成的双色缝合马戏小丑。头戴红白棋盘与纯黑双耳小丑帽，会高速蹦跳着奔向异想体收容平台并嬉闹般破坏逆卡巴拉计数器，破坏后通过条纹马戏帐篷传送门转移；被击杀时会发红剧烈自爆并造成范围物理（RED）伤害。</LCOrdeal_Codex_CrimsonDawn.description>
+
+  <LCOrdeal_Codex_GreenDawn.label>疑问</LCOrdeal_Codex_GreenDawn.label>
+  <LCOrdeal_Codex_GreenDawn.description>翠绿色黎明考验（TETH）生成的机械骸骨人形，也是黎明考验中正面战力最强的单位。巡逻时绿灯闪烁，接敌后切换红灯并挥舞血迹斑斑的长矛造成高额物理（RED）伤害；击杀目标后会进入残忍的虐尸狂暴，持续释放范围精神（WHITE）冲击波。</LCOrdeal_Codex_GreenDawn.description>
+
+  <LCOrdeal_Codex_VioletDawn.label>理解的果实</LCOrdeal_Codex_VioletDawn.label>
+  <LCOrdeal_Codex_VioletDawn.description>紫罗兰黎明考验（TETH）生成的铭文肉块生物。行动缓慢但生命值较高，会周期性释放侵蚀（BLACK）孢子脉冲；若未能在发光核心成熟前将其镇压，将引发大规模侵蚀与精神自爆并令周边收容平台逆卡巴拉计数器归零。</LCOrdeal_Codex_VioletDawn.description>
+
+  <LCOrdeal_Codex_CrimsonNoon.label>汁水大合唱</LCOrdeal_Codex_CrimsonNoon.label>
+  <LCOrdeal_Codex_CrimsonNoon.description>深红色正午考验（HE）生成的骇人蝎形小丑肉块畸变体。通体密布狂笑的小丑面孔，能交替施展凌空蝎尾重砸、双钳小丑巨口撕咬与全身飞扑碾压造成高额物理（RED）伤害；被击杀后会通过马戏帐篷分裂出三只深红黎明小丑。</LCOrdeal_Codex_CrimsonNoon.description>
+
+  <LCOrdeal_Codex_GreenNoon.label>理解的过程</LCOrdeal_Codex_GreenNoon.label>
+  <LCOrdeal_Codex_GreenNoon.description>翠绿色正午考验（HE）生成的重装甲机械屠戮者。右臂搭载高速旋转圆锯、左臂装备重型炮口，会对周围人员倾泻范围物理（RED）锯切伤害，并在周期性过热时蹲伏停机冷却。</LCOrdeal_Codex_GreenNoon.description>
+
+  <LCOrdeal_Codex_VioletNoon.label>请给我们爱！！！</LCOrdeal_Codex_VioletNoon.label>
+  <LCOrdeal_Codex_VioletNoon.description>紫罗兰正午考验（HE）从天而降的铭文黑曜石碑。落地瞬间压碎下方人员造成高额侵蚀（BLACK）伤害，随后从背后爆裂甩出六根漆黑触手持续释放侵蚀冲击并降低收容平台逆卡巴拉计数器。</LCOrdeal_Codex_VioletNoon.description>
+
+  <LCOrdeal_Codex_IndigoNoon.label>清道夫</LCOrdeal_Codex_IndigoNoon.label>
+  <LCOrdeal_Codex_IndigoNoon.description>靛蓝色正午考验（HE）成群降临的后巷清道夫。头戴红眼防毒面具、背负血浆罐并手持双弯钩，攻击附带侵蚀（BLACK）伤害与吸血效果，发现倒地尸体会蹲伏吞噬并瞬间回满生命值。</LCOrdeal_Codex_IndigoNoon.description>
+
+  <LCOrdeal_Codex_AmberDusk.label>食物链</LCOrdeal_Codex_AmberDusk.label>
+  <LCOrdeal_Codex_AmberDusk.description>琥珀色黄昏考验（WAW）生成的巨型覆甲掘地蠕虫，背负发光的琥珀卵囊。会弓起背甲吐出大批琥珀黎明幼虫，并钻入地下在殖民者脚下破土而出造成高额物理（RED）重击。</LCOrdeal_Codex_AmberDusk.description>
+
+  <LCOrdeal_Codex_CrimsonDusk.label>绝顶之战</LCOrdeal_Codex_CrimsonDusk.label>
+  <LCOrdeal_Codex_CrimsonDusk.description>深红色黄昏考验（WAW）生成的巨型缝合肉球畸变体，裂开的血肉巨口中探出狂笑的小丑头颅。会高速团身翻滚碾压沿途一切人员并喷溅鲜血，落地后挥舞巨型斩骨刀、铁签与拍肉锤造成恐怖的物理（RED）范围重击；被击杀后会分裂出两只深红正午畸变体。</LCOrdeal_Codex_CrimsonDusk.description>
+
+  <LCOrdeal_Codex_GreenDusk.label>前往何方</LCOrdeal_Codex_GreenDusk.label>
+  <LCOrdeal_Codex_GreenDusk.description>翠绿色黄昏考验（WAW）生成的巨型工业机械工厂。内部齿轮轰鸣并点亮右侧翠绿充能槽，蓄满后会横向掀开巨型前舱门源源不断部署翠绿黎明与翠绿正午单位。</LCOrdeal_Codex_GreenDusk.description>
+
+  <LCOrdeal_Codex_WhiteFixerRed.label>红色收尾人</LCOrdeal_Codex_WhiteFixerRed.label>
+  <LCOrdeal_Codex_WhiteFixerRed.description>白昼考验（WAW）登场的红色收尾人。身着红目重甲并装配高能臂刃与激光炮，完全吸收物理（RED）伤害，交替发动猩红旋斩与直线穿透红光束。</LCOrdeal_Codex_WhiteFixerRed.description>
+
+  <LCOrdeal_Codex_WhiteFixerWhite.label>白色收尾人</LCOrdeal_Codex_WhiteFixerWhite.label>
+  <LCOrdeal_Codex_WhiteFixerWhite.description>白昼考验（WAW）登场的白色收尾人。头顶悬浮光环并手持圣洁双面巨炮，完全吸收精神（WHITE）伤害，发射穿透精神光束并留下持续减速的精神白雾。</LCOrdeal_Codex_WhiteFixerWhite.description>
+
+  <LCOrdeal_Codex_WhiteFixerBlack.label>黑色收尾人</LCOrdeal_Codex_WhiteFixerBlack.label>
+  <LCOrdeal_Codex_WhiteFixerBlack.description>白昼考验（WAW）登场的黑色收尾人。挥舞巨型尖刺共鸣巨锤，完全吸收侵蚀（BLACK）伤害，连续震荡释放范围侵蚀脉冲并令附近收容平台逆卡巴拉计数器归零。</LCOrdeal_Codex_WhiteFixerBlack.description>
+
+  <LCOrdeal_Codex_WhiteFixerPale.label>蓝色收尾人</LCOrdeal_Codex_WhiteFixerPale.label>
+  <LCOrdeal_Codex_WhiteFixerPale.description>白昼考验（WAW）登场的苍白（蓝）收尾人。头戴礼帽、手提公文包与手枪，完全吸收灵魂（PALE）伤害，频繁借助空间裂隙闪现至目标身旁发动致命灵魂斩击。</LCOrdeal_Codex_WhiteFixerPale.description>
+
+  <LCOrdeal_Codex_AmberMidnight.label>永恒的盛宴</LCOrdeal_Codex_AmberMidnight.label>
+  <LCOrdeal_Codex_AmberMidnight.description>琥珀色午夜考验（ALEPH）生成的巨型竖立母虫。会向两侧彻底裂开布满琥珀卵囊的巨瓣，露出中央锯齿状漆黑内颚咆哮并孵化琥珀黄昏，同时频繁掘地破土碾碎设施中的一切生命（物理 RED）。</LCOrdeal_Codex_AmberMidnight.description>
+
+  <LCOrdeal_Codex_GreenMidnight.label>终末螺旋</LCOrdeal_Codex_GreenMidnight.label>
+  <LCOrdeal_Codex_GreenMidnight.description>翠绿色午夜考验（ALEPH）降临的终末激光高塔。装甲穹顶向两侧彻底张开，升起翠绿发光发射器并进行 360° 全图旋转激光扫射，沿途造成毁灭性侵蚀（BLACK）伤害与减速。</LCOrdeal_Codex_GreenMidnight.description>
+
+  <LCOrdeal_Codex_VioletMidnightRed.label>红色祭坛</LCOrdeal_Codex_VioletMidnightRed.label>
+  <LCOrdeal_Codex_VioletMidnightRed.description>紫罗兰午夜考验《神圣的赋予》（ALEPH）召唤的红色祭坛。完全吸收物理（RED）伤害并撕裂猩红传送门，伸出利爪血肉触手横扫目标造成物理伤害。</LCOrdeal_Codex_VioletMidnightRed.description>
+
+  <LCOrdeal_Codex_VioletMidnightWhite.label>白色祭坛</LCOrdeal_Codex_VioletMidnightWhite.label>
+  <LCOrdeal_Codex_VioletMidnightWhite.description>紫罗兰午夜考验《神圣的赋予》（ALEPH）召唤的白色祭坛。完全吸收精神（WHITE）伤害并召唤灵体涡纹触手对大范围人员造成精神伤害。</LCOrdeal_Codex_VioletMidnightWhite.description>
+
+  <LCOrdeal_Codex_VioletMidnightBlack.label>黑色祭坛</LCOrdeal_Codex_VioletMidnightBlack.label>
+  <LCOrdeal_Codex_VioletMidnightBlack.description>紫罗兰午夜考验《神圣的赋予》（ALEPH）召唤的黑色祭坛。完全吸收侵蚀（BLACK）伤害并从裂隙发射缠绕荆棘铁丝网的紫色巨矛贯通直线目标。</LCOrdeal_Codex_VioletMidnightBlack.description>
+
+  <LCOrdeal_Codex_VioletMidnightPale.label>苍白祭坛</LCOrdeal_Codex_VioletMidnightPale.label>
+  <LCOrdeal_Codex_VioletMidnightPale.description>紫罗兰午夜考验《神圣的赋予》（ALEPH）召唤的苍白祭坛。完全吸收灵魂（PALE）伤害并在黑雾中具现全视苍白之眼，施放致命灵魂伤害。</LCOrdeal_Codex_VioletMidnightPale.description>
+
+  <LCOrdeal_Codex_WhiteClaw.label>爪牙</LCOrdeal_Codex_WhiteClaw.label>
+  <LCOrdeal_Codex_WhiteClaw.description>白昼午夜考验（ALEPH）降临的首脑处决者。全四色抗性均为 0.4，左臂装配巨型机械利爪与红/蓝/绿三色奇点血清：橙色血清直线突刺（RED）、蓝色血清空间标记瞬杀（BLACK）、绿色血清高速再生。</LCOrdeal_Codex_WhiteClaw.description>
+
+</LanguageData>

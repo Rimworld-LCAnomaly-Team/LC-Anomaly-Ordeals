@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_AmberDawn</defName>
+    <label>Perfect Food manifestation</label>
+    <description>A ravenous, segmented orange-spotted worm spawned by the Amber Dawn Ordeal (TETH). Individually fragile and highly vulnerable to RED and PALE damage, yet relentless in burrowing swarms that lunge with rapid RED-damage bites.</description>
+    <uiIconPath>Things/Pawn/Ordeals/AmberDawn_south</uiIconPath>
+    <category>TETH</category>
+    <orderInCategory>101</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-D1</containmentCode>
+    <ordealStage>Dawn</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_AmberDawn</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_CrimsonDawn</defName>
+    <label>Cheers manifestation</label>
+    <description>A manic stitched jester clown with mismatched carnival hat ears spawned by the Crimson Dawn Ordeal (TETH). Sprints straight toward Abnormality Holding Platforms to drop Qliphoth Counters to zero before vanishing through a striped circus tent portal, and explodes in a RED-damage blast upon death.</description>
+    <uiIconPath>Things/Pawn/Ordeals/CrimsonDawn_south</uiIconPath>
+    <category>TETH</category>
+    <orderInCategory>102</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-D2</containmentCode>
+    <ordealStage>Dawn</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_CrimsonDawn</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_GreenDawn</defName>
+    <label>Doubt manifestation</label>
+    <description>An existentially tormented skeletal automaton spawned by the Green Dawn Ordeal (TETH). The deadliest direct fighter among Dawn Ordeals: hunts down personnel with high-power RED spear thrusts and enters a brutal corpse-execution frenzy emitting WHITE mental shockwaves upon scoring a kill.</description>
+    <uiIconPath>Things/Pawn/Ordeals/GreenDawn_south</uiIconPath>
+    <category>TETH</category>
+    <orderInCategory>103</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-D3</containmentCode>
+    <ordealStage>Dawn</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_GreenDawn</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_VioletDawn</defName>
+    <label>Understanding Fruit manifestation</label>
+    <description>An inscribed eldritch violet organism spawned by the Violet Dawn Ordeal (TETH). Creeps slowly while pulsing BLACK-damage spores; if not suppressed before its glowing core reaches maturity, it detonates in a massive BLACK and WHITE shockwave that drops nearby Abnormality Qliphoth Counters to zero.</description>
+    <uiIconPath>Things/Pawn/Ordeals/VioletDawn_south</uiIconPath>
+    <category>TETH</category>
+    <orderInCategory>104</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-D4</containmentCode>
+    <ordealStage>Dawn</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_VioletDawn</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_CrimsonNoon</defName>
+    <label>Harmony manifestation</label>
+    <description>A grotesque scorpion-like mass of screaming clown faces spawned by the Crimson Noon Ordeal (HE). Strikes with towering scorpion-tail slams, snapping twin clown-jaw pincers, and full-body pounces for heavy RED damage, and splits into three Crimson Dawn jesters upon death.</description>
+    <uiIconPath>Things/Pawn/Ordeals/CrimsonNoon_south</uiIconPath>
+    <category>HE</category>
+    <orderInCategory>105</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-N1</containmentCode>
+    <ordealStage>Noon</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_CrimsonNoon</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_GreenNoon</defName>
+    <label>Understanding Process manifestation</label>
+    <description>A heavy iron-plated automaton armed with a spinning circular saw and blaster cannon, spawned by the Green Noon Ordeal (HE). Shreds nearby targets with RED-damage saw sweeps before periodically overheating and crouching down to reboot.</description>
+    <uiIconPath>Things/Pawn/Ordeals/GreenNoon_south</uiIconPath>
+    <category>HE</category>
+    <orderInCategory>106</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-N2</containmentCode>
+    <ordealStage>Noon</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_GreenNoon</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_VioletNoon</defName>
+    <label>Love monument manifestation</label>
+    <description>A falling obsidian monolith inscribed with glowing violet runes, spawned by the Violet Noon Ordeal (HE). Crushes everything beneath its landing zone for BLACK damage, then whips out six black tentacles to emit BLACK-damage waves and reduce Abnormality Qliphoth Counters.</description>
+    <uiIconPath>Things/Pawn/Ordeals/VioletNoon_south</uiIconPath>
+    <category>HE</category>
+    <orderInCategory>107</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-N3</containmentCode>
+    <ordealStage>Noon</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_VioletNoon</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_IndigoNoon</defName>
+    <label>Sweeper manifestation</label>
+    <description>A hunched gas-mask scavenger carrying a blood-fuel tank and dual curved crimson hooks, spawned by the Indigo Noon Ordeal (HE). Hunts in packs, slashing targets for BLACK damage while leeching vitality, and devours fallen corpses to fully regenerate.</description>
+    <uiIconPath>Things/Pawn/Ordeals/IndigoNoon_south</uiIconPath>
+    <category>HE</category>
+    <orderInCategory>108</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-N4</containmentCode>
+    <ordealStage>Noon</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_IndigoNoon</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_AmberDusk</defName>
+    <label>Food Chain manifestation</label>
+    <description>A massive armored burrowing worm with a glowing amber egg-sac on its back, spawned by the Amber Dusk Ordeal (WAW). Arches its carapace to vomit swarms of Amber Dawn worms before burrowing underground and erupting beneath targets for heavy RED damage.</description>
+    <uiIconPath>Things/Pawn/Ordeals/AmberDusk_south</uiIconPath>
+    <category>WAW</category>
+    <orderInCategory>109</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-K1</containmentCode>
+    <ordealStage>Dusk</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_AmberDusk</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_CrimsonDusk</defName>
+    <label>Climax manifestation</label>
+    <description>A colossal stitched flesh boulder driven by a grinning clown within its gaping maw, spawned by the Crimson Dusk Ordeal (WAW). Tumbles across the facility at high speed crushing everything in its path for massive RED damage, smashes foes with a butcher cleaver, iron skewer, and giant meat tenderizer, and splits into two Crimson Noon abominations upon death.</description>
+    <uiIconPath>Things/Pawn/Ordeals/CrimsonDusk_south</uiIconPath>
+    <category>WAW</category>
+    <orderInCategory>110</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-K2</containmentCode>
+    <ordealStage>Dusk</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_CrimsonDusk</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_GreenDusk</defName>
+    <label>Factory manifestation</label>
+    <description>A colossal industrial automaton foundry spawned by the Green Dusk Ordeal (WAW). Charges its green furnace gauges and lifts its blast gate wide open to continuously manufacture and deploy Green Dawn and Green Noon war machines.</description>
+    <uiIconPath>Things/Pawn/Ordeals/GreenDusk_south</uiIconPath>
+    <category>WAW</category>
+    <orderInCategory>111</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-K3</containmentCode>
+    <ordealStage>Dusk</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_GreenDusk</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_WhiteFixerRed</defName>
+    <label>red Fixer manifestation</label>
+    <description>The Crimson Fixer of the White Ordeals (WAW). Clad in red-visor combat armor, absorbs RED damage and cleaves through personnel with spinning crimson gauntlet blades and piercing RED laser volleys.</description>
+    <uiIconPath>Things/Pawn/Ordeals/WhiteFixerRed_south</uiIconPath>
+    <category>WAW</category>
+    <orderInCategory>112</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-W1</containmentCode>
+    <ordealStage>White</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_WhiteFixerRed</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_WhiteFixerWhite</defName>
+    <label>white Fixer manifestation</label>
+    <description>The Ivory Fixer of the White Ordeals (WAW). Crowned with a levitating halo and armed with a twin-faced holy cannon, absorbs WHITE damage and unleashes blinding WHITE beams and lingering mental fog.</description>
+    <uiIconPath>Things/Pawn/Ordeals/WhiteFixerWhite_south</uiIconPath>
+    <category>WAW</category>
+    <orderInCategory>113</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-W2</containmentCode>
+    <ordealStage>White</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_WhiteFixerWhite</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_WhiteFixerBlack</defName>
+    <label>black Fixer manifestation</label>
+    <description>The Obsidian Fixer of the White Ordeals (WAW). Wields a colossal spiked resonance hammer, absorbs BLACK damage, and triggers crushing BLACK shockwave pulses that breach nearby containment units.</description>
+    <uiIconPath>Things/Pawn/Ordeals/WhiteFixerBlack_south</uiIconPath>
+    <category>WAW</category>
+    <orderInCategory>114</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-W3</containmentCode>
+    <ordealStage>White</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_WhiteFixerBlack</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_WhiteFixerPale</defName>
+    <label>pale Fixer manifestation</label>
+    <description>The Pale Fixer of the White Ordeals (WAW). A fedora-clad executioner armed with a pale pistol and briefcase blade who absorbs PALE damage and blinks behind targets via dimensional portals to inflict lethal PALE strikes.</description>
+    <uiIconPath>Things/Pawn/Ordeals/WhiteFixerPale_south</uiIconPath>
+    <category>WAW</category>
+    <orderInCategory>115</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-W4</containmentCode>
+    <ordealStage>White</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_WhiteFixerPale</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_AmberMidnight</defName>
+    <label>Eternal Meal manifestation</label>
+    <description>A colossal vertical brood-titan worm spawned by the Amber Midnight Ordeal (ALEPH). Splits its egg-sac armored petals wide open to expose snapping serrated inner jaws, spewing Amber Dusk worms and erupting from beneath the earth with devastating RED-damage shockwaves.</description>
+    <uiIconPath>Things/Pawn/Ordeals/AmberMidnight_south</uiIconPath>
+    <category>ALEPH</category>
+    <orderInCategory>116</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-M1</containmentCode>
+    <ordealStage>Midnight</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_AmberMidnight</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_GreenMidnight</defName>
+    <label>Helix manifestation</label>
+    <description>The apocalyptic Helix of the End laser tower spawned by the Green Midnight Ordeal (ALEPH). Splits its armored dome shell apart to elevate a glowing emerald emitter that rotates 360 degrees, sweeping the entire map with lethal BLACK-damage beams.</description>
+    <uiIconPath>Things/Pawn/Ordeals/GreenMidnight_south</uiIconPath>
+    <category>ALEPH</category>
+    <orderInCategory>117</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-M2</containmentCode>
+    <ordealStage>Midnight</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_GreenMidnight</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_VioletMidnightRed</defName>
+    <label>red shrine manifestation</label>
+    <description>The Crimson Altar of the Violet Midnight Ordeal (ALEPH). Absorbs all RED damage and tears open bloody portals to lash targets with clawed RED-damage tentacles.</description>
+    <uiIconPath>Things/Pawn/Ordeals/VioletMidnightRed_south</uiIconPath>
+    <category>ALEPH</category>
+    <orderInCategory>118</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-M3</containmentCode>
+    <ordealStage>Midnight</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_VioletMidnightRed</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_VioletMidnightWhite</defName>
+    <label>white shrine manifestation</label>
+    <description>The Ivory Altar of the Violet Midnight Ordeal (ALEPH). Absorbs all WHITE damage and opens spectral portals releasing swirling WHITE-damage spirit tentacles.</description>
+    <uiIconPath>Things/Pawn/Ordeals/VioletMidnightWhite_south</uiIconPath>
+    <category>ALEPH</category>
+    <orderInCategory>119</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-M4</containmentCode>
+    <ordealStage>Midnight</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_VioletMidnightWhite</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_VioletMidnightBlack</defName>
+    <label>black shrine manifestation</label>
+    <description>The Obsidian Altar of the Violet Midnight Ordeal (ALEPH). Absorbs all BLACK damage and fires barbed-wire purple lance tentacles through dimensional rifts for piercing BLACK damage.</description>
+    <uiIconPath>Things/Pawn/Ordeals/VioletMidnightBlack_south</uiIconPath>
+    <category>ALEPH</category>
+    <orderInCategory>120</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-M5</containmentCode>
+    <ordealStage>Midnight</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_VioletMidnightBlack</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_VioletMidnightPale</defName>
+    <label>pale shrine manifestation</label>
+    <description>The Pale Altar of the Violet Midnight Ordeal (ALEPH). Absorbs all PALE damage and manifests the all-seeing Pale Eye in swirling black mist to inflict lethal PALE damage.</description>
+    <uiIconPath>Things/Pawn/Ordeals/VioletMidnightPale_south</uiIconPath>
+    <category>ALEPH</category>
+    <orderInCategory>121</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-M6</containmentCode>
+    <ordealStage>Midnight</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_VioletMidnightPale</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+  <LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+    <defName>LCOrdeal_Codex_WhiteClaw</defName>
+    <label>Claw manifestation</label>
+    <description>An executioner of the Head spawned by the White Midnight Ordeal (ALEPH). Equipped with a mechanized execution claw and three singularity serums (Orange dash, Blue warp-shred, Green regeneration), resisting all four damage types equally at 0.4.</description>
+    <uiIconPath>Things/Pawn/Ordeals/WhiteClaw_south</uiIconPath>
+    <category>ALEPH</category>
+    <orderInCategory>122</orderInCategory>
+    <entryKind>Ordeal</entryKind>
+    <containmentCode>ORDEAL-W5</containmentCode>
+    <ordealStage>White</ordealStage>
+    <linkedThings>
+      <li>LCOrdeal_Race_WhiteClaw</li>
+    </linkedThings>
+  </LCAnomalyCore.Defs.AbnormalityCodexEntryDef>
+
+</Defs>
